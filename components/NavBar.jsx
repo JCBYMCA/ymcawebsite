@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const NavBar = () => {
    return (
-       <div className={'flex mt-5 mx-5 text-white items-center'}>
+       <div className={'flex p-5 text-white items-center bg-gradient-to-b from-gradient-from'}>
             <div className={'flex items-center'}>
                 <Image src='/assets/images/logo.png' alt={'Logo'} width={100} height={100} />
                 <div className={'flex flex-col font-bold text-xl -space-y-1 tracking-wider'}>
