@@ -1,0 +1,21 @@
+{
+  "home": {
+    "navbar": {
+      "Home": "होम",
+      "About Us": "हमारे बारे में",
+      "Academics": "शिक्षा",
+      "Students": "छात्र",
+      "Admission": "प्रवेश",
+      "Research": "अनुसंधान",
+      "Resources": "संसाधन"
+    },
+    "heading": {
+      "tagline": "वह दुनिया बनाएं जिसमें आप रहना चाहते हैं।"
+    },
+    "button": {
+      "Find a Program": "एक प्रोग्राम खोजें",
+      "Request Information": "जानकारी का अनुरोध करें",
+      "Apply Now": "अभी आवेदन करें"
+    }
+  }
+}

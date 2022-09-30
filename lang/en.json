@@ -1,0 +1,21 @@
+{
+  "home": {
+    "navbar": {
+      "Home": "Home",
+      "About Us": "About Us",
+      "Academics": "Academics",
+      "Students": "Students",
+      "Admission": "Admission",
+      "Research": "Research",
+      "Resources": "Resources"
+    },
+    "heading": {
+      "tagline": "Create the world you want to live in."
+    },
+    "button": {
+      "Find a Program": "Find a Program",
+      "Request Information": "Request Information",
+      "Apply Now": "Apply Now"
+    }
+  }
+}

@@ -9,7 +9,7 @@ module.exports = {
       colors: {
         "primary": "#640100",
         "secondary": "#173C81",
-        "gradient-from":'rgba(0,0,0,0.50)',
+        "gradient-from":'rgba(0,0,0,0.80)',
       }
     },
   },
