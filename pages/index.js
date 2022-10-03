@@ -5,7 +5,9 @@ import ScrollHint from "../components/HomePageComponents/ScrollHint";
 import Button from "../components/HomePageComponents/Button";
 import Cards from "../components/HomePageComponents/Cards";
 
+
 import Image from "next/image";
+import ProfileCards from "../components/HomePageComponents/ProfileCards";
 
 
 const Home = () => {
@@ -24,8 +26,11 @@ const Home = () => {
                     <Button/>
                     <ScrollHint/>
                     <Cards/>
+                    <ProfileCards/>
+                  
                 </div>
             </motion.div>
+           
 
         </div>
 
