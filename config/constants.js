@@ -1,1 +1,0 @@
-export const TAGLINE = "Create the world you want to live in.";
