@@ -13,7 +13,7 @@ const Footer = () => {
                 <h1 className={'mb-12'}>EMAIL: contact@jcboseust.ac.in</h1>
                 <h1 className={'mb-2'}>Subscribe for Newsletter</h1>
                 <div className={'flex mb-8'}>
-                    <input placeholder={'Enter Email Address'} type={"text"}/>
+                    <input placeholder={'Enter Email Address'} type={"email"} className={'text-black p-1'}/>
                     <button className={'bg-primary border-4 border-primary'} type={"submit"}>SUBMIT</button>
                 </div>
                 <div className={'bg-gray-300 h-[10rem] text-black'}>MAP GOES HERE</div>

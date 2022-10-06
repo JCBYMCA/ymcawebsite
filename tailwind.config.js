@@ -8,9 +8,13 @@ module.exports = {
     extend: {
       colors: {
         "primary": "#640100",
+        "primaryLight": "#B03136",
         "secondary": "#173C81",
         "gradient-from":'rgba(0,0,0,0.80)',
-      }
+      },
+      backgroundImage: theme => ({
+        'feature-bg': "url('/assets/images/temp.png')",
+      }),
     },
   },
   plugins: [],
