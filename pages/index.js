@@ -4,6 +4,7 @@ import {motion} from "framer-motion";
 import ScrollHint from "../components/HomePageComponents/ScrollHint";
 import Button from "../components/HomePageComponents/Button";
 import ProfileCard from "../components/HomePageComponents/ProfileCard";
+import Footer from "../components/HomePageComponents/Footer";
 
 
 const Home = () => {
@@ -15,7 +16,7 @@ const Home = () => {
             }} className={'h-screen -z-10 flex flex-col'}>
 
                 <div>
-                    <video autoPlay muted loop className={'fixed w-full h-screen brightness-50 -z-50 object-fill'}>
+                    <video autoPlay muted loop className={'fixed w-full h-screen brightness-50 -z-30 object-fill'}>
                         <source src="/assets/video/bg.mp4" type="video/mp4"/>
                     </video>
                     <NavBar/>
@@ -24,6 +25,14 @@ const Home = () => {
                 </div>
                 <ScrollHint/>
             </motion.div>
+            <div className={'mt-72 bg-white'}>
+                <div className={'mb-48'}>hh</div>
+                <Footer/>
+            </div>
+
+
+
+
 
         </div>
             <ProfileCard
