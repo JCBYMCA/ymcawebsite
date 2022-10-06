@@ -3,15 +3,12 @@ import Heading from "../components/HomePageComponents/Heading";
 import {motion} from "framer-motion";
 import ScrollHint from "../components/HomePageComponents/ScrollHint";
 import Button from "../components/HomePageComponents/Button";
-import Cards from "../components/HomePageComponents/Cards";
-
-
-import Image from "next/image";
-import ProfileCards from "../components/HomePageComponents/ProfileCards";
+import ProfileCard from "../components/HomePageComponents/ProfileCard";
 
 
 const Home = () => {
     return (
+        <>
         <div>
             <motion.div animate={{
                 backgroundColor:['#000', 'rgba(0,0,0,0)']
@@ -24,15 +21,17 @@ const Home = () => {
                     <NavBar/>
                     <Heading/>
                     <Button/>
-                    <ScrollHint/>
-                    <Cards/>
-                    <ProfileCards/>
-                  
                 </div>
+                <ScrollHint/>
             </motion.div>
-           
 
         </div>
+            <ProfileCard
+                name={'Shri Bandaru Dattatreya'}
+                designation={'Hon\'ble Chancellor & Governor Haryana'}
+                image={'/assets/images/governor.png'}
+            />
+        </>
 
     )
 }
