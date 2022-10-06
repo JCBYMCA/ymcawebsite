@@ -1,7 +1,6 @@
-import {motion} from "framer-motion";
 import {useTranslations} from "next-intl";
 import Image from "next/image";
-import {ADDRESS, ADMISSIONPHN, CONTACTEMAIL, PHONE} from "../../config/constants";
+// import {ADDRESS, ADMISSIONPHN, CONTACTEMAIL, PHONE} from "../../config/constants";
 
 
 const Footer = () => {
@@ -10,8 +9,8 @@ const Footer = () => {
         <div className={'flex flex-col'}>
         <div className={'bg-secondary h-[27rem] flex justify-around text-white text-xl pt-8 pb-8 '}>
             <div className={'flex flex-col'}>
-                <h1 className={'mb-2'}>TEL: {PHONE}</h1>
-                <h1 className={'mb-12'}>EMAIL: {CONTACTEMAIL}</h1>
+                <h1 className={'mb-2'}>TEL: 0129-2310126</h1>
+                <h1 className={'mb-12'}>EMAIL: contact@jcboseust.ac.in</h1>
                 <h1 className={'mb-2'}>Subscribe for Newsletter</h1>
                 <div className={'flex mb-8'}>
                     <input placeholder={'Enter Email Address'} type={"text"}/>
@@ -80,7 +79,7 @@ const Footer = () => {
                     <div><Image src={'/assets/images/linkedin.png'} height={25} width={25}/></div>
                 </div>
                 <div className={'flex items-center text-lg text-black font-bold'}>
-                    <h1 className={'w-80'}>{ADDRESS}</h1>
+                    <h1 className={'w-80'}>NH-2 Sector-6,Mathura Road, Faridabad-121006, Haryana(India)</h1>
                 </div>
             </div>
 
