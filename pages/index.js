@@ -6,6 +6,7 @@ import Button from "../components/HomePageComponents/Button";
 import Cards from "../components/HomePageComponents/Cards";
 
 import Image from "next/image";
+import Footer from "../components/HomePageComponents/Footer";
 
 
 const Home = () => {
@@ -16,7 +17,7 @@ const Home = () => {
             }} className={'h-screen -z-10 flex flex-col'}>
 
                 <div>
-                    <video autoPlay muted loop className={'fixed w-full h-screen brightness-50 -z-50 object-fill'}>
+                    <video autoPlay muted loop className={'fixed w-full h-screen brightness-50 -z-30 object-fill'}>
                         <source src="/assets/video/bg.mp4" type="video/mp4"/>
                     </video>
                     <NavBar/>
@@ -26,6 +27,14 @@ const Home = () => {
                     <Cards/>
                 </div>
             </motion.div>
+            <div className={'mt-72 bg-white'}>
+                <div className={'mb-48'}>hh</div>
+                <Footer/>
+            </div>
+
+
+
+
 
         </div>
 
