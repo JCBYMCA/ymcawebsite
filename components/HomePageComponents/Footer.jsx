@@ -1,10 +1,11 @@
 import {useTranslations} from "next-intl";
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import Image from "next/image";
 // import {ADDRESS, ADMISSIONPHN, CONTACTEMAIL, PHONE} from "../../config/constants";
 
 
 const Footer = () => {
-    const t = useTranslations("home.heading");
+    // const t = useTranslations("home.heading");
     return (
         <div className={'flex flex-col'}>
         <div className={'bg-secondary h-[27rem] flex justify-around text-white text-xl pt-8 pb-8 '}>
@@ -73,10 +74,10 @@ const Footer = () => {
                     <h1 className={'text-center w-80'}>J.C. Bose University of Science & Technology, YMCA</h1>
                 </div>
                 <div className={'flex space-x-11'}>
-                    <div><Image src={'/assets/images/linkedin.png'} height={25} width={25}/></div>
-                    <div><Image src={'/assets/images/linkedin.png'} height={25} width={25}/></div>
-                    <div><Image src={'/assets/images/linkedin.png'} height={25} width={25}/></div>
-                    <div><Image src={'/assets/images/linkedin.png'} height={25} width={25}/></div>
+                    <div><LinkedInIcon/></div>
+                    <div><LinkedInIcon/></div>
+                    <div><LinkedInIcon/></div>
+                    <div><LinkedInIcon/></div>
                 </div>
                 <div className={'flex items-center text-lg text-black font-bold'}>
                     <h1 className={'w-80'}>NH-2 Sector-6,Mathura Road, Faridabad-121006, Haryana(India)</h1>

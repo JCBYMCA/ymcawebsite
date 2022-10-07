@@ -6,11 +6,16 @@ import Button from "../components/HomePageComponents/Button";
 import ProfileCard from "../components/HomePageComponents/ProfileCard";
 import Footer from "../components/HomePageComponents/Footer";
 import FeatureCard from "../components/HomePageComponents/FeatureCard";
+import Head from "next/head";
 
 
 const Home = () => {
+
     return (
         <>
+            <Head>
+                <title>Home - JC Bose University of Science and Technology, YMCA</title>
+            </Head>
         <div>
             <motion.div animate={{
                 backgroundColor:['#000', 'rgba(0,0,0,0)']
@@ -29,18 +34,18 @@ const Home = () => {
             <div className={'flex bg-[#EBEBEB] h-[60vh] items-center'}>
                 <div className={'flex w-4/5 justify-around'}>
                     <ProfileCard
-                        name={'Shri Bandaru Dattatreya'}
-                        designation={'Hon\'ble Chancellor & Governor Haryana'}
+                        name={'governor name'}
+                        designation={'governor designation'}
                         image={'/assets/images/governor.png'}
                     />
                     <ProfileCard
-                        name={'Shri Manohar Lal'}
-                        designation={'Hon\'ble Chief Minister Haryana'}
+                        name={'chief minister name'}
+                        designation={'chief minister designation'}
                         image={'/assets/images/cm.png'}
                     />
                     <ProfileCard
-                        name={'Prof. S.K. Tomar'}
-                        designation={'Hon\'ble Vice-Chancellor'}
+                        name={'vice chancellor name'}
+                        designation={'vice chancellor designation'}
                         image={'/assets/images/vc.png'}
                     />
                 </div>
@@ -48,7 +53,7 @@ const Home = () => {
 
                 </div>
             </div>
-            <div className={'h-[70vh] bg-feature-bg bg-no-repeat bg-cover bg-center '}>
+            <div className={'h-[70vh] bg-feature-bg bg-no-repeat bg-fixed bg-cover bg-center '}>
                 <div className={'backdrop-brightness-50 h-[70vh] flex flex-col'}>
                     <h1 className={'text-white text-4xl '}>Explore</h1>
                     <h1 className={'text-white text-4xl'}>the privileges</h1>

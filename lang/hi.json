@@ -16,6 +16,15 @@
       "Find a Program": "एक प्रोग्राम खोजें",
       "Request Information": "जानकारी का अनुरोध करें",
       "Apply Now": "अभी आवेदन करें"
+    },
+    "profileCard": {
+      "governor name": "श्री बंडारू दत्तात्रेय",
+      "governor designation": "माननीय चांसलर और राज्यपाल हरियाणा",
+      "vice chancellor name": "प्रोफ ऐस के तोमर",
+      "vice chancellor designation": "माननीय कुलपति",
+      "chief minister name": "श्री मनोहर लाल खट्टर",
+      "chief minister designation": "माननीय मुख्यमंत्री हरियाणा",
+      "read more": "और पढ़ें"
     }
   }
 }

@@ -16,6 +16,15 @@
       "Find a Program": "Find a Program",
       "Request Information": "Request Information",
       "Apply Now": "Apply Now"
+    },
+    "profileCard": {
+      "governor name": "Shri Bandaru Dattatreya",
+      "governor designation": "Hon'ble Chancellor & Governor Haryana",
+      "vice chancellor name": "Prof. S.K. Tomar",
+      "vice chancellor designation": "Hon'ble Vice-Chancellor",
+      "chief minister name": "Shri Manohar Lal Khattar",
+      "chief minister designation": "Hon'ble Chief Minister Haryana",
+      "read more": "Read More"
     }
   }
 }
