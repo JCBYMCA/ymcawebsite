@@ -1,21 +1,26 @@
-const Notice = (props) =>{
+import {useTranslations} from "next-intl";
+
+const Notice = (props) => {
     return(
-        <div className={'border-1 rounded pb-3'}>
+        <div className={'border-1 cursor-pointer hover:scale-[1.01] duration-200 bg-white border-black rounded-md p-2 my-2'}>
             {props.heading}
         </div>
     );
 }
-const Notices = () =>{
+const Notices = () => {
     const t = useTranslations("home.notices");
     return(
-        <div className={'rounded-md'}>
-            <div className={'rounded-md text-center text-white decoration-secondary font-bold'}>
+        <div className={'rounded-md border-1 border-gray-800 flex flex-col'}>
+            <div className={'rounded-md py-2 text-2xl text-center bg-secondary text-white font-bold'}>
                 {t('heading')}
             </div>
-            <div className={'flex-col px-6 py-3'}>
+            <div className={'flex flex-col px-6 py-3'}>
+                <Notice heading={"BTech 1st counselling merit list"}/>
+                <Notice heading={"BTech 1st counselling merit list"}/>
+                <Notice heading={"BTech 1st counselling merit list"}/>
             </div>
-            <button className={'mt-auto flex-col mb-10'}>
-                {t('nextBtn')}
+            <button className={'mt-auto mx-auto bg-white py-2 px-8 hover:scale-105 duration-200 flex-col mb-10'}>
+                {t('viewAll')}
             </button>
         </div>
     );

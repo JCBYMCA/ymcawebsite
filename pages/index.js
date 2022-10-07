@@ -8,6 +8,7 @@ import Footer from "../components/HomePageComponents/Footer";
 import FeatureCard from "../components/HomePageComponents/FeatureCard";
 import Head from "next/head";
 import AutoScrollFeatures from "../components/HomePageComponents/AutoScrollFeatures";
+import Notices from "../components/HomePageComponents/Notices";
 
 
 const Home = () => {
@@ -54,6 +55,18 @@ const Home = () => {
                     <AutoScrollFeatures/>
                 </div>
             </div>
+            <div className={'flex h-[70vh] bg-notice-bg bg-no-repeat bg-center bg-cover '}>
+                <div className={'bg-white bg-opacity-60 flex w-full h-[70vh]'}>
+                    <div className={'w-2/3 py-10 px-6'}>
+                        <Notices/>
+                    </div>
+                    <div className={'w-1/3'}>
+
+                    </div>
+                </div>
+            </div>
+
+
             <div className={'h-[70vh] bg-feature-bg bg-no-repeat bg-fixed bg-cover bg-center '}>
                 <div className={'backdrop-brightness-50 h-[70vh] flex flex-col'}>
                     <div className={'mt-20 font-semibold'}>

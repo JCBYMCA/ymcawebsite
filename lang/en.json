@@ -27,7 +27,8 @@
       "read more": "Read More"
     },
     "notices":{
-      "heading":"NOTICE BOARD"
+      "heading":"NOTICE BOARD",
+      "viewAll": "View All"
     }
   }
 }
