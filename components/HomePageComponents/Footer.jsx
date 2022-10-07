@@ -17,7 +17,12 @@ const Footer = () => {
                     <input placeholder={'Enter Email Address'} type={"email"} className={'text-black p-1'}/>
                     <button className={'bg-primary border-4 border-primary'} type={"submit"}>SUBMIT</button>
                 </div>
-                <div className={'bg-gray-300 h-[10rem] text-black'}>MAP GOES HERE</div>
+                <div className={'bg-gray-300 h-[10rem] text-black'}>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14042.638181854629!2d77.3209443!3d28.3691409!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cdc71f6e9f557%3A0xeb301eec9ff18517!2sJ.C.%20Bose%20University%20of%20Science%20and%20Technology%2C%20YMCA%20(Formerly%20YMCA%20UST)!5e0!3m2!1sen!2sin!4v1665171600444!5m2!1sen!2sin"
+                        width="100%" height="100%" style={{border:0}} allowFullScreen="" loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"></iframe>
+                </div>
 
             </div>
             <div className={'flex flex-col text-center space-y-6 '}>
