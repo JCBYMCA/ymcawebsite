@@ -12,8 +12,14 @@ module.exports = {
         "secondary": "#173C81",
         "gradient-from":'rgba(0,0,0,0.80)',
       },
+      borderWidth:{
+        1: '1px',
+      },
       backgroundImage: theme => ({
-        'feature-bg': "url('/assets/images/temp.png')",
+        'feature-bg': "url('/assets/images/featureBg.png')",
+        'feature-bg-blue': "url('/assets/images/featureBgBlue.svg')",
+        'feature-bg-red': "url('/assets/images/featureBgRed.svg')",
+        'notice-bg': "url('/assets/images/noticeBg.png')",
       }),
     },
   },
