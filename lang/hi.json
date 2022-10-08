@@ -27,7 +27,8 @@
       "read more": "और पढ़ें"
     },
     "notices":{
-      "heading":"सूचना पट्ट"
+      "heading":"सूचना पट्ट",
+      "viewAll": "सभी देखें"
     }
   }
 }

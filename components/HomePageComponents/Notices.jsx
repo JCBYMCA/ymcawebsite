@@ -21,8 +21,8 @@ const Notices = () => {
                 <Notice heading={"BTech 1st counselling merit list"}/>
                 <Notice heading={"BTech 1st counselling merit list"}/>
             </div>
-            <button className={'mt-auto flex-col mb-10'}>
-                {t('nextBtn')}
+            <button className={'mt-auto mx-auto bg-white py-2 px-8 hover:scale-105 duration-200 flex-col mb-10'}>
+                {t('viewAll')}
             </button>
         </div>
     );

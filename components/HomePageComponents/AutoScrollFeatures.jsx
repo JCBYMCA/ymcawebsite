@@ -1,9 +1,10 @@
-import {motion} from "framer-motion";
-import {useState} from "react";
+import {motion, useAnimation} from "framer-motion";
+import {useEffect, useState} from "react";
 
 const AutoScrollFeatures = () => {
-    const data = {
-        scroll1: {
+    const controls = useAnimation();
+    const data = [
+        {
             first: {
                 title: "A",
                 subtitle: "Grade NAAC Accredited",
@@ -13,11 +14,11 @@ const AutoScrollFeatures = () => {
                 subtitle: "Lakhs highest package",
             },
             third: {
-                title: "2000-2500",
+                title: "2000",
                 subtitle: "QS World University Ranking",
             }
         },
-        scroll2: {
+        {
             first: {
                 title: "1000+",
                 subtitle: "Placement offers",
@@ -31,7 +32,7 @@ const AutoScrollFeatures = () => {
                 subtitle: "University in terms of placements in Haryana",
             }
         },
-        scroll3: {
+        {
             first: {
                 title: "5000+",
                 subtitle: "Students",
@@ -45,26 +46,41 @@ const AutoScrollFeatures = () => {
                 subtitle: "Centres of Excellence",
             }
         }
-    }
+    ]
 
-    const [title1, setTitle1] = useState(data.scroll1.first.title);
-    const [subtitle1, setSubtitle1] = useState(data.scroll1.first.subtitle);
-    const [title2, setTitle2] = useState(data.scroll2.first.title);
-    const [subtitle2, setSubtitle2] = useState(data.scroll2.first.subtitle);
-    const [title3, setTitle3] = useState(data.scroll3.first.title);
-    const [subtitle3, setSubtitle3] = useState(data.scroll3.first.subtitle);
+    const [title1, setTitle1] = useState(data[0].first.title);
+    const [subtitle1, setSubtitle1] = useState(data[0].first.subtitle);
+    const [title2, setTitle2] = useState(data[0].second.title);
+    const [subtitle2, setSubtitle2] = useState(data[0].second.subtitle);
+    const [title3, setTitle3] = useState(data[0].third.title);
+    const [subtitle3, setSubtitle3] = useState(data[0].third.subtitle);
+
+    useEffect(() => {
+        let i = 0;
+        setInterval(() => {
+            controls.start({
+                y: [0, 400, 0],
+                opacity: [1, 0, 1],
+                transition: {
+                    duration: 0.4,
+                }
+            });
+            if(i === data.length) i = 0;
+            setTitle1(data[i].first.title);
+            setSubtitle1(data[i].first.subtitle);
+            setTitle2(data[i].second.title);
+            setSubtitle2(data[i].second.subtitle);
+            setTitle3(data[i].third.title);
+            setSubtitle3(data[i].third.subtitle);
+            i++;
+        }, 5000);
+
+    }, [])
 
 
     return (
-        <motion.div animate={{
-            y:[0, 400, 0],
-            opacity: [1, 0, 1]
-        }} transition={{
-            duration: 0.5,
-            repeat: Infinity,
-            repeatDelay: 2,
-            type: 'spring',
-        }} className={'flex flex-col text-white text-center'}>
+        <motion.div animate={controls}
+            className={'flex flex-col text-white text-center'}>
             <div className={'h-1/3 flex flex-col my-10'}>
                 <h1 className={'text-6xl font-bold'}>{title1}</h1>
                 <h1 className={'text-xl'}>{subtitle1}</h1>

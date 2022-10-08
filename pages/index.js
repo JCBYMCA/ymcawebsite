@@ -56,7 +56,7 @@ const Home = () => {
                     <AutoScrollFeatures/>
                 </div>
             </div>
-            <div className={'flex h-[70vh] bg-notice-bg bg-no-repeat bg-center bg-cover '}>
+            <div className={'flex h-[70vh] bg-fixed bg-notice-bg bg-no-repeat bg-center bg-cover '}>
                 <div className={'bg-white bg-opacity-70 flex w-full h-[70vh] py-10 px-8'}>
                     <div className={'w-2/3 mr-4'}>
                         <Notices/>
