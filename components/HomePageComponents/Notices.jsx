@@ -11,16 +11,18 @@ const Notices = () => {
     const t = useTranslations("home.notices");
     return(
         <div className={'rounded-md border-1 border-gray-800 flex flex-col'}>
-            <div className={'rounded-md py-2 text-2xl text-center bg-secondary text-white font-bold'}>
+            <div className={'rounded-md py-2 text-3xl text-center bg-secondary text-white font-bold'}>
                 {t('heading')}
             </div>
             <div className={'flex flex-col px-6 py-3'}>
                 <Notice heading={"BTech 1st counselling merit list"}/>
                 <Notice heading={"BTech 1st counselling merit list"}/>
                 <Notice heading={"BTech 1st counselling merit list"}/>
+                <Notice heading={"BTech 1st counselling merit list"}/>
+                <Notice heading={"BTech 1st counselling merit list"}/>
             </div>
-            <button className={'mt-auto mx-auto bg-white py-2 px-8 hover:scale-105 duration-200 flex-col mb-10'}>
-                {t('viewAll')}
+            <button className={'mt-auto flex-col mb-10'}>
+                {t('nextBtn')}
             </button>
         </div>
     );

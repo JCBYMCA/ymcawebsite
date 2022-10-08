@@ -9,6 +9,7 @@ import FeatureCard from "../components/HomePageComponents/FeatureCard";
 import Head from "next/head";
 import AutoScrollFeatures from "../components/HomePageComponents/AutoScrollFeatures";
 import Notices from "../components/HomePageComponents/Notices";
+import UpcomingEvents from "../components/HomePageComponents/UpcomingEvents";
 
 
 const Home = () => {
@@ -56,12 +57,12 @@ const Home = () => {
                 </div>
             </div>
             <div className={'flex h-[70vh] bg-notice-bg bg-no-repeat bg-center bg-cover '}>
-                <div className={'bg-white bg-opacity-60 flex w-full h-[70vh]'}>
-                    <div className={'w-2/3 py-10 px-6'}>
+                <div className={'bg-white bg-opacity-70 flex w-full h-[70vh] py-10 px-8'}>
+                    <div className={'w-2/3 mr-4'}>
                         <Notices/>
                     </div>
-                    <div className={'w-1/3'}>
-
+                    <div className={'w-1/3 ml-4'}>
+                        <UpcomingEvents/>
                     </div>
                 </div>
             </div>
