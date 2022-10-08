@@ -1,12 +1,15 @@
 import NavBar from "../components/NavBar";
 import Heading from "../components/HomePageComponents/Heading";
-import {motion} from "framer-motion";
+import {motion, useScroll} from "framer-motion";
 import ScrollHint from "../components/HomePageComponents/ScrollHint";
 import Button from "../components/HomePageComponents/Button";
 import ProfileCard from "../components/HomePageComponents/ProfileCard";
 import Footer from "../components/HomePageComponents/Footer";
 import FeatureCard from "../components/HomePageComponents/FeatureCard";
 import Head from "next/head";
+import AutoScrollFeatures from "../components/HomePageComponents/AutoScrollFeatures";
+import Notices from "../components/HomePageComponents/Notices";
+import UpcomingEvents from "../components/HomePageComponents/UpcomingEvents";
 
 
 const Home = () => {
@@ -49,14 +52,38 @@ const Home = () => {
                         image={'/assets/images/vc.png'}
                     />
                 </div>
-                <div className={'w-1/5 bg-secondary h-full'}>
-
+                <div className={'w-1/5 bg-secondary h-full overflow-hidden'}>
+                    <AutoScrollFeatures/>
                 </div>
             </div>
+            <div className={'flex h-[70vh] bg-notice-bg bg-no-repeat bg-center bg-cover '}>
+                <div className={'bg-white bg-opacity-70 flex w-full h-[70vh] py-10 px-8'}>
+                    <div className={'w-2/3 mr-4'}>
+                        <Notices/>
+                    </div>
+                    <div className={'w-1/3 ml-4'}>
+                        <UpcomingEvents/>
+                    </div>
+                </div>
+            </div>
+
+
             <div className={'h-[70vh] bg-feature-bg bg-no-repeat bg-fixed bg-cover bg-center '}>
                 <div className={'backdrop-brightness-50 h-[70vh] flex flex-col'}>
-                    <h1 className={'text-white text-4xl '}>Explore</h1>
-                    <h1 className={'text-white text-4xl'}>the privileges</h1>
+                    <div className={'mt-20 font-semibold'}>
+                        <h1 className={'text-white text-8xl ml-60'}>Explore</h1>
+                        <h1 className={'text-white text-8xl ml-96'}>the privileges</h1>
+                    </div>
+                    <div className={'mt-auto flex overflow-hidden'}>
+                        <FeatureCard index={0}/>
+                        <FeatureCard index={1}/>
+                        <FeatureCard index={2}/>
+                        <FeatureCard index={3}/>
+                        <FeatureCard index={4}/>
+                        <FeatureCard index={5}/>
+                        <FeatureCard index={6}/>
+                    </div>
+
                 </div>
 
 
