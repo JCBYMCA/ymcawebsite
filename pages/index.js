@@ -1,4 +1,4 @@
-import NavBar from "../components/NavBar";
+import NavBar from "../components/NavBar/NavBar";
 import Heading from "../components/HomePageComponents/Heading";
 import {motion, useScroll} from "framer-motion";
 import ScrollHint from "../components/HomePageComponents/ScrollHint";
