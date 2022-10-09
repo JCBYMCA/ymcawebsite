@@ -26,6 +26,10 @@ export const menuItems = [
                     {
                         title: 'University Act',
                     }
+                    ,
+                    {
+                        title: 'Organogram Structure',
+                    }
                     ]
             },
             {
@@ -42,6 +46,24 @@ export const menuItems = [
                     },
                     {
                         title: 'Planning Board'
+                    },
+                    {
+                        title: 'Finance Committee',
+                    },
+                    {
+                        title: 'Board of Faculty',
+                    },
+                    {
+                        title: 'Building & Work Committee',
+                    },
+                    {
+                        title: 'Central Purchase Committee',
+                    },
+                    {
+                        title: 'Research Permission Board',
+                    },
+                    {
+                        title: 'National Education Policy',
                     }
                     ]
             },
@@ -90,6 +112,36 @@ export const menuItems = [
                     },
                     {
                         title: 'Dean (Faculty E&T)'
+                    },
+                    {
+                        title: 'Dean (Faculty I&C)'
+                    },
+                    {
+                        title: 'Dean (Faculty Mgmt.)'
+                    },
+                    {
+                        title: 'Dean (Faculty Sciences)'
+                    },
+                    {
+                        title: 'Dean (Student Welfare)'
+                    },
+                    {
+                        title: 'Dean (Academic Affairs )'
+                    },
+                    {
+                        title: 'Dean (R&D)'
+                    },
+                    {
+                        title: 'Dean (Faculty of Life Sciences)'
+                    },
+                    {
+                        title: 'Dean Faculty of Interdisciplinary Studies & Research'
+                    },
+                    {
+                        title: 'Dean (Colleges)'
+                    },
+                    {
+                        title: 'Dean (Construction & Maintenance)'
                     }
                 ]
             },
@@ -104,6 +156,39 @@ export const menuItems = [
                     },
                     {
                         title: 'Electrical Engineering'
+                    },
+                    {
+                        title: 'Electronics Engineering'
+                    },
+                    {
+                        title: 'Mechanical Engineering'
+                    },
+                    {
+                        title: 'Management Studies'
+                    },
+                    {
+                        title: 'Environmental Sciences & Engineering'
+                    },
+                    {
+                        title: 'Civil Engineering'
+                    },
+                    {
+                        title: 'Physics'
+                    },
+                    {
+                        title: 'Chemistry'
+                    },
+                    {
+                        title: 'Mathematics'
+                    },
+                    {
+                        title: 'Communication & Media Technology'
+                    },
+                    {
+                        title: 'Life Sciences'
+                    },
+                    {
+                        title: 'Centre for Energy Studies'
                     }
                 ]
             },
@@ -121,6 +206,30 @@ export const menuItems = [
                     },
                     {
                         title: 'Purchase'
+                    },
+                    {
+                        title: 'Maintenance'
+                    },
+                    {
+                        title: 'Sports'
+                    },
+                    {
+                        title: 'Workshop Superintendent'
+                    },
+                    {
+                        title: 'Hostel'
+                    },
+                    {
+                        title: 'Public Relations'
+                    },
+                    {
+                        title: 'Proctor'
+                    },
+                    {
+                        title: 'Health Centre'
+                    },
+                    {
+                        title: 'Affiliation & Registration'
                     }
                 ]
             },
@@ -135,6 +244,15 @@ export const menuItems = [
                     },
                     {
                         title: 'UCC & DA'
+                    },
+                    {
+                        title: 'IR Cell'
+                    },
+                    {
+                        title: 'International Affair Cell'
+                    },
+                    {
+                        title: 'Admissions'
                     }
                 ]
             }
@@ -144,15 +262,277 @@ export const menuItems = [
         title: 'Academics',
     },
     {
-        title: 'Students',
-    },
-    {
         title: 'Admission',
+        submenu:[
+            {
+                title: 'Diploma & UG Admissions',
+                submenu:[
+                    {
+                        title: 'Information Brochure'
+                    },
+                    {
+                        title: 'Fee Structure'
+                    },
+                    {
+                        title: 'Courses Offered'
+                    }
+                ]
+            },
+            {
+                title: 'PG Admissions',
+                submenu:[
+                    {
+                        title: 'Information Brochure'
+                    },
+                    {
+                        title: 'Fee Structure'
+                    },
+                    {
+                        title: 'Courses Offered'
+                    }
+                ]
+            },
+            {
+                title: 'PhD Admissions',
+                submenu:[
+                    {
+                        title: 'Information Brochure'
+                    },
+                    {
+                        title: 'Fee Structure'
+                    },
+                    {
+                        title: 'Courses Offered'
+                    }
+                ]
+            },
+            {
+                title: 'International Students',
+                submenu:[
+                    {
+                        title: 'Information Brochure'
+                    },
+                    {
+                        title: 'Fee Structure'
+                    },
+                    {
+                        title: 'Courses Offered'
+                    }
+                ]
+            },
+            {
+                title: 'Announcements'
+            }
+        ]
     },
     {
-        title: 'Research'
+        title: 'Students',
+        submenu:[
+            {
+                title: 'Common Infrastructure Facilities',
+                submenu: [
+                    {
+                        title: 'Medical  Centre'
+                    },
+                    {
+                        title: 'Hostel'
+                    },
+                    {
+                        title: 'Transport'
+                    },
+                    {
+                        title: 'Auditorium'
+                    },
+                    {
+                        title: 'Shakuntalam'
+                    },
+                    {
+                        title: 'Multimedia Centre'
+                    },
+                    {
+                        title: 'Sport Facilities'
+                    }
+                ]
+            },
+            {
+                title: 'Placements'
+            },
+            {
+                title: 'Hall of Fame'
+            },
+            {
+                title: 'Entitlement'
+            },
+            {
+                title: 'Student Window'
+            },
+            {
+                title: 'Grievances'
+            }
+
+        ]
     },
     {
-        title: 'Resources'
+        title: 'Research',
+        submenu:[
+            {
+                title: 'Research Policy'
+            },
+            {
+                title: 'Facility & Grants'
+            },
+            {
+                title: 'R & D Awards',
+                submenu: [
+                    {
+                        title: 'Publication Award'
+                    },
+                    {
+                        title: 'Seed Money Award'
+                    },
+                    {
+                        title: 'Honorary Award'
+                    }
+                ]
+            },
+            {
+                title: 'Notifications'
+            },
+            {
+                title: 'Publications',
+                submenu: [
+                    {
+                        title: 'Journals'
+                    },
+                    {
+                        title: 'Conferences'
+                    },
+                    {
+                        title: 'Book/Book Chapters'
+                    }
+                ]
+            },
+            {
+                title: 'FDP/Workshop/Seminar'
+            },
+            {
+                title: 'Fellowships'
+            },
+            {
+                title: 'MOUs/Industry Collaborations'
+            },
+            {
+                title: 'Sponsored Projects/Patents'
+            },
+            {
+                title: 'Downloads'
+            }
+        ]
+    },
+    {
+        title: 'Resources',
+        submenu:[
+            {
+                title: 'Library'
+            },
+            {
+                title: 'Medical Facility'
+            },
+            {
+                title: 'Hostel Facility',
+                submenu: [
+                    {
+                        title: 'Boys Hostel'
+                    },
+                    {
+                        title: 'Girls Hostel'
+                    }
+                ]
+            },
+            {
+                title: 'Canteen'
+            },
+            {
+                title: 'Mess'
+            },
+            {
+                title: 'Transport'
+            },
+            {
+                title: 'Multi-Purpose Halls',
+                submenu: [
+                    {
+                        title: 'Shakuntalam'
+                    },
+                    {
+                        title: 'Multi-Media Centre'
+                    },
+                    {
+                        title: 'Auditorium'
+                    }
+                ]
+            },
+            {
+                title: 'Sports Facilities',
+                submenu: [
+                    {
+                        title: 'Indoor'
+                    },
+                    {
+                        title: 'Outdoor'
+                    }
+                ]
+            },
+            {
+                title: 'Academic & Infrastructure Facilites',
+                submenu: [
+                    {
+                        title: 'Labs/Workshops'
+                    },
+                    {
+                        title: 'Incubation'
+                    },
+                    {
+                        title: 'Central Computer Centre'
+                    },
+                    {
+                        title: 'Digital Studio'
+                    },
+                    {
+                        title: 'Centre of Excellence'
+                    },
+                    {
+                        title: 'Robotics'
+                    },
+                    {
+                        title: 'Advance Machines'
+                    },
+                    {
+                        title: 'Smart Board'
+                    },
+                    {
+                        title: 'IOT Centre'
+                    },
+                    {
+                        title: 'Clean Lab'
+                    },
+                    {
+                        title: 'CNC Lab'
+                    },
+                    {
+                        title: 'Language Lab'
+                    }
+                ]
+            },
+            {
+                title: 'E-Resources',
+                submenu: [
+
+                    {
+                        title: 'LCS'
+                    }
+                ]
+            }
+        ]
     }
 ]
