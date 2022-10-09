@@ -22,6 +22,9 @@ export const menuItems = [
                     },
                     {
                         title: 'Incumbency Board'
+                    },
+                    {
+                        title: 'University Act',
                     }
                     ]
             },

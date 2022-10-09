@@ -3,11 +3,13 @@
     "navbar": {
       "Home": "Home",
       "About Us": "About Us",
+      "Administration": "Administration",
       "Academics": "Academics",
       "Students": "Students",
       "Admission": "Admission",
       "Research": "Research",
-      "Resources": "Resources"
+      "Resources": "Resources",
+      "About University": "About University"
     },
     "heading": {
       "tagline": "Create the world you want to live in."
