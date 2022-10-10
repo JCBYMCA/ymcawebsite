@@ -2,12 +2,24 @@ import Image from "next/image";
 import {useTranslations} from "next-intl";
 import {menuItems} from "./menuItems";
 import MenuItem from "./MenuItem";
+import {useScroll} from "framer-motion";
+import {useState} from "react";
 
-const NavBar = () => {
+const NavBar = ({isHome}) => {
     const t = useTranslations("home.navbar");
+    const {scrollY, scrollYProgress} = useScroll();
+    const [isWhite, setIsWhite] = useState(!isHome);
+
+    scrollY.onChange((y) => {
+        console.log(scrollYProgress.get());
+        if(isHome)
+            scrollYProgress.get() > 0.066 ? setIsWhite(true) : setIsWhite(false);
+    });
 
     return (
-        <div className={'flex p-5 text-white items-center bg-white bg-opacity-25'}>
+        <div className={`flex p-5 sticky top-0 items-center bg-white ${!isWhite ? "bg-opacity-25 text-white" : "text-black"}`} style={{
+            zIndex:999999
+        }}>
             <div className={'flex items-center'}>
                 <Image src='/assets/images/logo.png' alt={'Logo'} width={100} height={100} />
                 <div className={'flex flex-col font-bold text-xl -space-y-1 tracking-wider'}>

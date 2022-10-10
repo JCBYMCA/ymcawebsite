@@ -9,7 +9,10 @@ module.exports = {
       colors: {
         "primary": "#640100",
         "primaryLight": "#B03136",
+        "primaryTransparent": "rgba(100, 1, 0, 0.5)",
+        "primaryLightTransparent": "rgba(176, 49, 54, 0.7)",
         "secondary": "#173C81",
+        "secondaryLight": "#2D5F9E",
         "gradient-from":'rgba(0,0,0,0.80)',
       },
       borderWidth:{

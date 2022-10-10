@@ -22,19 +22,18 @@ const Home = () => {
         <div>
             <motion.div animate={{
                 backgroundColor:['#000', 'rgba(0,0,0,0)']
-            }} className={'h-screen -z-10 flex flex-col'}>
+            }} className={'h-[51.3rem] -z-10 flex flex-col -mt-[8.75rem]'}>
 
                 <div>
                     <video autoPlay muted loop className={'fixed w-full h-screen brightness-50 -z-30 object-fill'}>
                         <source src="/assets/video/bg.mp4" type="video/mp4"/>
                     </video>
-                    <NavBar/>
                     <Heading/>
                     <Button/>
                 </div>
                 <ScrollHint/>
             </motion.div>
-            <div className={'flex bg-[#EBEBEB] h-[60vh] items-center'}>
+            <div className={'flex bg-[#EBEBEB] h-[32rem] items-center'}>
                 <div className={'flex w-4/5 justify-around'}>
                     <ProfileCard
                         name={'governor name'}
@@ -56,8 +55,8 @@ const Home = () => {
                     <AutoScrollFeatures/>
                 </div>
             </div>
-            <div className={'flex h-[70vh] bg-fixed bg-notice-bg bg-no-repeat bg-center bg-cover '}>
-                <div className={'bg-white bg-opacity-70 flex w-full h-[70vh] py-10 px-8'}>
+            <div className={'flex h-[36rem] bg-fixed bg-notice-bg bg-no-repeat bg-center bg-cover '}>
+                <div className={'bg-white bg-opacity-70 flex w-full h-[35.8rem] py-10 px-8'}>
                     <div className={'w-2/3 mr-4'}>
                         <Notices/>
                     </div>
@@ -68,13 +67,63 @@ const Home = () => {
             </div>
 
 
-            <div className={'h-[70vh] bg-feature-bg bg-no-repeat bg-fixed bg-cover bg-center '}>
-                <div className={'backdrop-brightness-50 h-[70vh] flex flex-col'}>
+            <div className={'h-[35.8rem] bg-feature-bg bg-no-repeat bg-fixed bg-cover bg-center '}>
+                <div className={'backdrop-brightness-50 h-[35.8rem] flex flex-col'}>
                     <div className={'mt-20 font-semibold'}>
-                        <h1 className={'text-white text-8xl ml-60'}>Explore</h1>
-                        <h1 className={'text-white text-8xl ml-96'}>the privileges</h1>
+                        <motion.h1
+                            initial={{
+                                opacity:0,
+                                x: -800,
+                            }}
+                            viewport={{
+                                margin:'0px 0px -200px 0px',
+                                once: true
+                            }}
+                            whileInView={{
+                                opacity:1,
+                                x: 0,
+                        }}
+                            transition={{
+                            delay: 0.2,
+                            duration: 0.3,
+                        }} className={'text-white text-8xl ml-60'}>Explore</motion.h1>
+                        <motion.h1
+                            initial={{
+                                opacity:0,
+                                x: -800,
+                            }}
+                            viewport={{
+                                margin:'0px 0px -200px 0px',
+                                once: true
+                            }}
+                            whileInView={{
+                                opacity:1,
+                                x: 0,
+                            }}
+                            transition={{
+                                delay: 0.2,
+                                duration: 0.3
+                            }} className={'text-white text-8xl ml-96'}>the privileges</motion.h1>
                     </div>
-                    <div className={'mt-auto flex overflow-hidden'}>
+                    <motion.div
+                        initial={{
+                            opacity:0,
+                            y: 100,
+                        }}
+                        viewport={{
+                            margin:'0px 0px -200px 0px',
+                            once: true
+                        }}
+                        whileInView={{
+                            opacity:1,
+                            y: 0,
+                        }}
+                        transition={{
+                            delay: 0.2,
+                            duration: 1,
+                            type: 'spring',
+                        }}
+                        className={'mt-auto flex overflow-hidden'}>
                         <FeatureCard index={0}/>
                         <FeatureCard index={1}/>
                         <FeatureCard index={2}/>
@@ -82,7 +131,7 @@ const Home = () => {
                         <FeatureCard index={4}/>
                         <FeatureCard index={5}/>
                         <FeatureCard index={6}/>
-                    </div>
+                    </motion.div>
 
                 </div>
 
