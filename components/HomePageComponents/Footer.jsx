@@ -1,38 +1,40 @@
 import {useTranslations} from "next-intl";
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import {useTransition} from "next-intl";
 import Image from "next/image";
 // import {ADDRESS, ADMISSIONPHN, CONTACTEMAIL, PHONE} from "../../config/constants";
 
 
-const FooterLinks = () => {
-    return (
-        <div className={'flex flex-col text-left space-y-6 '}>
-            <h1 className={'underline underline-offset-8'}>Our Campus</h1>
-            <ul className={'list-disc'}>
-                <li className={'mb-1'}>Admission 2022</li>
-                <li className={'mb-1'}>Admission 2022</li>
-                <li className={'mb-1'}>Admission 2022</li>
-                <li className={'mb-1'}>Admission 2022</li>
-                <li className={'mb-1'}>Admission 2022</li>
-                <li className={'mb-1'}>Admission 2022</li>
-                <li className={'mb-1'}>Admission 2022</li>
-                <li className={'mb-1'}>Admission 2022</li>
-                <li className={'mb-1'}>Admission 2022</li>
-                <li className={'mb-1'}>Admission 2022</li>
-            </ul>
-        </div>
-    )
-}
+// const FooterLinks = () => {
+//
+//     return (
+//         <div className={'flex flex-col text-left space-y-6 '}>
+//             <h1 className={'underline underline-offset-8'}>Our Campus</h1>
+//             <ul className={'list-disc'}>
+//                 <li className={'mb-1'}>Admission 2022</li>
+//                 <li className={'mb-1'}>Admission 2022</li>
+//                 <li className={'mb-1'}>Admission 2022</li>
+//                 <li className={'mb-1'}>Admission 2022</li>
+//                 <li className={'mb-1'}>Admission 2022</li>
+//                 <li className={'mb-1'}>Admission 2022</li>
+//                 <li className={'mb-1'}>Admission 2022</li>
+//                 <li className={'mb-1'}>Admission 2022</li>
+//                 <li className={'mb-1'}>Admission 2022</li>
+//                 <li className={'mb-1'}>Admission 2022</li>
+//             </ul>
+//         </div>
+//     )
+// }
 
 const Footer = () => {
-    // const t = useTranslations("home.heading");
+    const t = useTranslations("home.footer");
     return (
         <div className={'flex flex-col'}>
         <div className={'bg-black h-[27rem] flex justify-around text-white text-xl space-x-8 p-8 '}>
             <div className={'flex flex-col w-1/4'}>
                 <h1 className={'mb-2'}>TEL: 0129-2310126</h1>
                 <h1 className={'mb-12'}>EMAIL: contact@jcboseust.ac.in</h1>
-                <h1 className={'mb-2'}>Subscribe for Newsletter</h1>
+                <h1 className={'mb-2'}>{t('Subscribe for Newsletter')}</h1>
                 <div className={'flex mb-8 cur'}>
                     <input placeholder={'Enter Email Address'} type={"email"} className={'text-black p-1'}/>
                     <button className={'bg-primaryLight p-1 hover:bg-primary cursor-pointer duration-200'} type={"submit"}>SUBMIT</button>
@@ -47,7 +49,7 @@ const Footer = () => {
             </div>
             <div className={'flex flex-col text-left space-y-6 w-1/4'}>
                 <div className={'w-full border-b-2 pb-2 border-secondaryLight'}>
-                    <h1 className={'font-bold'}>Our Campus</h1>
+                    <h1 className={'font-bold'}>{t('Our Campus')}</h1>
                 </div>
                 <ul className={'text-gray-400'}>
                     <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>Academic</li>

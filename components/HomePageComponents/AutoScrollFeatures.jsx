@@ -1,7 +1,9 @@
 import {motion, useAnimation} from "framer-motion";
 import {useEffect, useState} from "react";
+import {useTranslations} from "next-intl";
 
 const AutoScrollFeatures = () => {
+    const t = useTranslations("home.autoscrollfeatures")
     const controls = useAnimation();
     const data = [
         {

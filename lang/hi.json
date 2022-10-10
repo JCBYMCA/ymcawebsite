@@ -31,6 +31,10 @@
     "notices":{
       "heading":"सूचना पट्ट",
       "viewAll": "सभी देखें"
+    },
+    "footer": {
+      "Subscribe for Newsletter": "समाचार पत्र के लिए सदस्यता लें",
+      "Our Campus": "हमारा कैंपस"
     }
   }
 }

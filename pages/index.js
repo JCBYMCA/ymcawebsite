@@ -10,6 +10,7 @@ import Head from "next/head";
 import AutoScrollFeatures from "../components/HomePageComponents/AutoScrollFeatures";
 import Notices from "../components/HomePageComponents/Notices";
 import UpcomingEvents from "../components/HomePageComponents/UpcomingEvents";
+import SchoolIcon from '@mui/icons-material/School';
 
 
 const Home = () => {
@@ -124,7 +125,9 @@ const Home = () => {
                             type: 'spring',
                         }}
                         className={'mt-auto flex overflow-hidden'}>
-                        <FeatureCard index={0}/>
+                        <FeatureCard title={"Campus Life"} description={"Verear verterem commune discere evertitur eloquentiam utroque animal suavitate."} icon={<SchoolIcon sx={{
+                            fontSize: 60,
+                        }}/>} index={0}/>
                         <FeatureCard index={1}/>
                         <FeatureCard index={2}/>
                         <FeatureCard index={3}/>
