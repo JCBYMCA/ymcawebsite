@@ -23,10 +23,10 @@ const Home = () => {
         <div>
             <motion.div animate={{
                 backgroundColor:['#000', 'rgba(0,0,0,0)']
-            }} className={'h-[51.3rem] -z-10 flex flex-col -mt-[8.75rem]'}>
+            }} className={'md:h-[51.3rem] h-[40rem] -z-10 flex flex-col -mt-[8.75rem]'}>
 
                 <div>
-                    <video autoPlay muted loop className={'fixed w-full h-screen brightness-50 -z-30 object-fill'}>
+                    <video autoPlay muted loop className={'fixed md:w-full w-screen md:h-[51.3rem] h-[40rem] brightness-50 -z-30 object-fill'}>
                         <source src="/assets/video/bg.mp4" type="video/mp4"/>
                     </video>
                     <Heading/>
@@ -34,8 +34,8 @@ const Home = () => {
                 </div>
                 <ScrollHint/>
             </motion.div>
-            <div className={'flex bg-[#EBEBEB] h-[32rem] items-center'}>
-                <div className={'flex w-4/5 justify-around'}>
+            <div className={'flex flex-col md:flex-row bg-[#EBEBEB] md:h-[32rem] items-center'}>
+                <div className={'flex flex-col md:flex-row w-4/5 justify-around'}>
                     <ProfileCard
                         name={'governor name'}
                         designation={'governor designation'}
@@ -52,29 +52,29 @@ const Home = () => {
                         image={'/assets/images/vc.png'}
                     />
                 </div>
-                <div className={'w-1/5 bg-secondary h-full overflow-hidden'}>
+                <div className={'w-1/5 hidden md:block bg-secondary h-full overflow-hidden'}>
                     <AutoScrollFeatures/>
                 </div>
             </div>
-            <div className={'flex h-[36rem] bg-fixed bg-notice-bg bg-no-repeat bg-center bg-cover '}>
-                <div className={'bg-white bg-opacity-70 flex w-full h-[35.8rem] py-10 px-8'}>
-                    <div className={'w-2/3 mr-4'}>
+            <div className={'flex flex-col md:flex-row md:h-[36rem] bg-fixed bg-notice-bg bg-no-repeat bg-center bg-cover '}>
+                <div className={'flex flex-col md:flex-row bg-white bg-opacity-70 flex w-full md:h-[35.8rem] py-10 md:px-8'}>
+                    <div className={'md:w-2/3 md:mr-4'}>
                         <Notices/>
                     </div>
-                    <div className={'w-1/3 ml-4'}>
+                    <div className={'md:w-1/3 ml-4'}>
                         <UpcomingEvents/>
                     </div>
                 </div>
             </div>
 
 
-            <div className={'h-[35.8rem] bg-feature-bg bg-no-repeat bg-fixed bg-cover bg-center '}>
-                <div className={'backdrop-brightness-50 h-[35.8rem] flex flex-col'}>
+            <div className={'md:h-[35.8rem] bg-feature-bg bg-no-repeat bg-fixed bg-cover bg-center '}>
+                <div className={'backdrop-brightness-50 md:h-[35.8rem] flex flex-col'}>
                     <div className={'mt-20 font-semibold'}>
                         <motion.h1
                             initial={{
                                 opacity:0,
-                                x: -800,
+                                x: -50,
                             }}
                             viewport={{
                                 margin:'0px 0px -200px 0px',
@@ -87,11 +87,11 @@ const Home = () => {
                             transition={{
                             delay: 0.2,
                             duration: 0.3,
-                        }} className={'text-white text-8xl ml-60'}>Explore</motion.h1>
+                        }} className={'text-white text-4xl ml-12 md:text-8xl md:ml-60'}>Explore</motion.h1>
                         <motion.h1
                             initial={{
                                 opacity:0,
-                                x: -800,
+                                x: -50,
                             }}
                             viewport={{
                                 margin:'0px 0px -200px 0px',
@@ -104,7 +104,7 @@ const Home = () => {
                             transition={{
                                 delay: 0.2,
                                 duration: 0.3
-                            }} className={'text-white text-8xl ml-96'}>the privileges</motion.h1>
+                            }} className={'text-white text-4xl ml-20 md:text-8xl md:ml-96'}>the privileges</motion.h1>
                     </div>
                     <motion.div
                         initial={{
@@ -124,10 +124,8 @@ const Home = () => {
                             duration: 1,
                             type: 'spring',
                         }}
-                        className={'mt-auto flex overflow-hidden'}>
-                        <FeatureCard title={"Campus Life"} description={"Verear verterem commune discere evertitur eloquentiam utroque animal suavitate."} icon={<SchoolIcon sx={{
-                            fontSize: 60,
-                        }}/>} index={0}/>
+                        className={'mt-auto flex overflow-x-scroll'}>
+                        <FeatureCard  index={0}/>
                         <FeatureCard index={1}/>
                         <FeatureCard index={2}/>
                         <FeatureCard index={3}/>
@@ -148,6 +146,7 @@ const Home = () => {
 }
 
 export async function getStaticProps({locale}) {
+    console.log("LOCALE IS ",locale);
     return {
         props: {
             messages: (await import(`../lang/${locale}.json`)).default,

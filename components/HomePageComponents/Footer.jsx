@@ -30,8 +30,8 @@ const Footer = () => {
     const t = useTranslations("home.footer");
     return (
         <div className={'flex flex-col'}>
-        <div className={'bg-black h-[27rem] flex justify-around text-white text-xl space-x-8 p-8 '}>
-            <div className={'flex flex-col w-1/4'}>
+        <div className={'bg-black md:h-[27rem] space-y-6 flex flex-col md:flex-row justify-around text-white text-xl space-x-8 p-8 '}>
+            <div className={'flex flex-col md:w-1/4'}>
                 <h1 className={'mb-2'}>TEL: 0129-2310126</h1>
                 <h1 className={'mb-12'}>EMAIL: contact@jcboseust.ac.in</h1>
                 <h1 className={'mb-2'}>{t('Subscribe for Newsletter')}</h1>
@@ -47,7 +47,7 @@ const Footer = () => {
                 </div>
 
             </div>
-            <div className={'flex flex-col text-left space-y-6 w-1/4'}>
+            <div className={'flex flex-col text-left space-y-6 md:w-1/4'}>
                 <div className={'w-full border-b-2 pb-2 border-secondaryLight'}>
                     <h1 className={'font-bold'}>{t('Our Campus')}</h1>
                 </div>
@@ -60,7 +60,7 @@ const Footer = () => {
                     <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>Human Resources</li>
                 </ul>
             </div>
-            <div className={'flex flex-col text-left space-y-6 w-1/4'}>
+            <div className={'flex flex-col text-left space-y-6 md:w-1/4'}>
                 <div className={'w-full border-b-2 pb-2 border-secondaryLight'}>
                     <h1 className={'font-bold'}>Campus Life</h1>
                 </div>
@@ -74,7 +74,7 @@ const Footer = () => {
 
                 </ul>
             </div>
-            <div className={'flex flex-col text-left space-y-6 w-1/4'}>
+            <div className={'flex flex-col text-left space-y-6 md:w-1/4'}>
                 <div className={'w-full border-b-2 pb-2 border-secondaryLight'}>
                     <h1 className={'font-bold'}>Our Campus</h1>
                 </div>
@@ -89,7 +89,7 @@ const Footer = () => {
         </div>
             </div>
 
-            <div className={'bg-gray-200 flex justify-around h-[8rem] items-center'}>
+            <div className={'bg-gray-200 flex flex-col md:flex-row justify-around space-y-6 md:h-[8rem] items-center'}>
                 <div className={'flex items-center text-lg text-primary font-bold'}>
                     <Image src={'/assets/images/logo.png'} height={120} width={120}/>
                     <h1 className={'text-center w-80'}>J.C. Bose University of Science & Technology, YMCA</h1>

@@ -4,6 +4,7 @@ import {menuItems} from "./menuItems";
 import MenuItem from "./MenuItem";
 import {useScroll} from "framer-motion";
 import {useState} from "react";
+import MenuIcon from '@mui/icons-material/Menu';
 
 const NavBar = ({isHome}) => {
     const t = useTranslations("home.navbar");
@@ -17,15 +18,15 @@ const NavBar = ({isHome}) => {
     });
 
     return (
-        <div className={`flex p-5 sticky top-0 items-center bg-white ${!isWhite ? "bg-opacity-25 text-white" : "text-black"}`} style={{
+        <div className={`flex md:p-5 sticky top-0 items-center bg-white ${!isWhite ? "bg-opacity-25 text-white" : "text-black"}`} style={{
             zIndex:999999
         }}>
             <div className={'flex items-center'}>
                 <Image src='/assets/images/logo.png' alt={'Logo'} width={100} height={100} />
                 <div className={'flex flex-col font-bold text-xl -space-y-1 tracking-wider'}>
-                    <h1>JC Bose University</h1>
-                    <h1>of Science & Technology</h1>
-                    <h1>YMCA, Faridabad</h1>
+                    <h1 className={'text-xs'}>JC Bose University</h1>
+                    <h1 className={'text-xs'}>of Science & Technology</h1>
+                    <h1 className={'text-xs'}>YMCA, Faridabad</h1>
                 </div>
             </div>
 
@@ -38,7 +39,7 @@ const NavBar = ({isHome}) => {
             {/*    <h1 className={'uppercase cursor-pointer hover:underline decoration-primary decoration-4 duration-300 underline-offset-4'}>{t('Resources')}</h1>*/}
             {/*</div>*/}
 
-            <nav className={'ml-14 font-bold'}>
+            <nav className={'ml-14 font-bold hidden md:block'}>
                 <ul className={'flex '}>
                     {menuItems.map((menu, index) => {
                         const depthLevel = 0;
@@ -46,6 +47,9 @@ const NavBar = ({isHome}) => {
                     })}
                 </ul>
             </nav>
+            <div className={'flex md:hidden ml-auto mr-2'}>
+                <MenuIcon fontSize={'large'}/>
+            </div>
 
         </div>
     )

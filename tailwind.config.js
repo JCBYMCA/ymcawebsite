@@ -18,6 +18,9 @@ module.exports = {
       borderWidth:{
         1: '1px',
       },
+      fontSize: {
+        'xxs': '.425rem',
+      },
       backgroundImage: theme => ({
         'feature-bg': "url('/assets/images/featureBg.png')",
         'feature-bg-blue': "url('/assets/images/featureBgBlue.svg')",
