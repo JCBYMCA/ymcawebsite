@@ -26,7 +26,7 @@ const Home = () => {
             }} className={'md:h-[51.3rem] h-[40rem] -z-10 flex flex-col -mt-[8.75rem]'}>
 
                 <div>
-                    <video autoPlay muted loop className={'fixed md:w-full w-screen md:h-[51.3rem] h-[40rem] brightness-50 -z-30 object-fill'}>
+                    <video poster={'/assets/images/temp.png'} autoPlay muted loop className={'fixed md:w-full w-screen md:h-[51.3rem] h-[40rem] brightness-50 -z-30 object-fill'}>
                         <source src="/assets/video/bg.mp4" type="video/mp4"/>
                     </video>
                     <Heading/>
