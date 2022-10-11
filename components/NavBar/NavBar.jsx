@@ -24,9 +24,9 @@ const NavBar = ({isHome}) => {
             <div className={'flex items-center'}>
                 <Image src='/assets/images/logo.png' alt={'Logo'} width={100} height={100} />
                 <div className={'flex flex-col font-bold text-xl -space-y-1 tracking-wider'}>
-                    <h1 className={'text-xs'}>JC Bose University</h1>
-                    <h1 className={'text-xs'}>of Science & Technology</h1>
-                    <h1 className={'text-xs'}>YMCA, Faridabad</h1>
+                    <h1 className={'text-xs md:text-xl'}>JC Bose University</h1>
+                    <h1 className={'text-xs md:text-xl'}>of Science & Technology</h1>
+                    <h1 className={'text-xs md:text-xl'}>YMCA, Faridabad</h1>
                 </div>
             </div>
 
