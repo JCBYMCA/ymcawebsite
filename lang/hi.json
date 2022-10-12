@@ -34,7 +34,27 @@
     },
     "footer": {
       "Subscribe for Newsletter": "समाचार पत्र के लिए सदस्यता लें",
-      "Our Campus": "हमारा कैंपस"
+      "Our Campus": "हमारा कैंपस",
+      "Campus Life": "कैंपस की ज़िंदगी",
+      "SUBMIT": "सब्मिट",
+      "Academic": "शैक्षणिक",
+      "Planning & Administration": "योजना और प्रशासन",
+      "Campus Safety": "परिसर सुरक्षा", 
+      "Office of the Chancellor": "कुलाधिपति का कार्यालय",
+      "Facility Services": "सुविधा सेवा",
+      "Human Resources": "मानव संसाधन",
+      "Accessibility": "सरल उपयोग",
+      "Financial Aid": "आर्थिक सहायता",
+      "Food Services": "खाद्य सेवाएं",
+      "Housing": "आवास",
+      "Information Technologies": "सूचना प्रौद्योगिकी",
+      "Student Life": "छात्र जीवन",
+      "Canvas": "कैनवास", 
+      "Catalyst": "उत्प्रेरक", 
+      "Library": "पुस्तकालय", 
+      "Time Schedule": "समय सारणी",
+      "Apply for admissions": "प्रवेश के लिए आवेदन करें", 
+      "Pay my tuition": "मेरी ट्यूशन का भुगतान करें"
     }
   }
 }
