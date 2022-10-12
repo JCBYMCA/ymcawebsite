@@ -2,10 +2,12 @@ import SchoolIcon from '@mui/icons-material/School';
 
 const FeatureCard = ({ title, description, icon, link, index }) => {
     return (
-        <div className={`bg-no-repeat items-center bg-opacity-80 flex flex-col text-white w-1/5 bg-opacity-30 md:h-96 bg-auto mt-20 ${index%2===0 ? 'bg-feature-bg-blue' : 'bg-feature-bg-red'}`}>
+        <div className={`bg-no-repeat items-center bg-opacity-80 flex flex-col text-white w-1/5 bg-opacity-30 md:h-72 bg-auto mt-20 ${index%2===0 ? 'bg-feature-bg-blue' : 'bg-feature-bg-red'}`}>
             {/*TODO make cards responsive too*/}
             <div className={'hidden md:block mt-14 w-full items-center flex flex-col px-1 md:px-4'}>
-                {icon}
+                <div className={'ml-20'}>
+                    {icon}
+                </div>
                 <div className={'border-b-2 border-white w-full text-center pb-1'}>
                     <h1>{title}</h1>
                 </div>

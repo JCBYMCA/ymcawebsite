@@ -26,6 +26,7 @@ module.exports = {
         'feature-bg-blue': "url('/assets/images/featureBgBlue.svg')",
         'feature-bg-red': "url('/assets/images/featureBgRed.svg')",
         'notice-bg': "url('/assets/images/noticeBg.png')",
+        'computer-department-bg': "url('/assets/images/computerDepartmentBg.png')",
       }),
     },
   },
