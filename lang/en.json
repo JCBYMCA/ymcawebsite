@@ -34,7 +34,28 @@
     },
     "footer": {
       "Subscribe for Newsletter": "Subscribe for Newsletter",
-      "Our Campus": "Our Campus"
+      "Our Campus": "Our Campus",
+      "Campus Life": "Campus Life",
+      "SUBMIT": "SUBMIT",
+      "Academic": "Academic",
+      "Planning & Administration": "Planning & Administration",
+      "Campus Safety": "Campus Safety", 
+      "Office of the Chancellor": "Office of the Chancellor",
+      "Facility Services": "Facility Services",
+      "Human Resources": "Human Resources",
+      "Accessibility": "Accessibility",
+      "Financial Aid": "Financial Aid",
+      "Food Services": "Food Services",
+      "Housing": "Housing",
+      "Information Technologies": "Information Technologies",
+      "Student Life": "Student Life",
+      "Canvas": "Canvas", 
+      "Catalyst": "Catalyst", 
+      "Library": "Library", 
+      "Time Schedule": "Time Schedule",
+      "Apply for admissions": "Apply for admissions", 
+      "Pay my tuition": "Pay my tuition"
+      
     },
     "autoscrollfeatures": {
 
