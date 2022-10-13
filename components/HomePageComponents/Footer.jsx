@@ -37,7 +37,7 @@ const Footer = () => {
                 <h1 className={'mb-2'}>{t('Subscribe for Newsletter')}</h1>
                 <div className={'flex mb-8'}>
                     <input placeholder={'Enter Email Address'} type={"email"} className={'text-black p-1 w-60'}/>
-                    <button className={'bg-primaryLight p-1 hover:bg-primary cursor-pointer duration-200'} type={"submit"}>SUBMIT</button>
+                    <button className={'bg-primaryLight p-1 hover:bg-primary cursor-pointer duration-200'} type={"submit"}>{t('SUBMIT')}</button>
                 </div>
                 <div className={'bg-gray-300 h-[10rem] text-black'}>
                     <iframe
@@ -52,39 +52,39 @@ const Footer = () => {
                     <h1 className={'font-bold'}>{t('Our Campus')}</h1>
                 </div>
                 <ul className={'text-gray-400'}>
-                    <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>Academic</li>
-                    <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>Planning & Administration</li>
-                    <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>Campus Safety</li>
-                    <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>Office of the Chancellor</li>
-                    <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>Facility Services</li>
-                    <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>Human Resources</li>
+                    <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Academic')}</li>
+                    <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Planning & Administration')}</li>
+                    <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Campus Safety')}</li>
+                    <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Office of the Chancellor')}</li>
+                    <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Facility Services')}</li>
+                    <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Human Resources')}</li>
                 </ul>
             </div>
             <div className={'flex flex-col text-left space-y-6 md:w-1/4'}>
                 <div className={'w-full border-b-2 pb-2 border-secondaryLight'}>
-                    <h1 className={'font-bold'}>Campus Life</h1>
+                    <h1 className={'font-bold'}>{t('Campus Life')}</h1>
                 </div>
                 <ul className={'text-gray-400'}>
-                    <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>Accessibility</li>
-                    <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>Financial Aid</li>
-                    <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>Food Services</li>
-                    <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>Housing</li>
-                    <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>Information Technologies</li>
-                    <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>Student Life</li>
+                    <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Accessibility')}</li>
+                    <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Financial Aid')}</li>
+                    <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Food Services')}</li>
+                    <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Housing')}</li>
+                    <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Information Technologies')}</li>
+                    <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Student Life')}</li>
 
                 </ul>
             </div>
             <div className={'flex flex-col text-left space-y-6 md:w-1/4'}>
                 <div className={'w-full border-b-2 pb-2 border-secondaryLight'}>
-                    <h1 className={'font-bold'}>Our Campus</h1>
+                    <h1 className={'font-bold'}>{t('Our Campus')}</h1>
                 </div>
             <ul className={'text-gray-400'}>
-                <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>Canvas</li>
-                <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>Catalyst</li>
-                <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>Library</li>
-                <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>Time Schedule</li>
-                <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>Apply for admissions</li>
-                <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>Pay my tuition</li>
+                <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Canvas')}</li>
+                <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Catalyst')}</li>
+                <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Library')}</li>
+                <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Time Schedule')}</li>
+                <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Apply for admissions')}</li>
+                <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Pay my tuition')}</li>
             </ul>
         </div>
             </div>

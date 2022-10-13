@@ -11,7 +11,9 @@ import AutoScrollFeatures from "../components/HomePageComponents/AutoScrollFeatu
 import Notices from "../components/HomePageComponents/Notices";
 import UpcomingEvents from "../components/HomePageComponents/UpcomingEvents";
 import SchoolIcon from '@mui/icons-material/School';
-
+import WorkIcon from '@mui/icons-material/Work';
+import PrecisionManufacturingIcon from '@mui/icons-material/PrecisionManufacturing';
+import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 
 const Home = () => {
 
@@ -23,10 +25,10 @@ const Home = () => {
         <div>
             <motion.div animate={{
                 backgroundColor:['#000', 'rgba(0,0,0,0)']
-            }} className={'md:h-[51.3rem] h-[40rem] -z-10 flex flex-col -mt-[8.75rem]'}>
+            }} className={'md:h-screen h-[40rem] -z-10 flex flex-col -mt-[8.75rem]'}>
 
                 <div>
-                    <video poster={'/assets/images/temp.png'} autoPlay muted loop className={'fixed md:w-full w-screen md:h-[51.3rem] h-[40rem] brightness-50 -z-30 object-fill'}>
+                    <video poster={'/assets/images/temp.png'} autoPlay muted loop className={'fixed md:w-full w-screen md:h-screen h-[40rem] brightness-50 -z-30 object-fill'}>
                         <source src="/assets/video/bg.mp4" type="video/mp4"/>
                     </video>
                     <Heading/>
@@ -124,14 +126,14 @@ const Home = () => {
                             duration: 1,
                             type: 'spring',
                         }}
-                        className={'mt-auto flex overflow-x-scroll'}>
-                        <FeatureCard  index={0}/>
-                        <FeatureCard index={1}/>
-                        <FeatureCard index={2}/>
-                        <FeatureCard index={3}/>
-                        <FeatureCard index={4}/>
-                        <FeatureCard index={5}/>
-                        <FeatureCard index={6}/>
+                        className={'mt-auto flex overflow-x-scroll overflow-y-clip'}>
+                        <FeatureCard title={"Campus Life"} icon={<SchoolIcon/>} description={"Campus life is full of excitement and adventure. There are always new things to do and new people to meet."} index={0}/>
+                        <FeatureCard title={"Placements"} icon={<WorkIcon/>} description={"There are plenty of opportunities for students to find placements with companies that fit their skills and interests."} index={1}/>
+                        <FeatureCard title={"Centres of Excellence"} icon={<SchoolIcon/>} index={2} description={" The Centre of Excellence is a world-class facility that provides outstanding research."}/>
+                        <FeatureCard title={"Teqip"} description={'The TEQIP cell of our college is one of the most active and hardworking cells. They always work on improving the quality of education.'} index={3} icon={<PrecisionManufacturingIcon/>}/>
+                        <FeatureCard title={"Startup Culture"} icon={<RocketLaunchIcon/>} index={4} description={"The startup culture is all about taking risks and being innovative."} />
+                        <FeatureCard title={"Startup Culture"} icon={<RocketLaunchIcon/>} index={5} description={"The startup culture is all about taking risks and being innovative."}/>
+                        <FeatureCard title={"Startup Culture"} icon={<RocketLaunchIcon/>} index={6} description={"The startup culture is all about taking risks and being innovative."}/>
                     </motion.div>
 
                 </div>

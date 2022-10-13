@@ -1,7 +1,19 @@
+import Landing from "../../components/DepartmentPageComponents/Landing";
+import Description from "../../components/DepartmentPageComponents/Description";
+import QuickLinks from "../../components/common/QuickLinks";
+
 const DepartmentPage = () => {
     return (
         <div>
-            Department
+            <Landing/>
+            <div className={'flex'}>
+                <div className={'w-4/5 flex flex-col'}>
+                    <Description/>
+                </div>
+                <div>
+                    <QuickLinks/>
+                </div>
+            </div>
         </div>
     )
 }
