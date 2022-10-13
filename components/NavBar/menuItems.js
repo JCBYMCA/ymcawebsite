@@ -117,7 +117,7 @@ export const menuItems = [
                         title: 'Dean (Faculty I&C)'
                     },
                     {
-                        title: 'Dean (Faculty Mgmt.)'
+                        title: 'Dean (Faculty Mgmt)'
                     }/*,
                     {
                         title: 'Dean (Faculty Sciences)'

@@ -18,15 +18,21 @@ const NavBar = ({isHome}) => {
     });
 
     return (
-        <div className={`flex md:p-5 sticky top-0 items-center bg-white ${!isWhite ? "bg-opacity-25 text-white" : "text-black"}`} style={{
+        <div className={`flex md:px-2 sticky top-0 items-center bg-white ${!isWhite ? "bg-opacity-25 text-white" : "text-black border-1 border-neutral-200"}`} style={{
             zIndex:999999
         }}>
-            <div className={'flex items-center'}>
-                <Image src='/assets/images/logo.png' alt={'Logo'} width={100} height={100} />
-                <div className={'flex flex-col font-bold text-xl -space-y-1 tracking-wider'}>
-                    <h1 className={'text-xs md:text-xl'}>JC Bose University</h1>
-                    <h1 className={'text-xs md:text-xl'}>of Science & Technology</h1>
-                    <h1 className={'text-xs md:text-xl'}>YMCA, Faridabad</h1>
+            <div className={'flex items-center w-1/3'}>
+                <Image src='/assets/images/logo.png' alt={'Logo'} width={160} height={160} />
+                <div className={'flex flex-col'}>
+                    <div className={'flex flex-col font-bold text-xl -space-y-1 tracking-wider'}>
+                        <h1 className={'text-xs md:text-xl'}>JC Bose University</h1>
+                        <h1 className={'text-xs md:text-xl'}>of Science & Technology</h1>
+                        <h1 className={'text-xs md:text-xl'}>YMCA, Faridabad</h1>
+                    </div>
+                    <div className={''}>
+                        <h1 className={'text-xs md:text-xs'}>(A Haryana State Government University)</h1>
+                        <h1 className={'text-xxs'}>(Established by Haryana State Legislative Act No. 21 of 2009 & Recognised by UGC Act 1956 u/s 22 to Confer Degrees)</h1>
+                    </div>
                 </div>
             </div>
 
@@ -39,7 +45,7 @@ const NavBar = ({isHome}) => {
             {/*    <h1 className={'uppercase cursor-pointer hover:underline decoration-primary decoration-4 duration-300 underline-offset-4'}>{t('Resources')}</h1>*/}
             {/*</div>*/}
 
-            <nav className={'ml-14 font-bold hidden md:block'}>
+            <nav className={'ml-0 font-bold hidden md:block'}>
                 <ul className={'flex '}>
                     {menuItems.map((menu, index) => {
                         const depthLevel = 0;

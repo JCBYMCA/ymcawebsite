@@ -1,6 +1,6 @@
 import '../styles/globals.css'
 import {NextIntlProvider} from "next-intl";
-import Footer from "../components/HomePageComponents/Footer";
+import Footer from "../components/common/Footer";
 import NavBar from "../components/NavBar/NavBar";
 import {useRouter} from "next/router";
 

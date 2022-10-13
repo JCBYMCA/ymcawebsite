@@ -22,7 +22,7 @@ const DepartmentContact = () => {
                     <a href={'#'}><TwitterIcon className={'text-secondaryLight'}/></a>
                 </div>
             </div>
-            <a href={'#'}><button className={'border-2 border-secondaryLight bg-secondaryLight p-4'}>Student Resources</button></a>
+            <a href={'#'}><button className={' hover:bg-secondary hover:scale-105 duration-200  bg-secondaryLight p-4'}>Student Resources</button></a>
 
 
 

@@ -9,62 +9,40 @@ const FacultyPage = () => {
     return (
         <div>
             <div>
-                <Image src={'/assets/images/computerDepartmentBg.png'} layout={'fixed'} width={1518} height={400}/>
+                <Image src={'/assets/images/computerDepartmentBg.png'} layout={'responsive'} width={'100%'} height={30}/>
             </div>
-           <div className={'flex  space-x-44 pl-20 pr-20 mt-16'}>
+           <div className={'flex justify-between  px-10 mt-16'}>
             <div className={'flex flex-col'}>
             <FacultyCard
-                image={'/assets/images/komalbhatia.jpeg'}
+                image={'/assets/images/faculty/komalbhatia.png'}
                 name={'Komal Kumar Bhatia'}
-                designation={'Dean Computer Department hhhh hhhh hhh'}
+                designation={'Dean Computer Department'}
                 mail={'bla@gmail.com'}
                 contact={'91-8851221355'}
-                qualf1={'bla bla bla bla '}
-                qualf2={'bla bla bla bla'}
+                qualf1={'Vituperatoribus efficiantur tempor'}
+                qualf2={'Vituperatoribus efficiantur tempor'}
                 linkedinlink={''}
                 twitterlink={''}
             />
                 <FacultyCard
-                    image={'/assets/images/komalbhatia.jpeg'}
-                    name={'Komal Kumar Bhatia'}
-                    designation={'Dean Computer Department hhhh hhhh hhh'}
+                    image={'/assets/images/faculty/atulmishra.png'}
+                    name={'Atul Mishra'}
+                    designation={'Chairperson Computer Department'}
                     mail={'bla@gmail.com'}
                     contact={'91-8851221355'}
-                    qualf1={'bla bla bla bla '}
-                    qualf2={'bla bla bla bla'}
+                    qualf1={'Vituperatoribus efficiantur tempor'}
+                    qualf2={'Vituperatoribus efficiantur tempor'}
                     linkedinlink={''}
                     twitterlink={''}
                 />
                 <FacultyCard
-                    image={''}
-                    name={''}
-                    designation={''}
-                    mail={''}
-                    contact={''}
-                    qualf1={''}
-                    qualf2={''}
-                    linkedinlink={''}
-                    twitterlink={''}
-                />
-                <FacultyCard
-                    image={''}
-                    name={''}
-                    designation={''}
-                    mail={''}
-                    contact={''}
-                    qualf1={''}
-                    qualf2={''}
-                    linkedinlink={''}
-                    twitterlink={''}
-                />
-                <FacultyCard
-                    image={''}
-                    name={''}
-                    designation={''}
-                    mail={''}
-                    contact={''}
-                    qualf1={''}
-                    qualf2={''}
+                    image={'/assets/images/faculty/neelamduhan.png'}
+                    name={'Neelam Duhan'}
+                    designation={'Assistant Professor'}
+                    mail={'neelamduhan@jcboseust.ac.in'}
+                    contact={'91-8851221355'}
+                    qualf1={'Vituperatoribus efficiantur tempor'}
+                    qualf2={'Vituperatoribus efficiantur tempor'}
                     linkedinlink={''}
                     twitterlink={''}
                 />
