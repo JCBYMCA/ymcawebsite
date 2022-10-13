@@ -118,7 +118,7 @@ export const menuItems = [
                     },
                     {
                         title: 'Dean (Faculty Mgmt.)'
-                    },
+                    }/*,
                     {
                         title: 'Dean (Faculty Sciences)'
                     },
@@ -142,7 +142,7 @@ export const menuItems = [
                     },
                     {
                         title: 'Dean (Construction & Maintenance)'
-                    }
+                    }*/
                 ]
             },
             {
@@ -162,7 +162,7 @@ export const menuItems = [
                     },
                     {
                         title: 'Mechanical Engineering'
-                    },
+                    }/*,
                     {
                         title: 'Management Studies'
                     },
@@ -189,7 +189,7 @@ export const menuItems = [
                     },
                     {
                         title: 'Centre for Energy Studies'
-                    }
+                    }*/
                 ]
             },
             {
@@ -206,7 +206,7 @@ export const menuItems = [
                     },
                     {
                         title: 'Purchase'
-                    },
+                    }/*,
                     {
                         title: 'Maintenance'
                     },
@@ -230,7 +230,7 @@ export const menuItems = [
                     },
                     {
                         title: 'Affiliation & Registration'
-                    }
+                    }*/
                 ]
             },
             {
@@ -339,7 +339,7 @@ export const menuItems = [
                     },
                     {
                         title: 'Transport'
-                    },
+                    }/*,
                     {
                         title: 'Auditorium'
                     },
@@ -351,7 +351,7 @@ export const menuItems = [
                     },
                     {
                         title: 'Sport Facilities'
-                    }
+                    }*/
                 ]
             },
             {
@@ -371,7 +371,7 @@ export const menuItems = [
             }
 
         ]
-    },
+    }/*,
     {
         title: 'Research',
         submenu:[
@@ -534,5 +534,5 @@ export const menuItems = [
                 ]
             }
         ]
-    }
+    }*/
 ]
