@@ -4,7 +4,7 @@ import {motion, useScroll} from "framer-motion";
 import ScrollHint from "../components/HomePageComponents/ScrollHint";
 import Button from "../components/HomePageComponents/Button";
 import ProfileCard from "../components/HomePageComponents/ProfileCard";
-import Footer from "../components/HomePageComponents/Footer";
+import Footer from "../components/common/Footer";
 import FeatureCard from "../components/HomePageComponents/FeatureCard";
 import Head from "next/head";
 import AutoScrollFeatures from "../components/HomePageComponents/AutoScrollFeatures";
@@ -25,11 +25,11 @@ const Home = () => {
         <div>
             <motion.div animate={{
                 backgroundColor:['#000', 'rgba(0,0,0,0)']
-            }} className={'md:h-screen h-[40rem] -z-10 flex flex-col -mt-[8.75rem]'}>
+            }} className={'md:h-screen h-[40rem] -z-10 flex flex-col -mt-[9.1rem]'}>
 
                 <div>
                     <video poster={'/assets/images/temp.png'} autoPlay muted loop className={'fixed md:w-full w-screen md:h-screen h-[40rem] brightness-50 -z-30 object-fill'}>
-                        <source src="/assets/video/bg.mp4" type="video/mp4"/>
+                        <source src="/assets/video/Video.mov" type="video/mp4"/>
                     </video>
                     <Heading/>
                     <Button/>
@@ -127,13 +127,13 @@ const Home = () => {
                             type: 'spring',
                         }}
                         className={'mt-auto flex overflow-x-scroll overflow-y-clip'}>
-                        <FeatureCard title={"Campus Life"} icon={<SchoolIcon/>} description={"Campus life is full of excitement and adventure. There are always new things to do and new people to meet."} index={0}/>
-                        <FeatureCard title={"Placements"} icon={<WorkIcon/>} description={"There are plenty of opportunities for students to find placements with companies that fit their skills and interests."} index={1}/>
-                        <FeatureCard title={"Centres of Excellence"} icon={<SchoolIcon/>} index={2} description={" The Centre of Excellence is a world-class facility that provides outstanding research."}/>
-                        <FeatureCard title={"Teqip"} description={'The TEQIP cell of our college is one of the most active and hardworking cells. They always work on improving the quality of education.'} index={3} icon={<PrecisionManufacturingIcon/>}/>
-                        <FeatureCard title={"Startup Culture"} icon={<RocketLaunchIcon/>} index={4} description={"The startup culture is all about taking risks and being innovative."} />
-                        <FeatureCard title={"Startup Culture"} icon={<RocketLaunchIcon/>} index={5} description={"The startup culture is all about taking risks and being innovative."}/>
-                        <FeatureCard title={"Startup Culture"} icon={<RocketLaunchIcon/>} index={6} description={"The startup culture is all about taking risks and being innovative."}/>
+                        <FeatureCard title={"Campus Life"} icon={<SchoolIcon className={'mx-auto'}/>} description={"Campus life is full of excitement and adventure. There are always new things to do and new people to meet."} index={0}/>
+                        <FeatureCard title={"Placements"} icon={<WorkIcon className={'mx-auto'}/>} description={"There are plenty of opportunities for students to find placements with companies that fit their skills and interests."} index={1}/>
+                        <FeatureCard title={"Centres of Excellence"} icon={<SchoolIcon className={'mx-auto'}/>} index={2} description={" The Centre of Excellence is a world-class facility that provides outstanding research."}/>
+                        <FeatureCard title={"Teqip"} description={'The TEQIP cell of our college is one of the most active and hardworking cells. They always work on improving the quality of education.'} index={3} icon={<PrecisionManufacturingIcon className={'mx-auto'}/>}/>
+                        <FeatureCard title={"Startup Culture"} icon={<RocketLaunchIcon className={'mx-auto'}/>} index={4} description={"The startup culture is all about taking risks and being innovative."} />
+                        <FeatureCard title={"Startup Culture"} icon={<RocketLaunchIcon className={'mx-auto'}/>} index={5} description={"The startup culture is all about taking risks and being innovative."}/>
+                        <FeatureCard title={"Startup Culture"} icon={<RocketLaunchIcon className={'mx-auto'}/>} index={6} description={"The startup culture is all about taking risks and being innovative."}/>
                     </motion.div>
 
                 </div>
@@ -148,7 +148,6 @@ const Home = () => {
 }
 
 export async function getStaticProps({locale}) {
-    console.log("LOCALE IS ",locale);
     return {
         props: {
             messages: (await import(`../lang/${locale}.json`)).default,

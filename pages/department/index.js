@@ -1,17 +1,19 @@
 import Landing from "../../components/DepartmentPageComponents/Landing";
 import Description from "../../components/DepartmentPageComponents/Description";
 import QuickLinks from "../../components/common/QuickLinks";
+import DepartmentContact from "../../components/FacultyPageComponents/DepartmentContact";
 
 const DepartmentPage = () => {
     return (
         <div>
             <Landing/>
             <div className={'flex'}>
-                <div className={'w-4/5 flex flex-col'}>
+                <div className={'w-3/5 flex flex-col'}>
                     <Description/>
                 </div>
-                <div>
+                <div className={'mt-20 w-[28rem] space-y-8 flex flex-col'}>
                     <QuickLinks/>
+                    <DepartmentContact/>
                 </div>
             </div>
         </div>
@@ -19,7 +21,6 @@ const DepartmentPage = () => {
 }
 
 export async function getStaticProps({locale}) {
-    console.log("LOCALE IS ",locale);
     return {
         props: {
             messages: (await import(`../../lang/${locale}.json`)).default,

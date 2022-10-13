@@ -75,7 +75,7 @@ const AutoScrollFeatures = () => {
             setTitle3(data[i].third.title);
             setSubtitle3(data[i].third.subtitle);
             i++;
-        }, 5000);
+        }, 10000);
 
     }, [])
 
