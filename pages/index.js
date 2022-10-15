@@ -4,7 +4,7 @@ import {motion, useScroll} from "framer-motion";
 import ScrollHint from "../components/HomePageComponents/ScrollHint";
 import Button from "../components/HomePageComponents/Button";
 import ProfileCard from "../components/HomePageComponents/ProfileCard";
-import Footer from "../components/common/Footer";
+import FooterLinks from "../components/common/FooterLinks";
 import FeatureCard from "../components/HomePageComponents/FeatureCard";
 import Head from "next/head";
 import AutoScrollFeatures from "../components/HomePageComponents/AutoScrollFeatures";
@@ -25,7 +25,7 @@ const Home = () => {
         <div>
             <motion.div animate={{
                 backgroundColor:['#000', 'rgba(0,0,0,0)']
-            }} className={'md:h-screen h-[40rem] -z-10 flex flex-col -mt-[9.1rem]'}>
+            }} className={'md:h-screen h-[40rem] -mt-[8.54rem] -z-10 flex flex-col'}>
 
                 <div>
                     <video poster={'/assets/images/temp.png'} autoPlay muted loop className={'fixed md:w-full w-screen md:h-screen h-[40rem] brightness-50 -z-30 object-fill'}>
@@ -126,7 +126,7 @@ const Home = () => {
                             duration: 1,
                             type: 'spring',
                         }}
-                        className={'mt-auto flex overflow-x-scroll overflow-y-clip'}>
+                        className={'mt-auto flex overflow-x-scroll overflow-y-clip hide-scroll'}>
                         <FeatureCard title={"Campus Life"} icon={<SchoolIcon className={'mx-auto'}/>} description={"Campus life is full of excitement and adventure. There are always new things to do and new people to meet."} index={0}/>
                         <FeatureCard title={"Placements"} icon={<WorkIcon className={'mx-auto'}/>} description={"There are plenty of opportunities for students to find placements with companies that fit their skills and interests."} index={1}/>
                         <FeatureCard title={"Centres of Excellence"} icon={<SchoolIcon className={'mx-auto'}/>} index={2} description={" The Centre of Excellence is a world-class facility that provides outstanding research."}/>
@@ -141,7 +141,7 @@ const Home = () => {
 
             </div>
         </div>
-
+        <FooterLinks/>
         </>
 
     )

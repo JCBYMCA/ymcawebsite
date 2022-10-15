@@ -11,7 +11,7 @@ const DepartmentPage = () => {
                 <div className={'w-3/5 flex flex-col'}>
                     <Description/>
                 </div>
-                <div className={'mt-20 w-[28rem] space-y-8 flex flex-col'}>
+                <div className={'mt-20 w-[28rem] ml-20 space-y-8 flex flex-col'}>
                     <QuickLinks/>
                     <DepartmentContact/>
                 </div>
