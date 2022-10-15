@@ -11,7 +11,7 @@ const FacultyPage = () => {
             <div>
                 <Image src={'/assets/images/computerDepartmentBg.png'} layout={'responsive'} width={'100%'} height={30}/>
             </div>
-           <div className={'flex justify-between  px-10 mt-16'}>
+           <div className={'flex justify-between  px-32 mt-16'}>
             <div className={'flex flex-col'}>
             <FacultyCard
                 image={'/assets/images/faculty/komalbhatia.png'}

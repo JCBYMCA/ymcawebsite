@@ -3,9 +3,9 @@ import {useTranslations} from "next-intl";
 import Dropdown from "./Dropdown";
 import Link from "next/link";
 
-const MenuItem = ({ items, depthLevel }) => {
+const MenuItem = ({ items, depthLevel, translations }) => {
     const [dropdown, setDropdown] = useState(false);
-    const t = useTranslations("home.navbar");
+    const t = useTranslations(translations);
     let ref = useRef();
 
     useEffect(() => {
@@ -43,7 +43,7 @@ const MenuItem = ({ items, depthLevel }) => {
                     <button
                         type="button"
                         aria-haspopup="menu"
-                        className={'cursor-pointer hover:bg-primary decoration-primary decoration-4 duration-300 underline-offset-4'}
+                        className={'cursor-pointer hover:bg-primary hover:text-white decoration-primary decoration-4 duration-300 underline-offset-4'}
                         aria-expanded={dropdown ? "false" : "false"}
                         onClick={() => setDropdown((prev) => !prev)}
                     >
@@ -54,10 +54,11 @@ const MenuItem = ({ items, depthLevel }) => {
                         depthLevel={depthLevel}
                         submenus={items.submenu}
                         dropdown={dropdown}
+                        translations={translations}
                     />
                 </>
             ) : (
-                <Link href="/#"><h1 className={'cursor-pointer py-[0.7rem] px-[1rem] hover:bg-primary decoration-primary decoration-4 duration-300 underline-offset-4'}>{t(items.title)}</h1></Link>
+                <Link href="/pages#"><h1 className={'cursor-pointer py-[0.7rem] px-[1rem] hover:bg-primary hover:text-white decoration-primary decoration-4 duration-300 underline-offset-4'}>{t(items.title)}</h1></Link>
             )}
         </li>
     );

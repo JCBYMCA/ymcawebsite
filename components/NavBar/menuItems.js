@@ -260,6 +260,26 @@ export const menuItems = [
     },
     {
         title: 'Academics',
+        submenu: [
+            {
+                title: 'Ordinances',
+            },
+            {
+                title: 'Faculties',
+            },
+            {
+                title: 'Departments',
+            },
+            {
+                title: 'Community College of Skill Development',
+            },
+            {
+                title: 'Scheme & Syllabus',
+            },
+            {
+                title: 'Common Academic Facilities',
+            }
+        ]
     },
     {
         title: 'Admission',
@@ -371,7 +391,7 @@ export const menuItems = [
             }
 
         ]
-    }/*,
+    },
     {
         title: 'Research',
         submenu:[
@@ -534,5 +554,5 @@ export const menuItems = [
                 ]
             }
         ]
-    }*/
+    }
 ]

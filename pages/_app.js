@@ -1,8 +1,8 @@
 import '../styles/globals.css'
 import {NextIntlProvider} from "next-intl";
-import Footer from "../components/common/Footer";
 import NavBar from "../components/NavBar/NavBar";
 import {useRouter} from "next/router";
+import Footer from "../components/common/Footer";
 
 function MyApp({ Component, pageProps }) {
     const router = useRouter();
