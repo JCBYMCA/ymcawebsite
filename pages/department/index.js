@@ -1,7 +1,7 @@
 import Landing from "../../components/DepartmentPageComponents/Landing";
 import Description from "../../components/DepartmentPageComponents/Description";
 import QuickLinks from "../../components/common/QuickLinks";
-import DepartmentContact from "../../components/FacultyPageComponents/DepartmentContact";
+import DepartmentChairperson from "../../components/DepartmentPageComponents/DepartmentChairperson";
 
 const DepartmentPage = () => {
     return (
@@ -13,7 +13,7 @@ const DepartmentPage = () => {
                 </div>
                 <div className={'mt-20 w-[28rem] ml-20 space-y-8 flex flex-col'}>
                     <QuickLinks/>
-                    <DepartmentContact/>
+                    <DepartmentChairperson/>
                 </div>
             </div>
         </div>
