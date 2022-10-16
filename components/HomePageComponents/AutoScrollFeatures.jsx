@@ -30,7 +30,7 @@ const AutoScrollFeatures = () => {
                 subtitle: t("Companies visit"),
             },
             third: {
-                title: t("No.1"),
+                title: t("No 1"),
                 subtitle: t("University in terms of placements in Haryana"),
             }
         },

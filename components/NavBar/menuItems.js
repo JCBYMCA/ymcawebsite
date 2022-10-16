@@ -450,6 +450,12 @@ export const menuItems = [
         ]
     },
     {
+        title: 'Wellfare',
+    },
+    {
+        title: 'Alumni',
+    },
+    {
         title: 'Resources',
         submenu:[
             {
@@ -518,30 +524,30 @@ export const menuItems = [
                     {
                         title: 'Digital Studio'
                     },
-                    {
-                        title: 'Centre of Excellence'
-                    },
-                    {
-                        title: 'Robotics'
-                    },
-                    {
-                        title: 'Advance Machines'
-                    },
-                    {
-                        title: 'Smart Board'
-                    },
-                    {
-                        title: 'IOT Centre'
-                    },
-                    {
-                        title: 'Clean Lab'
-                    },
-                    {
-                        title: 'CNC Lab'
-                    },
-                    {
-                        title: 'Language Lab'
-                    }
+                    // {
+                    //     title: 'Centre of Excellence'
+                    // },
+                    // {
+                    //     title: 'Robotics'
+                    // },
+                    // {
+                    //     title: 'Advance Machines'
+                    // },
+                    // {
+                    //     title: 'Smart Board'
+                    // },
+                    // {
+                    //     title: 'IOT Centre'
+                    // },
+                    // {
+                    //     title: 'Clean Lab'
+                    // },
+                    // {
+                    //     title: 'CNC Lab'
+                    // },
+                    // {
+                    //     title: 'Language Lab'
+                    // }
                 ]
             },
             {

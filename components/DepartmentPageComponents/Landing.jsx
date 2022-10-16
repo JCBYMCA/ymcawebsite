@@ -23,7 +23,7 @@ const Landing = () => {
                     <Image src={'/assets/images/logo.png'} alt={'Logo'} width={90} height={90} className={isShow ? "visible" : "invisible"} />
                     <h1 className={'font-semibold text-4xl'}>Department of Computer Engineering</h1>
                 </div>
-                <div className={`flex ${isShow ? '':'hidden'}`}>
+                <div className={`flex ${isShow ? '':'bg-gradient-to-t from-gradient-from'}`}>
                     <DepartmentNavbar/>
                 </div>
             </div>

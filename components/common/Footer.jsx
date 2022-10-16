@@ -6,7 +6,7 @@ const Footer = () => {
         <div className={'bg-gray-200 flex flex-col md:flex-row justify-around space-y-6 md:space-y-0 md:h-[6rem] items-center'}>
             <div className={'flex items-center text-lg text-primary font-bold'}>
                 <Image src={'/assets/images/logo.png'} height={100} width={100}/>
-                <h1 className={'text-center w-80'}>J.C. Bose University of Science & Technology, YMCA</h1>
+                <h1 className={'text-center w-80'}>J.C. Bose University of Science & Technology, YMCA, Faridabad</h1>
             </div>
             <div className={'flex space-x-11'}>
                 <div><LinkedInIcon/></div>

@@ -3,7 +3,7 @@ import {departmentMenuItems} from "./DepartmentMenuItems";
 
 const DepartmentNavbar = () => {
     return (
-        <NavBarMenu menuItems={departmentMenuItems} className={'ml-[4.6rem]'} translations={''} />
+        <NavBarMenu menuItems={departmentMenuItems} className={'ml-auto mr-20'} translations={''} />
     )
 }
 

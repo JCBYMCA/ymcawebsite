@@ -26,7 +26,7 @@ const NavBar = ({isHome}) => {
                 <Image src='/assets/images/logo.png' alt={'Logo'} width={90} height={90} />
                 <div className={'flex flex-col'}>
                     <div className={'flex flex-col font-bold text-xl -space-y-1 tracking-wider mt-5'}>
-                        <h1 className={'text-xs md:text-xl'}>JC Bose University of Science and Technology, YMCA, Faridabad</h1>
+                        <h1 className={'text-xs md:text-xl'}>J.C. Bose University of Science and Technology, YMCA, Faridabad</h1>
                         {/*<h1 className={'text-xs md:text-xl'}>of Science & Technology</h1>*/}
                         {/*<h1 className={'text-xs md:text-xl'}>YMCA, Faridabad</h1>*/}
                     </div>
@@ -46,7 +46,7 @@ const NavBar = ({isHome}) => {
             {/*    <h1 className={'uppercase cursor-pointer hover:underline decoration-primary decoration-4 duration-300 underline-offset-4'}>{t('Resources')}</h1>*/}
             {/*</div>*/}
 
-            <NavBarMenu menuItems={menuItems} className={'ml-[4.6rem]'} translations={'home.navbar'} />
+            <NavBarMenu menuItems={menuItems} className={'ml-auto mr-20'} translations={'home.navbar'} />
 
             <div className={'flex md:hidden ml-auto mr-2'}>
                 <MenuIcon fontSize={'large'}/>
