@@ -8,44 +8,44 @@ const AutoScrollFeatures = () => {
     const data = [
         {
             first: {
-                title: "A",
-                subtitle: "Grade NAAC Accredited",
+                title: t("A"),
+                subtitle: t("Grade NAAC Accredited"),
             },
             second: {
-                title: "60",
-                subtitle: "Lakhs highest package",
+                title: t("60"),
+                subtitle: t("Lakhs highest package"),
             },
             third: {
-                title: "2000",
-                subtitle: "QS World University Ranking",
+                title: t("2000"),
+                subtitle: t("QS World University Ranking"),
             }
         },
         {
             first: {
-                title: "1000+",
-                subtitle: "Placement offers",
+                title: t("1000+"),
+                subtitle: t("Placement offers"),
             },
             second: {
-                title: "60+",
-                subtitle: "Companies visit",
+                title: t("60+"),
+                subtitle: t("Companies visit"),
             },
             third: {
-                title: "No.1",
-                subtitle: "University in terms of placements in Haryana",
+                title: t("No.1"),
+                subtitle: t("University in terms of placements in Haryana"),
             }
         },
         {
             first: {
-                title: "5000+",
-                subtitle: "Students",
+                title: t("5000+"),
+                subtitle: t("Students"),
             },
             second: {
-                title: "30",
-                subtitle: "Acre Campus",
+                title: t("30"),
+                subtitle: t("Acre Campus"),
             },
             third: {
-                title: "12",
-                subtitle: "Centres of Excellence",
+                title: t("12"),
+                subtitle: t("Centres of Excellence"),
             }
         }
     ]

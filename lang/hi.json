@@ -125,6 +125,29 @@
       "Time Schedule": "समय सारणी",
       "Apply for admissions": "प्रवेश के लिए आवेदन करें", 
       "Pay my tuition": "मेरी ट्यूशन का भुगतान करें"
+    },
+    "autoscrollfeatures": {
+      "A": "ए",
+      "Grade NAAC Accredited": "ग्रेड एनएएसी मान्यता प्राप्त",
+      "60":"60",
+      "Lakhs highest package":"लाख का उच्चतम पैकेज",
+      "2000":"2000",
+      "QS World University Ranking":"क्यूएस वर्ल्ड यूनिवर्सिटी रैंकिंग",
+      "1000+":"1000+",
+      "Placement offers":"प्लेसमेंट ऑफर",
+      "60+":"60+",
+      "Companies visit":"कंपनियों का दौरा",
+      "No.1":"नंबर 1",
+      "University in terms of placements in Haryana":"हरियाणा में प्लेसमेंट के मामले में विश्वविद्यालय",
+      "5000+":"5000+",
+      "Students":"छात्र",
+      "30":"30",
+      "Acre Campus":"एकर परिसर",
+      "12": "12",
+      "Centres of Excellence":"उत्कृष्टता के केंद्र"
+      
+
     }
+    
   }
 }
