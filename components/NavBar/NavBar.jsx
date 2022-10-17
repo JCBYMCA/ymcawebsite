@@ -27,13 +27,13 @@ const NavBar = ({isHome, isDepartment}) => {
                 <Image src='/assets/images/logo.png' alt={'Logo'} width={90} height={90} />
                 <div className={'flex flex-col'}>
                     <div className={'flex flex-col font-bold text-xl -space-y-1 tracking-wider mt-5'}>
-                        <h1 className={'text-xs md:text-xl'}>J.C. Bose University of Science and Technology, YMCA, Faridabad</h1>
+                        <h1 className={'text-xs md:text-xl'}>{t("JCBoseUst")}</h1>
                         {/*<h1 className={'text-xs md:text-xl'}>of Science & Technology</h1>*/}
                         {/*<h1 className={'text-xs md:text-xl'}>YMCA, Faridabad</h1>*/}
                     </div>
                     <div className={''}>
-                        <h1 className={`text-xs md:text-xs ${!isWhite ? "" : "text-secondaryLight"}`}>(A Haryana State Government University)</h1>
-                        <h1 className={`text-xs ${!isWhite ? "" : "text-secondaryLight"}`}>(Established by Haryana State Legislative Act No. 21 of 2009 & Recognised by UGC Act 1956 u/s 22 to Confer Degrees)</h1>
+                        <h1 className={`text-xs md:text-xs ${!isWhite ? "" : "text-secondaryLight"}`}>{t("UST description 1")}</h1>
+                        <h1 className={`text-xs ${!isWhite ? "" : "text-secondaryLight"}`}>{t("UST description 2")}</h1>
                     </div>
                 </div>
                 <div className={'ml-auto p-1 mr-5'}>
