@@ -14,7 +14,7 @@
       "Alumni": "Alumni",
       "Ranking and Accreditation": "Ranking and Accreditation",
       "NIRF": "NIRF",
-      "Wellfare": "Wellfare",
+      "Welfare": "Welfare",
       "ARIIA": "ARIIA",
       "NAAC": "NAAC",
       "NBA":"NBA",
@@ -223,21 +223,27 @@
       "Acre Campus":"Acre Campus",
       "12": "12",
       "Centres of Excellence":"Centres of Excellence"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    },
+    "scrollHint":
+    {
+      "EXPLORE": "EXPLORE"
+    },
+    "featureCard": {
+      "Read More":"Read More",
+      "Campus Life": "Campus Life",
+      "Campus Life description":"Campus life is full of excitement and adventure. There are always new things to do and new people to meet.",
+      "Placements": "Placements",
+      "Placements description": "There are plenty of opportunities for students to find placements with companies that fit their skills and interests.",
+      "Centres of Excellence": "Centres of Excellence",
+      "Centres of Excellence description": " The Centre of Excellence is a world-class facility that provides outstanding research.",
+      "Research Facility": "Research Facility",
+      "Research Facility description": "This cell is one of the most active and hardworking cells. They always work on improving the quality of education.",
+      "Central Library": "Central Library",
+      "Central Library description": "The Central library is one of the biggest and most popular libraries. It has a huge collection of books, journals, and other resources.",
+      "Incubation Centre": "Incubation Centre",
+      "Incubation Centre description": "Incubation centre is the state-of-the-art-faciliy that provides a platform for start up companies and entrepreneurs to develop their businesses",
+      "Media Centre": "Media Centre",
+      "Media Centre description": "The media center houses a variety of media-related resources that can be used for research, entertainment, or educational purposes."
     }
-
   }
 }

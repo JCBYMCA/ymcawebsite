@@ -130,13 +130,13 @@ const Home = () => {
                             type: 'spring',
                         }}
                         className={'mt-auto flex overflow-x-scroll overflow-y-clip hide-scroll'}>
-                        <FeatureCard title={"Campus Life"} icon={<LocationCityIcon className={'mx-auto'}/>} description={"Campus life is full of excitement and adventure. There are always new things to do and new people to meet."} index={0}/>
-                        <FeatureCard title={"Placements"} icon={<WorkIcon className={'mx-auto'}/>} description={"There are plenty of opportunities for students to find placements with companies that fit their skills and interests."} index={1}/>
-                        <FeatureCard title={"Centres of Excellence"} icon={<SchoolIcon className={'mx-auto'}/>} index={2} description={" The Centre of Excellence is a world-class facility that provides outstanding research."}/>
-                        <FeatureCard title={"Research Facility"} description={'This cell is one of the most active and hardworking cells. They always work on improving the quality of education.'} index={3} icon={<PrecisionManufacturingIcon className={'mx-auto'}/>}/>
-                        <FeatureCard title={"Central Library"} icon={<LocalLibraryIcon className={'mx-auto'}/>} index={4} description={"The Central library is one of the biggest and most popular libraries. It has a huge collection of books, journals, and other resources."} />
-                        <FeatureCard title={"Incubation Centre"} icon={<RocketLaunchIcon className={'mx-auto'}/>} index={5} description={"Incubation centre is the state-of-the-art-faciliy that provides a platform for start up companies and entrepreneurs to develop their businesses"}/>
-                        <FeatureCard title={"Media Centre"} icon={<MovieIcon className={'mx-auto'}/>} index={6} description={"The media center houses a variety of media-related resources that can be used for research, entertainment, or educational purposes."}/>
+                        <FeatureCard title={"Campus Life"} icon={<LocationCityIcon className={'mx-auto'}/>} description={"Campus Life description"} index={0}/>
+                        <FeatureCard title={"Placements"} icon={<WorkIcon className={'mx-auto'}/>} description={"Placements description"} index={1}/>
+                        <FeatureCard title={"Centres of Excellence"} icon={<SchoolIcon className={'mx-auto'}/>} index={2} description={"Centres of Excellence description"}/>
+                        <FeatureCard title={"Research Facility"} description={"Research Facility description"} index={3} icon={<PrecisionManufacturingIcon className={'mx-auto'}/>}/>
+                        <FeatureCard title={"Central Library"} icon={<LocalLibraryIcon className={'mx-auto'}/>} index={4} description={"Central Library description"} />
+                        <FeatureCard title={"Incubation Centre"} icon={<RocketLaunchIcon className={'mx-auto'}/>} index={5} description={"Incubation Centre description"}/>
+                        <FeatureCard title={"Media Centre"} icon={<MovieIcon className={'mx-auto'}/>} index={6} description={"Media Centre description"}/>
                     </motion.div>
 
                 </div>
