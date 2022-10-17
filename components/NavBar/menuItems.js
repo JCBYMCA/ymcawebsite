@@ -450,7 +450,7 @@ export const menuItems = [
         ]
     },
     {
-        title: 'Wellfare',
+        title: 'Welfare',
     },
     {
         title: 'Alumni',
