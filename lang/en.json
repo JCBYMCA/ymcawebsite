@@ -1,5 +1,7 @@
 {
   "home": {
+    "Explore": "Explore",
+    "the privileges": "the privileges",
     "navbar": {
       "JCBoseUst": "J.C. Bose University of Science and Technology, YMCA, Faridabad",
       "UST description 1": "(A Haryana State Government University)",
@@ -183,6 +185,8 @@
       "viewAll": "View All"
     },
     "footer": {
+      "TEL": "TEL",
+      "EMAIL": "EMAIL",
       "Subscribe for Newsletter": "Subscribe for Newsletter",
       "Our Campus": "Our Campus",
       "Campus Life": "Campus Life",
@@ -204,9 +208,37 @@
       "Library": "Library", 
       "Time Schedule": "Time Schedule",
       "Apply for admissions": "Apply for admissions", 
-      "Pay my tuition": "Pay my tuition"
-      
+      "Pay my tuition": "Pay my tuition",
+      "360 Degree Feedback": "360 Degree Feedback",
+      "MoUs & Collaborations": "MoUs & Collaborations",
+      "Holiday List": "Holiday List",
+      "Downloads": "Downloads",
+      "Rules and Circulars": "Rules and Circulars",
+      "Guest House": "Guest House",
+      "Life@JCBoseUST": "Life@JCBoseUST",
+      "Contact Us": "Contact Us",
+      "Officer's Contacts": "Officer's Contacts",
+      "JUFA Elections(2022)": "JUFA Elections(2022)",
+      "Archived News": "Archived News",
+      "Policies": "Policies",
+      "News Feeds": "News Feeds",
+      "Green Initiatives": "Green Initiatives",
+      "Extension & Outreach": "Extension & Outreach",
+      "University Cells": "University Cells",
+      "UGC": "UGC",
+      "DTE, Haryana": "DTE, Haryana",
+      "DigiLocker": "DigiLocker",
+      "HSTES": "HSTES",
+      "NPTEL": "NPTEL",
+      "AICTE": "AICTE",
+      "NATS": "NATS",
+      "HSHEC": "HSHEC",
+      "Quick Links": "Quick Links",
+      "Important Links": "Important Links",
+      "Enter Email Address":"Enter Email Address",
+      "address": "NH-2 Sector-6,Mathura Road, Faridabad-121006, Haryana(India)"
     },
+
     "autoscrollfeatures": {
       "A": "A",
       "Grade NAAC Accredited": "Grade NAAC Accredited",

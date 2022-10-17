@@ -27,16 +27,16 @@ import Image from "next/image";
 // }
 
 const FooterLinks = () => {
-    const t = useTranslations("");
+    const t = useTranslations("home.footer");
     return (
         <div className={'flex flex-col'}>
         <div className={'bg-black md:h-[27rem] space-y-6 flex flex-col md:flex-row justify-around text-white text-lg space-x-8 p-8 '}>
             <div className={'flex flex-col md:w-1/4'}>
-                <h1 className={'mb-2'}>TEL: 0129-2310126</h1>
-                <h1 className={'mb-12'}>EMAIL: contact@jcboseust.ac.in</h1>
+                <h1 className={'mb-2'}>{t("TEL")}: 0129-2310126</h1>
+                <h1 className={'mb-12'}>{t("EMAIL")}: contact@jcboseust.ac.in</h1>
                 <h1 className={'mb-2'}>{t('Subscribe for Newsletter')}</h1>
                 <div className={'flex mb-8'}>
-                    <input placeholder={'Enter Email Address'} type={"email"} className={'text-black p-1 w-60'}/>
+                    <input placeholder={t('Enter Email Address')} type={"email"} className={'text-black p-1 w-60'}/>
                     <button className={'bg-primaryLight p-1 hover:bg-primary cursor-pointer duration-200'} type={"submit"}>{t('SUBMIT')}</button>
                 </div>
                 <div className={'bg-gray-300 h-[10rem] text-black'}>
@@ -91,7 +91,7 @@ const FooterLinks = () => {
                     <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Guest House')}</li>
                     <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Life@JCBoseUST')}</li>
                     <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Contact Us')}</li>
-                    <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('')}</li>
+
 
                 </ul>
             </div>

@@ -3,6 +3,7 @@ import Heading from "../components/HomePageComponents/Heading";
 import {motion, useScroll} from "framer-motion";
 import ScrollHint from "../components/HomePageComponents/ScrollHint";
 import Button from "../components/HomePageComponents/Button";
+import {useTranslations} from "next-intl";
 import ProfileCard from "../components/HomePageComponents/ProfileCard";
 import FooterLinks from "../components/common/FooterLinks";
 import FeatureCard from "../components/HomePageComponents/FeatureCard";
@@ -19,7 +20,7 @@ import LocalLibraryIcon from '@mui/icons-material/LocalLibrary';
 import LocationCityIcon from '@mui/icons-material/LocationCity';
 
 const Home = () => {
-
+    const t = useTranslations("home");
     return (
         <>
             <Head>
@@ -92,7 +93,7 @@ const Home = () => {
                             transition={{
                             delay: 0.2,
                             duration: 0.3,
-                        }} className={'text-white text-4xl ml-12 md:text-8xl md:ml-60'}>Explore</motion.h1>
+                        }} className={'text-white text-4xl ml-12 md:text-8xl md:ml-60'}>{t("Explore")}</motion.h1>
                         <motion.h1
                             initial={{
                                 opacity:0,
@@ -109,7 +110,7 @@ const Home = () => {
                             transition={{
                                 delay: 0.2,
                                 duration: 0.3
-                            }} className={'text-white text-4xl ml-20 md:text-8xl md:ml-96'}>the privileges</motion.h1>
+                            }} className={'text-white text-4xl ml-20 md:text-8xl md:ml-96'}>{t("the privileges")}</motion.h1>
                     </div>
                     <motion.div
                         initial={{
