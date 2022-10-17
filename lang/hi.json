@@ -1,6 +1,11 @@
 {
   "home": {
+    "Explore": "अन्वेषण करें",
+    "the privileges": "विशेषाधिकारों का",
     "navbar": {
+      "JCBoseUst": "जे.सी. बोस विज्ञान और प्रौद्योगिकी विश्वविद्यालय, वाईएमसीए, फरीदाबाद",
+      "UST description 1":  "(हरियाणा राज्य सरकार विश्वविद्यालय)",
+      "UST description 2":  "(हरियाणा राज्य विधान अधिनियम संख्या 21 2009 द्वारा स्थापित और यूजीसी अधिनियम 1956 यू/एस 22 डिग्री प्रदान करने के लिए मान्यता प्राप्त है)",
       "Home": "होम",
       "About Us": "हमारे बारे में",
       "Administration": "प्रशासन",
@@ -153,7 +158,8 @@
       "Dean (Colleges)": "डीन (कॉलेज)",
       "Dean (Construction & Maintenance)": "डीन (निर्माण और रखरखाव)",
       "Multimedia Centre": "मल्टीमीडिया सेंटर",
-      "Sport Facilities": "खेल सुविधाएं"
+      "Sport Facilities": "खेल सुविधाएं",
+      "Welfare": "कल्याण"
     },
     "heading": {
       "tagline": "सच्ची प्रयोगशाला मन है, जहां भ्रम के पीछे हम सत्य के नियमों को उजागर करते हैं।",
@@ -177,31 +183,6 @@
       "heading":"सूचना पट्ट",
       "viewAll": "सभी देखें"
     },
-    "footer": {
-      "Subscribe for Newsletter": "समाचार पत्र के लिए सदस्यता लें",
-      "Our Campus": "हमारा कैंपस",
-      "Campus Life": "कैंपस की ज़िंदगी",
-      "SUBMIT": "सब्मिट",
-      "Academic": "शैक्षणिक",
-      "Planning & Administration": "योजना और प्रशासन",
-      "Campus Safety": "परिसर सुरक्षा",
-
-      "Office of the Chancellor": "कुलाधिपति का कार्यालय",
-      "Facility Services": "सुविधा सेवा",
-      "Human Resources": "मानव संसाधन",
-      "Accessibility": "सरल उपयोग",
-      "Financial Aid": "आर्थिक सहायता",
-      "Food Services": "खाद्य सेवाएं",
-      "Housing": "आवास",
-      "Information Technologies": "सूचना प्रौद्योगिकी",
-      "Student Life": "छात्र जीवन",
-      "Canvas": "कैनवास", 
-      "Catalyst": "उत्प्रेरक", 
-      "Library": "पुस्तकालय", 
-      "Time Schedule": "समय सारणी",
-      "Apply for admissions": "प्रवेश के लिए आवेदन करें", 
-      "Pay my tuition": "मेरी ट्यूशन का भुगतान करें"
-    },
     "autoscrollfeatures": {
       "A": "ए",
       "Grade NAAC Accredited": "ग्रेड एनएएसी मान्यता प्राप्त",
@@ -223,6 +204,82 @@
       "Centres of Excellence":"उत्कृष्टता के केंद्र"
       
 
+    },
+    "footer": {
+      "Subscribe for Newsletter": "न्यूज़लेटर के लिए सदस्यता लें",
+      "Our Campus": "हमारा परिसर",
+      "Campus Life":"कैंपसलाइफ",
+      "SUBMIT": "सबमिट करें",
+      "Academic": "शैक्षणिक",
+      "Planning & Administration":  "योजना और प्रशासन",
+      "Campus Safety": "कैंपस सुरक्षा",
+      "Office of the Chancellor":  "कुलपति का कार्यालय",
+      "Facility Services": "सुविधा सेवाएँ",
+      "Human Resources": "मानव संसाधन",
+      "Accessibility": "पहुंच-योग्यता",
+      "Financial Aid": "वित्तीय सहायता",
+      "Food Services":  "खाद्य सेवाएँ",
+      "Housing":  "आवास",
+      "Information Technologies":  "सूचना प्रौद्योगिकी",
+      "Student Life": "छात्र जीवन",
+      "Canvas":  "कैनवास",
+      "Catalyst":"उत्प्रेरक",
+      "Library": "पुस्तकालय",
+      "Time Schedule": "समय अनुसूची",
+      "Apply for admissions":  "प्रवेश के लिए आवेदन करें",
+      "Pay my tuition": "मेरी ट्यूशन का भुगतान करें",
+      "360 Degree Feedback": "360 डिग्री फीडबैक",
+      "MoUs & Collaborations": "समझौता ज्ञापन और सहयोग",
+      "Holiday List": "छुट्टी सूची",
+      "Downloads": "डाउनलोड",
+      "Rules and Circulars": "नियम और परिपत्र",
+      "Guest House": "गेस्ट हाउस",
+      "Life@JCBoseUST": "जीवन@JCBoseUST",
+      "Contact Us": "संपर्क करें",
+      "Officer's Contacts": "अधिकारी के संपर्क",
+      "JUFA Elections(2022)": "जेयूएफए चुनाव(2022)",
+      "Archived News": "संग्रहीत समाचार",
+      "Policies": "नीतियों",
+      "News Feeds": "समाचार फ़ीड्स",
+      "Green Initiatives": "हरित पहल",
+      "Extension & Outreach": "विस्तार और आउटरीच",
+      "University Cells": "विश्वविद्यालय प्रकोष्ठ",
+      "UGC": "यूजीसी",
+      "DTE, Haryana": "डीटीई, हरियाणा",
+      "DigiLocker": "डिजिटल लॉकर",
+      "HSTES": "एचएसटीईएस",
+      "NPTEL": "एनपीटीईएल",
+      "AICTE": "एआईसीटीई",
+      "NATS": "नैट्स",
+      "HSHEC": "एचएसएचईसी",
+      "Quick Links": "त्वरित सम्पक",
+      "Important Links": "महत्वपूर्ण लिंक",
+      "Enter Email Address": "ईमेल पता दर्ज करें",
+      "TEL": "टैल.",
+      "EMAIL": "ईमेल",
+      "address": "NH-2 सेक्टर-6, मथुरा रोड, फरीदाबाद-121006, हरियाणा (भारत)"
+    },
+
+    "scrollHint":
+    {
+      "EXPLORE": "और घूमें "
+    },
+    "featureCard": {
+      "Read More":"और  पढ़ें",
+      "Campus Life": "कैंपस लाइफ",
+      "Campus Life description":"कैंपस का जीवन उत्साह और रोमांच से भरा होता है। करने के लिए हमेशा नई चीजें होती हैं और नए लोगों से मिलना होता है।",
+      "Placements": "प्लेसमेंट",
+      "Placements description": "छात्रों के लिए ऐसी कंपनियों में प्लेसमेंट खोजने के बहुत सारे अवसर हैं जो उनके कौशल और रुचि के अनुकूल हों।",
+      "Centres of Excellence": "उत्कृष्टता केंद्र",
+      "Centres of Excellence description": "उत्कृष्टता केंद्र एक विश्व स्तरीय सुविधा है जो उत्कृष्ट शोध प्रदान करती है।",
+      "Research Facility": "अनुसंधान सुविधा",
+      "Research Facility description": "यह सेल सबसे सक्रिय और मेहनती सेल में से एक है। ये हमेशा शिक्षा की गुणवत्ता में सुधार के लिए काम करते हैं।",
+      "Central Library": "केंद्रीय पुस्तकालय",
+      "Central Library description":  "केंद्रीय पुस्तकालय सबसे बड़े और सबसे लोकप्रिय पुस्तकालयों में से एक है। इसमें पुस्तकों, पत्रिकाओं और अन्य संसाधनों का एक विशाल संग्रह है।",
+      "Incubation Centre": "ऊष्मायन केंद्र",
+      "Incubation Centre description": "ऊष्मायन केंद्र एक अत्याधुनिक सुविधा है जो स्टार्ट अप कंपनियों और उद्यमियों को अपना व्यवसाय विकसित करने के लिए एक मंच प्रदान करता है",
+      "Media Centre": "मीडिया सेंटर",
+      "Media Centre description": "मीडिया केंद्र में विभिन्न प्रकार के मीडिया-संबंधित संसाधन हैं जिनका उपयोग अनुसंधान, मनोरंजन या शैक्षिक उद्देश्यों के लिए किया जा सकता है।"
     }
     
   }
