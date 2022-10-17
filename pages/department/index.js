@@ -7,14 +7,14 @@ const DepartmentPage = () => {
     return (
         <div>
             <Landing/>
-            <div className={'flex'}>
-                <div className={'w-3/5 flex flex-col'}>
-                    <Description/>
-                </div>
-                <div className={'mt-20 w-[28rem] ml-20 space-y-8 flex flex-col'}>
-                    <QuickLinks/>
+            <div className={'flex flex-col'}>
+                <div className={'mt-12 ml-8 space-y-8 flex'}>
                     <DepartmentChairperson/>
                 </div>
+                <div className={'flex mt-8'}>
+                    <Description/>
+                </div>
+
             </div>
         </div>
     )
