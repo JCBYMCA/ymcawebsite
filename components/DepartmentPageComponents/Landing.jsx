@@ -25,7 +25,7 @@ const Landing = () => {
     })
 
     return (
-        <div className={`bg-no-repeat duration-200 bg-cover bg-center flex flex-col h-[35rem] ${isShow ? "bg-[#EBEBEB] sticky -top-[26rem] text-black" : `bg-computer-department-bg-${bgImage.toString()} text-white`}`}
+        <div className={`bg-no-repeat duration-200 bg-cover bg-center flex flex-col h-[35rem] ${isShow ? "bg-[#EBEBEB] sticky -top-[26rem] text-black" : `bg-computer-department-bg-1 text-white`}`}
              style={{
             zIndex: 9999
         }}>
