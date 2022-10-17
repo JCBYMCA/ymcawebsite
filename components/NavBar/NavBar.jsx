@@ -14,7 +14,6 @@ const NavBar = ({isHome, isDepartment}) => {
     const [isWhite, setIsWhite] = useState(!isHome);
 
     scrollY.onChange((y) => {
-        console.log(scrollYProgress.get());
         if(isHome)
             scrollYProgress.get() > 0.066 ? setIsWhite(true) : setIsWhite(false);
     });

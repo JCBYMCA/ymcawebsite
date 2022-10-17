@@ -451,6 +451,14 @@ export const menuItems = [
     },
     {
         title: 'Welfare',
+        submenu: [
+            {
+                title: 'Student Welfare',
+            },
+            {
+                title: 'Welfare Schemes',
+            }
+        ]
     },
     {
         title: 'Alumni',

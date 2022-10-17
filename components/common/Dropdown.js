@@ -14,8 +14,6 @@ const Dropdown = ({ submenus, dropdown, depthLevel, translations, left }) => {
     }
   });
 
-  typeof window !== "undefined" &&
-  console.log(posX, "screen width: ", window.innerWidth);
 
   // console.log("logged inview ",inView, "depth level ",depthLevel);
   const dropdownClass = depthLevel > 1 ? screenWidth - posX <=200 ? "dropdown-submenu-left" : "dropdown-submenu-right" : "";

@@ -20,10 +20,8 @@ const DepartmentPage = () => {
                     <Notices className={'w-[46rem] bg-white bg-opacity-60'} isDepartment={true}/>
                     <QuickLinks heading={'Scheme & Syllabus'}/>
                 </div>
-                <div>
                     <Achievements/>
 
-                </div>
 
 
             </div>

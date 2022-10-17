@@ -9,15 +9,15 @@ const Landing = () => {
     const [bgImage, setBgImage] = useState(1);
 
     useEffect(() => {
+        let i = 1;
         setInterval(() => {
-            if(bgImage === 1){
-                setBgImage(2);
-            }
-            else if(bgImage === 2){
-                setBgImage(1);
-            }
-        }, 10000)
-    })
+            if(i===7)
+                i=1;
+            setBgImage(i);
+            i++;
+            console.log(i);
+        }, 5000)
+    }, [])
 
     scrollY.onChange(() => {
         scrollYProgress.get() >= 0.501 ? setIsShow(true) : setIsShow(false);
@@ -25,7 +25,7 @@ const Landing = () => {
     })
 
     return (
-        <div className={`bg-no-repeat duration-200 bg-cover bg-center flex flex-col h-[35rem] ${isShow ? "bg-[#EBEBEB] sticky -top-[26rem] text-black" : `bg-computer-department-bg-1 text-white`}`}
+        <div className={`bg-no-repeat duration-200 bg-cover bg-center flex flex-col h-[35rem] ${isShow ? "bg-[#EBEBEB] sticky -top-[26rem] text-black" : `bg-computer-department-bg-${bgImage} text-white`}`}
              style={{
             zIndex: 9999
         }}>
