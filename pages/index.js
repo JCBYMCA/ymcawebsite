@@ -25,7 +25,7 @@ const Home = () => {
         <div>
             <motion.div animate={{
                 backgroundColor:['#000', 'rgba(0,0,0,0)']
-            }} className={'md:h-screen h-[40rem] -mt-[8.54rem] -z-10 flex flex-col'}>
+            }} className={'md:h-screen h-[40rem] -mt-[10.2rem] -z-10 flex flex-col'}>
 
                 <div>
                     <video poster={'/assets/images/temp.png'} autoPlay muted loop className={'fixed md:w-full w-screen md:h-screen h-[40rem] brightness-50 -z-30 object-fill'}>

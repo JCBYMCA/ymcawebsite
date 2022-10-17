@@ -35,6 +35,9 @@ const NavBar = ({isHome}) => {
                         <h1 className={`text-xs ${!isWhite ? "" : "text-secondaryLight"}`}>(Established by Haryana State Legislative Act No. 21 of 2009 & Recognised by UGC Act 1956 u/s 22 to Confer Degrees)</h1>
                     </div>
                 </div>
+                <div className={'ml-auto p-1 mr-5'}>
+                    <Image src={'/assets/images/jcBosePhoto.png'} width={75} height={75} className={'rounded-full'} />
+                </div>
             </div>
 
             {/*<div className={'flex justify-between w-3/5 ml-14 text-sm font-bold '}>*/}

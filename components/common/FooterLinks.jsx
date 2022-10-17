@@ -27,7 +27,7 @@ import Image from "next/image";
 // }
 
 const FooterLinks = () => {
-    const t = useTranslations("home.footer");
+    const t = useTranslations("");
     return (
         <div className={'flex flex-col'}>
         <div className={'bg-black md:h-[27rem] space-y-6 flex flex-col md:flex-row justify-around text-white text-xl space-x-8 p-8 '}>
@@ -49,42 +49,44 @@ const FooterLinks = () => {
             </div>
             <div className={'flex flex-col text-left space-y-6 md:w-1/4'}>
                 <div className={'w-full border-b-2 pb-2 border-secondaryLight'}>
-                    <h1 className={'font-bold'}>{t('Our Campus')}</h1>
+                    <h1 className={'font-bold'}>{t('Important Links')}</h1>
                 </div>
                 <ul className={'text-gray-400'}>
-                    <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Academic')}</li>
-                    <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Planning & Administration')}</li>
-                    <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Campus Safety')}</li>
-                    <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Office of the Chancellor')}</li>
-                    <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Facility Services')}</li>
-                    <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Human Resources')}</li>
+                    <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('UGC')}</li>
+                    <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('DTE, Haryana')}</li>
+                    <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('DigiLocker')}</li>
+                    <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('HSTES')}</li>
+                    <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('NPTEL')}</li>
+                    <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('AICTE')}</li>
+                    <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('NATS')}</li>
+                    <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('HSHEC')}</li>
                 </ul>
             </div>
             <div className={'flex flex-col text-left space-y-6 md:w-1/4'}>
                 <div className={'w-full border-b-2 pb-2 border-secondaryLight'}>
-                    <h1 className={'font-bold'}>{t('Campus Life')}</h1>
+                    <h1 className={'font-bold'}>{t('Quick Links')}</h1>
                 </div>
                 <ul className={'text-gray-400'}>
-                    <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Accessibility')}</li>
-                    <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Financial Aid')}</li>
-                    <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Food Services')}</li>
-                    <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Housing')}</li>
-                    <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Information Technologies')}</li>
-                    <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Student Life')}</li>
+                    <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Holiday List')}</li>
+                    <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Downloads')}</li>
+                    <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Rules and Circulars')}</li>
+                    <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Guest House')}</li>
+                    <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Life@JCBoseUST')}</li>
+                    <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Contact Us')}</li>
 
                 </ul>
             </div>
             <div className={'flex flex-col text-left space-y-6 md:w-1/4'}>
                 <div className={'w-full border-b-2 pb-2 border-secondaryLight'}>
-                    <h1 className={'font-bold'}>{t('Our Campus')}</h1>
+                    <h1 className={'font-bold'}>{t('Quick Links')}</h1>
                 </div>
             <ul className={'text-gray-400'}>
-                <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Canvas')}</li>
-                <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Catalyst')}</li>
-                <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Library')}</li>
-                <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Time Schedule')}</li>
-                <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Apply for admissions')}</li>
-                <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Pay my tuition')}</li>
+                <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Officer\'s Contacts')}</li>
+                <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('JUFA Elections(2022)')}</li>
+                <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Archived News')}</li>
+                <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Policies')}</li>
+                <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('News Feeds')}</li>
+                {/*<li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Pay my tuition')}</li>*/}
             </ul>
         </div>
             </div>
