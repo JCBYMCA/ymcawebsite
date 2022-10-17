@@ -10,7 +10,7 @@ const EventDate=()=>{
 const Event=(props)=>{
     return(
         <div className={'mb-4'}>
-         <div className={'text-2xl mb-1 mr-4'}>
+         <div className={'text-lg mb-1 mr-4'}>
              {props.name}
              <EventDate date={props.date}/>
          </div>

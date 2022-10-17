@@ -132,8 +132,8 @@ const Home = () => {
                         <FeatureCard title={"Centres of Excellence"} icon={<SchoolIcon className={'mx-auto'}/>} index={2} description={" The Centre of Excellence is a world-class facility that provides outstanding research."}/>
                         <FeatureCard title={"Teqip"} description={'The TEQIP cell of our college is one of the most active and hardworking cells. They always work on improving the quality of education.'} index={3} icon={<PrecisionManufacturingIcon className={'mx-auto'}/>}/>
                         <FeatureCard title={"Startup Culture"} icon={<RocketLaunchIcon className={'mx-auto'}/>} index={4} description={"The startup culture is all about taking risks and being innovative."} />
-                        <FeatureCard title={"Startup Culture"} icon={<RocketLaunchIcon className={'mx-auto'}/>} index={5} description={"The startup culture is all about taking risks and being innovative."}/>
-                        <FeatureCard title={"Startup Culture"} icon={<RocketLaunchIcon className={'mx-auto'}/>} index={6} description={"The startup culture is all about taking risks and being innovative."}/>
+                        <FeatureCard title={"Incubation Center"} icon={<RocketLaunchIcon className={'mx-auto'}/>} index={5} description={"Incubation centre is the state-of-the-art-faciliy that provides a platform for start up companies and entrepreneurs to develop their businesses"}/>
+                        <FeatureCard title={"Media Centre"} icon={<RocketLaunchIcon className={'mx-auto'}/>} index={6} description={"The media center houses a variety of media-related resources that can be used for research, entertainment, or educational purposes."}/>
                     </motion.div>
 
                 </div>

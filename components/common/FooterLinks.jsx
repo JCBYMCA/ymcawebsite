@@ -30,7 +30,7 @@ const FooterLinks = () => {
     const t = useTranslations("");
     return (
         <div className={'flex flex-col'}>
-        <div className={'bg-black md:h-[27rem] space-y-6 flex flex-col md:flex-row justify-around text-white text-xl space-x-8 p-8 '}>
+        <div className={'bg-black md:h-[27rem] space-y-6 flex flex-col md:flex-row justify-around text-white text-lg space-x-8 p-8 '}>
             <div className={'flex flex-col md:w-1/4'}>
                 <h1 className={'mb-2'}>TEL: 0129-2310126</h1>
                 <h1 className={'mb-12'}>EMAIL: contact@jcboseust.ac.in</h1>
@@ -67,28 +67,49 @@ const FooterLinks = () => {
                     <h1 className={'font-bold'}>{t('Quick Links')}</h1>
                 </div>
                 <ul className={'text-gray-400'}>
-                    <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Holiday List')}</li>
-                    <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Downloads')}</li>
-                    <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Rules and Circulars')}</li>
-                    <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Guest House')}</li>
-                    <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Life@JCBoseUST')}</li>
-                    <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Contact Us')}</li>
-
+                    <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Officer\'s Contacts')}</li>
+                    <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('JUFA Elections(2022)')}</li>
+                    <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Archived News')}</li>
+                    <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Policies')}</li>
+                    <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('News Feeds')}</li>
+                    <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Green Initiatives')}</li>
+                    <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Extension & Outreach')}</li>
+                    <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('University Cells')}</li>
+                    {/*<li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Pay my tuition')}</li>*/}
                 </ul>
             </div>
             <div className={'flex flex-col text-left space-y-6 md:w-1/4'}>
                 <div className={'w-full border-b-2 pb-2 border-secondaryLight'}>
                     <h1 className={'font-bold'}>{t('Quick Links')}</h1>
                 </div>
-            <ul className={'text-gray-400'}>
-                <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Officer\'s Contacts')}</li>
-                <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('JUFA Elections(2022)')}</li>
-                <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Archived News')}</li>
-                <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Policies')}</li>
-                <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('News Feeds')}</li>
-                {/*<li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Pay my tuition')}</li>*/}
-            </ul>
-        </div>
+                <ul className={'text-gray-400'}>
+                    <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('360 Degree Feedback')}</li>
+                    <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('MoUs & Collaborations')}</li>
+                    <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Holiday List')}</li>
+                    <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Downloads')}</li>
+                    <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Rules and Circulars')}</li>
+                    <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Guest House')}</li>
+                    <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Life@JCBoseUST')}</li>
+                    <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Contact Us')}</li>
+                    <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('')}</li>
+
+                </ul>
+            </div>
+        {/*    <div className={'flex flex-col text-left space-y-6 md:w-1/4'}>*/}
+        {/*        <div className={'w-full border-b-2 pb-2 border-secondaryLight'}>*/}
+        {/*            <h1 className={'font-bold'}>{t('Quick Links')}</h1>*/}
+        {/*        </div>*/}
+        {/*    <ul className={'text-gray-400'}>*/}
+        {/*        <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Officer\'s Contacts')}</li>*/}
+        {/*        <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('JUFA Elections(2022)')}</li>*/}
+        {/*        <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Archived News')}</li>*/}
+        {/*        <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Policies')}</li>*/}
+        {/*        <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('News Feeds')}</li>*/}
+        {/*        <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Green Initiatives')}</li>*/}
+        {/*        <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Extension & Outreach')}</li>*/}
+        {/*        /!*<li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Pay my tuition')}</li>*!/*/}
+        {/*    </ul>*/}
+        {/*</div>*/}
             </div>
 
 
