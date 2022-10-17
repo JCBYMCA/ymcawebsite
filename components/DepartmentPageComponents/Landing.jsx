@@ -20,10 +20,15 @@ const Landing = () => {
             <div className={` py-2 bg-no-repeat duration-200 bg-cover bg-center flex flex-col h-[35rem] ${isShow ? "bg-transparent" : "bg-opacity-50 bg-black"}`}>
                 <div className={`mt-auto flex items-center ${isShow ? 'mb-0' : ''}`}>
                     {/*<h1 className={'text-green-500'}>Department of Computer Engineering, Bachelor of Technology</h1>*/}
-                    <Image src={'/assets/images/favicon.ico'} alt={'Logo'} width={90} height={90} className={isShow ? "visible" : "invisible"} />
-                    <h1 className={'font-semibold text-4xl'}>Department of Computer Engineering</h1>
+                    <Image src={'/assets/images/favicon.ico'} alt={'Logo'} width={70} height={70} className={isShow ? "visible" : "invisible"} />
+                    <div className={'flex flex-col ml-2'}>
+                        <h1 className={'font-semibold text-3xl'}>Department of Computer Engineering</h1>
+                        {isShow && <h1 className={'font-semibold text-md text-secondaryLight'}>J.C. Bose University of Science and
+                            Technology, YMCA, Faridabad</h1>}
+                    </div>
+
                 </div>
-                <div className={`flex ${isShow ? '':'bg-gradient-to-t from-gradient-from'}`}>
+                <div className={`flex ${isShow ? '':'hidden'}`}>
                     <DepartmentNavbar/>
                 </div>
             </div>

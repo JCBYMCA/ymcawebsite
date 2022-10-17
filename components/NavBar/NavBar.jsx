@@ -6,8 +6,9 @@ import {useScroll} from "framer-motion";
 import {useState} from "react";
 import MenuIcon from '@mui/icons-material/Menu';
 import NavBarMenu from "../common/NavBarMenu";
+import DepartmentNavbar from "../DepartmentPageComponents/DepartmentNavbar/DepartmentNavbar";
 
-const NavBar = ({isHome}) => {
+const NavBar = ({isHome, isDepartment}) => {
     const t = useTranslations("home.navbar");
     const {scrollY, scrollYProgress} = useScroll();
     const [isWhite, setIsWhite] = useState(!isHome);
@@ -49,7 +50,8 @@ const NavBar = ({isHome}) => {
             {/*    <h1 className={'uppercase cursor-pointer hover:underline decoration-primary decoration-4 duration-300 underline-offset-4'}>{t('Resources')}</h1>*/}
             {/*</div>*/}
 
-            <NavBarMenu menuItems={menuItems} className={'ml-auto mr-20'} translations={'home.navbar'} />
+            {isDepartment ? <DepartmentNavbar/> : <NavBarMenu menuItems={menuItems} className={'ml-auto mr-20'} translations={'home.navbar'} />}
+
 
             <div className={'flex md:hidden ml-auto mr-2'}>
                 <MenuIcon fontSize={'large'}/>

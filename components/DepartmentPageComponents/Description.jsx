@@ -3,7 +3,7 @@ import Image from "next/image";
 const Description = () => {
     return (
         <div className={'flex flex-col p-8'}>
-            <Image src={'/assets/images/computerDepartment.png'} alt={'Department'} width={800} height={500} />
+            {/*<Image src={'/assets/images/computerDepartment.png'} alt={'Department'} width={800} height={500} />*/}
             {/*generate description text with a heading, subheading and about paragraph along with some bullet points*/}
             <div className={'flex flex-col mt-8'}>
                 <h1 className={'text-2xl font-bold'}>About Department</h1>

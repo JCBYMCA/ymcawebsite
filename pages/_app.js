@@ -8,10 +8,11 @@ import TopBar from "../components/common/TopBar";
 function MyApp({ Component, pageProps }) {
     const router = useRouter();
     const isHomePage = router.pathname === '/';
+    const isDepartment = router.pathname === '/department';
   return (
       <NextIntlProvider messages={pageProps.messages}>
           <TopBar/>
-          <NavBar isHome={isHomePage}/>
+          <NavBar isHome={isHomePage} isDepartment={isDepartment} />
           <Component {...pageProps} />
           <Footer/>
       </NextIntlProvider>
