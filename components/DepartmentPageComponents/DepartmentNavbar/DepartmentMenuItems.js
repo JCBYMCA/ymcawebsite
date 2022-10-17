@@ -43,7 +43,7 @@ export const departmentMenuItems = [
                         title: 'Constitution'
                     },
                     {
-                        title: 'Minus of Meetings'
+                        title: 'Minutes of Meetings'
                     }
                 ]
             },
@@ -54,7 +54,7 @@ export const departmentMenuItems = [
                         title: 'Constitution'
                     },
                     {
-                        title: 'Minus of Meetings'
+                        title: 'Minutes of Meetings'
                     }
                 ]
             }
@@ -93,6 +93,27 @@ export const departmentMenuItems = [
         submenu: [
             {
                 title: 'Downloads'
+            },
+            {
+                title: 'Awards'
+            },
+            {
+                title: 'Student Achievements'
+            },
+            {
+                title: 'Student Activities'
+            },
+            {
+                title: 'Student Clubs'
+            },
+            {
+                title: 'Student Publications'
+            },
+            {
+                title: 'Student Projects'
+            },
+            {
+                title: 'Scheme & Syllabus'
             }
         ]
     }

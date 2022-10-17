@@ -58,7 +58,7 @@ header {
 .menu-items a,
 .menu-items button {
     text-align: left;
-    padding: 0.7rem 1rem;
+    padding: 0.2rem 1rem;
 }
 
 .menu-items a:hover,
@@ -84,7 +84,7 @@ header {
     0 4px 6px -2px rgba(71, 63, 79, 0.16);
     font-size: 0.875rem;
     z-index: 9999;
-    min-width: 12rem;
+    min-width: 16rem;
     padding: 0.5rem 0;
     list-style: none;
     /*background-color: #fff;*/

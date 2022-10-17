@@ -48,7 +48,7 @@ const FacultyPage = () => {
                 />
             </div>
             <div className={'flex flex-col space-y-8 w-[28rem]'}>
-                <QuickLinks/>
+                <QuickLinks heading={'Quick Links'}/>
                 <DepartmentContact/>
             </div>
 

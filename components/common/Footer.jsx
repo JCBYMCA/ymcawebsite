@@ -1,5 +1,8 @@
 import Image from "next/image";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import TwitterIcon from '@mui/icons-material/Twitter';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import InstagramIcon from '@mui/icons-material/Instagram';
 
 const Footer = () => {
     return (
@@ -9,10 +12,18 @@ const Footer = () => {
                 <h1 className={'text-center w-80'}>J.C. Bose University of Science & Technology, YMCA, Faridabad</h1>
             </div>
             <div className={'flex space-x-11'}>
-                <div><LinkedInIcon/></div>
-                <div><LinkedInIcon/></div>
-                <div><LinkedInIcon/></div>
-                <div><LinkedInIcon/></div>
+                <div className={'hover:scale-125 hover:text-primaryLight duration-200'} onClick={() => {
+                    window.open('https://twitter.com', '_blank');
+                }}><TwitterIcon/></div>
+                <div className={'hover:scale-125 hover:text-primaryLight duration-200'} onClick={() => {
+                    window.open('https://www.instagram.com/jcboseustofficial/', '_blank');
+                }}><InstagramIcon/></div>
+                <div className={'hover:scale-125 hover:text-primaryLight duration-200'} onClick={() => {
+                    window.open('https://facebook.com', '_blank');
+                }}><FacebookIcon/></div>
+                <div className={'hover:scale-125 hover:text-primaryLight duration-200'} onClick={() => {
+                    window.open('https://linkedin.com', '_blank');
+                }}><LinkedInIcon/></div>
             </div>
             <div className={'text-lg text-black font-bold'}>
                 <h1 className={'w-80'}>NH-2 Sector-6,Mathura Road, Faridabad-121006, Haryana(India)</h1>

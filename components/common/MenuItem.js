@@ -58,7 +58,7 @@ const MenuItem = ({ items, depthLevel, translations }) => {
                     />
                 </>
             ) : (
-                <Link href="/pages#"><h1 className={'cursor-pointer py-[0.7rem] px-[1rem] hover:bg-primary hover:text-white decoration-primary decoration-4 duration-300 underline-offset-4'}>{t(items.title)}</h1></Link>
+                <Link href="/pages#"><h1 className={'cursor-pointer py-[0.2rem] px-[1rem] hover:bg-primary hover:text-white decoration-primary decoration-4 duration-300 underline-offset-4'}>{t(items.title)}</h1></Link>
             )}
         </li>
     );

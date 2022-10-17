@@ -1,11 +1,23 @@
 import {useScroll} from "framer-motion";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import Image from "next/image";
 import DepartmentNavbar from "./DepartmentNavbar/DepartmentNavbar";
 
 const Landing = () => {
     const {scrollY, scrollYProgress} = useScroll();
     const [isShow, setIsShow] = useState(false);
+    const [bgImage, setBgImage] = useState(1);
+
+    useEffect(() => {
+        setInterval(() => {
+            if(bgImage === 1){
+                setBgImage(2);
+            }
+            else if(bgImage === 2){
+                setBgImage(1);
+            }
+        }, 10000)
+    })
 
     scrollY.onChange(() => {
         scrollYProgress.get() >= 0.501 ? setIsShow(true) : setIsShow(false);
@@ -13,7 +25,7 @@ const Landing = () => {
     })
 
     return (
-        <div className={`bg-no-repeat duration-200 bg-cover bg-center flex flex-col h-[35rem] ${isShow ? "bg-[#EBEBEB] sticky -top-[26rem] text-black" : "bg-computer-department-bg text-white"}`}
+        <div className={`bg-no-repeat duration-200 bg-cover bg-center flex flex-col h-[35rem] ${isShow ? "bg-[#EBEBEB] sticky -top-[26rem] text-black" : `bg-computer-department-bg-${bgImage.toString()} text-white`}`}
              style={{
             zIndex: 9999
         }}>
