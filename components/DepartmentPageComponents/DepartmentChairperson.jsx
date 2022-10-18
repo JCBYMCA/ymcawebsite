@@ -5,7 +5,7 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import FacebookIcon from '@mui/icons-material/Facebook'
 import {motion} from "framer-motion";
 import Image from "next/image";
-const DepartmentChairperson = () => {
+const  DepartmentChairperson = () => {
     return (
         <motion.div
             initial={{
