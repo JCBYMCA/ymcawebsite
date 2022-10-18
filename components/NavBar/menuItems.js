@@ -1,7 +1,7 @@
 export const menuItems = [
-    // {
-    //     title: 'Home',
-    // },
+     // {
+     //     title: 'Home',
+     // },
     {
         title: 'About Us',
         submenu: [
@@ -84,9 +84,9 @@ export const menuItems = [
                     }
                 ]
             },
-            {
-                title: 'Alumni'
-            }
+            // {
+            //     title: 'Alumni'
+            // }
             ]
     },
     {
@@ -346,6 +346,41 @@ export const menuItems = [
             },
             {
                 title: 'Common Academic Facilities',
+                submenu: [
+                    {
+                        title: 'Incubation Founder',
+                    },
+                    {
+                        title: 'Workshops'
+                    },
+                    {
+                        title: 'Central Computer Centre'
+                    },
+                    {
+                        title: 'E-Books & E-Journals'
+                    },
+                    {
+                        title: 'Digital Learning Management Center'
+                    },
+                    {
+                        title: 'IOT Centre'
+                    },
+                    {
+                        title: 'Robotics Centre'
+                    },
+                    {
+                        title: 'Language Lab'
+                    },
+                    {
+                        title: 'Smart Boards'
+                    },
+                    {
+                        title: 'Media Centre'
+                    },
+                    {
+                        title: 'Digital Studio'
+                    }
+            ]
             }
         ]
     },
@@ -454,6 +489,17 @@ export const menuItems = [
                 ]
             },
             {
+                title: 'Welfare',
+                submenu: [
+                    {
+                        title: 'Student Welfare',
+                    },
+                    {
+                        title: 'Welfare Schemes',
+                    }
+                ]
+            },
+            {
                 title: 'Placements'
             },
             {
@@ -528,17 +574,7 @@ export const menuItems = [
             }
         ]
     },
-    {
-        title: 'Welfare',
-        submenu: [
-            {
-                title: 'Student Welfare',
-            },
-            {
-                title: 'Welfare Schemes',
-            }
-        ]
-    },
+
     {
         title: 'Alumni',
     },

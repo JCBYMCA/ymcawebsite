@@ -8,6 +8,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import NavBarMenu from "../common/NavBarMenu";
 import DepartmentNavbar from "../DepartmentPageComponents/DepartmentNavbar/DepartmentNavbar";
 import {useRouter} from "next/router";
+import HomeIcon from '@mui/icons-material/Home';
 import FacultyNavbar from "../FacultyProfilePageComponents/FacultyNavbar";
 
 const NavBar = () => {
@@ -80,8 +81,13 @@ const NavBar = () => {
             {/*    <h1 className={'uppercase cursor-pointer hover:underline decoration-primary decoration-4 duration-300 underline-offset-4'}>{t('Research')}</h1>*/}
             {/*    <h1 className={'uppercase cursor-pointer hover:underline decoration-primary decoration-4 duration-300 underline-offset-4'}>{t('Resources')}</h1>*/}
             {/*</div>*/}
+            <div className={'flex'}>
+                <div className={'ml-auto w-10 hover:bg-primary text-center hover:text-white duration-200'}>
+                    <HomeIcon className={'ml-auto'}/>
+                </div>
+            {isDepartment ? <DepartmentNavbar/> : isFaculty ? <FacultyNavbar/> : <NavBarMenu menuItems={menuItems} className={'mr-0'} translations={'home.navbar'} />}
+            </div>
 
-            {isDepartment ? <DepartmentNavbar/> : isFaculty ? <FacultyNavbar/> : <NavBarMenu menuItems={menuItems} className={'ml-auto mr-0'} translations={'home.navbar'} />}
 
             <div className={'flex md:hidden ml-auto mr-2'}>
                 <MenuIcon fontSize={'large'}/>

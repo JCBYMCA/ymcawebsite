@@ -47,9 +47,9 @@ const FacultyPage = () => {
             </div>
             <div className={'flex flex-col  '}>
                 <FacultyCard
-                    image={'/assets/images/faculty/komalbhatia.png'}
-                    name={'Komal Kumar Bhatia'}
-                    designation={'Dean Computer Department'}
+                    image={'/assets/images/faculty/cknagpal.jpg'}
+                    name={'C.K Nagpal '}
+                    designation={'Professor'}
                     mail={'bla@gmail.com'}
                     contact={'91-8851221355'}
                     qualf1={'Vituperatoribus efficiantur tempor'}
@@ -58,9 +58,9 @@ const FacultyPage = () => {
                     twitterlink={''}
                 />
                 <FacultyCard
-                    image={'/assets/images/faculty/atulmishra.png'}
-                    name={'Atul Mishra'}
-                    designation={'Chairperson Computer Department'}
+                    image={'/assets/images/faculty/ashutoshdixit.jpg'}
+                    name={'Ashutosh Dixit'}
+                    designation={'Professor, Computer Engineering and Dean, Academic Affairs'}
                     mail={'bla@gmail.com'}
                     contact={'91-8851221355'}
                     qualf1={'Vituperatoribus efficiantur tempor'}
@@ -69,9 +69,9 @@ const FacultyPage = () => {
                     twitterlink={''}
                 />
                 <FacultyCard
-                    image={'/assets/images/faculty/neelamduhan.png'}
-                    name={'Neelam Duhan'}
-                    designation={'Assistant Professor'}
+                    image={'/assets/images/faculty/harish.jpg'}
+                    name={'Harish Kumar'}
+                    designation={'Associate Professor'}
                     mail={'neelamduhan@jcboseust.ac.in'}
                     contact={'91-8851221355'}
                     qualf1={'Vituperatoribus efficiantur tempor'}
