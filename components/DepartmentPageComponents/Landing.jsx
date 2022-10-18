@@ -23,7 +23,7 @@ const Landing = () => {
     }, [])
 
     scrollY.onChange(() => {
-        scrollYProgress.get() >= 0.501 ? setIsShow(true) : setIsShow(false);
+        scrollYProgress.get() >= 0.331 ? setIsShow(true) : setIsShow(false);
 
     })
 
