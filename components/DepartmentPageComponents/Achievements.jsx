@@ -1,6 +1,8 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Image from "next/image";
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 
 const responsive = {
     desktop: {
@@ -19,6 +21,22 @@ const responsive = {
     }
 }
 
+const ButtonGroup = ({ next, previous, goToSlide, ...rest }) => {
+    const {
+        carouselState: { currentSlide },
+    } = rest;
+    return (
+        <div className="absolute flex w-full">
+            <button className="" onClick={() => previous()}>
+                <ArrowBackIosIcon/>
+            </button>
+            <button className="ml-auto" onClick={() => next()}>
+                <ArrowForwardIosIcon/>
+            </button>
+        </div>
+    );
+}
+
 const Achievements = () => {
     return (
         <div className={'bg-white mt-8 mb-8'}>
@@ -29,6 +47,7 @@ const Achievements = () => {
                 </div>
                 <Carousel
                     swipeable={true}
+                    customButtonGroup={<ButtonGroup />}
                     draggable={true}
                     showDots={false}
                     responsive={responsive}
@@ -40,7 +59,7 @@ const Achievements = () => {
                     // customTransition="all .5"
                     transitionDuration={500}
                     containerClass="carousel-container"
-                    removeArrowOnDeviceType={["tablet", "mobile",]}
+                    removeArrowOnDeviceType={["tablet", "mobile","desktop"]}
                     deviceType={"desktop"}
                     dotListClass="custom-dot-list-style"
                     itemClass="carousel-item-padding-40-px"

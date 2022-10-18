@@ -3,7 +3,7 @@ import {departmentMenuItems} from "../DepartmentPageComponents/DepartmentNavbar/
 
 const FacultyNavbar = () => {
     return (
-        <NavBarMenu menuItems={departmentMenuItems} className={'ml-auto mr-20'} translations={''} />
+        <NavBarMenu menuItems={departmentMenuItems} className={'mr-20'} translations={''} />
     )
 }
 

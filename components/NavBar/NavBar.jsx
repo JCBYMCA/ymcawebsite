@@ -17,13 +17,21 @@ const NavBar = () => {
     const [isDepartment, setIsDepartment] = useState(false);
     const [isFaculty, setIsFaculty] = useState(false);
     useEffect(() => {
-        if(router.pathname === '/')
+        if(router.pathname === '/') {
             setIsHome(true);
-        else if(router.pathname === '/department')
+            setIsDepartment(false);
+            setIsFaculty(false);
+        }
+        else if(router.pathname === '/department') {
             setIsDepartment(true);
-        else if(router.pathname==='/faculty-profile/[slug]' || router.pathname==='/faculty')
+            setIsHome(false);
+            setIsFaculty(false);
+        }
+        else if(router.pathname==='/faculty-profile/[slug]' || router.pathname==='/faculty') {
             setIsFaculty(true);
-
+            setIsHome(false);
+            setIsDepartment(false);
+        }
     }, [router.pathname])
 
 
@@ -82,7 +90,9 @@ const NavBar = () => {
             {/*    <h1 className={'uppercase cursor-pointer hover:underline decoration-primary decoration-4 duration-300 underline-offset-4'}>{t('Resources')}</h1>*/}
             {/*</div>*/}
             <div className={'flex'}>
-                <div className={'ml-auto w-10 hover:bg-primary text-center hover:text-white duration-200'}>
+                <div className={'ml-auto w-10 hover:bg-primary text-center hover:text-white duration-200'} onClick={() => {
+                    router.push('/')
+                }}>
                     <HomeIcon className={'ml-auto'}/>
                 </div>
             {isDepartment ? <DepartmentNavbar/> : isFaculty ? <FacultyNavbar/> : <NavBarMenu menuItems={menuItems} className={'mr-0'} translations={'home.navbar'} />}
