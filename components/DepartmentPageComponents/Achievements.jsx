@@ -49,37 +49,38 @@ const Achievements = () => {
                         <div className={'w-40 h-40 bg-secondaryDark rounded-full'}>
                             <Image src={'/assets/images/achievements/1.png'} alt={'Achievement'} width={200} height={200} className={'rounded-full'}/>
                         </div>
-                        <h1 className={'text-xl font-semibold text-center text-secondaryDark mt-2'}>Achievement 1</h1>
+                        <h1 className={'w-2/3 text-xs font-bold text-justify text-primary text-center text-secondaryDark mt-4'}>Dr. Neelam Duhan has been awarded the AICTE Visvesvaraya Best Teacher Award 2021. The award carries a cash prize of Rs 25,000 with a medal and certificate of excellence.</h1>
                     </div>
                     <div className={'flex flex-col items-center justify-center'}>
                         <div className={'w-40 h-40 bg-secondaryDark rounded-full'}>
                             <Image src={'/assets/images/achievements/2.png'} alt={'Achievement'} width={200} height={200} className={'rounded-full'}/>
                         </div>
-                        <h1 className={'text-xl font-semibold text-center text-secondaryDark mt-2'}>Achievement 2</h1>
+                        <h1 className={'text-xs text-justify w-2/3 text-secondary font-semibold text-center text-secondaryDark mt-4'}>The officials of university have been acknowledged for their support and contribution during the lockdown period of Covid-19 Pandemic from March to May, 2020, by the Haryana Red Cross Society.</h1>
                     </div>
                     <div className={'flex flex-col items-center justify-center'}>
                         <div className={'w-40 h-40 bg-secondaryDark rounded-full'}>
                             <Image src={'/assets/images/achievements/3.png'} alt={'Achievement'} width={200} height={200} className={'rounded-full'}/>
                         </div>
-                        <h1 className={'text-xl font-semibold text-center text-secondaryDark mt-2'}>Achievement 3</h1>
+                        <h1 className={'text-xs w-2/3 text-primary font-semibold text-center text-secondaryDark mt-4 text-justify'}>The team of women innovators of the University was recently awarded the Lilavati Award 2021-22 on Women Empowerment by AICTE. The award carries a cash prize of Rs. 75,000 and an appreciation certification.</h1>
                     </div>
                     <div className={'flex flex-col items-center justify-center'}>
                         <div className={'w-40 h-40 bg-secondaryDark rounded-full'}>
                             <Image src={'/assets/images/achievements/4.png'} alt={'Achievement'} width={200} height={200} className={'rounded-full'}/>
                         </div>
-                        <h1 className={'text-xl font-semibold text-center text-secondaryDark mt-2'}>Achievement 4</h1>
+                        <h1 className={'text-xs text-secondary font-semibold text-justify mt-4 w-2/3'}>Dr. Sushil Kumar Panwar won second prize in the three-day State Level YRC Orientation Workshop for YRC University Programme Coordinators and Counsellors on YRC Guidelines and Activities held from August 26 to 28,2022.</h1>
                     </div>
                     <div className={'flex flex-col items-center justify-center'}>
                         <div className={'w-40 h-40 bg-secondaryDark rounded-full'}>
                             <Image src={'/assets/images/achievements/5.png'} alt={'Achievement'} width={200} height={200} className={'rounded-full'}/>
                         </div>
-                        <h1 className={'text-xl font-semibold text-center text-secondaryDark mt-2'}>Achievement 5</h1>
+                        <h1 className={'text-xs text-primary font-semibold text-justify w-2/3 text-secondaryDark mt-4'}>The University & The University Computer Centre had set-up 'COVID-19 Help-Desk' to provide a Common Resource Platform for COVID patients with a dedicated team of over 200 student volunteers to assist critically ill patients by arranging medical facilities.
+                            </h1>
                     </div>
                     <div className={'flex flex-col items-center justify-center'}>
                         <div className={'w-40 h-40 bg-secondaryDark rounded-full'}>
                             <Image src={'/assets/images/achievements/6.png'} alt={'Achievement'} width={200} height={200} className={'rounded-full'}/>
                         </div>
-                        <h1 className={'text-xl font-semibold text-center text-secondaryDark mt-2'}></h1>
+                        <h1 className={'text-xs text-justify w-2/3 font-semibold text-secondary mt-4'}>The university has been awarded the 'Youth Red Cross Shield', 'Youth Red Cross Award', 'Voluntary Blood Donation Award', and a 'Souvenir' by the Haryana State Branch of Indian Red Cross Society (IRCS) in recognition of the University's outstanding contribution in voluntary blood donation.</h1>
                     </div>
                 </Carousel>
             </div>
