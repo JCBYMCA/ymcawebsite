@@ -12,7 +12,7 @@ const ProfileCard = () => {
             </div>
             <div className={'flex flex-col space-y-6 mt-10'}>
                 <div className={'flex'}>
-                    <EmailIcon className={'text-gray-700'}/>
+                    <EmailIcon className={'text-gray-700 mr-1'}/>
                     <h1>neelamduhan@jcboseust.ac.in</h1>
                 </div>
                 <div className={'flex'}>
@@ -23,7 +23,7 @@ const ProfileCard = () => {
                     <NearMeIcon className={'text-gray-700'}/>
                     <h1>054 Victor Pass, Alexandramouth, NV 27551</h1>
                 </div>
-                    <button className={'py-3 w-40 px-4 bg-secondaryLight text-white text-sm '}>
+                    <button className={'py-3 w-40 px-4 bg-secondaryLight text-white text-sm hover:scale-105 duration-200 hover:bg-secondary rounded '}>
                         Download CV
                         <FilePresentIcon fontSize={'small'}/>
                     </button>

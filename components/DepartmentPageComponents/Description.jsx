@@ -1,19 +1,19 @@
 import Image from "next/image";
-import {motion} from "framer-motion";
 
+import {motion} from "framer-motion";
 const Description = () => {
     return (
         <motion.div
             initial={{
                 opacity:0,
-                y:-150
+                y:150
             }}
             whileInView={{
                 opacity:1,
                 y:0
             }}
             transition={{
-                duration:1,
+                duration:0.5,
             }}
             viewport={{
                 margin:'0px 0px -50px 0px',
