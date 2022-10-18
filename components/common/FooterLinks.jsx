@@ -64,7 +64,7 @@ const FooterLinks = () => {
             </div>
             <div className={'flex flex-col text-left space-y-6 md:w-1/4'}>
                 <div className={'w-full border-b-2 pb-2 border-secondaryLight'}>
-                    <h1 className={'font-bold'}>{t('Quick Links')}</h1>
+                    <h1 className={'font-bold'}>{t('Explore more')}</h1>
                 </div>
                 <ul className={'text-gray-400'}>
                     <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Officer\'s Contacts')}</li>
@@ -80,7 +80,7 @@ const FooterLinks = () => {
             </div>
             <div className={'flex flex-col text-left space-y-6 md:w-1/4'}>
                 <div className={'w-full border-b-2 pb-2 border-secondaryLight'}>
-                    <h1 className={'font-bold'}>{t('Quick Links')}</h1>
+                    <h1 className={'font-bold'}>{t('Explore more')}</h1>
                 </div>
                 <ul className={'text-gray-400'}>
                     <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('360 Degree Feedback')}</li>

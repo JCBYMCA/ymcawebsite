@@ -32,7 +32,7 @@ const  DepartmentChairperson = () => {
             </div>
             <a href={'#'}><h1 className={'text-black font-bold text-2xl'}>Prof. Atul Mishra</h1></a>
             <a href={'#'}><h1 className={'text-black font-light mb-2'}>Chairperson</h1></a>
-            <button className={' rounded-lg p-1 bg-primaryLight text-white hover:scale-105 duration-200 hover:bg-primary'}>Read More</button>
+            <button className={' rounded-lg p-1 bg-primaryLight text-white hover:scale-105 duration-200 hover:bg-primary'} onClick={''}>Read More</button>
 
         </motion.div>
 
