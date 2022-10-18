@@ -5,7 +5,7 @@ import Image from "next/image";
 const responsive = {
     desktop: {
         breakpoint: { max: 3000, min: 1024 },
-        items: 4,
+        items: 5,
 
     },
     tablet: {
@@ -40,7 +40,7 @@ const Achievements = () => {
                     // customTransition="all .5"
                     transitionDuration={500}
                     containerClass="carousel-container"
-                    removeArrowOnDeviceType={["tablet", "mobile","desktop"]}
+                    removeArrowOnDeviceType={["tablet", "mobile",]}
                     deviceType={"desktop"}
                     dotListClass="custom-dot-list-style"
                     itemClass="carousel-item-padding-40-px"
@@ -79,7 +79,7 @@ const Achievements = () => {
                         <div className={'w-40 h-40 bg-secondaryDark rounded-full'}>
                             <Image src={'/assets/images/achievements/6.png'} alt={'Achievement'} width={200} height={200} className={'rounded-full'}/>
                         </div>
-                        <h1 className={'text-xl font-semibold text-center text-secondaryDark mt-2'}>Achievement 6</h1>
+                        <h1 className={'text-xl font-semibold text-center text-secondaryDark mt-2'}></h1>
                     </div>
                 </Carousel>
             </div>

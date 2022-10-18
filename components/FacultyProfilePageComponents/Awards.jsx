@@ -1,8 +1,8 @@
 const Awards = () => {
     return (
-        <div className={'mt-10 flex flex-col text-justify border-b-4 border-secondaryLight pb-10'}>
-            <h1 className={'text-2xl font-bold'}>Awards</h1>
-            <ul className={'list-disc text-lg mt-5 font-thin'}>
+        <div className={'mt-5 flex flex-col text-justify border-b-4 border-secondaryLight pb-6'}>
+            <h1 className={'text-xl font-bold'}>Awards</h1>
+            <ul className={'list-disc text-sm mt-3 font-thin'}>
                 <li>AICTE Visvesarya Best Teacher awardee by Education Minister, India in 2021 for contribution in Technical Education</li>
                 <li>Governor Chancellor Gold Medal award by Hon’ble Governor Haryana for teaching excellence in 2021</li>
                 <li>Awarded by District administration and IMA for Jeevisha Tele-consultancy services during COVID in 2021</li>

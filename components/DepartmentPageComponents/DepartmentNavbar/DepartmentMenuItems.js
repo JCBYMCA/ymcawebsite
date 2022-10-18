@@ -75,18 +75,32 @@ export const departmentMenuItems = [
         title: 'Scheme & Syllabus',
     },
     {
-        title: 'Faculty',
+        title: 'Staff',
         submenu: [
             {
-                title: 'Faculty Details',
-                link: '/faculty'
+                title: 'Teaching Staff',
+                submenu: [
+                    {
+                        title: 'Faculty Details'
+                    },
+                    {
+                        title: 'Faculty Awards'
+                    },
+                    {
+                        title: 'Faculty Contributions'
+                    }
+
+                ]
+                // title: 'Faculty Details',
+                // link: '/faculty'
             },
             {
-                title: 'Faculty Awards'
+                title: 'Lab/Workshop Staff'
             },
             {
-                title: 'Faculty Contributions'
+                title: 'Non-Teaching Staff'
             }
+
         ]
     },
     {
