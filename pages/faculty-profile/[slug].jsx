@@ -1,6 +1,12 @@
 import ProfileCard from "../../components/FacultyProfilePageComponents/ProfileCard";
 import Head from "../../components/FacultyProfilePageComponents/Head";
 import Biography from "../../components/FacultyProfilePageComponents/Biography";
+import EducationQualifications from "../../components/FacultyProfilePageComponents/EducationQualifications";
+import AreaofResearch from "../../components/FacultyProfilePageComponents/AreaofResearch";
+import PatentsGrants from "../../components/FacultyProfilePageComponents/Patentsgrants";
+import ProfessionalMembership from "../../components/FacultyProfilePageComponents/ProfessionalMembership";
+import Awards from "../../components/FacultyProfilePageComponents/Awards";
+import ResearchPublications from "../../components/FacultyProfilePageComponents/ResearchPublications";
 
 const FacultyProfile = () => {
 
@@ -12,6 +18,12 @@ const FacultyProfile = () => {
         <div className={'w-2/3'}>
             <Head/>
             <Biography/>
+            <EducationQualifications/>
+            <AreaofResearch/>
+            <PatentsGrants/>
+            <ProfessionalMembership/>
+            <Awards/>
+            <ResearchPublications/>
         </div>
     </div>
   );

@@ -17,7 +17,7 @@ const ProfileCard = ({image, name, designation}) => {
                 y:0
           }}
             transition={{
-                duration:0.5,
+                duration:1,
             }}
           viewport={{
               margin:'0px 0px -50px 0px',

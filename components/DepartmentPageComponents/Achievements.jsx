@@ -5,7 +5,7 @@ import Image from "next/image";
 const responsive = {
     desktop: {
         breakpoint: { max: 3000, min: 1024 },
-        items: 3,
+        items: 4,
 
     },
     tablet: {
@@ -21,10 +21,10 @@ const responsive = {
 
 const Achievements = () => {
     return (
-        <div className={'bg-white'}>
+        <div className={'bg-white mt-8 mb-8'}>
             <div className={'container mx-auto'}>
                 <div className={'flex flex-col items-center justify-center'}>
-                    <h1 className={'text-3xl font-semibold text-center text-secondaryDark'}>Achievements</h1>
+                    <h1 className={'text-3xl font-semibold text-center text-secondary mb-4 underline underline-offset-8 '}>Departmental Achievements</h1>
                     <div className={'w-20 h-1 bg-secondaryDark my-2'}/>
                 </div>
                 <Carousel
@@ -40,7 +40,7 @@ const Achievements = () => {
                     // customTransition="all .5"
                     transitionDuration={500}
                     containerClass="carousel-container"
-                    removeArrowOnDeviceType={["tablet", "mobile"]}
+                    removeArrowOnDeviceType={["tablet", "mobile","desktop"]}
                     deviceType={"desktop"}
                     dotListClass="custom-dot-list-style"
                     itemClass="carousel-item-padding-40-px"
