@@ -4,7 +4,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import FacebookIcon from '@mui/icons-material/Facebook'
 import Image from "next/image";
-const DepartmentChairperson = () => {
+const  DepartmentChairperson = () => {
     return (
         <div className={'flex flex-col bg-primaryLight bg-opacity-90 p-4 items-center justify-center rounded-xl shadow-2xl'}>
             <div>
