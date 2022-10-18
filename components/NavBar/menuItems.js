@@ -1,7 +1,7 @@
 export const menuItems = [
-    {
-        title: 'Home',
-    },
+    // {
+    //     title: 'Home',
+    // },
     {
         title: 'About Us',
         submenu: [
@@ -266,9 +266,76 @@ export const menuItems = [
             },
             {
                 title: 'Faculties',
+                submenu: [
+                    {
+                        title: 'Engineering & Technology',
+                    },
+                    {
+                        title: 'Management Studies',
+                    },
+                    {
+                        title: 'Sciences',
+                    },
+                    {
+                        title: 'Informatics and Computing',
+                    },
+                    {
+                        title: 'Liberal Arts & Media Studies',
+                    },
+                    {
+                        title: 'Life Sciences',
+                    },
+                    {
+                        title: 'Interdisciplinary Studies & Research',
+                    },
+                ]
             },
             {
                 title: 'Departments',
+                submenu: [
+                    {
+                        title: 'Computer Engineering'
+                    },
+                    {
+                        title: 'Computer Applications'
+                    },
+                    {
+                        title: 'Electrical Engineering'
+                    },
+                    {
+                        title: 'Electronics Engineering'
+                    },
+                    {
+                        title: 'Mechanical Engineering'
+                    },
+                    {
+                        title: 'Management Studies'
+                    },
+                    {
+                        title: 'Environmental Sciences & Engineering'
+                    },
+                    {
+                        title: 'Civil Engineering'
+                    },
+                    {
+                        title: 'Physics'
+                    },
+                    {
+                        title: 'Chemistry'
+                    },
+                    {
+                        title: 'Mathematics'
+                    },
+                    {
+                        title: 'Communication & Media Technology'
+                    },
+                    {
+                        title: 'Life Sciences'
+                    },
+                    {
+                        title: 'Centre for Energy Studies'
+                    }
+                ]
             },
             {
                 title: 'Community College of Skill Development',
@@ -342,6 +409,17 @@ export const menuItems = [
             },
             {
                 title: 'Announcements'
+            }
+        ]
+    },
+    {
+        title: 'Affiliated Colleges',
+        submenu:[
+            {
+                title: 'List of Affiliated Colleges'
+            },
+            {
+                title: 'Scheme & Syllabus for Affiliated Colleges'
             }
         ]
     },

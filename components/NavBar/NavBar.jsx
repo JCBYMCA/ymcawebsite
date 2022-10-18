@@ -49,7 +49,7 @@ const NavBar = ({isHome, isDepartment}) => {
             {/*    <h1 className={'uppercase cursor-pointer hover:underline decoration-primary decoration-4 duration-300 underline-offset-4'}>{t('Resources')}</h1>*/}
             {/*</div>*/}
 
-            {isDepartment ? <DepartmentNavbar/> : <NavBarMenu menuItems={menuItems} className={'ml-auto mr-20'} translations={'home.navbar'} />}
+            {isDepartment ? <DepartmentNavbar/> : <NavBarMenu menuItems={menuItems} className={'ml-auto mr-0'} translations={'home.navbar'} />}
 
 
             <div className={'flex md:hidden ml-auto mr-2'}>

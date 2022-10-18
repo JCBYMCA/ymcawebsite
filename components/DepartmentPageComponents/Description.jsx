@@ -41,11 +41,11 @@ const Description = () => {
                     learners.
                 </p>
                 <div className={'flex mt-4 space-x-8'}>
-                <div className={'text-justify w-[50rem] border-2 p-4 bg-primaryLight bg-opacity-80 rounded-lg drop-shadow-2xl hover:scale-105'}>
+                <div className={'text-justify w-[50rem] border-2 p-4 bg-primaryLight bg-opacity-80 rounded-lg drop-shadow-2xl hover:scale-105 duration-200'}>
                     <h1 className={'text-xl font-bold text-center underline mb-2 '}>MISSION</h1>
                     The department aims to make a place at both national and international level by producing high quality ethically rich computer engineers conversant with the state-of-the-art technology with the ability to adapt the upcoming technologies to cater to the ever changing industrial demands and societal needs.  It endeavours to establish itself as a centre of excellence by contributing to research areas having IT impact on the people’s life and nation’s growth.
                 </div>
-                    <div className={'text-justify w-[50rem] border-2 p-4 bg-primaryLight bg-opacity-80 rounded-lg drop-shadow-2xl hover:scale-105'}>
+                    <div className={'text-justify w-[50rem] border-2 p-4 bg-primaryLight bg-opacity-80 rounded-lg drop-shadow-2xl hover:scale-105 duration-200'}>
                         <h1 className={'text-xl font-bold text-center underline mb-2'}>VISION</h1>
                 <ul className={'list-disc pl-4'}>
                     <li>To provide the future leaders in the area of computer engineering and information technology through the development of human intellectual potential to its fullest extent. </li>
