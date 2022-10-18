@@ -3,12 +3,23 @@ import {useTranslations} from "next-intl";
 import {menuItems} from "./menuItems";
 import MenuItem from "../common/MenuItem";
 import {useScroll} from "framer-motion";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import MenuIcon from '@mui/icons-material/Menu';
 import NavBarMenu from "../common/NavBarMenu";
 import DepartmentNavbar from "../DepartmentPageComponents/DepartmentNavbar/DepartmentNavbar";
+import {useRouter} from "next/router";
 
-const NavBar = ({isHome, isDepartment}) => {
+const NavBar = () => {
+    const router = useRouter();
+    const [isHome, setIsHome] = useState(false);
+    const [isDepartment, setIsDepartment] = useState(false);
+    useEffect(() => {
+        if(router.pathname === '/')
+            setIsHome(true);
+        else if(router.pathname === '/department')
+            setIsDepartment(true);
+    }, [router.pathname])
+
     const t = useTranslations("home.navbar");
     const {scrollY, scrollYProgress} = useScroll();
     const [isWhite, setIsWhite] = useState(!isHome);

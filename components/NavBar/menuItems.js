@@ -294,7 +294,8 @@ export const menuItems = [
                 title: 'Departments',
                 submenu: [
                     {
-                        title: 'Computer Engineering'
+                        title: 'Computer Engineering',
+                        link: "/department"
                     },
                     {
                         title: 'Computer Applications'

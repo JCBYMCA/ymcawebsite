@@ -78,7 +78,8 @@ export const departmentMenuItems = [
         title: 'Faculty',
         submenu: [
             {
-                title: 'Faculty Details'
+                title: 'Faculty Details',
+                link: '/faculty'
             },
             {
                 title: 'Faculty Awards'
