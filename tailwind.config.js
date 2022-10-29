@@ -24,8 +24,9 @@ module.exports = {
       },
       backgroundImage: theme => ({
         'feature-bg': "url('/assets/images/featureBg.png')",
-        'feature-bg-blue': "url('/assets/images/featureBgBlue.svg')",
-        'feature-bg-red': "url('/assets/images/featureBgRed.svg')",
+        'feature-bg-blue': "url('/assets/images/blue_card.svg')",
+        'feature-bg-red': "url('/assets/images/red_card.svg')",
+        'feature-bg-cards': "url('/assets/images/cards.svg')",
         'notice-bg': "url('/assets/images/noticeBg.png')",
         'computer-department-bg-1': "url('/assets/images/department/1.png')",
         'computer-department-bg-2': "url('/assets/images/department/2.png')",

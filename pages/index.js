@@ -18,6 +18,7 @@ import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 import MovieIcon from '@mui/icons-material/Movie';
 import LocalLibraryIcon from '@mui/icons-material/LocalLibrary';
 import LocationCityIcon from '@mui/icons-material/LocationCity';
+import Recruiters from "../components/HomePageComponents/Recruiters";
 
 const Home = () => {
     const t = useTranslations("home");
@@ -130,7 +131,7 @@ const Home = () => {
                             duration: 1,
                             type: 'spring',
                         }}
-                        className={'mt-auto flex overflow-x-scroll overflow-y-clip hide-scroll'}>
+                        className={'mt-auto flex bg-feature-bg-cards  bg-no-repeat bg-contain bg-bottom overflow-x-scroll overflow-y-clip hide-scroll'}>
                         <FeatureCard title={"Campus Life"} icon={<LocationCityIcon className={'mx-auto'}/>} description={"Campus Life description"} index={0}/>
                         <FeatureCard title={"Placements"} icon={<WorkIcon className={'mx-auto'}/>} description={"Placements description"} index={1}/>
                         <FeatureCard title={"Centres of Excellence"} icon={<SchoolIcon className={'mx-auto'}/>} index={2} description={"Centres of Excellence description"}/>
@@ -144,6 +145,7 @@ const Home = () => {
 
 
             </div>
+            <Recruiters/>
         </div>
         <FooterLinks/>
         </>

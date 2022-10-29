@@ -449,7 +449,7 @@ export const menuItems = [
         ]
     },
     {
-        title: 'Affiliated Colleges',
+        title: 'Affiliations',
         submenu:[
             {
                 title: 'List of Affiliated Colleges'

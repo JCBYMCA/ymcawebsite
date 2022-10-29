@@ -4,7 +4,7 @@ import {useTranslations} from "next-intl";
 const FeatureCard = ({ title, description, icon, link, index }) => {
     const t = useTranslations("home.featureCard");
     return (
-        <div className={`bg-no-repeat items-center bg-opacity-80 flex flex-col text-white w-1/5 bg-opacity-30 md:h-72 bg-auto mt-20 ${index%2===0 ? 'bg-feature-bg-blue' : 'bg-feature-bg-red'}`}>
+        <div className={`bg-no-repeat items-center bg-opacity-80 flex flex-col text-white w-1/5 bg-opacity-30 md:h-72 bg-auto mt-20 `}>
             {/*TODO make cards responsive too*/}
             <div className={'hidden h-full md:flex mt-14 w-full items-center flex flex-col px-1 md:px-4'}>
                 <div className={'mx-auto flex'}>
