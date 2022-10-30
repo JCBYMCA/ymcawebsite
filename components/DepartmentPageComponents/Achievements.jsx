@@ -92,14 +92,14 @@ const Achievements = () => {
                         <div className={'w-40 h-40 bg-secondaryDark rounded-full'}>
                             <Image src={'/assets/images/achievements/5.png'} alt={'Achievement'} width={200} height={200} className={'rounded-full'}/>
                         </div>
-                        <h1 className={'text-xs text-primary font-semibold text-justify w-2/3 text-secondaryDark mt-4'}>The University & The University Computer Centre had set-up 'COVID-19 Help-Desk' to provide a Common Resource Platform for COVID patients with a dedicated team of over 200 student volunteers to assist critically ill patients by arranging medical facilities.
+                        <h1 className={'text-xs text-primary font-semibold text-justify w-2/3 text-secondaryDark mt-4'}>The University & The University Computer Centre had set-up &apos;COVID-19 Help-Desk&apos; to provide a Common Resource Platform for COVID patients with a dedicated team of over 200 student volunteers to assist critically ill patients by arranging medical facilities.
                             </h1>
                     </div>
                     <div className={'flex flex-col items-center justify-center'}>
                         <div className={'w-40 h-40 bg-secondaryDark rounded-full'}>
                             <Image src={'/assets/images/achievements/6.png'} alt={'Achievement'} width={200} height={200} className={'rounded-full'}/>
                         </div>
-                        <h1 className={'text-xs text-justify w-2/3 font-semibold text-secondary mt-4'}>The university has been awarded the 'Youth Red Cross Shield', 'Youth Red Cross Award', 'Voluntary Blood Donation Award', and a 'Souvenir' by the Haryana State Branch of Indian Red Cross Society (IRCS) in recognition of the University's outstanding contribution in voluntary blood donation.</h1>
+                        <h1 className={'text-xs text-justify w-2/3 font-semibold text-secondary mt-4'}>The university has been awarded the &apos;Youth Red Cross Shield&apos;, &apos;Youth Red Cross Award&apos;, &apos;Voluntary Blood Donation Award&apos;, and a &apos;Souvenir&apos; by the Haryana State Branch of Indian Red Cross Society (IRCS) in recognition of the University&apos;s outstanding contribution in voluntary blood donation.</h1>
                     </div>
                 </Carousel>
             </div>
