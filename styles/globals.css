@@ -118,7 +118,71 @@ header {
     scrollbar-width: none;  /* Firefox */
 }
 
+/* Feature Card css (homepage) */
+.fbox-container {
+    display: flex;
+    height: fit-content;
+}
+.fbox {
+    overflow: hidden;
+    width: calc(100%/7);
+    position: relative;
+    color: white;
+    text-align: center;
+}
+.section-b {
+    /* max-width: 200px; */
+    /* min-height: 300px; */
+    height: 100%;
+    position: relative;
+}
+.section-a {
+    /* width: 400px; */
+    height: 100px;
+    transform: rotate(-12deg);
+    margin-bottom: -50px;
+    margin-top: 100px;
+    margin-right: -100px;
+}
+/* .fbox:nth-of-type(odd), .fbox:nth-of-type(odd) p {
+    transform: rotateY(180deg);
+} */
+.fbox-odd, .fbox-odd .section-b {
+    transform: rotateY(180deg);
+}
+.fbox-even .section-a, .fbox-even .section-b {
+    background-color: rgb(25, 25, 124);
+}
+.fbox-odd .section-a, .fbox-odd .section-b {
+    background-color: rgb(175, 34, 29);
+}
+/* .fbox:nth-of-type(even) .section-a, .fbox:nth-of-type(even) .section-b {
+    background-color: rgb(0, 0, 88);
+}
+.fbox:nth-of-type(odd) .section-a, .fbox:nth-of-type(odd) .section-b {
+    background-color: rgb(216, 0, 0);
+} */
 
+@media all and (max-width: 800px) {
+    .fbox-container {
+        flex-direction: column;
+        /* flex-wrap: nowrap;
+        overflow-x: scroll; */
+    }
+
+    .fbox {
+        min-width: 100%;
+        margin: 0;
+    }
+
+    .section-a {
+        transform: rotate(0deg);
+        margin-bottom: -50px;
+        margin-top: 0;
+        margin-right: 0;
+        display: none;
+    }
+}
 /*Next Image CSS*/
 .custom-img {
     object-fit: contain;

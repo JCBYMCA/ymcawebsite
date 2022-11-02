@@ -75,8 +75,8 @@ const Home = () => {
             </div>
 
 
-            <div className={'md:h-[35.8rem] bg-feature-bg bg-no-repeat bg-fixed bg-cover bg-center '}>
-                <div className={'backdrop-brightness-50 md:h-[35.8rem] flex flex-col'}>
+            <div className={'bg-feature-bg bg-no-repeat bg-fixed bg-cover bg-center '}>
+                <div className={'backdrop-brightness-50 flex flex-col'}>
                     <div className={'mt-20 font-semibold'}>
                         <motion.h1
                             initial={{
@@ -131,7 +131,7 @@ const Home = () => {
                             duration: 1,
                             type: 'spring',
                         }}
-                        className={'mt-auto flex bg-feature-bg-cards  bg-no-repeat bg-contain bg-bottom overflow-x-scroll overflow-y-clip hide-scroll'}>
+                        className={'fbox-container'}>
                         <FeatureCard title={"Campus Life"} icon={<LocationCityIcon className={'mx-auto'}/>} description={"Campus Life description"} index={0}/>
                         <FeatureCard title={"Placements"} icon={<WorkIcon className={'mx-auto'}/>} description={"Placements description"} index={1}/>
                         <FeatureCard title={"Centres of Excellence"} icon={<SchoolIcon className={'mx-auto'}/>} index={2} description={"Centres of Excellence description"}/>
