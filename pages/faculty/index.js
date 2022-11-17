@@ -3,11 +3,13 @@ import FacultyCard from "../../components/FacultyPageComponents/FacultyCard";
 import DepartmentContact from "../../components/FacultyPageComponents/DepartmentContact";
 import QuickLinks from "../../components/common/QuickLinks";
 import Image from "next/image";
+import FacultyNavbar from "../../components/FacultyPageComponents/FacultyNavbar/FacultyNavbar";
 
 
 const FacultyPage = () => {
     return (
         <div>
+            <FacultyNavbar/>
 
            <div className={'flex justify-between  px-32 mt-16'}>
             <div className={'flex flex-col'}>

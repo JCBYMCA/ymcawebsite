@@ -8,7 +8,7 @@ function MyApp({ Component, pageProps }) {
   return (
       <NextIntlProvider messages={pageProps.messages}>
           <TopBar/>
-          <NavBar/>
+          {/*<NavBar/>*/}
           <Component {...pageProps} />
           <Footer/>
       </NextIntlProvider>

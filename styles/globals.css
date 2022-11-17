@@ -151,10 +151,10 @@ header {
     transform: rotateY(180deg);
 }
 .fbox-even .section-a, .fbox-even .section-b {
-    background-color: rgb(25, 25, 124);
+    background-color: #2D5F9E;
 }
 .fbox-odd .section-a, .fbox-odd .section-b {
-    background-color: rgb(175, 34, 29);
+    background-color: #640100;
 }
 /* .fbox:nth-of-type(even) .section-a, .fbox:nth-of-type(even) .section-b {
     background-color: rgb(0, 0, 88);
