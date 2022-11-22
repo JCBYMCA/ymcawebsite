@@ -18,6 +18,7 @@ import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 import MovieIcon from '@mui/icons-material/Movie';
 import LocalLibraryIcon from '@mui/icons-material/LocalLibrary';
 import LocationCityIcon from '@mui/icons-material/LocationCity';
+import Recruiters from "../components/HomePageComponents/Recruiters";
 
 const Home = () => {
     const t = useTranslations("home");
@@ -144,6 +145,7 @@ const Home = () => {
 
 
             </div>
+            <Recruiters/>
         </div>
         <FooterLinks/>
         </>
