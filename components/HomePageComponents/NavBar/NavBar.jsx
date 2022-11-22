@@ -1,15 +1,15 @@
 import Image from "next/image";
 import {useTranslations} from "next-intl";
 import {menuItems} from "./menuItems";
-import MenuItem from "../common/MenuItem";
+import MenuItem from "../../common/MenuItem";
 import {useScroll} from "framer-motion";
 import {useEffect, useState} from "react";
 import MenuIcon from '@mui/icons-material/Menu';
-import NavBarMenu from "../common/NavBarMenu";
-import DepartmentNavbar from "../DepartmentPageComponents/DepartmentNavbar/DepartmentNavbar";
+import NavBarMenu from "../../common/NavBarMenu";
+import DepartmentNavbar from "../../DepartmentPageComponents/DepartmentNavbar/DepartmentNavbar";
 import {useRouter} from "next/router";
 import HomeIcon from '@mui/icons-material/Home';
-import FacultyNavbar from "../FacultyProfilePageComponents/FacultyNavbar";
+import FacultyNavbar from "../../FacultyProfilePageComponents/FacultyNavbar";
 
 const NavBar = () => {
     const router = useRouter();
@@ -37,7 +37,7 @@ const NavBar = () => {
 
     const t = useTranslations("home.navbar");
     const {scrollY, scrollYProgress} = useScroll();
-    const [isWhite, setIsWhite] = useState(!isHome);
+    const [isWhite, setIsWhite] = useState(false);
 
     scrollY.onChange((y) => {
         if(isHome)
@@ -50,34 +50,52 @@ const NavBar = () => {
         }}>
             <div className={'flex '}>
                 <Image src='/assets/images/logo.png' alt={'Logo'} width={90} height={90} />
-                {!isFaculty ? (
-                    <>
-                        <div className={'flex flex-col'}>
-                            <div className={'flex flex-col font-bold text-xl -space-y-1 tracking-wider mt-5'}>
-                                <h1 className={'text-xs md:text-xl'}>{t("JCBoseUst")}</h1>
-                                {/*<h1 className={'text-xs md:text-xl'}>of Science & Technology</h1>*/}
-                                {/*<h1 className={'text-xs md:text-xl'}>YMCA, Faridabad</h1>*/}
-                            </div>
-                            <div className={''}>
-                                <h1 className={`text-xs md:text-xs ${!isWhite ? "" : "text-secondaryLight"}`}>{t("UST description 1")}</h1>
-                                <h1 className={`text-xs ${!isWhite ? "" : "text-secondaryLight"}`}>{t("UST description 2")}</h1>
-                            </div>
-                        </div>
-                        <div className={'ml-auto p-1 mr-5'}>
-                            <Image src={'/assets/images/jcBosePhoto.png'} width={75} height={75}
-                                   className={'rounded-full'}/>
-                        </div>
-                    </>
-                ) : (
+                {/*{!isFaculty ? (*/}
+                {/*    <>*/}
+                {/*        <div className={'flex flex-col'}>*/}
+                {/*            <div className={'flex flex-col font-bold text-xl -space-y-1 tracking-wider mt-5'}>*/}
+                {/*                <h1 className={'text-xs md:text-xl'}>{t("JCBoseUst")}</h1>*/}
+                {/*                /!*<h1 className={'text-xs md:text-xl'}>of Science & Technology</h1>*!/*/}
+                {/*                /!*<h1 className={'text-xs md:text-xl'}>YMCA, Faridabad</h1>*!/*/}
+                {/*            </div>*/}
+                {/*            <div className={''}>*/}
+                {/*                <h1 className={`text-xs md:text-xs ${!isWhite ? "" : "text-secondaryLight"}`}>{t("UST description 1")}</h1>*/}
+                {/*                <h1 className={`text-xs ${!isWhite ? "" : "text-secondaryLight"}`}>{t("UST description 2")}</h1>*/}
+                {/*            </div>*/}
+                {/*        </div>*/}
+                {/*        <div className={'ml-auto p-1 mr-5'}>*/}
+                {/*            <Image src={'/assets/images/jcBosePhoto.png'} width={75} height={75}*/}
+                {/*                   className={'rounded-full'}/>*/}
+                {/*        </div>*/}
+                {/*    </>*/}
+                {/*) : (*/}
+                {/*    <div className={'flex flex-col'}>*/}
+                {/*        <div className={'flex flex-col font-bold -space-y-1 tracking-wider mt-5'}>*/}
+                {/*            <h1 className={'text-xs md:text-2xl mb-1'}>Department of Computer Engineering - Faculty</h1>*/}
+                {/*            <h1 className={'text-sm text-secondaryLight'}>J.C. Bose University of Science and Technology ,YMCA, Faridabad</h1>*/}
+                {/*            /!*<h1 className={'text-xs md:text-xl'}>of Science & Technology</h1>*!/*/}
+                {/*            /!*<h1 className={'text-xs md:text-xl'}>YMCA, Faridabad</h1>*!/*/}
+                {/*        </div>*/}
+                {/*    </div>*/}
+                {/*)}*/}
+
+                <>
                     <div className={'flex flex-col'}>
-                        <div className={'flex flex-col font-bold -space-y-1 tracking-wider mt-5'}>
-                            <h1 className={'text-xs md:text-2xl mb-1'}>Department of Computer Engineering - Faculty</h1>
-                            <h1 className={'text-sm text-secondaryLight'}>J.C. Bose University of Science and Technology ,YMCA, Faridabad</h1>
+                        <div className={'flex flex-col font-bold text-xl -space-y-1 tracking-wider mt-5'}>
+                            <h1 className={'text-xs md:text-xl'}>{t("JCBoseUst")}</h1>
                             {/*<h1 className={'text-xs md:text-xl'}>of Science & Technology</h1>*/}
                             {/*<h1 className={'text-xs md:text-xl'}>YMCA, Faridabad</h1>*/}
                         </div>
+                        <div className={''}>
+                            <h1 className={`text-xs md:text-xs ${!isWhite ? "" : "text-secondaryLight"}`}>{t("UST description 1")}</h1>
+                            <h1 className={`text-xs ${!isWhite ? "" : "text-secondaryLight"}`}>{t("UST description 2")}</h1>
+                        </div>
                     </div>
-                )}
+                    <div className={'ml-auto p-1 mr-5'}>
+                        <Image src={'/assets/images/jcBosePhoto.png'} width={75} height={75}
+                               className={'rounded-full'}/>
+                    </div>
+                </>
 
             </div>
 
@@ -95,7 +113,8 @@ const NavBar = () => {
                 }}>
                     <HomeIcon className={'ml-auto'}/>
                 </div>
-            {isDepartment ? <DepartmentNavbar/> : isFaculty ? <FacultyNavbar/> : <NavBarMenu menuItems={menuItems} className={'mr-0'} translations={'home.navbar'} />}
+            {/*{isDepartment ? <DepartmentNavbar/> : isFaculty ? <FacultyNavbar/> : <NavBarMenu menuItems={menuItems} className={'mr-0'} translations={'home.navbar'} />}*/}
+                <NavBarMenu menuItems={menuItems} className={'mr-0'} translations={'home.navbar'} />
             </div>
 
 

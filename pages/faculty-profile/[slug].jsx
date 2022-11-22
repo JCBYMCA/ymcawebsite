@@ -7,12 +7,13 @@ import PatentsGrants from "../../components/FacultyProfilePageComponents/Patents
 import ProfessionalMembership from "../../components/FacultyProfilePageComponents/ProfessionalMembership";
 import Awards from "../../components/FacultyProfilePageComponents/Awards";
 import ResearchPublications from "../../components/FacultyProfilePageComponents/ResearchPublications";
-import FacultyNavbar from "../../components/FacultyProfilePageComponents/FacultyNavbar";
+import FacultyNavbar from "../../components/FacultyPageComponents/FacultyNavbar/FacultyNavbar";
 
 const FacultyProfile = () => {
 
     return (
         <div>
+            <FacultyNavbar/>
     <div className={'flex flex-row p-20 space-x-4'}>
         <div className={'w-1/3'}>
             <ProfileCard/>

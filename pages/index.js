@@ -1,4 +1,4 @@
-import NavBar from "../components/NavBar/NavBar";
+import NavBar from "../components/HomePageComponents/NavBar/NavBar";
 import Heading from "../components/HomePageComponents/Heading";
 import {motion, useScroll} from "framer-motion";
 import ScrollHint from "../components/HomePageComponents/ScrollHint";
@@ -28,6 +28,7 @@ const Home = () => {
                 <title>Home - JC Bose University of Science and Technology, YMCA</title>
             </Head>
         <div>
+            <NavBar/>
             <motion.div animate={{
                 backgroundColor:['#000', 'rgba(0,0,0,0)']
             }} className={'md:h-screen h-[40rem] -mt-[9.2rem] -z-10 flex flex-col'}>
