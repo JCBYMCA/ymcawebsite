@@ -36,7 +36,6 @@ const Landing = () => {
             <div className={`py-2 bg-no-repeat duration-200 bg-cover bg-center flex flex-col ${isShow ? "bg-transparent" : "bg-opacity-50 bg-black"}`}>
                 <Carousel
                     additionalTransfrom={0}
-                    arrows
                     autoPlay
                     autoPlaySpeed={5000}
                     centerMode={false}
@@ -82,8 +81,17 @@ const Landing = () => {
                     slidesToSlide={1}
                     swipeable
                 >
-                    <div>
-
+                    <div style={{'textAlign': 'center', 'height': '400px'}}>
+                        <Image src={'/assets/images/achievements/1.png'} alt={'Achievement'} width={1800} height={800} />
+                    </div>
+                    <div style={{'textAlign': 'center', 'height': '400px'}}>
+                        <Image src={'/assets/images/achievements/2.png'} alt={'Achievement'} width={1800} height={800} />
+                    </div>
+                    <div style={{'textAlign': 'center', 'height': '400px'}}>
+                        <Image src={'/assets/images/achievements/3.png'} alt={'Achievement'} width={1800} height={800} />
+                    </div>
+                    <div style={{'textAlign': 'center', 'height': '400px'}}>
+                        <Image src={'/assets/images/achievements/4.png'} alt={'Achievement'} width={1800} height={800} />
                     </div>
                 </Carousel>
                 <div className={`mt-auto flex items-center ${isShow ? 'mb-1 ml-3' : ''}`}>

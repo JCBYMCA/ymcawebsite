@@ -30,7 +30,7 @@ const FooterLinks = () => {
     const t = useTranslations("home.footer");
     return (
         <div className={'flex flex-col'}>
-        <div className={'bg-black md:h-[27rem] space-y-6 flex flex-col md:flex-row justify-around text-white text-lg space-x-8 p-8 '}>
+        <div className={'md:h-[27rem] space-y-6 flex flex-col md:flex-row justify-around text-white text-lg space-x-8 p-8'} style={{'background': '#0e0e0e'}}>
             <div className={'flex flex-col md:w-1/4'}>
                 <h1 className={'mb-2'}>{t("TEL")}: 0129-2310126</h1>
                 <h1 className={'mb-12'}>{t("EMAIL")}: contact@jcboseust.ac.in</h1>

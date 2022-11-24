@@ -64,10 +64,10 @@ const Home = () => {
                     <AutoScrollFeatures/>
                 </div>
             </div>
-            <div className={'flex flex-col md:flex-row md:h-[36rem] bg-fixed bg-notice-bg bg-no-repeat bg-center bg-cover '}>
-                <div className={'flex flex-col md:flex-row bg-white bg-opacity-70 flex w-full md:h-[35.8rem] py-10 md:px-8'}>
+            <div className={'flex flex-col md:flex-row md:h-[36rem] bg-fixed bg-notice-bg bg-no-repeat bg-center bg-cover'}>
+                <div className={'flex flex-col md:flex-row bg-white bg-opacity-20 flex w-full md:h-[35.8rem] py-10 md:px-8'}>
                     <div className={'md:w-2/3 md:mr-4'}>
-                        <Notices/>
+                        <Notices className={'bg-white bg-opacity-60'} />
                     </div>
                     <div className={'md:w-1/3 ml-4'}>
                         <UpcomingEvents/>
@@ -78,7 +78,7 @@ const Home = () => {
 
             <div className={'bg-feature-bg bg-no-repeat bg-fixed bg-cover bg-center '}>
                 <div className={'backdrop-brightness-50 flex flex-col'}>
-                    <div className={'mt-20 font-semibold'}>
+                    <div className={'mt-40 font-semibold'}>
                         <motion.h1
                             initial={{
                                 opacity:0,
@@ -146,7 +146,7 @@ const Home = () => {
 
 
             </div>
-            <Recruiters/>
+            {/* <Recruiters/> */}
         </div>
         <FooterLinks/>
         </>
