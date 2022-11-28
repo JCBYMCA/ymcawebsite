@@ -23,8 +23,8 @@ const Notices = ({isDepartment, className}) => {
 
     const t = useTranslations("home.notices");
     return(
-        <div className={'rounded-md border-1 border-gray-800 flex flex-col ' + className}>
-            <div className={'rounded-md py-2 text-3xl text-center bg-secondary text-white font-bold'}>
+        <div className={'rounded-md border-gray-800 flex flex-col ' + className}>
+            <div className={'rounded-tl-md rounded-tr-md py-2 text-3xl text-center bg-secondary text-white font-bold'}>
                 {t('heading')}
             </div>
 
