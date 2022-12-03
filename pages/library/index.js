@@ -7,6 +7,7 @@ import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import LibNotices from "../../components/LibraryPageComponents/LibNotices";
 import LibStats from "../../components/LibraryPageComponents/LibStats";
+import NewTitles from "../../components/LibraryPageComponents/NewTitles";
 
 const LibraryPage= ()=> {
     const [value, setValue] = useState('1');
@@ -155,6 +156,7 @@ const LibraryPage= ()=> {
                 <LibNotices/>
                 <LibStats/>
             </div>
+            <NewTitles categories={['Engineering', 'Finance', 'Business', 'Physics', 'Management']} />
         </div>
     )
 }
