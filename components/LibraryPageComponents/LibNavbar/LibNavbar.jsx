@@ -16,13 +16,13 @@ const LibNavbar = () => {
                     <Image src='/assets/images/logo.png' alt={'Logo'} width={110} height={90} />
                     <div className={'flex flex-col'}>
                         <div className={'flex flex-col font-bold text-xl -space-y-1 tracking-wider mt-5'}>
-                            <h1 className={'text-xs md:text-xl font-bold'}>LIBRARY</h1>
+                            <h1 className={'text-xl md:text-2xl font-bold'}>Pt. Deen Dayal Upadhyay Central library</h1>
 
                         </div>
                         <div className={''}>
-                            <h1 className={`text-sm md:text-sm `}>JC Bose University of</h1>
-                            <h1 className={`text-sm `}>Science & Technology,</h1>
-                            <h1 className={'text-sm'}>YMCA</h1>
+                            <h1 className={`text-sm text-secondary font-bold md:text-sm `}>JC Bose University of Science & Technology, YMCA, Faridabad</h1>
+                            {/*<h1 className={`text-sm `}>Science & Technology,</h1>*/}
+                            {/*<h1 className={'text-sm'}>YMCA</h1>*/}
                         </div>
                     </div>
                     <div className={'ml-auto p-1 mr-5'}>
