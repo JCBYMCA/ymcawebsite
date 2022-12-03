@@ -5,6 +5,8 @@ import Tab from '@mui/material/Tab';
 import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
+import LibNotices from "../../components/LibraryPageComponents/LibNavbar/LibNotices";
+import LibStats from "../../components/LibraryPageComponents/LibNavbar/LibStats";
 
 const LibraryPage= ()=> {
     const [value, setValue] = useState('1');
@@ -149,8 +151,9 @@ const LibraryPage= ()=> {
 
                 </div>
             </div>
-            <div className={'p-40 bg-white'}>
-
+            <div className={'mt-16 bg-white flex flex-row justify-around mb-8'}>
+                <LibNotices/>
+                <LibStats/>
             </div>
         </div>
     )
