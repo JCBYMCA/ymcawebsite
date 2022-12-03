@@ -13,16 +13,16 @@ const LibNavbar = () => {
                 zIndex:8000
             }}>
                 <div className={'flex'}>
-                    <Image src='/assets/images/logo.png' alt={'Logo'} width={90} height={90} />
+                    <Image src='/assets/images/logo.png' alt={'Logo'} width={110} height={90} />
                     <div className={'flex flex-col'}>
                         <div className={'flex flex-col font-bold text-xl -space-y-1 tracking-wider mt-5'}>
-                            <h1 className={'text-xs md:text-xl'}>{t("JCBoseUst")}</h1>
-                            {/*<h1 className={'text-xs md:text-xl'}>of Science & Technology</h1>*/}
-                            {/*<h1 className={'text-xs md:text-xl'}>YMCA, Faridabad</h1>*/}
+                            <h1 className={'text-xs md:text-xl font-bold'}>LIBRARY</h1>
+
                         </div>
                         <div className={''}>
-                            <h1 className={`text-xs md:text-xs `}>{t("UST description 1")}</h1>
-                            <h1 className={`text-xs `}>{t("UST description 2")}</h1>
+                            <h1 className={`text-sm md:text-sm `}>JC Bose University of</h1>
+                            <h1 className={`text-sm `}>Science & Technology,</h1>
+                            <h1 className={'text-sm'}>YMCA</h1>
                         </div>
                     </div>
                     <div className={'ml-auto p-1 mr-5'}>

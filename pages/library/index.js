@@ -5,8 +5,8 @@ import Tab from '@mui/material/Tab';
 import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
-import LibNotices from "../../components/LibraryPageComponents/LibNavbar/LibNotices";
-import LibStats from "../../components/LibraryPageComponents/LibNavbar/LibStats";
+import LibNotices from "../../components/LibraryPageComponents/LibNotices";
+import LibStats from "../../components/LibraryPageComponents/LibStats";
 
 const LibraryPage= ()=> {
     const [value, setValue] = useState('1');
@@ -17,7 +17,7 @@ const LibraryPage= ()=> {
     return (
         <div>
             <LibNavbar />
-            <div className={'bg-feature-bg bg-no-repeat bg-fixed bg-cover bg-center '}>
+            <div className={'bg-library-bg bg-no-repeat bg-cover'}>
                 <div className={'backdrop-brightness-50 flex flex-col'}>
                     <div className={'mt-20 font-semibold'}>
                         <motion.h1
@@ -74,7 +74,7 @@ const LibraryPage= ()=> {
                             type: 'spring',
                         }}
                         className={'text-white m-10'}>
-                            <div className={'bg-blue-800 w-2/4 m-auto'}>
+                            <div className={'bg-secondaryLight w-2/4 m-auto'}>
                                 <TabContext value={value}>
                                     <TabList onChange={handleChange} aria-label="Notices Tab" sx={{
                                         marginX: 'auto',
