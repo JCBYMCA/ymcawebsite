@@ -19,7 +19,7 @@ const NewTitles = ({categories}) => {
                     }} className={'bg-transparent'}>
                         {categories.map((category, index) => {
                     return (
-                                    <Tab label={category} value={index + 1} className={'text-white font-semibold focus:text-white'}/>
+                                    <Tab key={index} label={category} value={index + 1} className={'text-white font-semibold focus:text-white'}/>
 
                     )})
                 }
@@ -28,7 +28,7 @@ const NewTitles = ({categories}) => {
                     </TabList>
                     {categories.map((category, index) => {
                         return (
-                            <TabPanel value={index + 1} className={''}>
+                            <TabPanel key={index} value={index + 1} className={''}>
                                 <div className={'flex'}>
                                     <img src={'/assets/images/library/books/1.jpeg'} alt={'book'} className={'w-40 h-64 mx-5'}/>
                                     <img src={'/assets/images/library/books/2.jpeg'} alt={'book'} className={'w-40 h-64 mx-5'}/>
