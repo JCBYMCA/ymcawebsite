@@ -33,7 +33,7 @@ const Landing = () => {
              style={{
             zIndex: 9999
         }}>
-            <div className={`py-2 bg-no-repeat duration-200 bg-cover bg-center flex flex-col ${isShow ? "bg-transparent" : "bg-opacity-50 bg-black"}`}>
+            <div className={`py-1 bg-no-repeat duration-200 bg-cover bg-center flex flex-col ${isShow ? "bg-transparent" : "bg-opacity-50 bg-black"}`}>
                 <Carousel
                     additionalTransfrom={0}
                     autoPlay
@@ -80,25 +80,26 @@ const Landing = () => {
                     sliderClass=""
                     slidesToSlide={1}
                     swipeable
+                    arrows={false}
                 >
-                    <div style={{'textAlign': 'center', 'height': '400px'}}>
-                        <Image src={'/assets/images/achievements/1.png'} alt={'Achievement'} width={1800} height={800} />
+                    <div className={'w-full h-[60vh]'}>
+                        <Image src={'/assets/images/achievements/1.png'} alt={'Achievement'} layout={'fill'} />
                     </div>
-                    <div style={{'textAlign': 'center', 'height': '400px'}}>
-                        <Image src={'/assets/images/achievements/2.png'} alt={'Achievement'} width={1800} height={800} />
+                    <div >
+                        <Image src={'/assets/images/achievements/2.png'} alt={'Achievement'} layout={'fill'} />
                     </div>
-                    <div style={{'textAlign': 'center', 'height': '400px'}}>
-                        <Image src={'/assets/images/achievements/3.png'} alt={'Achievement'} width={1800} height={800} />
+                    <div >
+                        <Image src={'/assets/images/achievements/3.png'} alt={'Achievement'} layout={'fill'}/>
                     </div>
-                    <div style={{'textAlign': 'center', 'height': '400px'}}>
-                        <Image src={'/assets/images/achievements/4.png'} alt={'Achievement'} width={1800} height={800} />
+                    <div>
+                        <Image src={'/assets/images/achievements/4.png'} alt={'Achievement'} layout={'fill'} />
                     </div>
                 </Carousel>
-                <div className={`mt-auto flex items-center ${isShow ? 'mb-1 ml-3' : ''}`}>
+                <div className={`  flex items-center ${isShow ? 'mb-1 ml-3 mt-9  ' : 'absolute bottom-32'}`}>
                     {/*<h1 className={'text-green-500'}>Department of Computer Engineering, Bachelor of Technology</h1>*/}
                     <Image src={'/assets/images/favicon.ico'} alt={'Logo'} width={70} height={70} className={isShow ? "visible" : "invisible"} />
                     <div className={'flex flex-col ml-2'}>
-                        <h1 className={'font-semibold text-3xl'}>Department of Computer Engineering</h1>
+                        <h1 className={'font-semibold text-3xl '}>Department of Computer Engineering</h1>
                         {isShow && <h1 className={'font-semibold text-md text-secondaryLight'}>J.C. Bose University of Science and
                             Technology, YMCA, Faridabad</h1>}
                     </div>
