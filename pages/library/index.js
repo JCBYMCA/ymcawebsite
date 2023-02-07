@@ -144,7 +144,7 @@ const LibraryPage= ()=> {
                             <div className={'p-3 m-3 border-2 text-white w-80'}>Downloads</div>
                             <div className={'p-3 m-3 border-2 text-white w-80'}>Exam Papers</div>
                             <div className={'p-3 m-3 border-2 text-white w-80'}>E-Library</div>
-                            <div className={'p-3 m-3 border-2 text-white w-80'}>Student's Corner</div>
+                            <div className={'p-3 m-3 border-2 text-white w-80'}>Student&apos;s Corner</div>
                             <div className={'p-3 m-3 border-2 text-white w-80'}>Institutional Repository</div>
                             <div className={'p-3 m-3 border-2 text-white w-80'}>Archives</div>
                         </motion.h1>
