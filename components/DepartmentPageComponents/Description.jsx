@@ -19,7 +19,7 @@ const Description = () => {
                 margin:'0px 0px -50px 0px',
                 once: false
             }}
-            className={'flex flex-col w-[60rem] mb-4'}>
+            className={'flex flex-col w-[50rem] mb-4'}>
             {/*<Image src={'/assets/images/1.png'} alt={'Department'} width={800} height={500} />*/}
             {/*generate description text with a heading, subheading and about paragraph along with some bullet points*/}
             <div className={'flex flex-col'}>
