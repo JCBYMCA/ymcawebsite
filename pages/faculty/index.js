@@ -11,8 +11,8 @@ const FacultyPage = () => {
         <div>
             <FacultyNavbar/>
 
-           <div className={'flex justify-between  px-32 mt-16'}>
-            <div className={'flex flex-col'}>
+           <div className={'grid md:grid-cols-2 grid-cols-1 md:px-32 mt-16'}>
+
             <FacultyCard
                 image={'/assets/images/faculty/komalbhatia.png'}
                 name={'Komal Kumar Bhatia'}
@@ -39,15 +39,15 @@ const FacultyPage = () => {
                     image={'/assets/images/faculty/neelamduhan.png'}
                     name={'Neelam Duhan'}
                     designation={'Assistant Professor'}
-                    mail={'neelamduhan@jcboseust.ac.in'}
+                    mail={'bla@gmail.com'}
                     contact={'91-8851221355'}
                     qualf1={'Vituperatoribus efficiantur tempor'}
                     qualf2={'Vituperatoribus efficiantur tempor'}
                     linkedinlink={''}
                     twitterlink={''}
                 />
-            </div>
-            <div className={'flex flex-col  '}>
+
+
                 <FacultyCard
                     image={'/assets/images/faculty/cknagpal.jpg'}
                     name={'C.K Nagpal '}
@@ -74,14 +74,14 @@ const FacultyPage = () => {
                     image={'/assets/images/faculty/harish.jpg'}
                     name={'Harish Kumar'}
                     designation={'Associate Professor'}
-                    mail={'neelamduhan@jcboseust.ac.in'}
+                    mail={'bla@gmail.com'}
                     contact={'91-8851221355'}
                     qualf1={'Vituperatoribus efficiantur tempor'}
                     qualf2={'Vituperatoribus efficiantur tempor'}
                     linkedinlink={''}
                     twitterlink={''}
                 />
-            </div>
+
 
 
         </div>
