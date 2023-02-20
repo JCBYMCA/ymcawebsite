@@ -24,18 +24,19 @@ const Notices = ({isDepartment, className}) => {
     const t = useTranslations("home.notices");
     return(
         <div className={'rounded-md border-gray-800 flex flex-col ' + className}>
-            <div className={'rounded-tl-md rounded-tr-md py-2 text-3xl text-center bg-secondary text-white font-bold'}>
+            <div className={'rounded-tl-md rounded-tr-md py-2 text-xl md:text-3xl text-center bg-secondary text-white font-bold'}>
                 {t('heading')}
             </div>
 
             {!isDepartment ? <TabContext value={value}>
-                <TabList onChange={handleChange} aria-label="Notices Tab" sx={{
+                <TabList onChange={handleChange} aria-label="Notices Tab" className={'md:w-auto w-full'} variant="scrollable" sx={{
                     marginX: 'auto',
                 }}>
-                    <Tab label="All Notices" value="1" className={'font-bold text-black'}/>
-                    <Tab label="Student Notices" value="2" className={'font-bold text-black'}/>
-                    <Tab label="Admission Notices" value="3" className={'font-bold text-black'}/>
-                    <Tab label="Department Notices" value="4" className={'font-bold text-black'}/>
+
+                        <Tab label="All Notices" value="1" className={'font-bold text-sm text-black'}/>
+                        <Tab label="Student Notices" value="2" className={'font-bold text-sm text-black'}/>
+                        <Tab label="Admission Notices" value="3" className={'font-bold text-sm text-black'}/>
+                        <Tab label="Department Notices" value="4" className={'font-bold text-sm text-black'}/>
                 </TabList>
                 <TabPanel value="1">
                     <Notice heading={"Student 1st counselling merit list"}/>

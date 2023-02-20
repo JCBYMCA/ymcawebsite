@@ -45,7 +45,7 @@ const NavBar = () => {
     });
 
     return (
-        <div className={`flex flex-col sticky top-0 bg-[#EBEBEB] ${!isWhite ? "bg-opacity-25 text-white" : "text-black border-1 border-neutral-200"}`} style={{
+        <div className={` flex flex-col sticky top-0 bg-[#EBEBEB] ${!isWhite ? "bg-opacity-25 text-white" : "text-black border-1 border-neutral-200"}`} style={{
             zIndex:8000
         }}>
             <div className={'flex '}>

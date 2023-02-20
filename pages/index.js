@@ -34,7 +34,7 @@ const Home = () => {
             }} className={'md:h-screen h-[40rem] -mt-[9.2rem] -z-10 flex flex-col'}>
 
                 <div>
-                    <video poster={'/assets/images/temp.png'} autoPlay muted loop className={'fixed md:w-full w-screen md:h-screen h-[40rem] brightness-50 -z-30 object-fill'}>
+                    <video poster={'/assets/images/temp.png'} autoPlay muted loop className={'fixed md:w-full w-screen md:h-screen md:mt-[0px] mt-[-4rem] h-[43rem] bright ness-50 -z-30 object-fill'}>
                         <source src="/assets/video/Video.mov" type="video/mp4"/>
                     </video>
                     <Heading/>
@@ -66,10 +66,10 @@ const Home = () => {
             </div>
             <div className={'flex flex-col md:flex-row md:h-[36rem] bg-fixed bg-notice-bg bg-no-repeat bg-center bg-cover'}>
                 <div className={'flex flex-col md:flex-row bg-white bg-opacity-20 flex w-full md:h-[35.8rem] py-10 md:px-8'}>
-                    <div className={'md:w-2/3 md:mr-4'}>
+                    <div className={'md:w-2/3 w-auto md:mr-4'}>
                         <Notices className={'bg-white bg-opacity-60'} />
                     </div>
-                    <div className={'md:w-1/3 ml-4'}>
+                    <div className={'md:w-1/3 w-auto ml-4'}>
                         <UpcomingEvents/>
                     </div>
                 </div>

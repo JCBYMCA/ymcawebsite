@@ -19,7 +19,7 @@ const TopBar = () => {
 
 
     return (
-        <div className={'bg-primaryLight text-xs relative w-full flex h-7 items-center text-white px-5'} style={{
+        <div className={'bg-primaryLight text-xs relative overflow-auto  flex h-7 items-center text-white px-5'} style={{
             zIndex:9000
         }}>
             <div className={'flex space-x-1 items-center'}>
