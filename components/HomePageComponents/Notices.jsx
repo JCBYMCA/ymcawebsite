@@ -40,12 +40,12 @@ const Notices = ({isDepartment, className}) => {
                         <Tab label="Department Notices" value="4" className={'font-bold text-sm text-black'}/>
                 </TabList>
                 <TabPanel value="1">
-                    {notices.map((notice,i)=>(<Notice heading={notice.notice_id} key={i}/>)) /*have implemented it to display the notice id fetched from api , fix the api or explain how to display here*/} 
-                    <Notice heading={"Student 1st counselling merit list"}/>
-                    <Notice heading={"Admission 1st counselling merit list"}/>
-                    <Notice heading={"Department 1st counselling merit list"}/>
-                    <Notice heading={"BTech 1st counselling merit list"}/>
-                    <Notice heading={"BTech 1st counselling merit list"}/>
+                    {notices.map((notice,i)=>(<Notice heading={notice.title} key={i}/>)) /*have implemented it to display the notice id fetched from api , fix the api or explain how to display here*/}
+                    {/*<Notice heading={"Student 1st counselling merit list"}/>*/}
+                    {/*<Notice heading={"Admission 1st counselling merit list"}/>*/}
+                    {/*<Notice heading={"Department 1st counselling merit list"}/>*/}
+                    {/*<Notice heading={"BTech 1st counselling merit list"}/>*/}
+                    {/*<Notice heading={"BTech 1st counselling merit list"}/>*/}
                 </TabPanel>
                 <TabPanel value="2">
                     <Notice heading={"Student 1st counselling merit list"}/>

@@ -1,16 +1,15 @@
 import axios from 'axios';
 
 const api = axios.create({
-    baseURL:  "http://priyanshuverma.tech/", //process.env.APP_API_URL,
     headers: {
-        'Content-type': 'application/json', 
+        'Content-type': 'application/json',
         Accept: 'application/json',
     },
 });
 
 // List of all the endpoints , GET requests
-export const getNotices = (department = "admin") => api.get(`/noticenotice_api/${department}?format=json`);
-export const getEvents = (department = "admin") => api.get(`/eventsapi/${department}?format=json`);
+export const getNotices = (department = "admin") => api.get(`api/proxy/noticenotice_api/${department}?format=json`);
+export const getEvents = (department = "admin") => api.get(`api/proxy/eventsapi/${department}?format=json`);
 
 //Post requests
 //export const getNotices = (data,department = "admin") => api.post(`/noticenotice_api/${department}?format=json`, data);
