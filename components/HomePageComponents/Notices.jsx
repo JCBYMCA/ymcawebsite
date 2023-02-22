@@ -1,11 +1,11 @@
 import {useTranslations} from "next-intl";
-import {useState} from "react";
+import {useState,useEffect} from "react";
 import Box from '@mui/material/Box';
 import Tab from '@mui/material/Tab';
 import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
-
+import { getNotices } from "../../http";
 const Notice = (props) => {
     return(
         <div className={'border-1 cursor-pointer hover:scale-[1.01] duration-200 bg-white border-black rounded-md p-2 my-2'}>
@@ -20,7 +20,8 @@ const Notices = ({isDepartment, className}) => {
     const handleChange = (event, newValue) => {
         setValue(newValue);
     };
-
+    const [notices,setNotices] = useState([]);
+    useEffect(() => {getNotices().then((resp)=>{setNotices(resp.data["Notice List"])})} , [value]) //how do you want to update the values, empty the dependency array if you want to update on every render instead
     const t = useTranslations("home.notices");
     return(
         <div className={'rounded-md border-gray-800 flex flex-col ' + className}>
@@ -39,6 +40,7 @@ const Notices = ({isDepartment, className}) => {
                         <Tab label="Department Notices" value="4" className={'font-bold text-sm text-black'}/>
                 </TabList>
                 <TabPanel value="1">
+                    {notices.map((notice,i)=>(<Notice heading={notice.notice_id} key={i}/>)) /*have implemented it to display the notice id fetched from api , fix the api or explain how to display here*/} 
                     <Notice heading={"Student 1st counselling merit list"}/>
                     <Notice heading={"Admission 1st counselling merit list"}/>
                     <Notice heading={"Department 1st counselling merit list"}/>
