@@ -22,20 +22,6 @@ import Recruiters from "../components/HomePageComponents/Recruiters";
 import {useEffect} from "react";
 
 const Home = () => {
-    useEffect(() => {
-        async function fetchMyAPI() {
-            const response = await fetch(`http://website.jcboseustymca.co.in/api/user/LoginDetails?emailID=test@gmail.com&Password=test`, {
-                method: 'GET',
-                headers: {
-                    'Accept':'*/*'
-                }
-            });
-
-            const data = await response.json();
-            console.log(data);
-        }
-        fetchMyAPI();
-    }, [])
 
     const t = useTranslations("home");
     return (

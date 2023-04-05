@@ -10,12 +10,15 @@ import DepartmentNavbar from "../../DepartmentPageComponents/DepartmentNavbar/De
 import {useRouter} from "next/router";
 import HomeIcon from '@mui/icons-material/Home';
 import FacultyNavbar from "../../FacultyProfilePageComponents/FacultyNavbar";
+import Drawer from 'react-modern-drawer'
+import 'react-modern-drawer/dist/index.css'
 
 const NavBar = () => {
     const router = useRouter();
     const [isHome, setIsHome] = useState(false);
     const [isDepartment, setIsDepartment] = useState(false);
     const [isFaculty, setIsFaculty] = useState(false);
+    const [isDrawerOpen, setIsDrawerOpen] = useState(false);
     useEffect(() => {
         if(router.pathname === '/') {
             setIsHome(true);
@@ -108,19 +111,33 @@ const NavBar = () => {
             {/*    <h1 className={'uppercase cursor-pointer hover:underline decoration-primary decoration-4 duration-300 underline-offset-4'}>{t('Resources')}</h1>*/}
             {/*</div>*/}
             <div className={'flex'}>
-                <div className={'ml-auto w-10 hover:bg-primary text-center hover:text-white duration-200'} onClick={() => {
+                <div className={'md:ml-auto w-10 hover:bg-primary text-center hover:text-white duration-200'} onClick={() => {
                     router.push('/')
                 }}>
-                    <HomeIcon className={'ml-auto'}/>
+                    <HomeIcon className={'md:ml-auto'}/>
+
                 </div>
             {/*{isDepartment ? <DepartmentNavbar/> : isFaculty ? <FacultyNavbar/> : <NavBarMenu menuItems={menuItems} className={'mr-0'} translations={'home.navbar'} />}*/}
                 <NavBarMenu menuItems={menuItems} className={'mr-0'} translations={'home.navbar'} />
+                <div className={'flex md:hidden ml-auto mr-2'} onClick={() => setIsDrawerOpen(!isDrawerOpen)}>
+                    <MenuIcon fontSize={'large'}/>
+                </div>
             </div>
 
+            <Drawer
+                open={isDrawerOpen}
+                onClose={() => setIsDrawerOpen(false)}
+                direction='right'
+                className='bla bla bla'
+            >
+                <div className={'text-black'}>Hello World</div>
 
-            <div className={'flex md:hidden ml-auto mr-2'}>
-                <MenuIcon fontSize={'large'}/>
-            </div>
+            </Drawer>
+
+
+            {/*<div className={'flex md:hidden ml-auto mr-2'}>*/}
+            {/*    <MenuIcon fontSize={'large'}/>*/}
+            {/*</div>*/}
 
         </div>
     )
