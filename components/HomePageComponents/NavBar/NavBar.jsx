@@ -12,6 +12,7 @@ import HomeIcon from '@mui/icons-material/Home';
 import FacultyNavbar from "../../FacultyProfilePageComponents/FacultyNavbar";
 import Drawer from 'react-modern-drawer'
 import 'react-modern-drawer/dist/index.css'
+import NavDrawer from "./NavDrawer";
 
 const NavBar = () => {
     const router = useRouter();
@@ -124,15 +125,14 @@ const NavBar = () => {
                 </div>
             </div>
 
-            <Drawer
+            <NavDrawer
                 open={isDrawerOpen}
+                translations={'home.navbar'}
+                data={menuItems}
                 onClose={() => setIsDrawerOpen(false)}
-                direction='right'
-                className='bla bla bla'
             >
-                <div className={'text-black'}>Hello World</div>
 
-            </Drawer>
+            </NavDrawer>
 
 
             {/*<div className={'flex md:hidden ml-auto mr-2'}>*/}
