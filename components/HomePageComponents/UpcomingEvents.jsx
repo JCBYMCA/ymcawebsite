@@ -24,7 +24,12 @@ const Event=(props)=>{
 
 const UpcomingEvents=()=>{
     const [events,setEvents] = useState([]);
-    useEffect(() => {getEvents().then((resp)=>{setEvents(resp.data["Notice List"])})} , [])//havent implemented to display any data yet, but all data from the api is available in the hooks
+    useEffect(() => {
+        getEvents().then((resp)=>{
+            console.log(resp.data["Notice List"]);
+            setEvents(resp.data["Notice List"]);
+        })
+    } , []);
     return(
         <div className={'rounded-md bg-white bg-opacity-80 flex flex-col'}>
             <div className={'rounded-tl-md rounded-tr-md py-2 text-3xl text-center bg-secondary text-white font-bold'}>
