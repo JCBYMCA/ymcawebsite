@@ -8,7 +8,7 @@ const api = axios.create({
 });
 
 // List of all the endpoints , GET requests
-export const getNotices = (department = "admin") => api.get(`api/proxy/noticenotice_api/${department}?format=json`);
+export const getNotices = (department = "admin", noticeType = "all") => api.get(`api/proxy/noticenotice_api/${department}/${noticeType}?format=json`);
 export const getEvents = (department = "admin") => api.get(`api/proxy/eventsapi/${department}?format=json`);
 
 //Post requests

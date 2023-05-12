@@ -6,10 +6,20 @@ import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import { getNotices } from "../../http";
+import moment from "moment";
+
 const Notice = (props) => {
     return(
-        <div className={'border-1 cursor-pointer hover:scale-[1.01] duration-200 bg-white border-black rounded-md p-2 my-2'}>
-            {props.heading}
+        <div onClick={() => {
+            // open the notice in a new tab
+            window.open(props.notice.url ? props.notice.url : props.notice.pdf, '_blank');
+        }} className={'border-1 flex flex-row justify-between cursor-pointer hover:scale-[1.01] duration-200 bg-white border-black rounded-md p-2 my-2'}>
+            <h1>
+                {props.heading}
+            </h1>
+            <h1>
+                {moment(props.notice.s_date).format('DD MMM YYYY')}
+            </h1>
         </div>
     );
 }
@@ -21,7 +31,27 @@ const Notices = ({isDepartment, className}) => {
         setValue(newValue);
     };
     const [notices,setNotices] = useState([]);
-    useEffect(() => {getNotices().then((resp)=>{setNotices(resp.data["Notice List"])})} , [value]) //how do you want to update the values, empty the dependency array if you want to update on every render instead
+    const [resultNotices,setResultNotices] = useState([]);
+    const [datesheetNotices,setDatesheetNotices] = useState([]);
+    const [tenderNotices,setTenderNotices] = useState([]);
+    const [studentNotices,setStudentNotices] = useState([]);
+    useEffect(() => {
+        getNotices('admin', 'all').then((resp)=>{
+        setNotices(resp.data["Notice List"]);
+        });
+        getNotices('admin', 'result').then((resp)=>{
+            setResultNotices(resp.data["Notice List"]);
+        });
+        getNotices('admin', 'datesheet').then((resp)=>{
+            setDatesheetNotices(resp.data["Notice List"]);
+        });
+        getNotices('admin', 'tender').then((resp)=>{
+            setTenderNotices(resp.data["Notice List"]);
+        });
+        getNotices('admin', 'student').then((resp)=>{
+            setStudentNotices(resp.data["Notice List"]);
+        });
+    } , [value]) //how do you want to update the values, empty the dependency array if you want to update on every render instead
     const t = useTranslations("home.notices");
     return(
         <div className={'rounded-md border-gray-800 flex flex-col ' + className}>
@@ -34,39 +64,26 @@ const Notices = ({isDepartment, className}) => {
                     marginX: 'auto',
                 }}>
 
-                        <Tab label="All Notices" value="1" className={'font-bold text-sm text-black'}/>
-                        <Tab label="Student Notices" value="2" className={'font-bold text-sm text-black'}/>
-                        <Tab label="Admission Notices" value="3" className={'font-bold text-sm text-black'}/>
-                        <Tab label="Department Notices" value="4" className={'font-bold text-sm text-black'}/>
+                        <Tab label="All" value="1" className={'font-bold text-sm text-black'}/>
+                        <Tab label="Result" value="2" className={'font-bold text-sm text-black'}/>
+                        <Tab label="Datesheet" value="3" className={'font-bold text-sm text-black'}/>
+                        <Tab label="Tender" value="4" className={'font-bold text-sm text-black'}/>
+                        <Tab label="Student" value="5" className={'font-bold text-sm text-black'}/>
                 </TabList>
                 <TabPanel value="1">
-                    {notices.map((notice,i)=>(<Notice heading={notice.title} key={i}/>)) /*have implemented it to display the notice id fetched from api , fix the api or explain how to display here*/}
-                    {/*<Notice heading={"Student 1st counselling merit list"}/>*/}
-                    {/*<Notice heading={"Admission 1st counselling merit list"}/>*/}
-                    {/*<Notice heading={"Department 1st counselling merit list"}/>*/}
-                    {/*<Notice heading={"BTech 1st counselling merit list"}/>*/}
-                    {/*<Notice heading={"BTech 1st counselling merit list"}/>*/}
+                    {notices.map((notice,i)=> moment(notice.e_date).isAfter(moment()) ? (<Notice notice={notice} heading={notice.title} key={i}/>) : null)}
                 </TabPanel>
                 <TabPanel value="2">
-                    <Notice heading={"Student 1st counselling merit list"}/>
-                    <Notice heading={"Student 1st counselling merit list"}/>
-                    <Notice heading={"Student 1st counselling merit list"}/>
-                    <Notice heading={"Student 1st counselling merit list"}/>
-                    <Notice heading={"Student 1st counselling merit list"}/>
+                    {resultNotices.map((notice,i)=> moment(notice.e_date).isAfter(moment()) ? (<Notice notice={notice} heading={notice.title} key={i}/>) : null)}
                 </TabPanel>
                 <TabPanel value="3">
-                    <Notice heading={"Admission 1st counselling merit list"}/>
-                    <Notice heading={"Admission 1st counselling merit list"}/>
-                    <Notice heading={"Admission 1st counselling merit list"}/>
-                    <Notice heading={"Admission 1st counselling merit list"}/>
-                    <Notice heading={"Admission 1st counselling merit list"}/>
+                    {datesheetNotices.map((notice,i)=> moment(notice.e_date).isAfter(moment()) ? (<Notice notice={notice} heading={notice.title} key={i}/>) : null)}
                 </TabPanel>
                 <TabPanel value="4">
-                    <Notice heading={"Department 1st counselling merit list"}/>
-                    <Notice heading={"Department 1st counselling merit list"}/>
-                    <Notice heading={"Department 1st counselling merit list"}/>
-                    <Notice heading={"Department 1st counselling merit list"}/>
-                    <Notice heading={"Department 1st counselling merit list"}/>
+                    {tenderNotices.map((notice,i)=> moment(notice.e_date).isAfter(moment()) ? (<Notice notice={notice} heading={notice.title} key={i}/>) : null)}
+                </TabPanel>
+                <TabPanel value="5">
+                    {studentNotices.map((notice,i)=> moment(notice.e_date).isAfter(moment()) ? (<Notice notice={notice} heading={notice.title} key={i}/>) : null)}
                 </TabPanel>
             </TabContext> :
                 <div className={'flex flex-col px-6 py-3'}>
