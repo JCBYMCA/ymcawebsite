@@ -39,22 +39,30 @@ const Notices = ({isDepartment = false, className}) => {
     const [tenderNotices,setTenderNotices] = useState([]);
     const [studentNotices,setStudentNotices] = useState([]);
     useEffect(() => {
-        getNotices('admin', 'all').then((resp)=>{
-        setNotices(resp.data["Notice List"]);
+        let user = "admin";
+        if(isDepartment){
+            console.log("getting dept notices");
+            if (router.query.id === undefined) return; else
+            user = router.query.id;
+        }
+        console.log("getting",user,"notices");
+        getNotices(user, 'all').then((resp) => {
+            setNotices(resp.data["Notice List"]);
         });
-        getNotices('admin', 'result').then((resp)=>{
+        getNotices(user, 'result').then((resp) => {
             setResultNotices(resp.data["Notice List"]);
         });
-        getNotices('admin', 'datesheet').then((resp)=>{
+        getNotices(user, 'datesheet').then((resp) => {
             setDatesheetNotices(resp.data["Notice List"]);
         });
-        getNotices('admin', 'tender').then((resp)=>{
+        getNotices(user, 'tender').then((resp) => {
             setTenderNotices(resp.data["Notice List"]);
         });
-        getNotices('admin', 'student').then((resp)=>{
+        getNotices(user, 'student').then((resp) => {
             setStudentNotices(resp.data["Notice List"]);
         });
-    } , [value]) //how do you want to update the values, empty the dependency array if you want to update on every render instead
+
+    } , [value,router])
     const t = useTranslations("home.notices");
     return(
         <div className={'rounded-md border-gray-800 flex flex-col ' + className}>
@@ -62,7 +70,7 @@ const Notices = ({isDepartment = false, className}) => {
                 {t('heading')}
             </div>
 
-            {!isDepartment ? <TabContext value={value}>
+             <TabContext value={value}>
                 <TabList onChange={handleChange} aria-label="Notices Tab" className={'md:w-auto w-full'} variant="scrollable" sx={{
                     marginX: 'auto',
                 }}>
@@ -88,14 +96,7 @@ const Notices = ({isDepartment = false, className}) => {
                 <TabPanel value="5">
                     {studentNotices.map((notice,i)=> moment(notice?.e_date).isAfter(moment()) ? (<Notice notice={notice} heading={notice?.title} key={i}/>) : null)}
                 </TabPanel>
-            </TabContext> :
-                <div className={'flex flex-col px-6 py-3'}>
-                <Notice heading={"BTech 1st counselling merit list"}/>
-                <Notice heading={"BTech 1st counselling merit list"}/>
-                <Notice heading={"BTech 1st counselling merit list"}/>
-                <Notice heading={"BTech 1st counselling merit list"}/>
-                <Notice heading={"BTech 1st counselling merit list"}/>
-                </div>}
+            </TabContext>
             <button className={'mt-auto mx-auto bg-white py-2 px-8 hover:scale-105 duration-200 flex-col mb-10'}>
                 {t('viewAll')}
             </button>
