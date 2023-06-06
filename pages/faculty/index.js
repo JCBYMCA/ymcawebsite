@@ -1,7 +1,6 @@
 import Faculty from "./index";
 import FacultyCard from "../../components/FacultyPageComponents/FacultyCard";
 import DepartmentContact from "../../components/FacultyPageComponents/DepartmentContact";
-import QuickLinks from "../../components/common/QuickLinks";
 import Image from "next/image";
 import FacultyNavbar from "../../components/FacultyPageComponents/FacultyNavbar/FacultyNavbar";
 
