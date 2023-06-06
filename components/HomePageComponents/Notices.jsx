@@ -5,6 +5,7 @@ import Tab from '@mui/material/Tab';
 import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
+import {useRouter} from "next/router";
 import { getNotices } from "../../http";
 const Notice = (props) => {
     return(
@@ -15,13 +16,34 @@ const Notice = (props) => {
 }
 
 
-const Notices = ({isDepartment, className}) => {
+const Notices = ({isDepartment = false, className}) => {
     const [value, setValue] = useState('1');
+    const router = useRouter();
     const handleChange = (event, newValue) => {
         setValue(newValue);
     };
+
     const [notices,setNotices] = useState([]);
-    useEffect(() => {getNotices().then((resp)=>{setNotices(resp.data["Notice List"])})} , [value]) //how do you want to update the values, empty the dependency array if you want to update on every render instead
+    useEffect(() => {
+
+            if(isDepartment){
+                if (router.query.id)
+                    getNotices(router.query.id)
+                        .then((resp)=>{
+                            setNotices(resp.data["Notice List"])
+                        }
+                    )
+            }else{
+                getNotices()
+                    .then((resp)=>{
+                            setNotices(resp.data["Notice List"])
+                        }
+                    )
+            }
+            console.log("Notices:", notices);
+        }
+     , [value,router]) ;
+
     const t = useTranslations("home.notices");
     return(
         <div className={'rounded-md border-gray-800 flex flex-col ' + className}>
