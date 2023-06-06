@@ -1,11 +1,12 @@
 import { getEvents } from "../../http";
 import {useState,useEffect} from "react";
+import moment from "moment/moment";
 
 const EventDate=(props)=>{
     return(
         <div className={"text-center bg-white rounded-md mx-2"}>
-            <div className={"text-3xl"}>{props.day}</div>
-            <div className={"text-xs text-white bg-secondary rounded-br-md rounded-bl-md p-1"}>{props.month}</div>
+            <div className={"text-2xl px-2"}>{props.day>9?props.day:"0"+props.day}</div>
+            <div className={"text-xs text-white bg-secondary rounded-br-md w-full rounded-bl-md px-1"}>{props.month}</div>
         </div>
     );
 }
@@ -13,7 +14,7 @@ const EventDate=(props)=>{
 const Event=(props)=>{
     return(
         <div className={'mb-4'}>
-         <div className={'text-lg mb-1 mr-4 flex w-full justify-between px-2'}>
+         <div className={'text-lg mb-1 pl-4  flex w-full justify-between pr-2'}>
              {props.name}
              <EventDate day={props.day} month={props.month} className={'rounded-md'} />
          </div>
@@ -24,6 +25,9 @@ const Event=(props)=>{
 
 const UpcomingEvents=()=>{
     const [events,setEvents] = useState([]);
+    const getmonth=(date)=>{
+        return date.toLocaleString('default', { month: 'short' });
+    }
     useEffect(() => {
         getEvents().then((resp)=>{
             console.log(resp.data["Notice List"]);
@@ -36,10 +40,15 @@ const UpcomingEvents=()=>{
                 Upcoming Events:
             </div>
             <div className={'flex-col py-4'}>
-                <Event name={'RoundTable Build-a-Thon: AI/ML Challenge'} day={"6"} month={"October"} />
-                <Event name={'RoundTable Build-a-Thon: AI/ML Challenge'} day={"6"} month={"October"} />
-                <Event name={'RoundTable Build-a-Thon: AI/ML Challenge'} day={"6"} month={"October"} />
-                <Event name={'RoundTable Build-a-Thon: AI/ML Challenge'} day={"6"} month={"October"} />
+                {events.map((event,i)=>{
+                    return( moment(event?.e_date).isAfter(moment()) ?
+                        <Event key = {i} name={event.title} day={moment(new Date(event.s_date)).date() } month={getmonth(new Date(event.s_date))}/>
+                            :""
+                    )
+
+                }
+                )}
+
             </div>
         </div>
     );
