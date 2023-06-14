@@ -53,7 +53,8 @@ const NavBar = () => {
             zIndex:8000
         }}>
             <div className={'flex '}>
-                <Image src='/assets/images/logo.png' alt={'Logo'} width={90} height={90} />
+                <div><Image src='/assets/images/logo.png' className={"h-min"} alt={'Logo'} width={90} height={90} /></div>
+
                 {/*{!isFaculty ? (*/}
                 {/*    <>*/}
                 {/*        <div className={'flex flex-col'}>*/}
@@ -85,14 +86,14 @@ const NavBar = () => {
 
                 <>
                     <div className={'flex flex-col'}>
-                        <div className={'flex flex-col font-bold text-xl -space-y-1 tracking-wider mt-5'}>
+                        <div className={'flex flex-col font-bold text-xl -space-y-1 tracking-wider mt-2 md:mt-5'}>
                             <h1 className={'text-xs md:text-xl'}>{t("JCBoseUst")}</h1>
                             {/*<h1 className={'text-xs md:text-xl'}>of Science & Technology</h1>*/}
                             {/*<h1 className={'text-xs md:text-xl'}>YMCA, Faridabad</h1>*/}
                         </div>
                         <div className={''}>
                             <h1 className={`text-xs md:text-xs ${!isWhite ? "" : "text-secondaryLight"}`}>{t("UST description 1")}</h1>
-                            <h1 className={`text-xs ${!isWhite ? "" : "text-secondaryLight"}`}>{t("UST description 2")}</h1>
+                            <h1 className={`hidden md:block text-xs ${!isWhite ? "" : "text-secondaryLight"}`}>{t("UST description 2")}</h1>
                         </div>
                     </div>
                     <div className={'ml-auto p-1 mr-5'}>

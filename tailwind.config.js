@@ -35,6 +35,7 @@ module.exports = {
         'computer-department-bg-5': "url('/assets/images/department/5.png')",
         'computer-department-bg-6': "url('/assets/images/department/6.png')",
         'library-bg':"url('/assets/images/library/library.png')",
+        'logo':"url('/assets/images/logo.png')",
       }),
     },
   },
