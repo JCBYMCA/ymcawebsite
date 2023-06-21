@@ -36,7 +36,7 @@ const ProfileCard = ({image, name, designation}) => {
 
                 </div>
               <div className={'mx-auto mt-auto flex flex-col mb-3'}>
-                  <button  className={'px-1 mt-auto hover:scale-105  duration-200 text-sm rounded-md bg-primaryLight text-white m'}>{t('read more')}</button>
+                  <button  className={'px-1 py-0.5 mt-auto hover:scale-105  duration-200 text-sm rounded-sm bg-primaryLight text-white m'}>{t('read more')}</button>
               </div>
           </div>
       </motion.div>

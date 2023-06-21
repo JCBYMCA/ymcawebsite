@@ -24,11 +24,11 @@ const TopBar = () => {
         }}>
             <div className={'flex space-x-1 items-center'}>
                 <EmailOutlinedIcon/>
-                <h1>contact@jcboseust.ac.in</h1>
+                <a href='mailto:contact@jcboseust.ac.in'>contact@jcboseust.ac.in</a>
             </div>
             <div className={'flex space-x-1 ml-10 items-center'}>
                 <LocalPhoneOutlinedIcon/>
-                <h1>+91 9898989898</h1>
+                <a href='tel:+919898989898'>+91 9898989898</a>
             </div>
             <div className={'flex ml-auto  mr-5'}>
                 <button className={'px-3 hover:bg-primary duration-200'}>DLMS</button>

@@ -13,6 +13,7 @@ import FacultyNavbar from "../../FacultyProfilePageComponents/FacultyNavbar";
 import Drawer from 'react-modern-drawer'
 import 'react-modern-drawer/dist/index.css'
 import NavDrawer from "./NavDrawer";
+import SearchComponent from "../../common/SearchComponent";
 
 const NavBar = () => {
     const router = useRouter();
@@ -134,6 +135,8 @@ const NavBar = () => {
             >
 
             </NavDrawer>
+            <SearchComponent searchData={searchData}/>
+            
 
 
             {/*<div className={'flex md:hidden ml-auto mr-2'}>*/}
@@ -143,5 +146,14 @@ const NavBar = () => {
         </div>
     )
 }
+const searchData = [
+    { id: 1, title: 'Scheme A' },
+    { id: 2, title: 'Scheme B' },
+    { id: 3, title: 'Syllabus X' },
+    { id: 4, title: 'Syllabus Y' },
+    { id: 5, title: 'Faculty Member 1' },
+    { id: 6, title: 'Faculty Member 2' },
+    // Add more data elements as needed
+  ];
 
 export default NavBar;
