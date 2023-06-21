@@ -97,7 +97,7 @@ const Home = () => {
                             transition={{
                             delay: 0.2,
                             duration: 0.3,
-                        }} className={'text-white text-4xl ml-12 md:text-8xl md:ml-60'}>{t("Explore")}</motion.h1>
+                        }} className={'text-white underline decoration-primaryLight underline-offset-8 select-none text-4xl ml-12 md:text-8xl md:ml-60'}>{t("Explore")}</motion.h1>
                         <motion.h1
                             initial={{
                                 opacity:0,
@@ -114,7 +114,7 @@ const Home = () => {
                             transition={{
                                 delay: 0.2,
                                 duration: 0.3
-                            }} className={'text-white text-4xl ml-20 md:text-8xl md:ml-96'}>{t("the privileges")}</motion.h1>
+                            }} className={'text-white text-4xl ml-20 select-none md:text-8xl md:ml-96'}>{t("the privileges")}</motion.h1>
                     </div>
                     <motion.div
                         initial={{

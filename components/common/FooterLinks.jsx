@@ -36,8 +36,8 @@ const FooterLinks = () => {
                 <h1 className={'mb-12'}>{t("EMAIL")}: contact@jcboseust.ac.in</h1>
                 <h1 className={'mb-2'}>{t('Subscribe for Newsletter')}</h1>
                 <div className={'flex mb-8'}>
-                    <input placeholder={t('Enter Email Address')} type={"email"} className={'text-black p-1 w-60'}/>
-                    <button className={'bg-primaryLight p-1 hover:bg-primary cursor-pointer duration-200'} type={"submit"}>{t('SUBMIT')}</button>
+                    <input placeholder={t('Enter Email Address')} type={"email"} className={'text-black text-sm p-1 w-60 mr-2 border rounded-sm'}/>
+                    <button className={'bg-primaryLight p-1 rounded-sm hover:bg-primary cursor-pointer duration-200'} type={"submit"}>{t('SUBMIT')}</button>
                 </div>
                 <div className={'bg-gray-300 h-[10rem] text-black'}>
                     <iframe
