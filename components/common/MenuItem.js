@@ -38,7 +38,7 @@ const MenuItem = ({ items, depthLevel, translations }) => {
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}
         >
-            {items.submenu ? (
+            {(items.submenu?.length>0)? (
                 <>
                     <button
                         type="button"
@@ -50,6 +50,7 @@ const MenuItem = ({ items, depthLevel, translations }) => {
                         {t(items.title)}{" "}
                         {depthLevel > 0 ? <span>&raquo;</span> : <span className="arrow" />}
                     </button>
+                    
                     <Dropdown
                         depthLevel={depthLevel}
                         submenus={items.submenu}
@@ -58,7 +59,7 @@ const MenuItem = ({ items, depthLevel, translations }) => {
                     />
                 </>
             ) : (
-                <Link href={items.link ? items.link : "#"}><h1 className={'cursor-pointer py-[0.2rem] px-[1rem] hover:bg-primary hover:text-white decoration-primary decoration-4 duration-300 underline-offset-4'}>{t(items.title)}</h1></Link>
+                <Link className={'cursor-pointer hover:bg-primary hover:text-white decoration-primary decoration-4 duration-300 underline-offset-4'} href={items.link ? items.link : "#"}><h1 >{t(items.title)}</h1></Link>
             )}
         </li>
     );

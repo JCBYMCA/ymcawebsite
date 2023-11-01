@@ -20,6 +20,7 @@ import LocalLibraryIcon from '@mui/icons-material/LocalLibrary';
 import LocationCityIcon from '@mui/icons-material/LocationCity';
 import Recruiters from "../components/HomePageComponents/Recruiters";
 import {useEffect} from "react";
+import Feedback from "../components/HomePageComponents/Feedback";
 
 const Home = () => {
 
@@ -66,6 +67,7 @@ const Home = () => {
                     <AutoScrollFeatures/>
                 </div>
             </div>
+            <Feedback />
             <div className={'flex flex-col md:flex-row md:h-[36rem] bg-fixed bg-notice-bg bg-no-repeat bg-center bg-cover'}>
                 <div className={'flex flex-col md:flex-row bg-white bg-opacity-20 flex w-full md:h-[35.8rem] py-10 md:px-8'}>
                     <div className={'md:w-2/3 w-auto md:mr-4'}>

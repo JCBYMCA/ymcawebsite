@@ -39,16 +39,17 @@ const Notices = ({isDepartment = false, className}) => {
     const [tenderNotices,setTenderNotices] = useState([]);
     const [studentNotices,setStudentNotices] = useState([]);
     useEffect(() => {
-        let user = "admin";
+        let user = "1";
         if(isDepartment){
             console.log("getting dept notices");
             if (router.query.id === undefined) return; else
             user = router.query.id;
         }
         console.log("getting",user,"notices");
-        getNotices(user, 'all').then((resp) => {
-            setNotices(resp.data["Notice List"]);
-        });
+        // getNotices(user, 'all').then((resp) => {
+        //     console.log(resp);
+        //     setNotices(resp.data["Notice List"]);
+        // });
         getNotices(user, 'result').then((resp) => {
             setResultNotices(resp.data["Notice List"]);
         });
@@ -61,6 +62,8 @@ const Notices = ({isDepartment = false, className}) => {
         getNotices(user, 'student').then((resp) => {
             setStudentNotices(resp.data["Notice List"]);
         });
+        const arr= notices.concat(resultNotices).concat(datesheetNotices).concat(tenderNotices).concat(studentNotices);
+        setNotices(arr.sort((a,b)=> b.e_date - a.e_date))
 
     } , [value,router])
     const t = useTranslations("home.notices");

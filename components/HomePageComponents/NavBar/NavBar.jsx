@@ -14,6 +14,7 @@ import Drawer from 'react-modern-drawer'
 import 'react-modern-drawer/dist/index.css'
 import NavDrawer from "./NavDrawer";
 import SearchComponent from "../../common/SearchComponent";
+import { getMenu } from "../../../http";
 
 const NavBar = () => {
     const router = useRouter();
@@ -21,7 +22,9 @@ const NavBar = () => {
     const [isDepartment, setIsDepartment] = useState(false);
     const [isFaculty, setIsFaculty] = useState(false);
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+    const [menu, setMenu]= useState([]);
     useEffect(() => {
+
         if(router.pathname === '/') {
             setIsHome(true);
             setIsDepartment(false);
@@ -39,6 +42,88 @@ const NavBar = () => {
         }
     }, [router.pathname])
 
+    useEffect(() => {
+        let user = "1";
+        // if(isDepartment){
+        //     console.log("getting dept menu");
+        //     if (router.query.id === undefined) return; else
+        //     user = router.query.id;
+        // }
+        console.log("getting",user,"menu");
+        getMenu(user).then((resp) => {
+            console.log(resp.data);
+            setMenu(createMenuObj(resp.data));
+            
+        });
+
+    } , [])
+
+    const createMenuObj= (data)=> {
+        let arr = [];
+        let pi = {};
+        let si={};
+        for( let item of data['Parent Menu List'] ){
+            // console.log(item);
+            let temp = {}
+            temp['title'] = item["name"];
+            temp['link'] = item['url'];
+            temp['submenu'] = [];
+            arr.push(temp);
+            pi[item.menu_id] = arr.length-1;
+
+        }
+        console.log(arr);
+        for(let item of data['Submenu Menu List'] ){
+            let temp = {};
+            temp['title'] = item["name"];
+            temp['link'] = item['url'];
+            temp['submenu'] = [];
+            arr[pi[item.p_id]]['submenu'].push(temp);
+            si[item.menu_id] = arr[pi[item.p_id]]['submenu'].length-1;
+        }
+        console.log(si);
+        for(let item of data['Submenu Level 2 Menu List'] ){
+            let temp = {};
+            temp['title'] = item["name"];
+            temp['link'] = item['url'];
+            // console.log(item.p_id,item.s_id);
+            arr[pi[item.p_id]]['submenu'][si[item.s_id]]['submenu'].push(temp);
+        }
+        // console.log(arr);
+        return arr;
+    }
+    /*
+        submenu 2 -  138
+        2d arr = {[]}
+        arr[obj.p_id].append {obj} 138
+        submenu 
+        let arr = {}
+        for( item in data['Parent Menu List'] ){
+            let temp = {}
+            temp['title'] = item["name"];
+            temp['link'] = item['url'];
+            temp['submenu'] = {};
+            arr[item.menu_id] = temp;
+        }
+        for( item in data['Submenu Menu List'] ){
+            let temp = {};
+            temp['title'] = item["name"];
+            temp['link'] = item['url'];
+            temp['submenu'] = [];
+            arr[item.p_id]['submenu'][item.menu_id] = temp;
+        }
+        for( item in data['Submenu Level 2 Menu List'] ){
+            let temp = {};
+            temp['title'] = item["name"];
+            temp['link'] = item['url'];
+            arr[item.p_id]['submenu'][item.s_id]['submenu'].append(temp);
+        }
+        
+        
+     */
+
+    // }
+
 
     const t = useTranslations("home.navbar");
     const {scrollY, scrollYProgress} = useScroll();
@@ -51,7 +136,7 @@ const NavBar = () => {
 
     return (
         <div className={` flex flex-col sticky top-0 bg-[#EBEBEB] ${!isWhite ? "bg-opacity-25 text-white" : "text-black border-1 border-neutral-200"}`} style={{
-            zIndex:8000
+            zIndex:80
         }}>
             <div className={'flex '}>
                 <div><Image src='/assets/images/logo.png' className={"h-min"} alt={'Logo'} width={90} height={90} /></div>
@@ -121,7 +206,7 @@ const NavBar = () => {
 
                 </div>
             {/*{isDepartment ? <DepartmentNavbar/> : isFaculty ? <FacultyNavbar/> : <NavBarMenu menuItems={menuItems} className={'mr-0'} translations={'home.navbar'} />}*/}
-                <NavBarMenu menuItems={menuItems} className={'mr-0'} translations={'home.navbar'} />
+                <NavBarMenu menuItems={menu} className={'mr-0'} translations={'home.navbar'} />
                 <div className={'flex md:hidden ml-auto mr-2'} onClick={() => setIsDrawerOpen(!isDrawerOpen)}>
                     <MenuIcon fontSize={'large'}/>
                 </div>
@@ -130,12 +215,12 @@ const NavBar = () => {
             <NavDrawer
                 open={isDrawerOpen}
                 translations={'home.navbar'}
-                data={menuItems}
+                data={menu}
                 onClose={() => setIsDrawerOpen(false)}
             >
 
             </NavDrawer>
-            <SearchComponent searchData={searchData}/>
+            {/* <SearchComponent searchData={searchData}/> */}
             
 
 

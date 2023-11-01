@@ -4,6 +4,8 @@ import Image from "next/image";
 import {useTranslations} from "next-intl";
 import HomeIcon from "@mui/icons-material/Home";
 import {useRouter} from "next/router";
+import { getMenu } from "../../../http";
+import { useEffect, useState } from "react";
 
 const DepartmentNavbar = () => {
     const t = useTranslations("home.navbar");
@@ -38,6 +40,59 @@ const DepartmentNavbar = () => {
 
 export const DepartmentNavbarMenu = () => {
     const router = useRouter();
+    const [menu, setMenu]= useState([]);
+
+    useEffect(() => {
+        let user = "1";
+        // if(isDepartment){
+        //     console.log("getting dept menu");
+        //     if (router.query.id === undefined) return; else
+        //     user = router.query.id;
+        // }
+        console.log("getting",user,"menu");
+        getMenu(user).then((resp) => {
+            console.log(resp.data);
+            setMenu(createMenuObj(resp.data));
+            
+        });
+
+    } , [])
+
+    const createMenuObj= (data)=> {
+        let arr = [];
+        let pi = {};
+        let si={};
+        for( let item of data['Parent Menu List'] ){
+            // console.log(item);
+            let temp = {}
+            temp['title'] = item["name"];
+            temp['link'] = item['url'];
+            temp['submenu'] = [];
+            arr.push(temp);
+            pi[item.menu_id] = arr.length-1;
+
+        }
+        console.log(arr);
+        for(let item of data['Submenu Menu List'] ){
+            let temp = {};
+            temp['title'] = item["name"];
+            temp['link'] = item['url'];
+            temp['submenu'] = [];
+            arr[pi[item.p_id]]['submenu'].push(temp);
+            si[item.menu_id] = arr[pi[item.p_id]]['submenu'].length-1;
+        }
+        console.log(si);
+        for(let item of data['Submenu Level 2 Menu List'] ){
+            let temp = {};
+            temp['title'] = item["name"];
+            temp['link'] = item['url'];
+            // console.log(item.p_id,item.s_id);
+            arr[pi[item.p_id]]['submenu'][si[item.s_id]]['submenu'].push(temp);
+        }
+        // console.log(arr);
+        return arr;
+    }
+
     return (
         <div className={'flex'}>
             <div className={'ml-auto w-10 hover:bg-primary text-center hover:text-white duration-200'} onClick={() => {
@@ -45,7 +100,7 @@ export const DepartmentNavbarMenu = () => {
             }}>
                 <HomeIcon className={'ml-auto'}/>
             </div>
-            <NavBarMenu menuItems={departmentMenuItems} className={' mr-20'} translations={''} />
+            <NavBarMenu menuItems={menu} className={' mr-20'} translations={''} />
         </div>
     )
 }
