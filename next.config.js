@@ -3,7 +3,7 @@ const nextConfig = {
   async rewrites() {
     return [
       {
-        source: '/api/proxy/:path*',
+        source: '/api/proxyy/:path*',
         destination: 'http://49.50.77.87:8888/:path*',
       },
     ]
