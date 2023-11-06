@@ -6,7 +6,7 @@ import { getPost } from "../http";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
-const templatePage = (props) => {
+const TemplatePage = (props) => {
     const router= useRouter();
     const urlKey= router.query.slug;
     const [data, setData]= useState('');
@@ -53,7 +53,7 @@ export async function getServerSideProps({locale}) {
 }
 
 
-export default templatePage;
+export default TemplatePage;
 
 //getStaticPaths and getStaticProps are used to generate static pages at build time
 
