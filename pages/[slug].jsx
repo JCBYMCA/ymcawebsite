@@ -10,6 +10,7 @@ const templatePage = (props) => {
     const router= useRouter();
     const urlKey= router.query.slug;
     const [data, setData]= useState('');
+    const [title, setTitle]= useState('');
 
     useEffect(() => {
         let user = "1";
@@ -20,8 +21,8 @@ const templatePage = (props) => {
         // }
         console.log("getting",user,"post data");
         getPost(user, urlKey).then((resp) => {
-            console.log(resp.data);
-            setData(resp.data);
+            setData(resp.data["Post List"][0].content);
+            setTitle(resp.data["Post List"][0].name);
             
         });
 
@@ -33,9 +34,9 @@ const templatePage = (props) => {
         </Head>
     <div>
         <div className={"backdrop-brightness-50 shadow-lg"}>
-        {/* <NavBar/> */}
+        <NavBar/>
         </div>
-        <PostTemplate></PostTemplate>
+        <PostTemplate content={data} title={title}></PostTemplate>
 
     </div>
     <FooterLinks/>
