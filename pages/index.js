@@ -21,6 +21,7 @@ import LocationCityIcon from '@mui/icons-material/LocationCity';
 import Recruiters from "../components/HomePageComponents/Recruiters";
 import {useEffect} from "react";
 import Feedback from "../components/HomePageComponents/Feedback";
+import HomeSlider from "../components/HomePageComponents/HomeSlider";
 
 const Home = () => {
 
@@ -32,20 +33,9 @@ const Home = () => {
             </Head>
         <div>
             <NavBar/>
-            <motion.div animate={{
-                backgroundColor:['#000', 'rgba(0,0,0,0)']
-            }} className={'md:h-screen h-[40rem] -mt-[9.2rem] -z-10 flex flex-col'}>
-
-                <div>
-                    <video poster={'/assets/images/temp.png'} autoPlay muted loop className={'fixed md:w-full w-screen md:h-screen md:mt-[0px] mt-[-4rem] h-[43rem] bright ness-50 -z-30 object-fill'}>
-                        <source src="/assets/video/Video.mov" type="video/mp4"/>
-                    </video>
-                    <Heading/>
-                    <Button/>
-                </div>
-                <ScrollHint/>
-            </motion.div>
-            <div className={'flex flex-col md:flex-row bg-[#EBEBEB] md:h-[32rem] items-center'}>
+           
+            <HomeSlider/>
+            <div className={'flex flex-col md:flex-row bg-[#EBEBEB] md:h-[26rem] items-center'}>
                 <div className={'flex flex-col md:flex-row w-4/5 justify-around'}>
                     <ProfileCard
                         name={'governor name'}
@@ -69,12 +59,12 @@ const Home = () => {
             </div>
             <Feedback />
             <div className={'flex flex-col md:flex-row md:h-[36rem] bg-fixed bg-notice-bg bg-no-repeat bg-center bg-cover'}>
-                <div className={'flex flex-col md:flex-row bg-white bg-opacity-20 flex w-full md:h-[35.8rem] py-10 md:px-8'}>
+                <div className={'flex flex-col md:flex-row bg-white bg-opacity-5 flex w-full md:h-[35.8rem] py-10 md:px-8'}>
                     <div className={'md:w-2/3 w-auto md:mr-4'}>
-                        <Notices className={'bg-white bg-opacity-60'} />
+                        <Notices className={'bg-white border-solid'} />
                     </div>
                     <div className={'md:w-1/3 w-auto ml-4'}>
-                        <UpcomingEvents/>
+                        <UpcomingEvents className={'bg-white border-solid'}/>
                     </div>
                 </div>
             </div>
@@ -82,11 +72,11 @@ const Home = () => {
 
             <div className={'bg-feature-bg bg-no-repeat bg-fixed bg-cover bg-center '}>
                 <div className={'backdrop-brightness-50 flex flex-col'}>
-                    <div className={'mt-40 font-semibold'}>
+                    <div className={'mt-38 font-semibold'}>
                         <motion.h1
                             initial={{
                                 opacity:0,
-                                x: -50,
+                                x: -50,                            
                             }}
                             viewport={{
                                 margin:'0px 0px -200px 0px',
@@ -99,7 +89,7 @@ const Home = () => {
                             transition={{
                             delay: 0.2,
                             duration: 0.3,
-                        }} className={'text-white underline decoration-primaryLight underline-offset-8 select-none text-4xl ml-12 md:text-8xl md:ml-60'}>{t("Explore")}</motion.h1>
+                        }} className={'text-white underline decoration-primaryLight underline-offset-8 select-none text-4xl ml-12 md:text-6xl md:ml-60'}>{t("Explore")}</motion.h1>
                         <motion.h1
                             initial={{
                                 opacity:0,
@@ -116,7 +106,7 @@ const Home = () => {
                             transition={{
                                 delay: 0.2,
                                 duration: 0.3
-                            }} className={'text-white text-4xl ml-20 select-none md:text-8xl md:ml-96'}>{t("the privileges")}</motion.h1>
+                            }} className={'text-white text-4xl ml-20 select-none md:text-6xl md:ml-96'}>{t("the privileges")}</motion.h1>
                     </div>
                     <motion.div
                         initial={{
@@ -151,6 +141,22 @@ const Home = () => {
 
             </div>
             {/* <Recruiters/> */}
+            {/* className={'md:h-screen h-[40rem] -mt-[9.2rem] -z-10 flex flex-col'} */}
+            <motion.div animate={{
+                backgroundColor:['#000', 'rgba(0,0,0,0)']
+            }} className={'h-[48rem] -mt-[9.2rem] -z-10 flex flex-col'}>
+                <div className={''}>
+                    {/* fixed md:w-full w-screen md:h-screen md:mt-[0px] mt-[-4rem] h-[43rem] bright ness-50 -z-30 object-fill */}
+                 <video poster={'/assets/images/temp.png'} autoPlay muted loop className={'md:w-full  md:mt-[0px] mt-[-5rem] h-[48rem] bright ness-50 -z-30 object-fill' }>
+                        <source src="/assets/video/Video.mov" type="video/mp4"/>
+                    </video>
+                    <div className="absolute top-[410%] lg:top-[2300px] md:top-[410%]">
+                        <Heading/>
+                    </div>
+                    {/* <Button/> */}
+                </div>
+                {/* <ScrollHint/> */}
+            </motion.div>
         </div>
         <FooterLinks/>
         </>

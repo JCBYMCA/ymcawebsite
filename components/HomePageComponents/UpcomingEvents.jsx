@@ -35,9 +35,9 @@ const UpcomingEvents=()=>{
         })
     } , []);
     return(
-        <div className={'rounded-md bg-white bg-opacity-80 flex flex-col'}>
-            <div className={'rounded-tl-md rounded-tr-md py-2 text-3xl text-center bg-secondary text-white font-bold'}>
-                Upcoming Events:
+        <div className={'rounded-md h-full bg-white flex flex-col'}>
+            <div className={'rounded-tl-md rounded-tr-md py-2 text-xl text-center bg-secondary text-white font-bold'}>
+                Upcoming Events
             </div>
             <div className={'flex-col py-4'}>
                 {events.map((event,i)=>{
@@ -50,6 +50,7 @@ const UpcomingEvents=()=>{
                 )}
 
             </div>
+            
         </div>
     );
 }

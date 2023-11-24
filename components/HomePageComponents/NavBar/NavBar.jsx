@@ -127,11 +127,11 @@ const NavBar = () => {
 
     const t = useTranslations("home.navbar");
     const {scrollY, scrollYProgress} = useScroll();
-    const [isWhite, setIsWhite] = useState(false);
+    const [isWhite, setIsWhite] = useState(true);
 
     scrollY.onChange((y) => {
         if(isHome)
-            scrollYProgress.get() > 0.066 ? setIsWhite(true) : setIsWhite(false);
+            scrollYProgress.get() > 0.066 ? setIsWhite(true) : setIsWhite(true);
     });
 
     return (
@@ -139,7 +139,7 @@ const NavBar = () => {
             zIndex:80
         }}>
             <div className={'flex '}>
-                <div><Image src='/assets/images/logo.png' className={"h-min"} alt={'Logo'} width={90} height={90} /></div>
+                <div><Image src='/assets/images/logo.png' className={"h-min"} alt={'Logo'} width={90} height={100} /></div>
 
                 {/*{!isFaculty ? (*/}
                 {/*    <>*/}
@@ -198,7 +198,7 @@ const NavBar = () => {
             {/*    <h1 className={'uppercase cursor-pointer hover:underline decoration-primary decoration-4 duration-300 underline-offset-4'}>{t('Research')}</h1>*/}
             {/*    <h1 className={'uppercase cursor-pointer hover:underline decoration-primary decoration-4 duration-300 underline-offset-4'}>{t('Resources')}</h1>*/}
             {/*</div>*/}
-            <div className={'flex'}>
+            <div className={'flex '}>
                 <div className={'md:ml-auto w-10 hover:bg-primary text-center hover:text-white duration-200'} onClick={() => {
                     router.push('/')
                 }}>

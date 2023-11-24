@@ -19,7 +19,7 @@
     "framer-motion": "^7.5.0",
     "jsonwebtoken": "^8.5.1",
     "moment": "^2.29.4",
-    "next": "^13.4.5",
+    "next": "^14.0.3",
     "next-intl": "^2.7.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

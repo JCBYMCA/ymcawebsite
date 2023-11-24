@@ -43,11 +43,11 @@ const MenuItem = ({ items, depthLevel, translations }) => {
                     <button
                         type="button"
                         aria-haspopup="menu"
-                        className={'cursor-pointer hover:bg-primary hover:text-white decoration-primary decoration-4 duration-300 underline-offset-4'}
+                        className={'cursor-pointer hover:bg-[#455a64] hover:text-white decoration-primary decoration-4 duration-300 underline-offset-4'}
                         aria-expanded={dropdown ? "false" : "false"}
                         onClick={() => setDropdown((prev) => !prev)}
                     >
-                        {t(items.title)}{" "}
+                        {items.title}{" "}
                         {depthLevel > 0 ? <span>&raquo;</span> : <span className="arrow" />}
                     </button>
                     
@@ -59,7 +59,7 @@ const MenuItem = ({ items, depthLevel, translations }) => {
                     />
                 </>
             ) : (
-                <Link className={'cursor-pointer hover:bg-primary hover:text-white decoration-primary decoration-4 duration-300 underline-offset-4'} href={items.link ? items.link : "#"}><h1 >{t(items.title)}</h1></Link>
+                <Link className={'cursor-pointer hover:bg-[#455a64] hover:text-white decoration-primary decoration-4 duration-300 underline-offset-4'} href={items.link ? items.link : "#"}><h1 >{items.title}</h1></Link>
             )}
         </li>
     );

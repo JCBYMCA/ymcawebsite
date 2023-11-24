@@ -84,16 +84,16 @@ const AutoScrollFeatures = () => {
         <motion.div animate={controls}
             className={'flex flex-col text-white text-center'}>
             <div className={'h-1/3 flex flex-col my-10'}>
-                <h1 className={'text-6xl font-bold'}>{title1}</h1>
-                <h1 className={'text-xl'}>{subtitle1}</h1>
+                <h1 className={'text-3xl font-bold'}>{title1}</h1>
+                <h1 className={'text-lg'}>{subtitle1}</h1>
             </div>
             <div className={'h-1/3 flex flex-col my-10'}>
-                <h1 className={'text-6xl font-bold'}>{title2}</h1>
-                <h1 className={'text-xl'}>{subtitle2}</h1>
+                <h1 className={'text-3xl font-bold'}>{title2}</h1>
+                <h1 className={'text-lg'}>{subtitle2}</h1>
             </div>
             <div className={'h-1/3 flex flex-col my-10'}>
-                <h1 className={'text-6xl font-bold'}>{title3}</h1>
-                <h1 className={'text-xl'}>{subtitle3}</h1>
+                <h1 className={'text-3xl font-bold'}>{title3}</h1>
+                <h1 className={'text-lg'}>{subtitle3}</h1>
             </div>
         </motion.div>
     )

@@ -26,7 +26,7 @@ const TemplatePage = (props) => {
             
         });
 
-    } , [])
+    } , [urlKey])
 
     return (<>
         <Head>

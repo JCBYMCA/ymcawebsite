@@ -2,6 +2,11 @@ import {useTranslations} from "next-intl";
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import {useTransition} from "next-intl";
 import Image from "next/image";
+import TwitterIcon from '@mui/icons-material/Twitter';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import { MyLocation } from "@mui/icons-material";
+
 // import {ADDRESS, ADMISSIONPHN, CONTACTEMAIL, PHONE} from "../../config/constants";
 
 
@@ -30,28 +35,47 @@ const FooterLinks = () => {
     const t = useTranslations("home.footer");
     return (
         <div className={'flex flex-col'}>
-        <div className={'md:h-[27rem] space-y-6 flex flex-col md:flex-row justify-around text-white text-lg space-x-8 p-8'} style={{'background': '#0e0e0e'}}>
+        <div className={'md:h-[22rem] space-y-6 flex flex-col md:flex-row justify-around text-white text-lg space-x-8 p-8'} style={{'background': '#1B1818'}}>
             <div className={'flex flex-col md:w-1/4'}>
-                <h1 className={'mb-2'}>{t("TEL")}: 0129-2310126</h1>
-                <h1 className={'mb-12'}>{t("EMAIL")}: contact@jcboseust.ac.in</h1>
-                <h1 className={'mb-2'}>{t('Subscribe for Newsletter')}</h1>
-                <div className={'flex mb-8'}>
-                    <input placeholder={t('Enter Email Address')} type={"email"} className={'text-black text-sm p-1 w-60 mr-2 border rounded-sm'}/>
-                    <button className={'bg-primaryLight p-1 rounded-sm hover:bg-primary cursor-pointer duration-200'} type={"submit"}>{t('SUBMIT')}</button>
+
+            <div className={'flex items-center text-lg text-white font-bold md:h-[8rem]'}>
+                {/* <Image src={'/assets/images/logo.png'} height={100} width={100}/> */}
+                <h1 className={'text-center w-80'}>{"J.C. Bose University of Science and Technology, YMCA, Faridabad"}</h1>
+            </div>  
+            <div className={'flex space-x-11 px-8'}>
+                <div className={'hover:scale-125 hover:text-primaryLight duration-200'} onClick={() => {
+                    window.open('https://twitter.com', '_blank');
+                }}><TwitterIcon/></div>
+                <div className={'hover:scale-125 hover:text-primaryLight duration-200'} onClick={() => {
+                    window.open('https://www.instagram.com/jcboseustofficial/', '_blank');
+                }}><InstagramIcon/></div>
+                <div className={'hover:scale-125 hover:text-primaryLight duration-200'} onClick={() => {
+                    window.open('https://facebook.com', '_blank');
+                }}><FacebookIcon/>
                 </div>
-                <div className={'bg-gray-300 h-[10rem] text-black'}>
+               </div>
+               <div className={'flex space-x-11 pt-9 px-8'}>
+                <div className={'hover:scale-125 hover:text-primaryLight duration-200'} onClick={() => {
+                    window.open('https://linkedin.com', '_blank');
+                }}><LinkedInIcon/></div>
+                <div className={'hover:scale-125 hover:text-primaryLight duration-200'} onClick={() => {
+                    window.open('https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14042.638181854629!2d77.3209443!3d28.3691409!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cdc71f6e9f557%3A0xeb301eec9ff18517!2sJ.C.%20Bose%20University%20of%20Science%20and%20Technology%2C%20YMCA%20(Formerly%20YMCA%20UST)!5e0!3m2!1sen!2sin!4v1665171600444!5m2!1sen!2sin', '_blank');
+                }}><MyLocation/></div>
+            </div>
+               
+                {/* <div className={'bg-gray-300 h-[10rem] text-black'}>
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14042.638181854629!2d77.3209443!3d28.3691409!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cdc71f6e9f557%3A0xeb301eec9ff18517!2sJ.C.%20Bose%20University%20of%20Science%20and%20Technology%2C%20YMCA%20(Formerly%20YMCA%20UST)!5e0!3m2!1sen!2sin!4v1665171600444!5m2!1sen!2sin"
                         width="100%" height="100%" style={{border:0}} allowFullScreen="" loading="lazy"
                         referrerPolicy="no-referrer-when-downgrade"></iframe>
-                </div>
+                </div> */}
 
             </div>
             <div className={'flex flex-col text-left space-y-6 md:w-1/4'}>
                 <div className={'w-full border-b-2 pb-2 border-secondaryLight'}>
-                    <h1 className={'font-bold'}>{t('Important Links')}</h1>
+                    <h3 className={'font-bold'}>{t('Important Links')}</h3>
                 </div>
-                <ul className={'text-gray-400'}>
+                <ul className={'text-gray-300 text-base'}>
                     <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('UGC')}</li>
                     <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('DTE, Haryana')}</li>
                     <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('DigiLocker')}</li>
@@ -66,7 +90,7 @@ const FooterLinks = () => {
                 <div className={'w-full border-b-2 pb-2 border-secondaryLight'}>
                     <h1 className={'font-bold'}>{t('Explore more')}</h1>
                 </div>
-                <ul className={'text-gray-400'}>
+                <ul className={'text-gray-400 text-base'}>
                     <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Officer\'s Contacts')}</li>
                     <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('JUFA Elections(2022)')}</li>
                     <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Archived News')}</li>
@@ -82,7 +106,7 @@ const FooterLinks = () => {
                 <div className={'w-full border-b-2 pb-2 border-secondaryLight'}>
                     <h1 className={'font-bold'}>{t('Explore more')}</h1>
                 </div>
-                <ul className={'text-gray-400'}>
+                <ul className={'text-gray-400 text-base'}>
                     <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('360 Degree Feedback')}</li>
                     <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('MoUs & Collaborations')}</li>
                     <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Holiday List')}</li>

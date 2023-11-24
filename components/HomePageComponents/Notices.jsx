@@ -69,7 +69,7 @@ const Notices = ({isDepartment = false, className}) => {
     const t = useTranslations("home.notices");
     return(
         <div className={'rounded-md border-gray-800 flex flex-col h-full ' + className}>
-            <div className={'rounded-tl-md rounded-tr-md py-2 text-xl md:text-3xl text-center bg-secondary text-white font-bold'}>
+            <div className={'rounded-tl-md rounded-tr-md py-2 text-xl md:text-xl text-center bg-secondary text-white font-bold'}>
                 {t('heading')}
             </div>
 

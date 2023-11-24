@@ -11,11 +11,11 @@ const FeatureCard = ({ title, description, icon, link, index }) => {
                 <div className={'mx-auto flex'}>
                     {icon}
                 </div>
-                <div className={'border-b-2 font-medium border-white mx-2 text-center pb-1'}>
+                <div className={'border-b-2 font-semibold border-white mx-2 text-center pb-1'}>
                     <h1>{t(title)}</h1>
                 </div>
-                <h1 className={'text-xs font-light mt-4 mb-12 '}>{t(description)}</h1>
-                <button className={'text-xxs py-0.5 absolute bottom-44 mx-auto md:text-sm bg-white px-2 md:px-3 hover:scale-105 duration-200 text-black'}>{t("Read More")}</button>
+                <h1 className={'text-sm font-light mt-4 mb-12 '}>{t(description)}</h1>
+                <button className={'text-xxs py-0.5 absolute bottom-44 mx-auto md:text-base bg-white px-2 md:px-3 hover:scale-105 duration-200 text-black'}>{t("Read More")}</button>
             </div>
         </div>
     )

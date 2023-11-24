@@ -18,7 +18,7 @@ const Dropdown = ({ submenus, dropdown, depthLevel, translations, left }) => {
   // console.log("logged inview ",inView, "depth level ",depthLevel);
   const dropdownClass = depthLevel > 1 ? screenWidth - posX <=200 ? "dropdown-submenu-left" : "dropdown-submenu-right" : "";
   return (
-    <ul ref={dropdownRef} className={`dropdown ${dropdownClass} ${dropdown ? "show" : ""} bg-primaryLight bg-opacity-90 text-white border-2 border-primary`}>
+    <ul ref={dropdownRef} className={`dropdown ${dropdownClass} ${dropdown ? "show" : ""} bg-[#EBEBEB] bg-opacity-90 text-black border-2 border-[#EBEBEB]`}>
       {submenus.map((submenu, index) => (
         <MenuItem items={submenu} key={index} depthLevel={depthLevel} translations={translations} />
       ))}

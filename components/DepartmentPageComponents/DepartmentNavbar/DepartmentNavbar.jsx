@@ -4,10 +4,10 @@ import Image from "next/image";
 import {useTranslations} from "next-intl";
 import HomeIcon from "@mui/icons-material/Home";
 import {useRouter} from "next/router";
-import { getMenu } from "../../../http";
+import { getDepartmentMenu, getMenu } from "../../../http";
 import { useEffect, useState } from "react";
 
-const DepartmentNavbar = () => {
+const DepartmentNavbar = ({id}) => {
     const t = useTranslations("home.navbar");
     return (
         <>
@@ -32,31 +32,31 @@ const DepartmentNavbar = () => {
                                className={'rounded-full'}/>
                     </div>
                 </div>
-                <DepartmentNavbarMenu/>
+                <DepartmentNavbarMenu id={id} />
             </div>
         </>
     )
 }
 
-export const DepartmentNavbarMenu = () => {
+export const DepartmentNavbarMenu = ({id}) => {
     const router = useRouter();
     const [menu, setMenu]= useState([]);
 
     useEffect(() => {
-        let user = "1";
+        let user = "2";
         // if(isDepartment){
         //     console.log("getting dept menu");
         //     if (router.query.id === undefined) return; else
         //     user = router.query.id;
         // }
-        console.log("getting",user,"menu");
-        getMenu(user).then((resp) => {
+        console.log("getting",id,"menu");
+        getDepartmentMenu(id).then((resp) => {
             console.log(resp.data);
             setMenu(createMenuObj(resp.data));
             
         });
 
-    } , [])
+    } , [id])
 
     const createMenuObj= (data)=> {
         let arr = [];
