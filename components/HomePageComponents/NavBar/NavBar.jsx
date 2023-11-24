@@ -14,7 +14,7 @@ import Drawer from 'react-modern-drawer'
 import 'react-modern-drawer/dist/index.css'
 import NavDrawer from "./NavDrawer";
 import SearchComponent from "../../common/SearchComponent";
-import { getMenu } from "../../../http";
+import {getDepartmentPostsMenu, getMenu} from "../../../http";
 
 const NavBar = () => {
     const router = useRouter();
@@ -50,10 +50,10 @@ const NavBar = () => {
         //     user = router.query.id;
         // }
         console.log("getting",user,"menu");
-        getMenu(user).then((resp) => {
+        getDepartmentPostsMenu(user).then((resp) => {
             console.log(resp.data);
             setMenu(createMenuObj(resp.data));
-            
+
         });
 
     } , [])
@@ -96,7 +96,7 @@ const NavBar = () => {
         submenu 2 -  138
         2d arr = {[]}
         arr[obj.p_id].append {obj} 138
-        submenu 
+        submenu
         let arr = {}
         for( item in data['Parent Menu List'] ){
             let temp = {}
@@ -118,8 +118,8 @@ const NavBar = () => {
             temp['link'] = item['url'];
             arr[item.p_id]['submenu'][item.s_id]['submenu'].append(temp);
         }
-        
-        
+
+
      */
 
     // }
@@ -221,7 +221,7 @@ const NavBar = () => {
 
             </NavDrawer>
             {/* <SearchComponent searchData={searchData}/> */}
-            
+
 
 
             {/*<div className={'flex md:hidden ml-auto mr-2'}>*/}

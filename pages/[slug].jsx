@@ -23,7 +23,7 @@ const TemplatePage = (props) => {
         getPost(user, urlKey).then((resp) => {
             setData(resp.data["Post List"][0].content);
             setTitle(resp.data["Post List"][0].name);
-            
+
         });
 
     } , [urlKey])
