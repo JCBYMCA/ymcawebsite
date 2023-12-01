@@ -45,11 +45,11 @@ const Notices = ({isDepartment = false, className}) => {
             if (router.query.id === undefined) return; else
             user = router.query.id;
         }
-        console.log("getting",user,"notices");
-        // getNotices(user, 'all').then((resp) => {
-        //     console.log(resp);
-        //     setNotices(resp.data["Notice List"]);
-        // });
+        //console.log("getting",user,"notices");
+        getNotices(user, 'student').then((resp) => {
+           // console.log(resp);
+            setNotices(resp.data["Notice List"]);
+        });
         getNotices(user, 'result').then((resp) => {
             setResultNotices(resp.data["Notice List"]);
         });
@@ -62,8 +62,8 @@ const Notices = ({isDepartment = false, className}) => {
         getNotices(user, 'student').then((resp) => {
             setStudentNotices(resp.data["Notice List"]);
         });
-        const arr= notices.concat(resultNotices).concat(datesheetNotices).concat(tenderNotices).concat(studentNotices);
-        setNotices(arr.sort((a,b)=> b.e_date - a.e_date))
+        //const arr= notices.concat(resultNotices).concat(datesheetNotices).concat(tenderNotices).concat(studentNotices);
+        //setNotices(arr.sort((a,b)=> b.e_date - a.e_date))
 
     } , [value,router])
     const t = useTranslations("home.notices");
@@ -77,7 +77,6 @@ const Notices = ({isDepartment = false, className}) => {
                 <TabList onChange={handleChange} aria-label="Notices Tab" className={'md:w-auto w-full'} variant="scrollable" sx={{
                     marginX: 'auto',
                 }}>
-
                         <Tab label="All" value="1" className={'font-bold text-sm text-black'}/>
                         <Tab label="Result" value="2" className={'font-bold text-sm text-black'}/>
                         <Tab label="Datesheet" value="3" className={'font-bold text-sm text-black'}/>
@@ -100,7 +99,7 @@ const Notices = ({isDepartment = false, className}) => {
                     {studentNotices.map((notice,i)=> moment(notice?.e_date).isAfter(moment()) ? (<Notice notice={notice} heading={notice?.title} key={i}/>) : null)}
                 </TabPanel>
             </TabContext>
-            <button className={'mt-auto mx-auto bg-white py-2 px-8 hover:scale-105 duration-200 flex-col mb-10'}>
+            <button className={'mt-auto mx-auto bg-secondary text-white py-2 px-8 hover:scale-105 duration-200 flex-col mb-10'}>
                 {t('viewAll')}
             </button>
         </div>

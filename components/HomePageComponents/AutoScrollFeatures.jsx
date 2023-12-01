@@ -8,7 +8,7 @@ const AutoScrollFeatures = () => {
     const data = [
         {
             first: {
-                title: t("A"),
+                title: t("A+"),
                 subtitle: t("Grade NAAC Accredited"),
             },
             second: {
@@ -40,7 +40,7 @@ const AutoScrollFeatures = () => {
                 subtitle: t("Students"),
             },
             second: {
-                title: t("30"),
+                title: t("18"),
                 subtitle: t("Acre Campus"),
             },
             third: {

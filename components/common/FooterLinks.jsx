@@ -5,7 +5,7 @@ import Image from "next/image";
 import TwitterIcon from '@mui/icons-material/Twitter';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
-import { MyLocation } from "@mui/icons-material";
+import { MyLocation, YouTube } from "@mui/icons-material";
 
 // import {ADDRESS, ADMISSIONPHN, CONTACTEMAIL, PHONE} from "../../config/constants";
 
@@ -39,25 +39,28 @@ const FooterLinks = () => {
             <div className={'flex flex-col md:w-1/4'}>
 
             <div className={'flex items-center text-lg text-white font-bold md:h-[8rem]'}>
-                {/* <Image src={'/assets/images/logo.png'} height={100} width={100}/> */}
+                <Image src={'/assets/images/footerlogo.png'} height={80} width={80}/>
                 <h1 className={'text-center w-80'}>{"J.C. Bose University of Science and Technology, YMCA, Faridabad"}</h1>
             </div>  
             <div className={'flex space-x-11 px-8'}>
                 <div className={'hover:scale-125 hover:text-primaryLight duration-200'} onClick={() => {
-                    window.open('https://twitter.com', '_blank');
+                    window.open('https://twitter.com/JCBoseUST', '_blank');
                 }}><TwitterIcon/></div>
                 <div className={'hover:scale-125 hover:text-primaryLight duration-200'} onClick={() => {
                     window.open('https://www.instagram.com/jcboseustofficial/', '_blank');
                 }}><InstagramIcon/></div>
                 <div className={'hover:scale-125 hover:text-primaryLight duration-200'} onClick={() => {
-                    window.open('https://facebook.com', '_blank');
+                    window.open('https://www.facebook.com/JCBoseUST', '_blank');
                 }}><FacebookIcon/>
                 </div>
                </div>
                <div className={'flex space-x-11 pt-9 px-8'}>
                 <div className={'hover:scale-125 hover:text-primaryLight duration-200'} onClick={() => {
-                    window.open('https://linkedin.com', '_blank');
+                    window.open('https://www.linkedin.com/JCBoseUST', '_blank');
                 }}><LinkedInIcon/></div>
+                <div className={'hover:scale-125 hover:text-primaryLight duration-200'} onClick={() => {
+                    window.open('https://www.youtube.com/JCBoseUniversity', '_blank');
+                }}><YouTube/></div>
                 <div className={'hover:scale-125 hover:text-primaryLight duration-200'} onClick={() => {
                     window.open('https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14042.638181854629!2d77.3209443!3d28.3691409!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cdc71f6e9f557%3A0xeb301eec9ff18517!2sJ.C.%20Bose%20University%20of%20Science%20and%20Technology%2C%20YMCA%20(Formerly%20YMCA%20UST)!5e0!3m2!1sen!2sin!4v1665171600444!5m2!1sen!2sin', '_blank');
                 }}><MyLocation/></div>

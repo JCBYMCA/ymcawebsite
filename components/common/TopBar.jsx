@@ -22,14 +22,14 @@ const TopBar = () => {
         <div className={'bg-primaryLight text-xs relative overflow-auto  flex h-7 items-center text-white px-5'} style={{
             zIndex:9000
         }}>
-            <div className={'flex space-x-1 items-center'}>
+            {/* <div className={'flex space-x-1 items-center'}>
                 <EmailOutlinedIcon/>
                 <a href='mailto:contact@jcboseust.ac.in'>contact@jcboseust.ac.in</a>
             </div>
             <div className={'flex space-x-1 ml-10 items-center'}>
                 <LocalPhoneOutlinedIcon/>
                 <a href='tel:+919898989898'>+91 9898989898</a>
-            </div>
+            </div> */}
             <div className={'flex ml-auto  mr-5'}>
                 <button className={'px-3 hover:bg-primary duration-200'}>DLMS</button>
                 <button className={'px-3 hover:bg-primary duration-200 '}>WEB</button>

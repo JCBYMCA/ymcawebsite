@@ -22,6 +22,7 @@ import Recruiters from "../components/HomePageComponents/Recruiters";
 import {useEffect} from "react";
 import Feedback from "../components/HomePageComponents/Feedback";
 import HomeSlider from "../components/HomePageComponents/HomeSlider";
+import Marquee from "../components/common/Marquee";
 
 const Home = () => {
 
@@ -35,6 +36,7 @@ const Home = () => {
             <NavBar/>
            
             <HomeSlider/>
+            <Marquee />
             <div className={'flex flex-col md:flex-row bg-[#EBEBEB] md:h-[26rem] items-center'}>
                 <div className={'flex flex-col md:flex-row w-4/5 justify-around'}>
                     <ProfileCard
@@ -59,18 +61,18 @@ const Home = () => {
             </div>
             <Feedback />
             <div className={'flex flex-col md:flex-row md:h-[36rem] bg-fixed bg-notice-bg bg-no-repeat bg-center bg-cover'}>
-                <div className={'flex flex-col md:flex-row bg-white bg-opacity-5 flex w-full md:h-[35.8rem] py-10 md:px-8'}>
+                <div className={'flex flex-col md:flex-row bg-[#EBEBEB] bg-opacity-5 flex w-full md:h-[35.8rem] py-10 md:px-8'}>
                     <div className={'md:w-2/3 w-auto md:mr-4'}>
-                        <Notices className={'bg-white border-solid'} />
+                        <Notices className={'bg-[#EBEBEB] border-solid'} />
                     </div>
                     <div className={'md:w-1/3 w-auto ml-4'}>
-                        <UpcomingEvents className={'bg-white border-solid'}/>
+                        <UpcomingEvents className={'bg-[#EBEBEB] border-solid'}/>
                     </div>
                 </div>
             </div>
 
 
-            <div className={'bg-feature-bg bg-no-repeat bg-fixed bg-cover bg-center '}>
+            <div className={'bg-feature-bg bg-no-repeat bg-fixed bg-cover bg-center bg-mintcream'}>
                 <div className={'backdrop-brightness-50 flex flex-col'}>
                     <div className={'mt-38 font-semibold'}>
                         <motion.h1
@@ -89,7 +91,7 @@ const Home = () => {
                             transition={{
                             delay: 0.2,
                             duration: 0.3,
-                        }} className={'text-white underline decoration-primaryLight underline-offset-8 select-none text-4xl ml-12 md:text-6xl md:ml-60'}>{t("Explore")}</motion.h1>
+                        }} className={'text-white decoration-primaryLight underline-offset-8 select-none text-4xl ml-12 md:text-6xl md:ml-60'}>{t("Explore")}</motion.h1>
                         <motion.h1
                             initial={{
                                 opacity:0,
@@ -142,9 +144,10 @@ const Home = () => {
             </div>
             {/* <Recruiters/> */}
             {/* className={'md:h-screen h-[40rem] -mt-[9.2rem] -z-10 flex flex-col'} */}
+            <div className={'border-y-4'}>
             <motion.div animate={{
                 backgroundColor:['#000', 'rgba(0,0,0,0)']
-            }} className={'h-[48rem] -mt-[9.2rem] -z-10 flex flex-col'}>
+            }} className={'h-[48rem] -z-10 flex flex-col'}>
                 <div className={''}>
                     {/* fixed md:w-full w-screen md:h-screen md:mt-[0px] mt-[-4rem] h-[43rem] bright ness-50 -z-30 object-fill */}
                  <video poster={'/assets/images/temp.png'} autoPlay muted loop className={'md:w-full  md:mt-[0px] mt-[-5rem] h-[48rem] bright ness-50 -z-30 object-fill' }>
@@ -157,6 +160,7 @@ const Home = () => {
                 </div>
                 {/* <ScrollHint/> */}
             </motion.div>
+            </div>
         </div>
         <FooterLinks/>
         </>

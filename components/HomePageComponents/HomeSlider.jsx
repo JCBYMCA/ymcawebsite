@@ -85,16 +85,16 @@ const Landing = () => {
                     arrows={false}
                 >
                     <div className={'w-full h-[68vh]'}>
-                        <Image src={'/assets/images/achievements/1.png'} alt={'Achievement'} layout={'fill'} />
+                        <Image src={'/assets/images/slider/1.jpg'} alt={'Achievement'} layout={'fill'} />
                     </div>
                     <div  >
-                        <Image src={'/assets/images/achievements/2.png'} alt={'Achievement'} layout={'fill'} />
+                        <Image src={'/assets/images/slider/2.jpg'} alt={'Achievement'} layout={'fill'} />
                     </div>
                     <div >
-                        <Image src={'/assets/images/achievements/3.png'} alt={'Achievement'} layout={'fill'}/>
+                        <Image src={'/assets/images/slider/3.jpg'} alt={'Achievement'} layout={'fill'}/>
                     </div>
                     <div>
-                        <Image src={'/assets/images/achievements/4.png'} alt={'Achievement'} layout={'fill'} />
+                        <Image src={'/assets/images/slider/4.jpg'} alt={'Achievement'} layout={'fill'} />
                     </div>
                 </Carousel>
                

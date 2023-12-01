@@ -9,7 +9,7 @@ const api = axios.create({
 
 // List of all the endpoints , GET requests
 export const getNotices = (department = "1", noticeType = "all") => api.get(`api/proxy/noticeapi/${department}/${noticeType}?format=json`);
-export const getEvents = (department = "1") => api.get(`api/proxy/eventsapi/${department}?format=json`);
+export const getEvents = (department = "1",noticeType = "event") => api.get(`api/proxy/noticeapi/${department}/${noticeType}?format=json`);
 export const getScheme = (department = "1") => api.get(`api/proxy/schemeapi/${department}?format=json`);
 export const getMenu = (department = "1") => api.get(`api/proxy/parentmenuapi/${department}?format=json`);
 export const getDepartmentMenu  = (department = "1") => api.get(`../api/proxy/parentmenuapi/${department}?format=json`);

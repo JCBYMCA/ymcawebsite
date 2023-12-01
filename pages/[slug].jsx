@@ -33,7 +33,7 @@ const TemplatePage = (props) => {
             <title>Home - JC Bose University of Science and Technology, YMCA</title>
         </Head>
     <div>
-        <div className={"backdrop-brightness-50 shadow-lg"}>
+        <div className={"shadow-lg"}>
         <NavBar/>
         </div>
         <PostTemplate content={data} title={title}></PostTemplate>

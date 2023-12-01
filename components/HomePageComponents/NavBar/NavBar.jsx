@@ -181,11 +181,17 @@ const NavBar = () => {
                             <h1 className={`text-xs md:text-xs ${!isWhite ? "" : "text-secondaryLight"}`}>{t("UST description 1")}</h1>
                             <h1 className={`hidden md:block text-xs ${!isWhite ? "" : "text-secondaryLight"}`}>{t("UST description 2")}</h1>
                         </div>
-                    </div>
-                    <div className={'ml-auto p-1 mr-5'}>
-                        <Image src={'/assets/images/jcBosePhoto.png'} width={75} height={75}
-                               className={'rounded-full'}/>
-                    </div>
+                    </div>                  
+                   
+<div className="flex ml-auto p-1 mr-5">
+    <div className="flex-shrink-0">
+        <Image src="/assets/images/G20.png" width={120} height={120} className="rounded-full" />
+    </div>
+    <div className="ml-2 flex-shrink-0">
+        <Image src="/assets/images/jcBosePhoto.png" width={75} height={75} className="rounded-full" />
+    </div>
+</div>
+
                 </>
 
             </div>

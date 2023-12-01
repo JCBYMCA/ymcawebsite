@@ -14,7 +14,7 @@ const Footer = () => {
                
                 <p className={'text-center w-120 text-base'}><span>{"Copyright © 2023 J.C. Bose University of Science and Technology, YMCA, Faridabad All Rights Reserved."}</span>
                 <br></br>    
-                <span>{"Designed & Developed By:  Meet The Team"}</span>         
+                <span>{"Designed & Developed By:  University Computer Centre & Digital Affairs Cell"}</span>         
                 </p>
                 
             </div>
