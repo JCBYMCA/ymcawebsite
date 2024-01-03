@@ -5,7 +5,7 @@ export default function handler (req, res) {
     console.log(path);
     let urlPath = path.join('/');
     console.log(urlPath);
-    const url = `http://49.50.77.87:8888/${urlPath}?format=json`;
+    const url = `http://49.50.77.87:8000/${urlPath}?format=json`;
     console.log(url);
     if (req.method === 'POST') {
         axios.post(url, req.body).then((response) => {
