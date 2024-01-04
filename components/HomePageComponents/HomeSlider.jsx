@@ -33,7 +33,7 @@ const Landing = () => {
 
     useEffect(() => {
         getSilder().then((resp) => {
-            setSliderImages(resp.data);
+            setSliderImages(resp.data['Notice List']);
             //console.log(resp.data);
         });
     }, []);
@@ -93,7 +93,7 @@ const Landing = () => {
                     swipeable
                     arrows={true}
                 >
-                    <div className={'w-full h-[30vh] md:h-[60vh]'}>
+                    {/* <div className={'w-full h-[30vh] md:h-[60vh]'}>
                         <Image src={'/assets/images/slider/1.jpg'} alt={'Achievement'} layout={'fill'} />
                     </div>
                     <div className={'w-full h-[30vh] md:h-[60vh]'}>
@@ -104,19 +104,12 @@ const Landing = () => {
                     </div>
                     <div className={'w-full h-[30vh] md:h-[60vh]'}>
                         <Image src={'/assets/images/slider/4.jpg'} alt={'Achievement'} layout={'fill'} />
-                    </div>
-                    {console.log(sliderImages)}                
-                    {/* {sliderImages && sliderImages.map((files_url, i) => (
-                        <div key={i} className={'w-full h-[68vh]'}>
-                            <Image src={files_url} alt={'Achievement'} layout={'fill'} />
+                    </div> */}               
+                    {sliderImages && sliderImages.map((item, i) => (
+                        <div key={i} className={'w-full h-[30vh] md:h-[60vh]'}>
+                            <Image src={'http://49.50.77.87:8000/media/'+item.files_url} alt={'Achievement'} layout={'fill'} />
                         </div>
-                    ))}                 */}
-                     {/* {sliderImages.map(item => (
-                          // Your map logic here
-                            <div key={item.slider_id} className={'w-full h-[68vh]'}>
-                                <Image src={item.files_url} alt={'Achievement'} layout={'fill'} />  
-                            </div>
-                           ))} */}
+                    ))} 
                 </Carousel>
                
                 </div>
