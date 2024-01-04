@@ -7,6 +7,15 @@ module.exports = {
   ],
   theme: {
     extend: {
+      animation: {
+        marquee: 'marquee 25s linear infinite',       
+      },
+      keyframes: {
+        marquee: {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-100%)' },
+        },        
+      },
       colors: {
         "primary": "#640100",
         "primaryLight": "#B03136",
@@ -41,3 +50,4 @@ module.exports = {
   },
   plugins: [],
 }
+

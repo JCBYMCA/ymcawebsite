@@ -47,7 +47,7 @@ const DrawerItem = ({ items, depthLevel, translations }) => {
                         aria-expanded={dropdown ? "false" : "false"}
                         onClick={onTap}
                     >
-                        {t(items.title)}{" "}
+                        {(items.title)}{" "}
                         {depthLevel > 0 ? <span>&raquo;</span> : <span className="arrow" />}
                     </button>
                     </div>
@@ -59,7 +59,7 @@ const DrawerItem = ({ items, depthLevel, translations }) => {
                     />
                 </>
             ) : (
-                <Link href={items.link ? items.link : "#"}><h1 className={'cursor-pointer py-[0.2rem] hover:bg-primary hover:text-white decoration-primary decoration-4 duration-300 underline-offset-4'}>{t(items.title)}</h1></Link>
+                <Link href={items.link ? items.link : "#"}><h1 className={'cursor-pointer py-[0.2rem] hover:bg-primary hover:text-white decoration-primary decoration-4 duration-300 underline-offset-4'}>{(items.title)}</h1></Link>
             )}
         </li>
     );

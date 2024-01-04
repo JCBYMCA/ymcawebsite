@@ -1,17 +1,19 @@
 import {useScroll} from "framer-motion";
 import {useEffect, useState} from "react";
 import Image from "next/image";
-
-import HomeIcon from "@mui/icons-material/Home";
 import {useRouter} from "next/router";
 import Carousel from "react-multi-carousel";
 import NavBar from "./NavBar/NavBar";
+import {getSilder} from "../../http";
+
+
 
 const Landing = () => {
     const router = useRouter();
     const {scrollY, scrollYProgress} = useScroll();
     const [isShow, setIsShow] = useState(false);
     const [bgImage, setBgImage] = useState(1);
+    const [sliderImages, setSliderImages] = useState([]);
 
     useEffect(() => {
         let i = 1;
@@ -20,7 +22,7 @@ const Landing = () => {
                 i=1;
             setBgImage(i);
             i++;
-            console.log(i);
+           // console.log(i);
         }, 5000)
     }, [])
 
@@ -29,6 +31,13 @@ const Landing = () => {
 
     })
 
+    useEffect(() => {
+        getSilder().then((resp) => {
+            setSliderImages(resp.data);
+            //console.log(resp.data);
+        });
+    }, []);
+     
     return (
         <div className={`bg-no-repeat duration-200 bg-cover bg-center flex flex-col ${isShow ? "bg-[#EBEBEB] sticky -top-[33rem] text-black" : `text-white`}`}
              style={{
@@ -95,7 +104,19 @@ const Landing = () => {
                     </div>
                     <div>
                         <Image src={'/assets/images/slider/4.jpg'} alt={'Achievement'} layout={'fill'} />
-                    </div>
+                    </div>   
+                    {console.log(sliderImages)}                
+                    {/* {sliderImages && sliderImages.map((files_url, i) => (
+                        <div key={i} className={'w-full h-[68vh]'}>
+                            <Image src={files_url} alt={'Achievement'} layout={'fill'} />
+                        </div>
+                    ))}                 */}
+                     {/* {sliderImages.map(item => (
+                          // Your map logic here
+                            <div key={item.slider_id} className={'w-full h-[68vh]'}>
+                                <Image src={item.files_url} alt={'Achievement'} layout={'fill'} />  
+                            </div>
+                           ))} */}
                 </Carousel>
                
                 </div>
