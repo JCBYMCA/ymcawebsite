@@ -43,7 +43,7 @@ const Landing = () => {
              style={{
             zIndex: 9999
         }}>
-            <div className={`py-1 bg-no-repeat duration-200 bg-cover bg-center flex flex-col ${isShow ? "bg-transparent" : "bg-opacity-50 bg-black"}`}>
+            <div className={`py-0 bg-no-repeat duration-200 bg-cover bg-center flex flex-col ${isShow ? "bg-transparent" : "bg-opacity-50 bg-black"}`}>
                 <div className={'h-[80%]'}>
                 <Carousel
                     additionalTransfrom={0}
@@ -91,20 +91,20 @@ const Landing = () => {
                     sliderClass=""
                     slidesToSlide={1}
                     swipeable
-                    arrows={false}
+                    arrows={true}
                 >
-                    <div className={'w-full h-[68vh]'}>
+                    <div className={'w-full h-[30vh] md:h-[60vh]'}>
                         <Image src={'/assets/images/slider/1.jpg'} alt={'Achievement'} layout={'fill'} />
                     </div>
-                    <div  >
+                    <div className={'w-full h-[30vh] md:h-[60vh]'}>
                         <Image src={'/assets/images/slider/2.jpg'} alt={'Achievement'} layout={'fill'} />
                     </div>
-                    <div >
-                        <Image src={'/assets/images/slider/3.jpg'} alt={'Achievement'} layout={'fill'}/>
+                    <div className={'w-full h-[30vh] md:h-[60vh]'}>
+                        <Image src={'/assets/images/slider/3.jpg'} alt={'Achievement'} layout={'fill'} />
                     </div>
-                    <div>
+                    <div className={'w-full h-[30vh] md:h-[60vh]'}>
                         <Image src={'/assets/images/slider/4.jpg'} alt={'Achievement'} layout={'fill'} />
-                    </div>   
+                    </div>
                     {console.log(sliderImages)}                
                     {/* {sliderImages && sliderImages.map((files_url, i) => (
                         <div key={i} className={'w-full h-[68vh]'}>

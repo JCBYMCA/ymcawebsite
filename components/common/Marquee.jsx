@@ -13,7 +13,7 @@ const Marquee = () => {
     })}, []);
 
   return (
-    <div class="relative flex overflow-x-hidden">
+    <div class="relative flex overflow-x-hidden bg-white">
       {/* <div class="py-3">
         <span class="text-2xl mx-4 bg-red-600 text-white">Bulletin</span>
       </div> */}

@@ -26,6 +26,22 @@ import Marquee from "../components/common/Marquee";
 
 const Home = () => {
 
+
+    useEffect(() => {
+        const parallaxBackground = document.querySelector('.bg-notice-bg');
+    
+        const handleScroll = () => {
+        const scrollPosition = window.scrollY;
+        parallaxBackground.style.transform = `translate3d(0, ${scrollPosition * 0.5}px, 0)`;
+        };
+    
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+        window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
     const t = useTranslations("home");
     return (
         <>
@@ -60,8 +76,10 @@ const Home = () => {
                 </div>
             </div>
             <Feedback />
-            <div className={'flex flex-col md:flex-row md:h-[36rem] bg-fixed bg-notice-bg bg-no-repeat bg-center bg-cover'}>
-                <div className={'flex flex-col md:flex-row bg-[#EBEBEB] bg-opacity-5 flex w-full md:h-[35.8rem] py-10 md:px-8'}>
+            <div className={'bg-no-repeat bg-fixed bg-cover bg-center'}>
+            <div className={'h-[100%] md:h-[80%] xl:h-[100%] w-full bg-notice-bg bg-no-repeat bg-center bg-cover absolute -z-10 top-[120%] md:top-[75%] xl:top-[80%] left-0'}></div>
+            <div className={'flex flex-col md:flex-row md:h-[36rem] bg-fixed bg!-notice-bg bg-no-repeat bg-center bg-cover'}>
+                <div className={'flex flex-col md:flex-row bg-[#EBEBEB] bg-opacity-5 w-full md:h-[35.8rem] py-10 md:px-8'}>
                     <div className={'md:w-2/3 w-auto md:mr-4'}>
                         <Notices className={'bg-[#EBEBEB] border-solid'} />
                     </div>
@@ -70,15 +88,17 @@ const Home = () => {
                     </div>
                 </div>
             </div>
+            </div>
 
 
-            <div className={'bg-feature-bg bg-no-repeat bg-fixed bg-cover bg-center bg-mintcream'}>
-                <div className={'backdrop-brightness-50 flex flex-col'}>
-                    <div className={'mt-38 font-semibold'}>
+            <div className={'bg-no-repeat bg-fixed bg-cover bg-center'}>
+                <div className={'h-[100%] md:h-[80%] xl:h-[100%] w-full bg!-feature-bg bg-no-repeat bg-center bg-cover absolute -z-10 top-[120%] md:top-[75%] xl:top-[100%] left-0'}></div>
+                <div className={'backdrop-brightness-50 flex flex-col items-center bg-[#000000] bg-opacity-40'}>
+                    <div className={'md:mt-20 mt-20 mb-10 font-semibold'}>
                         <motion.h1
                             initial={{
                                 opacity:0,
-                                x: -50,                            
+                                x: -50,
                             }}
                             viewport={{
                                 margin:'0px 0px -200px 0px',
@@ -91,7 +111,7 @@ const Home = () => {
                             transition={{
                             delay: 0.2,
                             duration: 0.3,
-                        }} className={'text-white decoration-primaryLight underline-offset-8 select-none text-4xl ml-12 md:text-6xl md:ml-60'}>{t("Explore")}</motion.h1>
+                        }} className={'text-white select-none text-2xl ml-0 md:text-5xl md:ml-0'}>{t("Explore")}</motion.h1>
                         <motion.h1
                             initial={{
                                 opacity:0,
@@ -108,7 +128,7 @@ const Home = () => {
                             transition={{
                                 delay: 0.2,
                                 duration: 0.3
-                            }} className={'text-white text-4xl ml-20 select-none md:text-6xl md:ml-96'}>{t("the privileges")}</motion.h1>
+                            }} className={'text-white text-4xl ml-0 select-none md:text-7xl md:ml-0'}>{t("the privileges")}</motion.h1>
                     </div>
                     <motion.div
                         initial={{
@@ -139,7 +159,6 @@ const Home = () => {
                     </motion.div>
 
                 </div>
-
 
             </div>
             {/* <Recruiters/> */}
