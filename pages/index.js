@@ -169,13 +169,13 @@ const Home = () => {
             <div className={'border-y-4'}>
             <motion.div animate={{
                 backgroundColor:['#000', 'rgba(0,0,0,0)']
-            }} className={'h-[48rem] -z-10 flex flex-col'}>
-                <div className={''}>
+            }} className={'md:h-[48rem] -z-10 flex flex-col'}>
+                <div className={'relative'}>
                     {/* fixed md:w-full w-screen md:h-screen md:mt-[0px] mt-[-4rem] h-[43rem] bright ness-50 -z-30 object-fill */}
-                 <video poster={'/assets/images/temp.png'} autoPlay muted loop className={'md:w-full  md:mt-[0px] mt-[-5rem] h-[48rem] bright ness-50 -z-30 object-fill' }>
+                    <video poster={'/assets/images/temp.png'} autoPlay muted loop className={'md:w-full md:mt-[0px] md:h-[48rem] bright ness-50 -z-30 object-fill' }>
                         <source src="/assets/video/Video.mov" type="video/mp4"/>
                     </video>
-                    <div className="absolute top-[410%] lg:top-[2300px] md:top-[410%]">
+                    <div className="absolute top-[0%] lg:top-[0%] md:top-[0%]">
                         <Heading/>
                     </div>
                     {/* <Button/> */}
