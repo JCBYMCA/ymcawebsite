@@ -30,9 +30,9 @@ const UpcomingEvents=()=>{
         })
     } , []);
     return(
-        <div className={'rounded-md h-full bg-[#EBEBEB] flex flex-col'}>
-            <div className={'rounded-tl-md rounded-tr-md py-2 text-xl text-center bg-secondary text-white font-bold'}>
-                Upcoming Events
+        <div className={'rounded-md bg-[#EBEBEB] flex flex-col h-full'}>
+            <div className={'rounded-tl-md rounded-tr-md py-2 text-l md:text-xl text-center bg-secondary text-white font-bold'}>
+                UPCOMING EVENTS
             </div>
             <div className={'flex-col py-4'}>
             {events.map((notice,i)=> moment(notice?.e_date).isAfter(moment()) ? (<Event notice={notice} heading={notice?.title} key={i}/>) : null)}

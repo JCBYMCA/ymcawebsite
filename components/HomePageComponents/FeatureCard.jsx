@@ -15,7 +15,7 @@ const FeatureCard = ({ title, description, icon, link, index }) => {
                     <h1>{t(title)}</h1>
                 </div>
                 <h1 className={'text-sm font-light mt-4 mb-12 '}>{t(description)}</h1>
-                <button className={'text-xxs py-0.5 absolute bottom-44 mx-auto md:text-base bg-white px-2 md:px-3 hover:scale-105 duration-200 text-black'}>{t("Read More")}</button>
+                <button className={'text-xxs py-0.5 absolute bottom-5 md:bottom-44 mx-auto md:text-base bg-white px-2 md:px-3 hover:scale-105 duration-200 text-black'}>{t("Read More")}</button>
             </div>
         </div>
     )

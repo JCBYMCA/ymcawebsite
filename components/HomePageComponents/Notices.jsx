@@ -69,7 +69,7 @@ const Notices = ({isDepartment = false, className}) => {
     const t = useTranslations("home.notices");
     return(
         <div className={'rounded-md border-gray-800 flex flex-col h-full ' + className}>
-            <div className={'rounded-tl-md rounded-tr-md py-2 text-xl md:text-xl text-center bg-secondary text-white font-bold'}>
+            <div className={'rounded-tl-md rounded-tr-md py-2 text-l md:text-xl text-center bg-secondary text-white font-bold'}>
                 {t('heading')}
             </div>
 
@@ -77,11 +77,11 @@ const Notices = ({isDepartment = false, className}) => {
                 <TabList onChange={handleChange} aria-label="Notices Tab" className={'md:w-auto w-full'} variant="scrollable" sx={{
                     marginX: 'auto',
                 }}>
-                        <Tab label="All" value="1" className={'font-bold text-sm text-black'}/>
-                        <Tab label="Result" value="2" className={'font-bold text-sm text-black'}/>
-                        <Tab label="Datesheet" value="3" className={'font-bold text-sm text-black'}/>
-                        <Tab label="Tender" value="4" className={'font-bold text-sm text-black'}/>
-                        <Tab label="Student" value="5" className={'font-bold text-sm text-black'}/>
+                        <Tab label="All" value="1" className={'font-bold text-xs md:text-sm text-black'}/>
+                        <Tab label="Result" value="2" className={'font-bold text-xs md:text-sm text-black'}/>
+                        <Tab label="Datesheet" value="3" className={'font-bold text-xs md:text-sm text-black'}/>
+                        <Tab label="Tender" value="4" className={'font-bold text-xs md:text-sm text-black'}/>
+                        <Tab label="Student" value="5" className={'font-bold text-xs md:text-sm text-black'}/>
                 </TabList>
                 <TabPanel value="1" className={"overflow-auto mb-4"} >
                     {notices.map((notice,i)=> moment(notice?.e_date).isAfter(moment()) ? (<Notice notice={notice} heading={notice?.title} key={i}/>) : null)}

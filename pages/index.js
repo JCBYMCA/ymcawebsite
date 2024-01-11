@@ -86,7 +86,7 @@ const Home = () => {
                     <div className={'md:w-2/3 w-auto md:mr-4'}>
                         <Notices className={'bg-[#EBEBEB] border-solid'} />
                     </div>
-                    <div className={'md:w-1/3 w-auto ml-4'}>
+                    <div className={'md:w-1/3 w-auto md:ml-4 mt-4 md:mt-0'}>
                         <UpcomingEvents className={'bg-[#EBEBEB] border-solid'}/>
                     </div>
                 </div>
