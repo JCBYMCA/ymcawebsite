@@ -1,6 +1,7 @@
 import Image from "next/image"
 import {useTranslations} from "next-intl";
 import {motion} from "framer-motion";
+import Link from "next/link";
 
 
 const ProfileCard = ({image, name, designation,url}) => {
@@ -36,7 +37,7 @@ const ProfileCard = ({image, name, designation,url}) => {
 
                 </div>
               <div className={'mx-auto mt-auto flex flex-col mb-3'}>
-                  <button  className={'px-1 py-0.5 mt-auto hover:scale-105  duration-200 text-sm rounded-sm bg-primaryLight text-white m'}>{t('read more')}</button>
+                  <Link className={'px-1 py-0.5 mt-auto hover:scale-105  duration-200 text-sm rounded-sm bg-primaryLight text-white m'} href={url ? url : "#"}>{t('read more')}</Link>
               </div>
           </div>
       </motion.div>
