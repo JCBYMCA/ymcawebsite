@@ -3,7 +3,7 @@ import {useTranslations} from "next-intl";
 import {motion} from "framer-motion";
 
 
-const ProfileCard = ({image, name, designation}) => {
+const ProfileCard = ({image, name, designation,url}) => {
     const t = useTranslations("home.profileCard");
 
   return (

@@ -59,16 +59,19 @@ const Home = () => {
                         name={'governor name'}
                         designation={'governor designation'}
                         image={'/assets/images/governor.png'}
+                        url = {'https://haryanarajbhavan.gov.in/whoswho/shri-bandaru-dattatraya/'}
                     />
                     <ProfileCard
                         name={'chief minister name'}
                         designation={'chief minister designation'}
                         image={'/assets/images/cm.png'}
+                        url = {'https://haryanacmoffice.gov.in/biography'}
                     />
                     <ProfileCard
                         name={'vice chancellor name'}
                         designation={'vice chancellor designation'}
                         image={'/assets/images/vc.png'}
+                        url = {'https://ymcawebsite.vercel.app/vice-chancellor'}
                     />
                 </div>
                 <div className={'w-1/5 hidden md:block bg-secondary h-full overflow-hidden'}>
