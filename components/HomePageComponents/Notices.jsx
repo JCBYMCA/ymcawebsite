@@ -41,7 +41,7 @@ const Notices = ({isDepartment = false, className}) => {
     useEffect(() => {
         let user = "1";
         if(isDepartment){
-            console.log("getting dept notices");
+            //console.log("getting dept notices");
             if (router.query.id === undefined) return; else
             user = router.query.id;
         }
@@ -62,6 +62,7 @@ const Notices = ({isDepartment = false, className}) => {
         getNotices(user, 'student').then((resp) => {
             setStudentNotices(resp.data["Notice List"]);
         });
+       
         //const arr= notices.concat(resultNotices).concat(datesheetNotices).concat(tenderNotices).concat(studentNotices);
         //setNotices(arr.sort((a,b)=> b.e_date - a.e_date))
 
@@ -76,12 +77,12 @@ const Notices = ({isDepartment = false, className}) => {
              <TabContext value={value} className={"mb-2"}>
                 <TabList onChange={handleChange} aria-label="Notices Tab" className={'md:w-auto w-full'} variant="scrollable" sx={{
                     marginX: 'auto',
-                }}>
-                        <Tab label="All" value="1" className={'font-bold text-xs md:text-sm text-black'}/>
+                }}>                    
+                        <Tab label="All" value="4" className={'font-bold text-xs md:text-sm text-black'}/>
                         <Tab label="Result" value="2" className={'font-bold text-xs md:text-sm text-black'}/>
                         <Tab label="Datesheet" value="3" className={'font-bold text-xs md:text-sm text-black'}/>
                         <Tab label="Tender" value="4" className={'font-bold text-xs md:text-sm text-black'}/>
-                        <Tab label="Student" value="5" className={'font-bold text-xs md:text-sm text-black'}/>
+                        <Tab label="Student" value="5" className={'font-bold text-xs md:text-sm text-black'}/>                        
                 </TabList>
                 <TabPanel value="1" className={"overflow-auto mb-4"} >
                     {notices.map((notice,i)=> moment(notice?.e_date).isAfter(moment()) ? (<Notice notice={notice} heading={notice?.title} key={i}/>) : null)}
@@ -92,12 +93,13 @@ const Notices = ({isDepartment = false, className}) => {
                 <TabPanel value="3" className={"overflow-auto mb-4"}>
                     {datesheetNotices.map((notice,i)=> moment(notice?.e_date).isAfter(moment()) ? (<Notice notice={notice} heading={notice?.title} key={i}/>) : null)}
                 </TabPanel>
-                <TabPanel value="4" className={"overflow-auto mb-4 scroll-smooth"}>
+                {/* <TabPanel value="4" className={"overflow-auto mb-4 scroll-smooth"}>
                     {tenderNotices.map((notice,i)=> moment(notice?.e_date).isAfter(moment()) ? (<Notice notice={notice} heading={notice?.title} key={i}/>) : null)}
-                </TabPanel>
+                </TabPanel> */}
                 <TabPanel value="5" className={"overflow-auto mb-4"} >
                     {studentNotices.map((notice,i)=> moment(notice?.e_date).isAfter(moment()) ? (<Notice notice={notice} heading={notice?.title} key={i}/>) : null)}
                 </TabPanel>
+                {tenderNotices.map((notice,i)=> moment(notice?.e_date).isAfter(moment()) ? (<Notice notice={notice} heading={notice?.title} key={i}/>) : null)}
             </TabContext>
             <button className={'mt-auto mx-auto bg-secondary text-white py-2 px-8 hover:scale-105 duration-200 flex-col mb-10'}>
                 {t('viewAll')}
