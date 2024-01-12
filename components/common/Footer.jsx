@@ -12,7 +12,7 @@ const Footer = () => {
             <div className={'flex items-center text-lg text-primary font-bold'}>
                 {/* <Image src={'/assets/images/logo.png'} height={100} width={100}/> */}
                
-                <p className={'text-center w-120 text-base'}><span>{"Copyright © 2023 J.C. Bose University of Science and Technology, YMCA, Faridabad All Rights Reserved."}</span>
+                <p className={'text-center w-120 text-base'}><span>{"Copyright © 2023-24 J.C. Bose University of Science and Technology, YMCA, Faridabad All Rights Reserved."}</span>
                 <br></br>    
                 <span>{"Designed & Developed By:  University Computer Centre & Digital Affairs Cell"}</span>         
                 </p>
