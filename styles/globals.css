@@ -120,7 +120,7 @@ header {
 
 /* Feature Card css (homepage) */
 .fbox-container {
-    display: flex;
+    /* display: flex; */
     min-height: 400px;
 }
 .fbox {
@@ -174,13 +174,15 @@ header {
         min-width: 100%;
         margin: 0;
     }
-
     .section-a {
         transform: rotate(0deg);
         margin-bottom: -50px;
         margin-top: 0;
         margin-right: 0;
         display: none;
+    }
+    .section-b {
+        height: 200px;
     }
 }
 
