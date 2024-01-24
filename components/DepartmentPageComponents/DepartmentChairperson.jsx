@@ -5,7 +5,7 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import FacebookIcon from '@mui/icons-material/Facebook'
 import {motion} from "framer-motion";
 import Image from "next/image";
-const  DepartmentChairperson = () => {
+const  DepartmentChairperson = ({name, designation, link}) => {
     return (
         <motion.div
             initial={{
@@ -28,10 +28,10 @@ const  DepartmentChairperson = () => {
             }}
             className={'flex flex-col  bg-opacity-90 px-4 items-center justify-center rounded-xl shadow-2xl h-[30rem]'}>
             <div>
-                <a href={'#'}><Image src={'/assets/images/faculty/atulmishra.png'} layout={'fixed'} height={300} width={300} className={'rounded'}/></a>
+                <a href={'#'}><Image src={'http://49.50.77.87:8000/media/'+link} height={300} width={300} className={'w-[300px] h-[350px] rounded'}/></a>
             </div>
-            <a href={'#'}><h1 className={'text-black font-bold text-2xl'}>Prof. Atul Mishra</h1></a>
-            <a href={'#'}><h1 className={'text-black font-light mb-2'}>Chairperson</h1></a>
+            <a href={'#'}><h1 className={'text-black font-bold text-2xl'}>{name}</h1></a>
+            <a href={'#'}><h1 className={'text-black font-light mb-2'}>{designation}</h1></a>
             <button className={' rounded-lg p-1 bg-primaryLight text-white hover:scale-105 duration-200 hover:bg-primary'} onClick={''}>Read More</button>
 
         </motion.div>

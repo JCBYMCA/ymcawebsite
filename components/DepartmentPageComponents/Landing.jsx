@@ -6,7 +6,7 @@ import HomeIcon from "@mui/icons-material/Home";
 import {useRouter} from "next/router";
 import Carousel from "react-multi-carousel";
 
-const Landing = () => {
+const Landing = ({id, dept_name}) => {
     const router = useRouter();
     const {scrollY, scrollYProgress} = useScroll();
     const [isShow, setIsShow] = useState(false);
@@ -98,7 +98,7 @@ const Landing = () => {
                 </Carousel>
                 <div className={'absolute ml-20 bottom-[21%]'}>
                     <h1>
-                        <span className={'text-3xl font-bold '}>Department of Computer Engineering</span>
+                        {/* <span className={'text-3xl font-bold '}>Department of Computer Engineering</span> */}
                     </h1>
                 </div>
                 </div>
@@ -115,7 +115,7 @@ const Landing = () => {
 
                     <div className={` margin auto`}>
 
-                        <DepartmentNavbarMenu/>
+                        <DepartmentNavbarMenu id={id} dept_name={dept_name} />
                     </div>
                 </div>
             </div>

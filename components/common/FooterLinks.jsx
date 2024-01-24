@@ -6,6 +6,8 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import { MyLocation, YouTube } from "@mui/icons-material";
+import { useState, useEffect } from "react";
+import { getFooterLinks } from '../../http';
 
 // import {ADDRESS, ADMISSIONPHN, CONTACTEMAIL, PHONE} from "../../config/constants";
 
@@ -33,6 +35,14 @@ import { MyLocation, YouTube } from "@mui/icons-material";
 
 const FooterLinks = () => {
     const t = useTranslations("home.footer");
+    const [links,setLinks] = useState([]);
+
+    useEffect(() => {
+        getFooterLinks().then((resp)=>{
+           // console.log(resp.data["Notice List"]);
+            setLinks(resp.data["List"]);
+        })
+    } , []);
     return (
         <div className={'flex flex-col'}>
         <div className={'md:h-[22rem] space-y-6 flex flex-col md:flex-row justify-around text-white text-lg space-x-8 p-8'} style={{'background': '#1B1818'}}>
@@ -79,14 +89,19 @@ const FooterLinks = () => {
                     <h3 className={'font-bold'}>{t('Important Links')}</h3>
                 </div>
                 <ul className={'text-gray-300 text-base'}>
-                    <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('UGC')}</li>
+                    {links && links.map((item, i)=> {
+                        if(i > 9) return;
+                        if(item.type=='Important')
+                        return <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{item.name}</li>
+                    })}
+                    {/* <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('UGC')}</li>
                     <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('DTE, Haryana')}</li>
                     <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('DigiLocker')}</li>
                     <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('HSTES')}</li>
                     <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('NPTEL')}</li>
                     <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('AICTE')}</li>
                     <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('NATS')}</li>
-                    <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('HSHEC')}</li>
+                    <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('HSHEC')}</li> */}
                 </ul>
             </div>
             <div className={'flex flex-col text-left space-y-6 md:w-1/4'}>
@@ -94,14 +109,19 @@ const FooterLinks = () => {
                     <h1 className={'font-bold'}>{t('Explore more')}</h1>
                 </div>
                 <ul className={'text-gray-400 text-base'}>
-                    <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Officer\'s Contacts')}</li>
+                    {links && links.map((item, i)=> {
+                        if(i > 9) return;
+                        if(item.type=='Explore')
+                        return <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{item.name}</li>
+                    })}
+                    {/* <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Officer\'s Contacts')}</li>
                     <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('JUFA Elections(2022)')}</li>
                     <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Archived News')}</li>
                     <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Policies')}</li>
                     <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('News Feeds')}</li>
                     <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Green Initiatives')}</li>
                     <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Extension & Outreach')}</li>
-                    <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('University Cells')}</li>
+                    <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('University Cells')}</li> */}
                     {/*<li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Pay my tuition')}</li>*/}
                 </ul>
             </div>

@@ -9,45 +9,49 @@ import { motion } from "framer-motion";
 import DepartmentNavbar from "../../components/DepartmentPageComponents/DepartmentNavbar/DepartmentNavbar";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import { getDepartmentMenu, getDepartmentPost } from "../../http";
+import { getAboutDepartment, getDepartmentMenu, getDepartmentPost } from "../../http";
 import Head from "next/head";
 import NavBar from "../../components/HomePageComponents/NavBar/NavBar";
 import PostTemplate from "../../components/common/PostTemplate";
 import FooterLinks from "../../components/common/FooterLinks";
+import departmentId from "../../config/dept_map";
 
 const DepartmentPage = ({ slug }) => {
-    const router = useRouter();
+    const [main, setMain] = useState([]);
     const [data, setData] = useState('');
     const [title, setTitle] = useState('');
     const page = slug?.[1] ? slug[1] : "";
 
-    const departmentId = {
-        "cse": 2,
-        "electrical": 1
-    }
-
     useEffect(() => {
-        console.log("getting", departmentId[slug?.[0]], "post data");
+        if(page!= "")
         getDepartmentPost(departmentId[slug?.[0]], page).then((resp) => {
             setData(resp.data["Post List"][0].content);
             setTitle(resp.data["Post List"][0].name);
+        });
+
+        getAboutDepartment(departmentId[slug?.[0]]).then((resp) => {
+            setMain(resp.data['List'], console.log(resp.data['List']))
         });
     }, [page, slug])
 
     return slug?.length === 1 ? (
         <div>
-            <DepartmentNavbar id={departmentId[slug[0]]} />
-            <Landing />
+            <DepartmentNavbar id={departmentId[slug[0]]} dept_name={slug[0]} />
+            <Landing id={departmentId[slug[0]]} dept_name={slug[0]} />
             <div className={'flex flex-col'}>
                 <div className={'mt-16 mb-12 ml-20 mr-16 space-x-12 flex '}>
-                    <DepartmentChairperson />
-                    <Description />
+                    {main && main.map(data => {
+                        return <>
+                        <DepartmentChairperson name={data.head_name} designation={data.head_des} link={data.head_img} />
+                        <Description about={data.about_department} mission={data.department_mission} vision={data.department_vision} />
+                        </>
+                    })}
                 </div>
                 <div className={'flex space-x-4 pl-20 py-8 bg-notice-bg bg-cover justify-around pr-20'}>
                     <Notices className={'w-[52rem] bg-white bg-opacity-60'} isDepartment={true} />
                     <QuickLinks heading={'Scheme & Syllabus'} />
                 </div>
-                <Achievements />
+                <Achievements id={departmentId[slug[0]]} />
             </div>
         </div>
     ) : (

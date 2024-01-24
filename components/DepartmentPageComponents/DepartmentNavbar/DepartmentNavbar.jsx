@@ -7,7 +7,7 @@ import {useRouter} from "next/router";
 import { getDepartmentMenu, getMenu } from "../../../http";
 import { useEffect, useState } from "react";
 
-const DepartmentNavbar = ({id}) => {
+const DepartmentNavbar = ({id, dept_name}) => {
     const t = useTranslations("home.navbar");
     return (
         <>
@@ -32,13 +32,13 @@ const DepartmentNavbar = ({id}) => {
                                className={'rounded-full'}/>
                     </div>
                 </div>
-                <DepartmentNavbarMenu id={id} />
+                <DepartmentNavbarMenu id={id} dept_name={dept_name} />
             </div>
         </>
     )
 }
 
-export const DepartmentNavbarMenu = ({id}) => {
+export const DepartmentNavbarMenu = ({id, dept_name}) => {
     const router = useRouter();
     const [menu, setMenu]= useState([]);
 
@@ -66,7 +66,7 @@ export const DepartmentNavbarMenu = ({id}) => {
             // console.log(item);
             let temp = {}
             temp['title'] = item["name"];
-            temp['link'] = item['url'];
+            temp['link'] = dept_name+'/'+item['url'];
             temp['submenu'] = [];
             arr.push(temp);
             pi[item.menu_id] = arr.length-1;
@@ -76,7 +76,7 @@ export const DepartmentNavbarMenu = ({id}) => {
         for(let item of data['Submenu Menu List'] ){
             let temp = {};
             temp['title'] = item["name"];
-            temp['link'] = item['url'];
+            temp['link'] = dept_name+'/'+item['url'];
             temp['submenu'] = [];
             arr[pi[item.p_id]]['submenu'].push(temp);
             si[item.menu_id] = arr[pi[item.p_id]]['submenu'].length-1;
@@ -85,7 +85,7 @@ export const DepartmentNavbarMenu = ({id}) => {
         for(let item of data['Submenu Level 2 Menu List'] ){
             let temp = {};
             temp['title'] = item["name"];
-            temp['link'] = item['url'];
+            temp['link'] = dept_name+'/'+item['url'];
             // console.log(item.p_id,item.s_id);
             arr[pi[item.p_id]]['submenu'][si[item.s_id]]['submenu'].push(temp);
         }

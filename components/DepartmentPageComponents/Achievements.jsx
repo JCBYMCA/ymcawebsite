@@ -3,6 +3,8 @@ import "react-multi-carousel/lib/styles.css";
 import Image from "next/image";
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import { useEffect, useState } from "react";
+import { getAchievement } from "../../http";
 
 const responsive = {
     desktop: {
@@ -40,15 +42,22 @@ const ButtonGroup = ({ next, previous, goToSlide, ...rest }) => {
 const Achievement = ({image_src, text}) => {
     return (
         <div className={'flex flex-col items-center justify-center'}>
-            <div className={'w-40 h-40 bg-secondaryDark rounded-full'}>
-                <Image src={image_src} alt={'Achievement'} width={200} height={200} className={'rounded-full'}/>
+            <div className={'h-50 bg-secondaryDark rounded-md'}>
+                <Image src={image_src} alt={'Achievement'} width={200} height={200} className={'w-[200px] h-[150px] rounded-md'}/>
             </div>
             <h1 className={'text-xs text-justify w-2/3 font-semibold text-secondary mt-4'}>{text.slice(0,100)+'...'}</h1>
         </div>
     );
 }
 
-const Achievements = () => {
+const Achievements = ({id}) => {
+    const [achievement,setAchievement] = useState([]);
+    useEffect(() => {
+        getAchievement().then((resp)=>{
+           // console.log(resp.data["Notice List"]);
+            setAchievement(resp.data["List"]);
+        })
+    } , []);
     return (
         <div className={'bg-white mt-8 mb-8'}>
             <div className={'container mx-auto'}>
@@ -75,6 +84,9 @@ const Achievements = () => {
                     dotListClass="custom-dot-list-style"
                     itemClass="carousel-item-padding-40-px"
                 >
+                    {achievement && achievement.map((item)=>{
+                        return <Achievement text={item.description} image_src={'http://49.50.77.87:8000/media/'+item.img}/>
+                    })}
                     <Achievement text={'Dr. Neelam Duhan has been awarded the AICTE Visvesvaraya Best Teacher Award 2021. The award carries a cash prize of Rs 25,000 with a medal and certificate of excellence.'} image_src={'/assets/images/achievements/1.png'}/>
                     <Achievement text={'The officials of university have been acknowledged for their support and contribution during the lockdown period of Covid-19 Pandemic from March to May, 2020, by the Haryana Red Cross Society.'} image_src={'/assets/images/achievements/2.png'}/>
                     <Achievement text={'The team of women innovators of the University was recently awarded the Lilavati Award 2021-22 on Women Empowerment by AICTE. The award carries a cash prize of Rs. 75,000 and an appreciation certification.'} image_src={'/assets/images/achievements/3.png'}/>
