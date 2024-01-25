@@ -8,6 +8,7 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import { MyLocation, YouTube } from "@mui/icons-material";
 import { useState, useEffect } from "react";
 import { getFooterLinks } from '../../http';
+import Link from "next/link";
 
 // import {ADDRESS, ADMISSIONPHN, CONTACTEMAIL, PHONE} from "../../config/constants";
 
@@ -92,7 +93,7 @@ const FooterLinks = () => {
                     {links && links.map((item, i)=> {
                         if(i > 9) return;
                         if(item.type=='Important')
-                        return <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{item.name}</li>
+                        return <li className={'mb-1 cursor-pointer hover:text-white duration-200'}><Link href={item.url ? item.url : "#"}>{item.name}</Link></li>
                     })}
                     {/* <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('UGC')}</li>
                     <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('DTE, Haryana')}</li>
