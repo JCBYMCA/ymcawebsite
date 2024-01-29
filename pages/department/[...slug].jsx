@@ -61,7 +61,7 @@ const DepartmentPage = ({ slug }) => {
             </Head>
             <div>
                 <div className={"backdrop-brightness-50 shadow-lg"}>
-                    <NavBar />
+                    <NavBar id={departmentId[slug[0]]} />
                 </div>
                 <PostTemplate content={data} title={title}></PostTemplate>
             </div>

@@ -16,7 +16,7 @@ import NavDrawer from "./NavDrawer";
 import SearchComponent from "../../common/SearchComponent";
 import {getDepartmentPostsMenu, getMenu} from "../../../http";
 
-const NavBar = () => {
+const NavBar = ({id}) => {
     const router = useRouter();
     const [isHome, setIsHome] = useState(false);
     const [isDepartment, setIsDepartment] = useState(false);
@@ -24,7 +24,6 @@ const NavBar = () => {
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
     const [menu, setMenu]= useState([]);
     useEffect(() => {
-
         if(router.pathname === '/') {
             setIsHome(true);
             setIsDepartment(false);
@@ -43,7 +42,7 @@ const NavBar = () => {
     }, [router.pathname])
 
     useEffect(() => {
-        let user = "1";
+        let user = id;
         // if(isDepartment){
         //     console.log("getting dept menu");
         //     if (router.query.id === undefined) return; else
