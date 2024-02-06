@@ -230,9 +230,10 @@ const Home = () => {
                 <div className={'relative'}>
                     {/* fixed md:w-full w-screen md:h-screen md:mt-[0px] mt-[-4rem] h-[43rem] bright ness-50 -z-30 object-fill */}
                     <video poster={'/assets/images/temp.png'} autoPlay muted loop className={'md:w-full md:mt-[0px] md:h-[48rem] bright ness-50 -z-30 object-fill' }>
-                        <source src="/assets/video/Video.mov" type="video/mp4"/>
+                        <source src="/assets/video/videoplayback.mp4" type="video/mp4"/>
                     </video>
-                    <div className="absolute top-[0%] lg:top-[0%] md:top-[0%]">
+                    <div className="absolute top-[0%] w-full h-full bg-black opacity-40"></div>
+                    <div className="absolute top-[0%] lg:top-[20%] md:top-[0%]">
                         <Heading/>
                     </div>
                     {/* <Button/> */}

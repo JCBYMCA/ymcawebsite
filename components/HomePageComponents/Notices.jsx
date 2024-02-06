@@ -26,7 +26,7 @@ const Notice = (props) => {
 }
 
 
-const Notices = ({isDepartment = false, className}) => {
+const Notices = ({isDepartment = false, isHome = true, className}) => {
     const [value, setValue] = useState('1');
     const router = useRouter();
     const handleChange = (event, newValue) => {
@@ -75,6 +75,7 @@ const Notices = ({isDepartment = false, className}) => {
             </div>
 
              <TabContext value={value} className={"mb-2"}>
+                {isHome && <>
                 <TabList onChange={handleChange} aria-label="Notices Tab" className={'md:w-auto w-full'} variant="scrollable" sx={{
                     marginX: 'auto',
                 }}>                    
@@ -84,6 +85,7 @@ const Notices = ({isDepartment = false, className}) => {
                         <Tab label="Tender" value="4" className={'font-bold text-xs md:text-sm text-black'}/>
                         <Tab label="Student" value="5" className={'font-bold text-xs md:text-sm text-black'}/>                        
                 </TabList>
+                </>}
                 <TabPanel value="1" className={"overflow-auto mb-4"} >
                     {notices.map((notice,i)=> moment(notice?.e_date).isAfter(moment()) ? (<Notice notice={notice} heading={notice?.title} key={i}/>) : null)}
                 </TabPanel>
