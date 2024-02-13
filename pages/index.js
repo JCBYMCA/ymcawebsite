@@ -84,7 +84,7 @@ const Home = ({setLoader}) => {
             {sliderImages.length!=0 && menu.length!=0 && <HomeSlider sliderImages={sliderImages} menu={menu} />}
             <Marquee />
             <div className={'flex flex-col md:flex-row bg-[#EBEBEB] md:h-[26rem] items-center'}>
-                <div className={'flex flex-col md:flex-row w-4/5 justify-around'}>
+                <div className={'flex flex-col md:flex-row w-4/5 md:justify-around'}>
                     <ProfileCard
                         name={'governor name'}
                         designation={'governor designation'}
@@ -112,8 +112,8 @@ const Home = ({setLoader}) => {
             <div className={'bg-no-repeat bg-fixed bg-cover bg-center'}>
             <div className={'h-[100%] md:h-[80%] xl:h-[100%] w-full bg-notice-bg bg-no-repeat bg-center bg-cover absolute -z-10 top-[120%] md:top-[75%] xl:top-[80%] left-0'}></div>
             <div className={'flex flex-col md:flex-row md:h-[36rem] bg-fixed bg!-notice-bg bg-no-repeat bg-center bg-cover'}>
-                <div className={'flex flex-col md:flex-row bg-[#EBEBEB] bg-opacity-5 w-full md:h-[35.8rem] py-10 md:px-8'}>
-                    <div className={'md:w-2/3 w-auto md:mr-4'}>
+                <div className={'flex flex-col md:flex-row bg-[#EBEBEB] bg-opacity-5 w-full md:h-[35.8rem] py-10 px-3 md:px-8'}>
+                    <div className={'md:w-2/3 w-auto shadow-sm md:mr-4'}>
                         <Notices className={'bg-[#EBEBEB] border-solid'} />
                     </div>
                     <div className={'md:w-1/3 w-auto md:ml-4 mt-4 md:mt-0'}>
