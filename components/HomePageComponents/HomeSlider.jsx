@@ -4,16 +4,13 @@ import Image from "next/image";
 import {useRouter} from "next/router";
 import Carousel from "react-multi-carousel";
 import NavBar from "./NavBar/NavBar";
-import {getSilder} from "../../http";
 
 
-
-const Landing = () => {
+const Landing = ({sliderImages, menu}) => {
     const router = useRouter();
     const {scrollY, scrollYProgress} = useScroll();
     const [isShow, setIsShow] = useState(false);
     const [bgImage, setBgImage] = useState(1);
-    const [sliderImages, setSliderImages] = useState([]);
 
     useEffect(() => {
         let i = 1;
@@ -30,13 +27,6 @@ const Landing = () => {
         scrollYProgress.get() >= 0.331 ? setIsShow(true) : setIsShow(false);
 
     })
-
-    useEffect(() => {
-        getSilder().then((resp) => {
-            setSliderImages(resp.data['Notice List']);
-            //console.log(resp.data);
-        });
-    }, []);
      
     return (
         <div className={`bg-no-repeat duration-200 bg-cover bg-center flex flex-col ${isShow ? "bg-[#EBEBEB] sticky -top-[33rem] text-black" : `text-white`}`}
@@ -116,7 +106,7 @@ const Landing = () => {
                 <div className={`fixed top-0 bg-[#EBEBEB] p-2 pb-0   w-full ${isShow ? 'visible' : 'invisible'}`}>
                   
                     <div className={` margin auto`}>
-                        <NavBar/>
+                        <NavBar menudata={menu} />
                     </div>
                 </div>
             </div>

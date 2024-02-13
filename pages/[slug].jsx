@@ -2,15 +2,19 @@ import PostTemplate from "../components/common/PostTemplate";
 import Head from "next/head";
 import NavBar from "../components/HomePageComponents/NavBar/NavBar";
 import FooterLinks from "../components/common/FooterLinks";
-import { getPost } from "../http";
+import { getDepartmentPostsMenu, getPost } from "../http";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
 const TemplatePage = (props) => {
+    setTimeout(() => {
+        props.setLoader(false);
+    }, 1000);
     const router= useRouter();
     const urlKey= router.query.slug;
     const [data, setData]= useState('');
     const [title, setTitle]= useState('');
+    const [menu, setMenu]= useState([]);
 
     useEffect(() => {
         let user = "1";
@@ -26,6 +30,10 @@ const TemplatePage = (props) => {
 
         });
 
+        getDepartmentPostsMenu(user).then((resp) => {
+            setMenu((resp.data));
+        });
+
     } , [urlKey])
 
     return (<>
@@ -34,7 +42,7 @@ const TemplatePage = (props) => {
         </Head>
     <div>
         <div className={"shadow-lg"}>
-        <NavBar/>
+        {menu.length!=0 && <NavBar menudata={menu} />}
         </div>
         <PostTemplate content={data} title={title}></PostTemplate>
 

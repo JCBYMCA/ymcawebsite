@@ -6,7 +6,7 @@ import HomeIcon from "@mui/icons-material/Home";
 import {useRouter} from "next/router";
 import Carousel from "react-multi-carousel";
 
-const Landing = ({id, dept_name}) => {
+const Landing = ({id, dept_name, sliderImages}) => {
     const router = useRouter();
     const {scrollY, scrollYProgress} = useScroll();
     const [isShow, setIsShow] = useState(false);
@@ -83,18 +83,23 @@ const Landing = ({id, dept_name}) => {
                     swipeable
                     arrows={false}
                 >
-                    <div className={'w-full h-[60vh]'}>
+                    <div className={'w-full h-[30vh] md:h-[60vh]'}>
                         <Image src={'/assets/images/achievements/1.png'} alt={'Achievement'} layout={'fill'} />
                     </div>
-                    <div  >
+                    <div className={'w-full h-[30vh] md:h-[60vh]'}>
                         <Image src={'/assets/images/achievements/2.png'} alt={'Achievement'} layout={'fill'} />
                     </div>
-                    <div >
+                    <div className={'w-full h-[30vh] md:h-[60vh]'}>
                         <Image src={'/assets/images/achievements/3.png'} alt={'Achievement'} layout={'fill'}/>
                     </div>
-                    <div>
+                    <div className={'w-full h-[30vh] md:h-[60vh]'}>
                         <Image src={'/assets/images/achievements/4.png'} alt={'Achievement'} layout={'fill'} />
                     </div>
+                    {sliderImages && sliderImages.map((item, i) => (
+                        <div key={i} className={'w-full h-[30vh] md:h-[60vh]'}>
+                            <Image src={'http://49.50.77.87:8000/media/'+item.files_url} alt={'Achievement'} layout={'fill'} />
+                        </div>
+                    ))} 
                 </Carousel>
                 <div className={'absolute ml-20 bottom-[21%]'}>
                     <h1>

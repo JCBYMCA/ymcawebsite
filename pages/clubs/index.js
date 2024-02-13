@@ -3,8 +3,15 @@ import { useTransition } from "next-intl";
 import ClubNavbar from "../../components/ClubPageComponents/ClubPageNavbar/ClubNavbar";
 import Clubs from "../../components/ClubPageComponents/Clubs";
 import Caro from "../../components/ClubPageComponents/Caro";
+import { useEffect } from "react";
 
-const cell = () => {
+const Club = ({setLoader}) => {
+  useEffect(() => {
+    setTimeout(() => {
+      setLoader(false);
+    }, 1000);
+  }, [])
+
   return (
     <div>
       <ClubNavbar />
@@ -15,4 +22,4 @@ const cell = () => {
   );
 };
 
-export default cell;
+export default Club;
