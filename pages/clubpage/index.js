@@ -17,15 +17,20 @@ const Clubpage = ({setLoader}) => {
   }, [])
   
   return (
-    <div>
+    <div className="bg-[#161b25]">
       <ClubNavbar />
       <ClubHero />
       <AboutClub />
-      <Gallery />
-      <div className={'flex space-x-4 pl-20 py-8 bg-notice-bg bg-cover justify-around pr-20'}>
-          <Notices className={'w-[52rem] bg-white bg-opacity-60'} isHome={false} />
-          <QuickLinks heading={'Upcoming Events'} />
+      <div className="sm:flex w-full h-full bg-[#161b25]">
+        <QuickLinks heading={"Upcoming Events"} />
+        <Gallery />
       </div>
+      {/* <div
+        className={
+          "flex space-x-4 pl-20 py-8 bg-notice-bg bg-cover justify-around pr-20"
+        }
+      >
+      </div> */}
       <FooterLinks />
     </div>
   );
