@@ -70,7 +70,7 @@ const Notices = ({isDepartment = false, isHome = true, className}) => {
     const t = useTranslations("home.notices");
     return(
         <div className={'rounded-md border-gray-800 flex flex-col h-full ' + className}>
-            <div className={'rounded-tl-md rounded-tr-md py-2 text-l md:text-xl text-center bg-secondary text-white font-bold'}>
+            <div className={'rounded-tl-md  rounded-tr-md py-2 text-l md:text-xl text-center bg-secondary text-white font-bold'}>
                 {t('heading')}
             </div>
 
@@ -86,6 +86,7 @@ const Notices = ({isDepartment = false, isHome = true, className}) => {
                         <Tab label="Student" value="5" className={'font-bold text-xs md:text-sm text-black'}/>                        
                 </TabList>
                 </>}
+                <div className="p-3">
                 <TabPanel value="1" className={"overflow-auto mb-4"} >
                     {notices.map((notice,i)=> moment(notice?.e_date).isAfter(moment()) ? (<Notice notice={notice} heading={notice?.title} key={i}/>) : null)}
                 </TabPanel>
@@ -102,6 +103,7 @@ const Notices = ({isDepartment = false, isHome = true, className}) => {
                     {studentNotices.map((notice,i)=> moment(notice?.e_date).isAfter(moment()) ? (<Notice notice={notice} heading={notice?.title} key={i}/>) : null)}
                 </TabPanel>
                 {tenderNotices.map((notice,i)=> moment(notice?.e_date).isAfter(moment()) ? (<Notice notice={notice} heading={notice?.title} key={i}/>) : null)}
+                </div>
             </TabContext>
             <button className={'mt-auto mx-auto bg-secondary text-white py-2 px-8 hover:scale-105 duration-200 flex-col mb-10'}>
                 {t('viewAll')}

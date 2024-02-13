@@ -50,7 +50,7 @@ const NavBar = ({id}) => {
         // }
         //console.log("getting",user,"menu");
         getDepartmentPostsMenu(user).then((resp) => {
-            //console.log(resp.data);
+            console.log(resp.data);
             setMenu(createMenuObj(resp.data));
 
         });
@@ -71,13 +71,19 @@ const NavBar = ({id}) => {
             pi[item.menu_id] = arr.length-1;
 
         }
-        //console.log(arr);
+        // console.log(arr ,pi);
         for(let item of data['Submenu Menu List'] ){
-            let temp = {};
-            temp['title'] = item["name"];
-            temp['link'] = item['url'];
-            temp['submenu'] = [];
-            arr[pi[item.p_id]]['submenu'].push(temp);
+            try{
+                let temp = {};
+                temp['title'] = item["name"];
+                temp['link'] = item['url'];
+                temp['submenu'] = [];
+                arr[pi[item.p_id]]['submenu'].push(temp);
+            }
+            catch (e) {
+                console.log(e);
+                // console.log(item);
+            }
             si[item.menu_id] = arr[pi[item.p_id]]['submenu'].length-1;
         }
         //console.log(si);

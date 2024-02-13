@@ -34,7 +34,7 @@ const UpcomingEvents=()=>{
             <div className={'rounded-tl-md rounded-tr-md py-2 text-l md:text-xl text-center bg-secondary text-white font-bold'}>
                 UPCOMING EVENTS
             </div>
-            <div className={'flex-col py-4'}>
+            <div className={'flex-col px-3 py-4'}>
             {events.map((notice,i)=> moment(notice?.e_date).isAfter(moment()) ? (<Event notice={notice} heading={notice?.title} key={i}/>) : null)}
             </div>
             
