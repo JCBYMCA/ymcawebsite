@@ -21,12 +21,27 @@ const Cellpage = ({setLoader}) => {
       <ClubHero />
       <AboutClub />
       <div className={'sm:flex sm:flex-row sm:items-center space-x-4 px-5 sm:pl-20 py-8 bg-notice-bg bg-cover justify-center sm:justify-around sm:pr-20'}>
-          <Notices className={'sm:w-[52rem] bg-white bg-opacity-60 px-4 pt-5 sm:pt-2'} isHome={false} />
-          <QuickLinks className={' sm:mt-0'} heading={'Upcoming Events'} />
+           <div className={'flex flex-col md:flex-row bg-[#EBEBEB] bg-opacity-5 w-full md:h-[35.8rem] py-10 px-3 md:px-8'}>
+                    <div className={'md:w-2/3 w-auto shadow-sm md:mr-4'}>
+                        <Notices className={'bg-[#EBEBEB] border-solid'} isHome={false} />
+                    </div>
+                    <div className={'md:w-1/3 w-auto md:ml-4 mt-4 md:mt-0'}>
+                        <QuickLinks className={'bg-[#EBEBEB] border-solid'} heading={"Upcoming Events"}/>
+                    </div>
+                </div>
       </div>
       <FooterLinks />
     </div>
   );
 };
+
+export async function getServerSideProps({locale}) {
+  return {
+      props: {
+          messages: (await import(`../../lang/${locale}.json`)).default,
+      }
+  }
+}
+
 
 export default Cellpage;

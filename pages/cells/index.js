@@ -22,4 +22,6 @@ const Cell = ({setLoader}) => {
   );
 };
 
+
+
 export default Cell;
