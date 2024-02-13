@@ -6,7 +6,7 @@ import CellCards from "../../components/ClubPageComponents/CellCards";
 import FooterLinks from "../../components/common/FooterLinks";
 import { useEffect } from "react";
 
-const cell = ({setLoader}) => {
+const Cell = ({setLoader}) => {
   useEffect(() => {
     setTimeout(() => {
       setLoader(false);
@@ -22,4 +22,4 @@ const cell = ({setLoader}) => {
   );
 };
 
-export default cell;
+export default Cell;

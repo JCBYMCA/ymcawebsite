@@ -8,7 +8,7 @@ import Notices from "../../components/HomePageComponents/Notices";
 import QuickLinks from "../../components/common/QuickLinks";
 import { useEffect } from "react";
 
-const club = ({setLoader}) => {
+const Cellpage = ({setLoader}) => {
   useEffect(() => {
     setTimeout(() => {
       setLoader(false);
@@ -29,4 +29,4 @@ const club = ({setLoader}) => {
   );
 };
 
-export default club;
+export default Cellpage;

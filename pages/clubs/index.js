@@ -5,7 +5,7 @@ import Clubs from "../../components/ClubPageComponents/Clubs";
 import Caro from "../../components/ClubPageComponents/Caro";
 import { useEffect } from "react";
 
-const cell = ({setLoader}) => {
+const Club = ({setLoader}) => {
   useEffect(() => {
     setTimeout(() => {
       setLoader(false);
@@ -22,4 +22,4 @@ const cell = ({setLoader}) => {
   );
 };
 
-export default cell;
+export default Club;
