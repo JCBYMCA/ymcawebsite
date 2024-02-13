@@ -19,18 +19,46 @@ import MovieIcon from '@mui/icons-material/Movie';
 import LocalLibraryIcon from '@mui/icons-material/LocalLibrary';
 import LocationCityIcon from '@mui/icons-material/LocationCity';
 import Recruiters from "../components/HomePageComponents/Recruiters";
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 import Feedback from "../components/HomePageComponents/Feedback";
 import HomeSlider from "../components/HomePageComponents/HomeSlider";
 import Marquee from "../components/common/Marquee";
 import Carousel from "react-multi-carousel";
+import api, { getDepartmentPostsMenu, getSilder } from "../http";
 
-const Home = () => {
+const Home = ({setLoader}) => {
+    const [sliderImages, setSliderImages] = useState([]);
+    const [menu, setMenu]= useState([]);
+    const [apiCount, setApiCount]= useState(1);
 
+    useEffect(()=> {
+        let user= 1;
+
+        getSilder().then((resp) => {
+            setApiCount(apiCount+1);
+            setSliderImages(resp.data['Notice List']);
+        });
+
+        getDepartmentPostsMenu(user).then((resp) => {
+            setApiCount(apiCount+1);
+            setMenu((resp.data));
+        });
+
+        return () => {
+            setLoader(true);
+          }
+    }, [])
+
+    useEffect(() => {
+        if(apiCount == 2) {
+            setTimeout(() => {
+                setLoader(false);
+            }, 1000);
+        }
+    }, [apiCount])
 
     useEffect(() => {
         const parallaxBackground = document.querySelector('.bg-notice-bg');
-    
         const handleScroll = () => {
         const scrollPosition = window.scrollY;
         parallaxBackground.style.transform = `translate3d(0, ${scrollPosition * 0.5}px, 0)`;
@@ -41,6 +69,7 @@ const Home = () => {
         return () => {
         window.removeEventListener('scroll', handleScroll);
         };
+        
     }, []);
 
     const t = useTranslations("home");
@@ -50,9 +79,9 @@ const Home = () => {
                 <title>Home - JC Bose University of Science and Technology, YMCA</title>
             </Head>
         <div>
-            <NavBar/>
+            {menu.length!=0 && <NavBar menudata={menu} />}
            
-            <HomeSlider/>
+            {sliderImages.length!=0 && menu.length!=0 && <HomeSlider sliderImages={sliderImages} menu={menu} />}
             <Marquee />
             <div className={'flex flex-col md:flex-row bg-[#EBEBEB] md:h-[26rem] items-center'}>
                 <div className={'flex flex-col md:flex-row w-4/5 justify-around'}>

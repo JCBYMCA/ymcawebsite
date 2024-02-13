@@ -14,9 +14,8 @@ import Drawer from 'react-modern-drawer'
 import 'react-modern-drawer/dist/index.css'
 import NavDrawer from "./NavDrawer";
 import SearchComponent from "../../common/SearchComponent";
-import {getDepartmentPostsMenu, getMenu} from "../../../http";
 
-const NavBar = ({id}) => {
+const NavBar = ({id, menudata}) => {
     const router = useRouter();
     const [isHome, setIsHome] = useState(false);
     const [isDepartment, setIsDepartment] = useState(false);
@@ -49,11 +48,7 @@ const NavBar = ({id}) => {
         //     user = router.query.id;
         // }
         //console.log("getting",user,"menu");
-        getDepartmentPostsMenu(user).then((resp) => {
-            //console.log(resp.data);
-            setMenu(createMenuObj(resp.data));
-
-        });
+        setMenu(createMenuObj(menudata));
 
     } , [])
 

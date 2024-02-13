@@ -4,8 +4,15 @@ import ClubNavbar from "../../components/ClubPageComponents/ClubPageNavbar/ClubN
 import CellHero from "../../components/ClubPageComponents/CellHero";
 import CellCards from "../../components/ClubPageComponents/CellCards";
 import FooterLinks from "../../components/common/FooterLinks";
+import { useEffect } from "react";
 
-const cell = () => {
+const cell = ({setLoader}) => {
+  useEffect(() => {
+    setTimeout(() => {
+      setLoader(false);
+    }, 1000);
+  }, [])
+
   return (
     <div>
       <ClubNavbar />

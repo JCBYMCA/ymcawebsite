@@ -6,8 +6,15 @@ import ClubNavbar from "../../components/ClubPageComponents/ClubPageNavbar/ClubN
 import FooterLinks from "../../components/common/FooterLinks";
 import Notices from "../../components/HomePageComponents/Notices";
 import QuickLinks from "../../components/common/QuickLinks";
+import { useEffect } from "react";
 
-const club = () => {
+const club = ({setLoader}) => {
+  useEffect(() => {
+    setTimeout(() => {
+      setLoader(false);
+    }, 1000);
+  }, [])
+  
   return (
     <div>
       <ClubNavbar />
