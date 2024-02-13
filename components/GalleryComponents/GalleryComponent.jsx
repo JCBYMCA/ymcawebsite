@@ -2,8 +2,6 @@ import Image from 'next/image';
 import { useState } from 'react';
 import GalleryModal from './GalleryModal';
 
-import {Lightbox} from 'yet-another-react-lightbox';
-
 
 import { ImageList } from '@mui/material';
 import { ImageListItem } from '@mui/material';
