@@ -43,7 +43,7 @@ const Home = ({setLoader}) => {
             setApiCount(apiCount+1);
             setMenu((resp.data));
         });
-
+        
         return () => {
             setLoader(true);
           }

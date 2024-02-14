@@ -9,7 +9,7 @@ import { motion } from "framer-motion";
 import DepartmentNavbar from "../../components/DepartmentPageComponents/DepartmentNavbar/DepartmentNavbar";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import { getAboutDepartment, getDepartmentMenu, getDepartmentPost, getSilder } from "../../http";
+import { getAboutDepartment, getDepartmentPost, getDepartmentPostsMenu, getSilder } from "../../http";
 import Head from "next/head";
 import NavBar from "../../components/HomePageComponents/NavBar/NavBar";
 import PostTemplate from "../../components/common/PostTemplate";
@@ -23,6 +23,7 @@ const DepartmentPage = ({ slug, setLoader }) => {
     const [main, setMain] = useState([]);
     const [data, setData] = useState('');
     const [title, setTitle] = useState('');
+    const [menu, setMenu] = useState([]);
     const [sliderImages, setSliderImages] = useState([]);
     const page = slug?.[1] ? slug[1] : "";
 
@@ -40,6 +41,11 @@ const DepartmentPage = ({ slug, setLoader }) => {
         getSilder(departmentId[slug?.[0]]).then((resp) => {
             setSliderImages(resp.data['Notice List']);
         });
+
+        getDepartmentPostsMenu(departmentId[slug?.[0]]).then((resp) => {
+            setMenu((resp.data));
+        });
+
     }, [page, slug])
 
     return slug?.length === 1 ? (
@@ -69,7 +75,7 @@ const DepartmentPage = ({ slug, setLoader }) => {
             </Head>
             <div>
                 <div className={"backdrop-brightness-50 shadow-lg"}>
-                    <NavBar id={departmentId[slug[0]]} />
+                    <NavBar id={departmentId[slug[0]]} menudata={menu} />
                 </div>
                 <PostTemplate content={data} title={title}></PostTemplate>
             </div>
