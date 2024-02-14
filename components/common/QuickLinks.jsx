@@ -32,7 +32,7 @@ const QuickLinks = ({heading,className}) => {
 
 
     return (
-        <div className={'flex flex-col mb-4 mx-8 sm:w-[28rem] sm:mb-0 bg-white sm:ml-10 sm:mx-0 rounded-lg mt-40 mr-4 h-96 bg-opacity-60' + className}>
+        <div className={'flex flex-col bg-white  bg-opacity-60 h-full mx-auto ' + className}>
             <div className={'flex items-center p-5 bg-gray-200 border-b-4 border-secondaryLight'}>
                 <h1 className={'font-bold text-2xl'}>{heading}</h1>
             </div>

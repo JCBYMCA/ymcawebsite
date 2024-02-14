@@ -2,7 +2,7 @@ import Image from "next/image"
 
 const Gallery = () => {
   return (
-    <div className="bg-[#161b25] p-10 px-20 hidden sm:block text-white w-[70%]">
+    <div className="bg-[#161b25]hidden sm:block text-white">
         <span className="text-5xl font-bold">Gallery</span>
         <div className="border border-white sm:border-t-6 border-solid mt-10"></div>
         <div className="flex mt-4">

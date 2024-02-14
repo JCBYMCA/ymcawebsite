@@ -21,9 +21,15 @@ const Clubpage = ({setLoader}) => {
       <ClubNavbar />
       <ClubHero />
       <AboutClub />
-      <div className="sm:flex w-full h-full bg-[#161b25]">
+      <div className=" flex-col flex p-10 justify-around md:flex-row w-full h-full bg-[#161b25] gap-y-10">
+        <div className={"md:w-1/4"}>
         <QuickLinks heading={"Upcoming Events"} />
-        <Gallery />
+        </div>
+        
+        <div className="md:w-2/3">
+          <Gallery />
+        </div>
+        
       </div>
       {/* <div
         className={
