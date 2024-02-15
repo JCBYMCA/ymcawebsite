@@ -23,6 +23,7 @@ export const getDepartmentPost = (department = "1", url= "LegalCell") => api.get
 export const getAchievement = (department = "1") => api.get(`../../api/proxy/achievementapi/${department}?format=json`);
 export const getGallery = (department = "1") => api.get(`../../api/proxy/galleryapi/${department}?format=json`);
 export const getEventGallery = (galleryId = "1") => api.get(`../../api/proxy/galleryimages_api/${galleryId}?format=json`);
+export const getCellsClubs = () => api.get(`../../api/proxy/cellsapi?format=json`);
 //Post requests
 //export const getNotices = (data,department = "admin") => api.post(`/noticenotice_api/${department}?format=json`, data);
 

@@ -23,46 +23,22 @@ const responsive = {
 const description =
   "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis consectetur ut molestias ad perspiciatis ex assumenda, sint";
 
-const Caro = ({ type }) => {
+const Caro = ({ title, data }) => {
+  
   return (
-    <div className="bg-[#F5F7FA] rounded-xl m-20 p-10 flex flex-col space-y-5">
-      <span className="text-4xl font-bold">{type}</span>
+    <div className="bg-[#F5F7FA] rounded-xl m-20 p-6 flex flex-col space-y-5">
+      <span className="text-4xl font-bold">{title}</span>
       <Carousel responsive={responsive} keyBoardControl={true}>
-        <Cards
-          height={100}
-          width={100}
-          name={"UCC & DA"}
-          desc={description}
-          image={"/assets/images/cell/ucc.png"}
-        />
-        <Cards
-          height={100}
-          width={100}
-          name={"C & C"}
-          desc={description}
-          image={"/assets/images/cell/logo2.png"}
-        />
-        <Cards
-          height={100}
-          width={100}
-          name={"IIC"}
-          desc={description}
-          image={"/assets/images/cell/logo3.png"}
-        />
-        <Cards
-          height={100}
-          width={100}
-          name={"UDAAN"}
-          desc={description}
-          image={"/assets/images/cell/logo4.png"}
-        />
-        <Cards
-          height={100}
-          width={100}
-          name={"Manan"}
-          desc={description}
-          image={"/assets/images/cell/logo4.png"}
-        />
+      {data && data.map((item, index) => (
+            <Cards
+            height={100}
+            width={100}
+            name={item.name}
+            desc={item.Description}
+            image={"http://49.50.77.87:8000/media/"+item.image}
+            url = {item.url}
+          />
+        ))}
       </Carousel>
     </div>
   );

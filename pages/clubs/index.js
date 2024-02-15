@@ -3,21 +3,43 @@ import { useTransition } from "next-intl";
 import ClubNavbar from "../../components/ClubPageComponents/ClubPageNavbar/ClubNavbar";
 import Clubs from "../../components/ClubPageComponents/Clubs";
 import Caro from "../../components/ClubPageComponents/Caro";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { getCellsClubs } from "../../http";
 
 const Club = ({setLoader}) => {
-  useEffect(() => {
-    setTimeout(() => {
+  const [techClubs,setTechClubs] = useState([]);
+  const [cultClubs,setCultClubs] = useState([]);
+
+  const separateClubs = (data,type)=>{
+      return data.filter((club)=>{
+          return club.type == type;
+      })
+      
+  }
+
+  useEffect(()=>{
+    getCellsClubs().then((resp) => {
+      console.log(resp.data);
+      setTechClubs(separateClubs(resp.data["List"],"technicalclub"))
+      setCultClubs(separateClubs(resp.data["List"],"culturalclub"))
       setLoader(false);
-    }, 1000);
-  }, [])
+
+  });
+
+
+
+
+  }, []); 
+
+
+
 
   return (
     <div>
       <ClubNavbar />
       <Clubs />
-      <Caro type={"Technical Clubs"} />
-      <Caro type={"Cultural Clubs"} />
+      <Caro title={"Technical Clubs"} data={techClubs} />
+      <Caro title={"Cultural Clubs"} data={cultClubs}    />
     </div>
   );
 };
