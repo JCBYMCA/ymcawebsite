@@ -31,6 +31,7 @@ const Caro = ({ title, data }) => {
       <Carousel responsive={responsive} keyBoardControl={true}>
       {data && data.map((item, index) => (
             <Cards
+            key = {index}
             height={100}
             width={100}
             name={item.name}
