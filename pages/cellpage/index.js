@@ -1,6 +1,6 @@
 import { useTranslations } from "next-intl";
 import { useTransition } from "next-intl";
-import AboutClub from "../../components/ClubPageComponents/AboutClub";
+import AboutCell from "../../components/ClubPageComponents/AboutCell";
 import ClubHero from "../../components/ClubPageComponents/ClubHero";
 import ClubNavbar from "../../components/ClubPageComponents/ClubPageNavbar/ClubNavbar";
 import FooterLinks from "../../components/common/FooterLinks";
@@ -19,7 +19,7 @@ const Cellpage = ({setLoader}) => {
     <div>
       <ClubNavbar />
       <ClubHero />
-      <AboutClub />
+      <AboutCell />
       <div className={'sm:flex sm:flex-row sm:items-center space-x-4 px-5 sm:pl-20 py-8 bg-notice-bg bg-cover justify-center sm:justify-around sm:pr-20'}>
            <div className={'flex flex-col md:flex-row bg-[#EBEBEB] bg-opacity-5 w-full md:h-[35.8rem] py-10 px-3 md:px-8'}>
                     <div className={'md:w-2/3 w-auto shadow-sm md:mr-4'}>

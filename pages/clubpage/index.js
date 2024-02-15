@@ -8,6 +8,7 @@ import FooterLinks from "../../components/common/FooterLinks";
 import Notices from "../../components/HomePageComponents/Notices";
 import QuickLinks from "../../components/common/QuickLinks";
 import { useEffect } from "react";
+import CLubPos from "../../components/ClubPageComponents/ClubPos";
 
 const Clubpage = ({setLoader}) => {
   useEffect(() => {
@@ -21,6 +22,7 @@ const Clubpage = ({setLoader}) => {
       <ClubNavbar />
       <ClubHero />
       <AboutClub />
+      <CLubPos />
       <div className=" flex-col flex p-10 justify-around md:flex-row w-full h-full bg-[#161b25] gap-y-10">
         <div className={"md:w-1/4"}>
         <QuickLinks heading={"Upcoming Events"} />

@@ -15,6 +15,18 @@ const AboutClub = () => {
             <br />
             {"Currently, UCC8DA is undertaking the ambitious project of developing a new website for the university. This endeavor aims to create a user-friendly and visually appealing online platform that showcases the university's offerings, faculty profiles, research initiatives, and other relevant information. The new website will serve as a digital gateway, providing easy access to resources and promoting effective communication between the university and its stakeholders."}
           </div>
+        <div className="">
+          <div className="hidden sm:block border border-t-6 border-white border-solid my-4">
+          </div>
+          <div className="sm:flex px-10 sm:px-0">
+            <div className="hidden sm:block border border-l-6 border-white border-solid mr-6"></div>
+            <div className="mt-8 mb-8 sm:mb-0 sm:mt-0">
+            <Image src='/assets/images/faculty/neelamduhan.png' alt="Pic" width={650} height={650} />
+            <h1 className="w-full text-xl font-bold pl-4 text-center sm:text-start">Dr. Neelam Duhan</h1>
+            <p className="w-full pl-20 sm:pl-10 text-xs">Director UCC&DA</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   )

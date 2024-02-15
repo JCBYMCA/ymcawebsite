@@ -7,29 +7,30 @@ import { useRouter } from "next/router";
 import { getGallery } from '../../http';
 import { getEventGallery } from '../../http';
 
-const TemplatePage = (props) => {
-    const router= useRouter();
-    const user= router.query.slug||router.query.id;
-    const [data, setData]= useState('');
-    const [title, setTitle]= useState('Gallery@JCBoseUST');
+const TemplatePage = ({ setLoader }) => {
+    const router = useRouter();
+    const user = router.query.slug || router.query.id;
+    const [data, setData] = useState('');
+    const [title, setTitle] = useState('Gallery@JCBoseUST');
 
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
-        if (user  === undefined) return; else
-        console.log("getting",user,"gallery data");
+        if (user === undefined) return; else
+            console.log("getting", user, "gallery data");
         setLoading(true);
         getGallery(user).then((resp) => {
             // console.log(resp);
             setData(resp.data["Gallery List"]);
             setTitle(resp.data["Gallery"]);
             setLoading(false);
+            setLoader(false);
 
         });
 
-        
 
-    } , [user])
+
+    }, [user])
 
 
 
@@ -37,12 +38,12 @@ const TemplatePage = (props) => {
         <Head>
             <title>Home - JC Bose University of Science and Technology, YMCA</title>
         </Head>
-    <div>
-        <NavBar/>
-        
-        <GalleryTemplate title={title} data={data} loader={loading}/>
+        <div>
+            {/* <NavBar/> */}
 
-    </div>
+            <GalleryTemplate title={title} data={data} loader={loading} />
+
+        </div>
         {/* <FooterLinks/> */}
     </>
     )
