@@ -44,4 +44,12 @@ const Clubpage = ({setLoader}) => {
   );
 };
 
+export async function getServerSideProps({locale}) {
+  return {
+      props: {
+          messages: (await import(`../../lang/${locale}.json`)).default,
+      }
+  }
+}
+
 export default Clubpage;

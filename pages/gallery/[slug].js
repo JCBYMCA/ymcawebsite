@@ -49,13 +49,13 @@ const TemplatePage = ({ setLoader }) => {
     )
 }
 
-// export async function getServerSideProps({locale}) {
-//     return {
-//         props: {
-//             messages: (await import(`../lang/${locale}.json`)).default,
-//         }
-//     }
-// }
+    export async function getServerSideProps({locale}) {
+        return {
+            props: {
+                messages: (await import(`../../lang/${locale}.json`)).default,
+            }
+        }
+    }
 
 
 export default TemplatePage;

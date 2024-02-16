@@ -89,9 +89,11 @@ export const getServerSideProps = async (context) => {
     console.log("slug", slug);
     return {
         props: {
-            slug: slug
+            slug: slug,
+            messages: (await import(`../../lang/${context.locale}.json`)).default,
         }
     }
 }
+
 
 export default DepartmentPage;

@@ -16,7 +16,7 @@ const ClubNavbar = () => {
                     <Image src='/assets/images/logo.png' alt={'Logo'} width={90} height={90} />
                     <div className={'flex flex-col'}>
                         <div className={'flex flex-col font-bold -space-y-1 tracking-wider mt-5'}>
-                            <h1 className={'text-xs md:text-3xl mb-1'}>Cells and Clubs</h1>
+                            <h1 className={'text-xs md:text-3xl mb-1'}>Clubs & Societies</h1>
                             {/*<h1 className={'text-xs md:text-xl'}>of Science & Technology</h1>*/}
                             {/*<h1 className={'text-xs md:text-xl'}>YMCA, Faridabad</h1>*/}
                         </div>

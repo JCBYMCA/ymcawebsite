@@ -6,7 +6,7 @@ import HomeIcon from "@mui/icons-material/Home";
 import {useRouter} from "next/router";
 import Carousel from "react-multi-carousel";
 
-const Landing = ({id, dept_name, sliderImages}) => {
+const Landing = ({id, dept_name, sliderImages, isNavbar=true}) => {
     const router = useRouter();
     const {scrollY, scrollYProgress} = useScroll();
     const [isShow, setIsShow] = useState(false);
@@ -34,7 +34,7 @@ const Landing = ({id, dept_name, sliderImages}) => {
             zIndex: 9999
         }}>
             <div className={`py-1 bg-no-repeat duration-200 bg-cover bg-center flex flex-col ${isShow ? "bg-transparent" : "bg-opacity-50 bg-black"}`}>
-                <div className={'h-[80%]'}>
+                <div className={'h-min]'}>
                 <Carousel
                     additionalTransfrom={0}
                     autoPlay
@@ -101,16 +101,18 @@ const Landing = ({id, dept_name, sliderImages}) => {
                         </div>
                     ))} 
                 </Carousel>
+                
                 <div className={'absolute ml-20 bottom-[21%]'}>
                     <h1>
                         {/* <span className={'text-3xl font-bold '}>Department of Computer Engineering</span> */}
                     </h1>
                 </div>
                 </div>
+                {isNavbar && <>
                 <div className={`fixed top-0 bg-[#EBEBEB] p-2 pb-0   w-full ${isShow ? 'visible' : 'invisible'}`}>
                     <div className={`  flex items-center mb-4 ml-3`}>
                         {/*<h1 className={'text-green-500'}>Department of Computer Engineering, Bachelor of Technology</h1>*/}
-                        <Image src={'/assets/images/favicon.ico'} alt={'Logo'} width={70} height={70} className={isShow ? "visible" : "invisible"} />
+                        <Image src={'/assets/image{isNavbar? <>s/favicon.ico'} alt={'Logo'} width={70} height={70} className={isShow ? "visible" : "invisible"} />
                         <div className={'flex flex-col ml-2'}>
                             <h1 className={'font-semibold text-3xl'}>Department of Computer Engineering</h1>
                             <h1 className={'font-semibold text-md text-secondaryLight'}>J.C. Bose University of Science and
@@ -123,6 +125,9 @@ const Landing = ({id, dept_name, sliderImages}) => {
                         <DepartmentNavbarMenu id={id} dept_name={dept_name} />
                     </div>
                 </div>
+                </>
+                }   
+
             </div>
         </div>
     )

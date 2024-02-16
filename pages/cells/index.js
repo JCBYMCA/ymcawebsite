@@ -4,20 +4,36 @@ import ClubNavbar from "../../components/ClubPageComponents/ClubPageNavbar/ClubN
 import CellHero from "../../components/ClubPageComponents/CellHero";
 import CellCards from "../../components/ClubPageComponents/CellCards";
 import FooterLinks from "../../components/common/FooterLinks";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { getCellsClubs } from "../../http";
+
 
 const Cell = ({setLoader}) => {
-  useEffect(() => {
-    setTimeout(() => {
+  const [cells,setCells] = useState([]);
+
+  const separateClubs = (data,type)=>{
+      return data.filter((club)=>{
+          return club.type == type;
+      })
+      
+  }
+
+  useEffect(()=>{
+    getCellsClubs().then((resp) => {
+      console.log(resp.data);
+      setCells(separateClubs(resp.data["List"],"cells"))
       setLoader(false);
-    }, 1000);
-  }, [])
+
+  });
+
+
+  }, []); 
 
   return (
     <div>
       <ClubNavbar />
       <CellHero />
-      <CellCards />
+      <CellCards data={cells} />
     </div>
   );
 };
