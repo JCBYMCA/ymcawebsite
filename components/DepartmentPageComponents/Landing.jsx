@@ -83,16 +83,16 @@ const Landing = ({id, dept_name, sliderImages, isNavbar=true}) => {
                     swipeable
                     arrows={false}
                 >
-                    <div className={'w-full h-[30vh] md:h-[60vh]'}>
+                    <div className={'w-full h-[30vh] md:h-[65vh]'}>
                         <Image src={'/assets/images/achievements/1.png'} alt={'Achievement'} layout={'fill'} />
                     </div>
-                    <div className={'w-full h-[30vh] md:h-[60vh]'}>
+                    <div className={'w-full h-[30vh] md:h-[65vh]'}>
                         <Image src={'/assets/images/achievements/2.png'} alt={'Achievement'} layout={'fill'} />
                     </div>
-                    <div className={'w-full h-[30vh] md:h-[60vh]'}>
+                    <div className={'w-full h-[30vh] md:h-[65vh]'}>
                         <Image src={'/assets/images/achievements/3.png'} alt={'Achievement'} layout={'fill'}/>
                     </div>
-                    <div className={'w-full h-[30vh] md:h-[60vh]'}>
+                    <div className={'w-full h-[30vh] md:h-[65vh]'}>
                         <Image src={'/assets/images/achievements/4.png'} alt={'Achievement'} layout={'fill'} />
                     </div>
                     {sliderImages && sliderImages.map((item, i) => (

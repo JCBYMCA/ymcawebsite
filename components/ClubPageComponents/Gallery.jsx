@@ -1,10 +1,14 @@
+import { Button } from "@mui/material"
 import Image from "next/image"
 
 const Gallery = () => {
   return (
     <div className="bg-[#161b25]hidden sm:block text-white">
-        <span className="text-5xl font-bold">Gallery</span>
-        <div className="border border-white sm:border-t-6 border-solid mt-10"></div>
+      <div className="flex items-center">
+        <span className="text-5xl font-bold pr-8">Gallery</span>
+        <Button variant="outlined" className="border-white text-white hover:border-white">View More</Button>
+      </div>
+        <div className="border border-white sm:border-t-6 border-solid mt-4"></div>
         <div className="flex mt-4">
             <div className="border border-solid border-white border-l-6"></div>
             <div className="sm:flex pl-6 space-x-6">
