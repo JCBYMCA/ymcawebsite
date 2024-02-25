@@ -18,7 +18,7 @@
     "bcryptjs": "^2.4.3",
     "framer-motion": "^7.5.0",
     "jsonwebtoken": "^8.5.1",
-    "moment": "^2.29.4",
+    "moment": "^2.30.1",
     "next": "^14.0.3",
     "next-intl": "^2.7.6",
     "react": "^18.2.0",

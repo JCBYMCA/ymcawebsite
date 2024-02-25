@@ -5,7 +5,7 @@ const Gallery = () => {
   return (
     <div className="bg-[#161b25]hidden sm:block text-white">
       <div className="flex items-center">
-        <span className="text-5xl font-bold pr-8">Gallery</span>
+        <span className="text-5xl font-bold pr-8">Gallery</span>  
         <Button variant="outlined" className="border-white text-white hover:border-white">View More</Button>
       </div>
         <div className="border border-white sm:border-t-6 border-solid mt-4"></div>

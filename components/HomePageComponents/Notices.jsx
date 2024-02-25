@@ -46,20 +46,35 @@ const Notices = ({isDepartment = false, isHome = true, className}) => {
             user = router.query.id;
         }
         //console.log("getting",user,"notices");
-        getNotices(user, 'student').then((resp) => {
+        getNotices(user, 'all').then((resp) => {
            // console.log(resp);
+            resp.data["Notice List"].sort((a, b)=> {
+                return moment(b.date) - moment(a.date)
+            })
             setNotices(resp.data["Notice List"]);
         });
         getNotices(user, 'result').then((resp) => {
+            resp.data["Notice List"].sort((a, b)=> {
+                return moment(b.date) - moment(a.date)
+            })
             setResultNotices(resp.data["Notice List"]);
         });
         getNotices(user, 'datesheet').then((resp) => {
+            resp.data["Notice List"].sort((a, b)=> {
+                return moment(b.date) - moment(a.date)
+            })
             setDatesheetNotices(resp.data["Notice List"]);
         });
         getNotices(user, 'tender').then((resp) => {
+            resp.data["Notice List"].sort((a, b)=> {
+                return moment(b.date) - moment(a.date)
+            })
             setTenderNotices(resp.data["Notice List"]);
         });
         getNotices(user, 'student').then((resp) => {
+            resp.data["Notice List"].sort((a, b)=> {
+                return moment(b.date) - moment(a.date)
+            })
             setStudentNotices(resp.data["Notice List"]);
         });
        
@@ -79,7 +94,7 @@ const Notices = ({isDepartment = false, isHome = true, className}) => {
                 <TabList onChange={handleChange} aria-label="Notices Tab" className={'md:w-auto w-full'} variant="scrollable" sx={{
                     marginX: 'auto',
                 }}>                    
-                        <Tab label="All" value="4" className={'font-bold text-xs md:text-sm text-black'}/>
+                        <Tab label="All" value="1" className={'font-bold text-xs md:text-sm text-black'}/>
                         <Tab label="Result" value="2" className={'font-bold text-xs md:text-sm text-black'}/>
                         <Tab label="Datesheet" value="3" className={'font-bold text-xs md:text-sm text-black'}/>
                         <Tab label="Tender" value="4" className={'font-bold text-xs md:text-sm text-black'}/>
@@ -87,22 +102,24 @@ const Notices = ({isDepartment = false, isHome = true, className}) => {
                 </TabList>
                 </>}
                 <div className="p-3">
-                <TabPanel value="1" className={"overflow-auto mb-4"} >
+                <TabPanel value="1" className={"overflow-auto mb-4 overflow-y-scroll"} >
                     {notices.map((notice,i)=> moment(notice?.e_date).isAfter(moment()) ? (<Notice notice={notice} heading={notice?.title} key={i}/>) : null)}
                 </TabPanel>
-                <TabPanel value="2" className={"overflow-auto mb-4"}>
+                <TabPanel value="2" className={"overflow-auto mb-4 overflow-y-scroll"}>
                     {resultNotices.map((notice,i)=> moment(notice?.e_date).isAfter(moment()) ? (<Notice notice={notice} heading={notice?.title} key={i}/>) : null)}
                 </TabPanel>
-                <TabPanel value="3" className={"overflow-auto mb-4"}>
+                <TabPanel value="3" className={"overflow-auto mb-4 overflow-y-scroll"}>
                     {datesheetNotices.map((notice,i)=> moment(notice?.e_date).isAfter(moment()) ? (<Notice notice={notice} heading={notice?.title} key={i}/>) : null)}
                 </TabPanel>
                 {/* <TabPanel value="4" className={"overflow-auto mb-4 scroll-smooth"}>
                     {tenderNotices.map((notice,i)=> moment(notice?.e_date).isAfter(moment()) ? (<Notice notice={notice} heading={notice?.title} key={i}/>) : null)}
                 </TabPanel> */}
-                <TabPanel value="5" className={"overflow-auto mb-4"} >
+                <TabPanel value="4" className={"overflow-auto mb-4 overflow-y-scroll"} >
                     {studentNotices.map((notice,i)=> moment(notice?.e_date).isAfter(moment()) ? (<Notice notice={notice} heading={notice?.title} key={i}/>) : null)}
                 </TabPanel>
-                {tenderNotices.map((notice,i)=> moment(notice?.e_date).isAfter(moment()) ? (<Notice notice={notice} heading={notice?.title} key={i}/>) : null)}
+                <TabPanel value="5" className={"overflow-auto mb-4 overflow-y-scroll"} >
+                    {tenderNotices.map((notice,i)=> moment(notice?.e_date).isAfter(moment()) ? (<Notice notice={notice} heading={notice?.title} key={i}/>) : null)}
+                </TabPanel>
                 </div>
             </TabContext>
             <button className={'mt-auto mx-auto bg-secondary text-white py-2 px-8 hover:scale-105 duration-200 flex-col mb-10'}>

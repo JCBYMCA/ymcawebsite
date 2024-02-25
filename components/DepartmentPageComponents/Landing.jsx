@@ -86,7 +86,7 @@ const Landing = ({id, dept_name, sliderImages, isNavbar=true}) => {
                     <div className={'w-full h-[30vh] md:h-[65vh]'}>
                         <Image src={'/assets/images/achievements/1.png'} alt={'Achievement'} layout={'fill'} />
                     </div>
-                    <div className={'w-full h-[30vh] md:h-[65vh]'}>
+                    {/* <div className={'w-full h-[30vh] md:h-[65vh]'}>
                         <Image src={'/assets/images/achievements/2.png'} alt={'Achievement'} layout={'fill'} />
                     </div>
                     <div className={'w-full h-[30vh] md:h-[65vh]'}>
@@ -94,7 +94,7 @@ const Landing = ({id, dept_name, sliderImages, isNavbar=true}) => {
                     </div>
                     <div className={'w-full h-[30vh] md:h-[65vh]'}>
                         <Image src={'/assets/images/achievements/4.png'} alt={'Achievement'} layout={'fill'} />
-                    </div>
+                    </div> */}
                     {sliderImages && sliderImages.map((item, i) => (
                         <div key={i} className={'w-full h-[30vh] md:h-[60vh]'}>
                             <Image src={'http://49.50.77.87:8000/media/'+item.files_url} alt={'Achievement'} layout={'fill'} />

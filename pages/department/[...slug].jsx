@@ -61,9 +61,13 @@ const DepartmentPage = ({ slug, setLoader }) => {
                         </>
                     })}
                 </div>
-                <div className={'flex space-x-4 pl-20 py-8 bg-notice-bg bg-cover justify-around pr-20'}>
-                    <Notices className={'w-[52rem] bg-white bg-opacity-60'} isDepartment={true}  isHome={false} />
-                    <QuickLinks heading={'Scheme & Syllabus'} />
+                <div className={'flex flex-col md:flex-row bg-notice-bg bg-cover bg-opacity-5 w-full md:h-[35.8rem] py-10 px-3 md:px-8'}>
+                    <div className={'md:w-2/3 w-auto shadow-sm md:mr-4'}>
+                        <Notices className={'bg-[#EBEBEB] border-solid'} isDepartment={true}  isHome={false} />
+                    </div>
+                    <div className={'md:w-1/3 w-auto md:ml-4 mt-4 md:mt-0'}>
+                        <QuickLinks heading={'Scheme & Syllabus'} className={'bg-[#EBEBEB] border-solid'}/>
+                    </div>
                 </div>
                 <Achievements id={departmentId[slug[0]]} />
             </div>

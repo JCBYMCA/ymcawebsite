@@ -42,7 +42,7 @@ const FooterLinks = () => {
 
     useEffect(() => {
         getFooterLinks().then((resp)=>{
-           // console.log(resp.data["Notice List"]);
+           console.log(resp);
             setLinks(resp.data["List"]);
         })
     } , []);
