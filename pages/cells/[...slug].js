@@ -6,15 +6,39 @@ import ClubNavbar from "../../components/ClubPageComponents/ClubPageNavbar/ClubN
 import FooterLinks from "../../components/common/FooterLinks";
 import Notices from "../../components/HomePageComponents/Notices";
 import QuickLinks from "../../components/common/QuickLinks";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import cellsclubId from "../../config/cell_club_map";
 
 import Landing from "../../components/DepartmentPageComponents/Landing";
 import Carousel from "react-multi-carousel";
 import Image from "next/image";
 import "react-multi-carousel/lib/styles.css";
+import { getAboutDepartment, getSilder } from "../../http";
 
 const Cellpage = ({slug, setLoader}) => {
+
+  const [sliderImages, setSliderImages] = useState([]);
+  const [heroData, setHeroData] = useState();
+  const [about, setAbout] = useState();
+
   useEffect(() => {
+    console.log("slug", slug);
+    const cellId = cellsclubId[slug[0]];
+    console.log("cellId", cellId);
+
+    getSilder(cellId).then((resp) => {
+      // console.log("resp", resp);
+      setSliderImages(resp.data['Notice List']);
+    });
+
+    getAboutDepartment(cellId).then((resp) => {
+      // console.log("resp", resp.data['List']);
+      setAbout(resp.data['List']);
+    });
+    
+  
+
+
     setTimeout(() => {
       setLoader(false);
     }, 1000);
@@ -23,8 +47,8 @@ const Cellpage = ({slug, setLoader}) => {
   return (
     <div>
       <ClubNavbar name={slug} />      
-      <ClubHero />
-      <AboutCell />
+      <ClubHero slider = {sliderImages} data = {heroData}/>
+      <AboutCell data = {about}/>
       <div className={'sm:flex sm:flex-row sm:items-center space-x-4 px-5 sm:pl-20 py-8 bg-notice-bg bg-cover justify-center sm:justify-around sm:pr-20'}>
            <div className={'flex flex-col md:flex-row bg-[#EBEBEB] bg-opacity-5 w-full md:h-[35.8rem] py-10 px-3 md:px-8'}>
                     <div className={'md:w-2/3 w-auto shadow-sm md:mr-4'}>
