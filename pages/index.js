@@ -25,6 +25,7 @@ import HomeSlider from "../components/HomePageComponents/HomeSlider";
 import Marquee from "../components/common/Marquee";
 import Carousel from "react-multi-carousel";
 import api, { getDepartmentPostsMenu, getSilder } from "../http";
+import PopupModal from "../components/HomePageComponents/PopupModal";
 
 const Home = ({setLoader}) => {
     const [sliderImages, setSliderImages] = useState([]);
@@ -109,6 +110,7 @@ const Home = ({setLoader}) => {
                 </div>
             </div>
             <Feedback />
+            <PopupModal />
             <div className={'bg-no-repeat bg-fixed bg-cover bg-center'}>
             <div className={'h-[100%] md:h-[80%] xl:h-[100%] w-full bg-notice-bg bg-no-repeat bg-center bg-cover absolute -z-10 top-[120%] md:top-[75%] xl:top-[80%] left-0'}></div>
             <div className={'flex flex-col md:flex-row md:h-[36rem] bg-fixed bg!-notice-bg bg-no-repeat bg-center bg-cover'}>
