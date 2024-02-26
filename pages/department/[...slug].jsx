@@ -57,7 +57,7 @@ const DepartmentPage = ({ slug, setLoader }) => {
                     {main && main.map(data => {
                         return <>
                         <DepartmentChairperson name={data.head_name} designation={data.head_des} link={data.head_img} />
-                        <Description about={data.about_department} mission={data.department_mission} vision={data.department_vision} />
+                        <Description about={data.about_department} mission={data.department_mission} vision={data.department_vision} dept_name={slug[0]} />
                         </>
                     })}
                 </div>

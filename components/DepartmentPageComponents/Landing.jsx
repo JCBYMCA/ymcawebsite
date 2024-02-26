@@ -83,10 +83,10 @@ const Landing = ({id, dept_name, sliderImages, isNavbar=true}) => {
                     swipeable
                     arrows={false}
                 >
-                    <div className={'w-full h-[30vh] md:h-[65vh]'}>
+                    {/* <div className={'w-full h-[30vh] md:h-[65vh]'}>
                         <Image src={'/assets/images/achievements/1.png'} alt={'Achievement'} layout={'fill'} />
                     </div>
-                    {/* <div className={'w-full h-[30vh] md:h-[65vh]'}>
+                    <div className={'w-full h-[30vh] md:h-[65vh]'}>
                         <Image src={'/assets/images/achievements/2.png'} alt={'Achievement'} layout={'fill'} />
                     </div>
                     <div className={'w-full h-[30vh] md:h-[65vh]'}>
@@ -112,9 +112,9 @@ const Landing = ({id, dept_name, sliderImages, isNavbar=true}) => {
                 <div className={`fixed top-0 bg-[#EBEBEB] p-2 pb-0   w-full ${isShow ? 'visible' : 'invisible'}`}>
                     <div className={`  flex items-center mb-4 ml-3`}>
                         {/*<h1 className={'text-green-500'}>Department of Computer Engineering, Bachelor of Technology</h1>*/}
-                        <Image src={'/assets/image{isNavbar? <>s/favicon.ico'} alt={'Logo'} width={70} height={70} className={isShow ? "visible" : "invisible"} />
+                        <Image src={`/assets/images/logo.png`} alt={'Logo'} width={70} height={70} className={isShow ? "visible" : "invisible"} />
                         <div className={'flex flex-col ml-2'}>
-                            <h1 className={'font-semibold text-3xl'}>Department of Computer Engineering</h1>
+                            <h1 className={'font-semibold text-3xl'}>Department of {dept_name.replace(/_/g, " ")}</h1>
                             <h1 className={'font-semibold text-md text-secondaryLight'}>J.C. Bose University of Science and
                                 Technology, YMCA, Faridabad</h1>
                         </div>
