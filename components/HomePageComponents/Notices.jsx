@@ -26,7 +26,7 @@ const Notice = (props) => {
 }
 
 
-const Notices = ({isDepartment = false, isHome = true, className}) => {
+const Notices = ({isDepartment = false, isHome = true, className, deptID=1}) => {
     const [value, setValue] = useState('1');
     const router = useRouter();
     const handleChange = (event, newValue) => {
@@ -39,15 +39,10 @@ const Notices = ({isDepartment = false, isHome = true, className}) => {
     const [tenderNotices,setTenderNotices] = useState([]);
     const [studentNotices,setStudentNotices] = useState([]);
     useEffect(() => {
-        let user = "1";
-        if(isDepartment){
-            //console.log("getting dept notices");
-            if (router.query.id === undefined) return; else
-            user = router.query.id;
-        }
-        //console.log("getting",user,"notices");
+        let user = deptID;
+        console.log("getting",user,"notices");
         getNotices(user, 'all').then((resp) => {
-           // console.log(resp);
+           console.log(resp);
             resp.data["Notice List"].sort((a, b)=> {
                 return moment(b.date) - moment(a.date)
             })
