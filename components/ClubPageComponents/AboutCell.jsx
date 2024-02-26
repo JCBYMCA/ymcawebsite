@@ -1,4 +1,5 @@
 import Image from "next/image"
+import { MEDIA_BASE_URL } from "../../config/constants"
 const AboutClub = ({ data }) => {
   return (
     <div className="bg-[#161b25] text-white p-10 px-10 sm:px-20">
@@ -17,11 +18,11 @@ const AboutClub = ({ data }) => {
           <div className="sm:flex px-10 sm:px-0">
             <div className="hidden sm:block border border-l-6 border-white border-solid mr-6"></div>
             <div className="mt-8 mb-8 sm:mb-0 sm:mt-0  text-center">
-              <Image src={data?.head_img || '/assets/images/faculty/neelamduhan.png'} alt="Pic" width={650} height={650} />
+              <Image src={ data?.head_img ? MEDIA_BASE_URL+data?.head_img : '/assets/images/faculty/neelamduhan.png'} alt="Pic" width={650} height={650} />
               <div className="w-full md:text-xl font-bold text-xl">{
                 data?.head_name ? data?.head_name : "Neelam Duhan"
               }</div>
-              <p className="w-full text-xs">Director UCC&DA</p>
+              <p className="w-full text-xs">{data?.head_des || "Director UCC&DA"}</p>
             </div>
           </div>
         </div>
