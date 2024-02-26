@@ -21,8 +21,8 @@ const GalleryTemplate = ({title="Gallery@JCBoseUST", data, loader})=>    {
 
         setLoading(true);
         getEventGallery(data?.id).then((resp) => {
-            // console.log(resp.data);
-            // setActiveFolderData(resp.data["Images List"]);
+            console.log(resp.data);
+            setActiveFolderData(resp.data["Images List"]);
             setShowFolder(false);
             setLoading(false);
         });
