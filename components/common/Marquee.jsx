@@ -14,8 +14,8 @@ const Marquee = () => {
 
   return (
     <div className="relative flex overflow-x-hidden bg-white">
-      <div className="py-3 z-10">
-        <div className="w-30 p-3 md:text-md mr-4 bg-secondaryLight text-white rounded-r-md hidden md:block">Important Links</div>
+      <div className="py-0 z-10">
+        <div className="w-30 p-3 md:text-md mr-4 bg-secondaryLight text-white hidden md:block">Important Links</div>
       </div>
       <div className="py-2 md:py-3 animate-marquee whitespace-nowrap">
         {Dmarquee && Dmarquee.map((marquee,i)=>(<span key={marquee.marque_id} className="text-xs md:text-lg mx-4">{marquee?.title}</span>))}

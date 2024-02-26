@@ -104,27 +104,64 @@ const Notices = ({isDepartment = false, isHome = true, className}) => {
                 <div className="p-3">
                 <TabPanel value="1" className={"overflow-auto mb-4 overflow-y-scroll"} >
                     {notices.map((notice,i)=> moment(notice?.e_date).isAfter(moment()) ? (<Notice notice={notice} heading={notice?.title} key={i}/>) : null)}
+                    <button 
+                    onClick={() => {
+                        // open the notice in a new tab
+                        window.open(`/notices/all`, '_blank');
+                    }}
+                    className={'block mt-auto mx-auto bg-secondary text-white py-2 px-8 hover:scale-105 duration-200 flex-col mb-10'}>
+                        {t('viewAll')}
+                    </button>
                 </TabPanel>
                 <TabPanel value="2" className={"overflow-auto mb-4 overflow-y-scroll"}>
                     {resultNotices.map((notice,i)=> moment(notice?.e_date).isAfter(moment()) ? (<Notice notice={notice} heading={notice?.title} key={i}/>) : null)}
+                    <button 
+                    onClick={() => {
+                        // open the notice in a new tab
+                        window.open(`/notices/result`, '_blank');
+                    }}
+                    className={'block mt-auto mx-auto bg-secondary text-white py-2 px-8 hover:scale-105 duration-200 flex-col mb-10'}>
+                        {t('viewAll')}
+                    </button>
                 </TabPanel>
                 <TabPanel value="3" className={"overflow-auto mb-4 overflow-y-scroll"}>
                     {datesheetNotices.map((notice,i)=> moment(notice?.e_date).isAfter(moment()) ? (<Notice notice={notice} heading={notice?.title} key={i}/>) : null)}
+                    <button 
+                    onClick={() => {
+                        // open the notice in a new tab
+                        window.open(`/notices/datesheet`, '_blank');
+                    }}
+                    className={'block mt-auto mx-auto bg-secondary text-white py-2 px-8 hover:scale-105 duration-200 flex-col mb-10'}>
+                        {t('viewAll')}
+                    </button>
                 </TabPanel>
                 {/* <TabPanel value="4" className={"overflow-auto mb-4 scroll-smooth"}>
                     {tenderNotices.map((notice,i)=> moment(notice?.e_date).isAfter(moment()) ? (<Notice notice={notice} heading={notice?.title} key={i}/>) : null)}
                 </TabPanel> */}
                 <TabPanel value="4" className={"overflow-auto mb-4 overflow-y-scroll"} >
-                    {studentNotices.map((notice,i)=> moment(notice?.e_date).isAfter(moment()) ? (<Notice notice={notice} heading={notice?.title} key={i}/>) : null)}
+                    {tenderNotices.map((notice,i)=> moment(notice?.e_date).isAfter(moment()) ? (<Notice notice={notice} heading={notice?.title} key={i}/>) : null)}
+                    <button 
+                    onClick={() => {
+                        // open the notice in a new tab
+                        window.open(`/notices/tender`, '_blank');
+                    }}
+                    className={'block mt-auto mx-auto bg-secondary text-white py-2 px-8 hover:scale-105 duration-200 flex-col mb-10'}>
+                        {t('viewAll')}
+                    </button>
                 </TabPanel>
                 <TabPanel value="5" className={"overflow-auto mb-4 overflow-y-scroll"} >
-                    {tenderNotices.map((notice,i)=> moment(notice?.e_date).isAfter(moment()) ? (<Notice notice={notice} heading={notice?.title} key={i}/>) : null)}
+                    {studentNotices.map((notice,i)=> moment(notice?.e_date).isAfter(moment()) ? (<Notice notice={notice} heading={notice?.title} key={i}/>) : null)}
+                    <button 
+                    onClick={() => {
+                        // open the notice in a new tab
+                        window.open(`/notices/student`, '_blank');
+                    }}
+                    className={'block mt-auto mx-auto bg-secondary text-white py-2 px-8 hover:scale-105 duration-200 flex-col mb-10'}>
+                        {t('viewAll')}
+                    </button>
                 </TabPanel>
                 </div>
             </TabContext>
-            <button className={'mt-auto mx-auto bg-secondary text-white py-2 px-8 hover:scale-105 duration-200 flex-col mb-10'}>
-                {t('viewAll')}
-            </button>
         </div>
     );
 }
