@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 import {motion} from "framer-motion";
-const Description = ({about, mission, vision}) => {
+const Description = ({about, mission, vision, dept_name}) => {
     return (
         <motion.div
             initial={{
@@ -24,7 +24,7 @@ const Description = ({about, mission, vision}) => {
             {/*generate description text with a heading, subheading and about paragraph along with some bullet points*/}
             <div className={'flex flex-col'}>
                 <h1 className={'text-3xl font-bold'}>About Department</h1>
-                <h1 className={'text-3xl font-semibold mt-2 mb-2'}>Department of Computer Engineering</h1>
+                <h1 className={'text-3xl font-semibold mt-2 mb-2'}>Department of {dept_name.replace(/_/g, " ")}</h1>
                 {/*<h1 className={'text-lg font-semibold mt-2'}>Bachelor of Technology</h1>*/}
                 <p className={'text-justify'}>
                     {about}

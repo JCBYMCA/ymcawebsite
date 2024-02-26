@@ -15,7 +15,7 @@ function MyApp({ Component, pageProps }) {
           {/*<NavBar/>*/}
           {loader && <div className='w-full h-full bg-white fixed top-0 z-[6000] flex justify-center items-center'>
             <div>
-              <Image src={'/assets/images/logo.png'} alt={'Loader'} width={200} height={200} />
+              <Image className='animate-pulse' src={'/assets/images/logo.png'} alt={'Loader'} width={200} height={200} />
               {/* <Image src={'/assets/images/logo.png'} alt={'Loader'} width={200} height={200} /> */}
             </div>
             </div>}

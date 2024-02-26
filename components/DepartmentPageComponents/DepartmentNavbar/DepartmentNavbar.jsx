@@ -100,7 +100,7 @@ export const DepartmentNavbarMenu = ({id, dept_name}) => {
             }}>
                 <HomeIcon className={'ml-auto'}/>
             </div>
-            <NavBarMenu menuItems={menu} className={' mr-20'} translations={''} />
+            <NavBarMenu menuItems={menu} className={' mr-0'} translations={''} />
         </div>
     )
 }
