@@ -2,13 +2,19 @@ import { useState, useEffect, useRef } from "react";
 import {useTranslations} from "next-intl";
 import Dropdown from "./Dropdown";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 const MenuItem = ({ items, depthLevel, translations }) => {
+    const router= useRouter();
     const [dropdown, setDropdown] = useState(false);
+    const [isNotice, setIsNotice] = useState(false);
     const t = useTranslations(translations);
     let ref = useRef();
 
     useEffect(() => {
+        if(router.pathname==='/notices/[slug]') {
+            setIsNotice(true);
+        }
         const handler = (event) => {
             if (dropdown && ref.current && !ref.current.contains(event.target)) {
                 setDropdown(false);
@@ -59,7 +65,7 @@ const MenuItem = ({ items, depthLevel, translations }) => {
                     />
                 </>
             ) : (
-                <Link className={'cursor-pointer hover:bg-[#455a64] hover:text-white decoration-primary decoration-4 duration-300 underline-offset-4'} href={items.link ? items.link : "#"}><h1 >{items.title}</h1></Link>
+                <Link className={'cursor-pointer hover:bg-[#455a64] hover:text-white decoration-primary decoration-4 duration-300 underline-offset-4'} href={`${items.link ? (isNotice?"../"+items.link:items.link) : "#"}`}><h1 >{items.title}</h1></Link>
             )}
         </li>
     );
