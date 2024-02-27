@@ -4,7 +4,7 @@ const NavBarMenu = ({ menuItems, className, translations }) => {
     return (
         <nav className={'font-bold hidden md:block ' + className}>
             <ul className={'flex '}>
-                {menuItems.map((menu, index) => {
+                {menuItems?.map((menu, index) => {
                     const depthLevel = 0;
                     return <MenuItem items={menu} key={index} depthLevel={depthLevel} translations={translations} />;
                 })}

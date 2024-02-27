@@ -6,7 +6,10 @@ import NavBarMenu from "../../common/NavBarMenu";
 import { ClubMenuItems } from "./ClubMenuItems";
 
 
-const ClubNavbar = ({name}) => {
+const ClubNavbar = ({name, menuData}) => {
+    if(!menuData || menuData.length === 0){
+        menuData = ClubMenuItems;
+    }
     return (
         <>
             <div className={`flex flex-col sticky top-0 bg-[#EBEBEB]  text-black border-1 border-neutral-200`} style={{
@@ -22,12 +25,12 @@ const ClubNavbar = ({name}) => {
                         </div>
                     </div>
                 </div>
-                <ClubNavbarMenu/>
+                <ClubNavbarMenu menuData={menuData} />
             </div>
         </>
     )
 }
-export const ClubNavbarMenu = () => {
+export const ClubNavbarMenu = ({menuData}) => {
     const router = useRouter();
     return (
         <div className={'flex'}>
@@ -36,7 +39,7 @@ export const ClubNavbarMenu = () => {
             }}>
                 <HomeIcon className={'ml-auto'}/>
             </div>
-            <NavBarMenu menuItems={ClubMenuItems} className={' mr-20'} translations={''} />
+            <NavBarMenu menuItems={menuData} className={' mr-20'} translations={''} />
         </div>
     )
 }

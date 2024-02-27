@@ -13,13 +13,14 @@ import Landing from "../../components/DepartmentPageComponents/Landing";
 import Carousel from "react-multi-carousel";
 import Image from "next/image";
 import "react-multi-carousel/lib/styles.css";
-import { getAboutDepartment, getCellsClubs, getSilder } from "../../http";
+import { getAboutDepartment, getCellsClubs, getMenu, getSilder } from "../../http";
 
 const Cellpage = ({slug, setLoader}) => {
 
   const [sliderImages, setSliderImages] = useState([]);
   const [heroData, setHeroData] = useState();
   const [about, setAbout] = useState();
+  const [menuData, setMenuData] = useState();
 
 
 
@@ -44,6 +45,10 @@ const Cellpage = ({slug, setLoader}) => {
       setAbout(resp.data['List'][0]);
     });
     
+    getMenu(cellId).then((resp)=>{
+      console.log("resp", resp);
+      setMenuData(resp.data);
+    },[]);
     
     
 

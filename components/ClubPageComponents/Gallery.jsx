@@ -1,12 +1,14 @@
 import { Button } from "@mui/material"
 import Image from "next/image"
 
-const Gallery = () => {
+const Gallery = ({url}) => {
   return (
     <div className="bg-[#161b25]hidden sm:block text-white">
       <div className="flex items-center">
         <span className="text-5xl font-bold pr-8">Gallery</span>  
+        <a href={"/gallery/"+url} target="_blank">
         <Button variant="outlined" className="border-white text-white hover:border-white">View More</Button>
+        </a>
       </div>
         <div className="border border-white sm:border-t-6 border-solid mt-4"></div>
         <div className="flex mt-4">
