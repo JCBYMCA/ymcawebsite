@@ -26,7 +26,7 @@ const Notice = (props) => {
 }
 
 
-const Notices = ({isDepartment = false, isHome = true, className, deptID=1}) => {
+const Notices = ({isDepartment = false, isHome = true, className, deptID = 1}) => {
     const [value, setValue] = useState('1');
     const router = useRouter();
     const handleChange = (event, newValue) => {
