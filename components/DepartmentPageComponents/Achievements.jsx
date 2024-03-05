@@ -62,7 +62,7 @@ const Achievements = ({id}) => {
         <div className={'bg-white mt-8 mb-8'}>
             <div className={'container mx-auto'}>
                 <div className={'flex flex-col items-center justify-center'}>
-                    <h1 className={'text-3xl font-semibold text-center text-secondary mb-4 underline underline-offset-8 '}>Achievements</h1>
+                    <h1 className={'text-3xl font-semibold text-center text-secondary mb-4 underline underline-offset-8 '}>{achievement.length!=0 && 'Achievements'}</h1>
                     <div className={'w-20 h-1 bg-secondaryDark my-2'}/>
                 </div>
                 <Carousel

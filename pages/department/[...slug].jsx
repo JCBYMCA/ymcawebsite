@@ -53,7 +53,7 @@ const DepartmentPage = ({ slug, setLoader }) => {
             <DepartmentNavbar id={departmentId[slug[0]]} dept_name={slug[0]} />
             <Landing id={departmentId[slug[0]]} dept_name={slug[0]} sliderImages={sliderImages} />
             <div className={'flex flex-col'}>
-                <div className={'mt-16 mb-12 ml-20 mr-16 space-x-12 flex '}>
+                <div className={'mt-16 mb-12 ml-20 mr-16 md:flex-row space-x-12 flex flex-col justify-center'}>
                     {main && main.map(data => {
                         return <>
                         <DepartmentChairperson name={data.head_name} designation={data.head_des} link={data.head_img} />
@@ -63,10 +63,10 @@ const DepartmentPage = ({ slug, setLoader }) => {
                 </div>
                 <div className={'flex flex-col md:flex-row bg-notice-bg bg-cover bg-opacity-5 w-full md:h-[35.8rem] py-10 px-3 md:px-8'}>
                     <div className={'md:w-2/3 w-auto shadow-sm md:mr-4'}>
-                        <Notices className={'bg-[#EBEBEB] border-solid'} isDepartment={true}  isHome={false} deptID={departmentId[slug[0]]} />
+                        <Notices className={'bg-[#EBEBEB] border-solid'} isDepartment={true}  isHome={false} deptID={departmentId[slug[0]]} deptName={slug[0]} />
                     </div>
                     <div className={'md:w-1/3 w-auto md:ml-4 mt-4 md:mt-0'}>
-                        <QuickLinks heading={'Scheme & Syllabus'} className={'bg-[#EBEBEB] border-solid'}/>
+                        <QuickLinks heading={'Scheme & Syllabus'} className={'bg-[#EBEBEB] border-solid'} deptName={slug[0]} />
                     </div>
                 </div>
                 <Achievements id={departmentId[slug[0]]} />

@@ -23,7 +23,7 @@ const responsive = {
   },
 };
 
-const CellCards = ({data=[]}) => {
+const CellCards = ({data=[], type}) => {
   const description =
     "";
   return (
@@ -31,6 +31,7 @@ const CellCards = ({data=[]}) => {
       <Carousel responsive={responsive} keyBoardControl={true}>
       {data && data.map((item, index) => (
             <Cards
+            type= {type}
             key = {index}
             height={120}
             width={120}

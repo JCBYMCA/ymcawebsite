@@ -10,7 +10,7 @@ import NavBar from "../../components/HomePageComponents/NavBar/NavBar";
 
 
 const Cell = ({ setLoader }) => {
-  const [cells, setCells] = useState([]);
+  const [data, setData] = useState([]);
   const [menu, setMenu]= useState([]);
 
   const separateClubs = (data, type) => {
@@ -23,7 +23,7 @@ const Cell = ({ setLoader }) => {
   useEffect(() => {
     let user= 1;
     getCellsClubs().then((resp) => {
-      setCells(separateClubs(resp.data["List"], "cells"))
+      setData(separateClubs(resp.data["List"], "cells"))
 
     });
 
@@ -40,7 +40,7 @@ const Cell = ({ setLoader }) => {
       {/* <ClubNavbar /> */}
       {menu.length != 0 && <NavBar menudata={menu} />}
       <CellHero />
-      <CellCards data={cells} />
+      <CellCards data={data} type={'cells'} />
     </div>
   );
 };

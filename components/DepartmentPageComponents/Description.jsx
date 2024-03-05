@@ -19,11 +19,11 @@ const Description = ({about, mission, vision, dept_name}) => {
                 margin:'0px 0px -50px 0px',
                 once: false
             }}
-            className={'flex flex-col w-[50rem] mb-4'}>
+            className={'flex flex-col w-[100%] md:w-[60%] mb-4'}>
             {/*<Image src={'/assets/images/1.png'} alt={'Department'} width={800} height={500} />*/}
             {/*generate description text with a heading, subheading and about paragraph along with some bullet points*/}
             <div className={'flex flex-col'}>
-                <h1 className={'text-3xl font-bold'}>About Department</h1>
+                {/* <h1 className={'text-3xl font-bold'}>About Department</h1> */}
                 <h1 className={'text-3xl font-semibold mt-2 mb-2'}>Department of {dept_name.replace(/_/g, " ")}</h1>
                 {/*<h1 className={'text-lg font-semibold mt-2'}>Bachelor of Technology</h1>*/}
                 <p className={'text-justify'}>

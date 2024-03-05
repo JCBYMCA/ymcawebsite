@@ -28,7 +28,7 @@ const  DepartmentChairperson = ({name, designation, link}) => {
             }}
             className={'flex flex-col  bg-opacity-90 px-4 items-center justify-center rounded-xl shadow-2xl h-[30rem]'}>
             <div>
-                <a href={'#'}><Image src={'http://49.50.77.87:8000/media/'+link} height={300} width={300} className={'w-[300px] h-[350px] rounded'}/></a>
+                <a href={'#'}><Image src={'http://49.50.77.87:8000/media/'+link} height={200} width={200} className={'w-[250px] h-[300px] rounded'}/></a>
             </div>
             <a href={'#'}><h1 className={'text-black font-bold text-2xl'}>{name}</h1></a>
             <a href={'#'}><h1 className={'text-black font-light mb-2'}>{designation}</h1></a>
