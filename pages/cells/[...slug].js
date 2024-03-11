@@ -42,6 +42,7 @@ const Cellpage = ({slug, setLoader}) => {
     getAboutDepartment(cellId).then((resp) => {
       // console.log("resp", resp.data['List'][0]);
       setAbout(resp.data['List'][0]);
+    });
     
     getMenu(cellId).then((resp)=>{
       console.log("resp", resp);
