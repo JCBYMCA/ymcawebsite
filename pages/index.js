@@ -102,7 +102,7 @@ const Home = ({setLoader}) => {
                         name={'vice chancellor name'}
                         designation={'vice chancellor designation'}
                         image={'/assets/images/vc.png'}
-                        url = {'https://ymcawebsite.vercel.app/vice-chancellor'}
+                        url = {'http://new.jcboseust.ac.in:3000/vc-s-message'}
                     />
                 </div>
                 <div className={'w-1/5 hidden md:block bg-secondary h-full overflow-hidden'}>
