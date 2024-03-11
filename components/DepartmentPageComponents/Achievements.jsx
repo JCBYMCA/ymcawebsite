@@ -62,7 +62,7 @@ const Achievements = ({id}) => {
         <div className={'bg-white mt-8 mb-8'}>
             <div className={'container mx-auto'}>
                 <div className={'flex flex-col items-center justify-center'}>
-                    <h1 className={'text-3xl font-semibold text-center text-secondary mb-4 underline underline-offset-8 '}>Achievements</h1>
+                    <h1 className={'text-3xl font-semibold text-center text-secondary mb-4 underline underline-offset-8 '}>{achievement.length!=0 && 'Achievements'}</h1>
                     <div className={'w-20 h-1 bg-secondaryDark my-2'}/>
                 </div>
                 <Carousel
@@ -85,7 +85,7 @@ const Achievements = ({id}) => {
                     itemClass="carousel-item-padding-40-px"
                 >
                     {achievement && achievement.map((item, i)=>{
-                        return <Achievement key={i} text={item.description} image_src={'http://49.50.77.87:8000/media/'+item.img}/>
+                        return <Achievement key={i} text={item.description} image_src={'http://49.50.77.87:3000/assets/media/'+item.img}/>
                     })}
                     {/* <Achievement text={'Dr. Neelam Duhan has been awarded the AICTE Visvesvaraya Best Teacher Award 2021. The award carries a cash prize of Rs 25,000 with a medal and certificate of excellence.'} image_src={'/assets/images/achievements/1.png'}/>
                     <Achievement text={'The officials of university have been acknowledged for their support and contribution during the lockdown period of Covid-19 Pandemic from March to May, 2020, by the Haryana Red Cross Society.'} image_src={'/assets/images/achievements/2.png'}/>

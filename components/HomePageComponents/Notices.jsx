@@ -26,7 +26,7 @@ const Notice = (props) => {
 }
 
 
-const Notices = ({isDepartment = false, isHome = true, className, deptID=1}) => {
+const Notices = ({isDepartment = false, isHome = true, className, deptID = 1, deptName}) => {
     const [value, setValue] = useState('1');
     const router = useRouter();
     const handleChange = (event, newValue) => {
@@ -102,7 +102,7 @@ const Notices = ({isDepartment = false, isHome = true, className, deptID=1}) => 
                     <button 
                     onClick={() => {
                         // open the notice in a new tab
-                        window.open(`/notices/all`, '_blank');
+                        window.open(`${isDepartment?'/department/notices/'+deptName+'/all':'/notices/all'}`, '_blank');
                     }}
                     className={'block mt-auto mx-auto bg-secondary text-white py-2 px-8 hover:scale-105 duration-200 flex-col mb-10'}>
                         {t('viewAll')}

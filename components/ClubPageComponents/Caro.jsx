@@ -23,7 +23,7 @@ const responsive = {
 const description =
   "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis consectetur ut molestias ad perspiciatis ex assumenda, sint";
 
-const Caro = ({ title, data }) => {
+const Caro = ({ title, data, type }) => {
   
   return (
     <div className="bg-[#F5F7FA] rounded-xl m-20 p-6 flex flex-col space-y-5">
@@ -31,12 +31,13 @@ const Caro = ({ title, data }) => {
       <Carousel responsive={responsive} keyBoardControl={true}>
       {data && data.map((item, index) => (
             <Cards
+            type= {type}
             key = {index}
             height={100}
             width={100}
             name={item.name}
             desc={item.Description}
-            image={"http://49.50.77.87:8000/media/"+item.image}
+            image={"http://49.50.77.87:3000/assets/media/"+item.image}
             url = {item.url}
           />
         ))}

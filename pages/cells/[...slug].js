@@ -8,7 +8,6 @@ import Notices from "../../components/HomePageComponents/Notices";
 import QuickLinks from "../../components/common/QuickLinks";
 import { useEffect, useState } from "react";
 import cellsclubId from "../../config/cell_club_map";
-
 import Landing from "../../components/DepartmentPageComponents/Landing";
 import Carousel from "react-multi-carousel";
 import Image from "next/image";
@@ -43,14 +42,12 @@ const Cellpage = ({slug, setLoader}) => {
     getAboutDepartment(cellId).then((resp) => {
       // console.log("resp", resp.data['List'][0]);
       setAbout(resp.data['List'][0]);
-    });
     
     getMenu(cellId).then((resp)=>{
       console.log("resp", resp);
       setMenuData(resp.data);
-    },[]);
-    
-    
+    });
+   
 
 
     setTimeout(() => {

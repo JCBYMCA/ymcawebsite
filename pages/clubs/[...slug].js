@@ -20,6 +20,7 @@ const Cellpage = ({slug, setLoader}) => {
   let count = 0;
 
 
+
   useEffect(() => {
     // console.log("slug", slug);
     const cellId = cellsclubId[slug[0]];
@@ -29,6 +30,7 @@ const Cellpage = ({slug, setLoader}) => {
       // console.log("resp", resp);
       setSliderImages(resp.data['Notice List']);
       handleCount();
+
     });
 
     getCellsClubs().then((resp) => {
@@ -36,6 +38,7 @@ const Cellpage = ({slug, setLoader}) => {
       setHeroData(resp.data['List'].filter((item) => item['url'] == slug[0])[0]);
       handleCount();
     });
+
 
     getAboutDepartment(cellId).then((resp) => {
       // console.log("resp", resp.data['List'][0]);
@@ -68,6 +71,7 @@ const Cellpage = ({slug, setLoader}) => {
       <ClubHero slider={sliderImages} data={heroData} />
       <AboutClub  data={about} />
       <ClubPos data={[]} />
+
       <div className=" flex-col flex p-10 justify-around md:flex-row w-full h-full bg-[#161b25] gap-y-10">
         <div className={"md:w-1/4"}>
         <QuickLinks heading={"Upcoming Events"} />
@@ -96,3 +100,4 @@ export const getServerSideProps = async (context) => {
 }
 
 export default Cellpage;
+

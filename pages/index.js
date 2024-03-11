@@ -102,7 +102,7 @@ const Home = ({setLoader}) => {
                         name={'vice chancellor name'}
                         designation={'vice chancellor designation'}
                         image={'/assets/images/vc.png'}
-                        url = {'https://ymcawebsite.vercel.app/vice-chancellor'}
+                        url = {'http://new.jcboseust.ac.in:3000/vc-s-message'}
                     />
                 </div>
                 <div className={'w-1/5 hidden md:block bg-secondary h-full overflow-hidden'}>
@@ -110,7 +110,7 @@ const Home = ({setLoader}) => {
                 </div>
             </div>
             <Feedback />
-            <PopupModal />
+            {/* <PopupModal /> */}
             <div className={'bg-no-repeat bg-fixed bg-cover bg-center'}>
             <div className={'h-[100%] md:h-[80%] xl:h-[100%] w-full bg-notice-bg bg-no-repeat bg-center bg-cover absolute -z-10 top-[120%] md:top-[75%] xl:top-[80%] left-0'}></div>
             <div className={'flex flex-col md:flex-row md:h-[36rem] bg-fixed bg!-notice-bg bg-no-repeat bg-center bg-cover'}>
