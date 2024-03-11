@@ -45,11 +45,47 @@ const Cellpage = ({slug, setLoader}) => {
     });
     
     getMenu(cellId).then((resp)=>{
-      console.log("resp", resp);
-      setMenuData(resp.data);
+      console.log("resp", resp.data);
+      setMenuData(createMenuObj(resp.data));
     });
    
+    const createMenuObj= (data)=> {
+      let arr = [];
+      let pi = {};
+      let si={};
+      for( let item of data['Parent Menu List'] ){
+          // console.log(item);
+          let temp = {}
+          temp['title'] = item["name"];
+          temp['link'] = item['url'];
+          temp['isNewTab'] = item['IsNewTab'];
+          temp['submenu'] = [];
+          arr.push(temp);
+          pi[item.menu_id] = arr.length-1;
 
+      }
+      console.log(arr);
+      for(let item of data['Submenu Menu List'] ){
+          let temp = {};
+          temp['title'] = item["name"];
+          temp['link'] = item['url'];
+          temp['isNewTab'] = item['IsNewTab'];
+          temp['submenu'] = [];
+          arr[pi[item.p_id]]['submenu'].push(temp);
+          si[item.menu_id] = arr[pi[item.p_id]]['submenu'].length-1;
+      }
+      console.log(si);
+      for(let item of data['Submenu Level 2 Menu List'] ){
+          let temp = {};
+          temp['title'] = item["name"];
+          temp['link'] = item['url'];
+          temp['isNewTab'] = item['IsNewTab'];
+          // console.log(item.p_id,item.s_id);
+          arr[pi[item.p_id]]['submenu'][si[item.s_id]]['submenu'].push(temp);
+      }
+      // console.log(arr);
+      return arr;
+  }
 
     setTimeout(() => {
       setLoader(false);
@@ -58,7 +94,7 @@ const Cellpage = ({slug, setLoader}) => {
   
   return (
     <div>
-      <ClubNavbar name={slug[0].replace("_"," ")} />      
+      <ClubNavbar name={slug[0].replace("_"," ")} menuData={menuData} />      
       <ClubHero slider = {sliderImages} data = {heroData}/>
       <AboutCell data = {about}/>
       <div className={'sm:flex sm:flex-row sm:items-center space-x-4 px-5 sm:pl-20 py-8 bg-notice-bg bg-cover justify-center sm:justify-around sm:pr-20'}>
