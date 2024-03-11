@@ -4,7 +4,7 @@ import React from "react";
 
 const Cards = ({ image, desc = "", name, height, width, url,type }) => {
   return (
-    <div className="bg-[#F5F7FA] w-[250px] flex flex-col items-center m-5 px-5 pb-5 duration-700 hover:scale-[1.02] rounded-lg drop-shadow-xl">
+    <div className="bg-[#F5F7FA] w-[250px] flex flex-col items-center mx-auto m-5 px-5 pb-5 duration-700 hover:scale-[1.02] rounded-lg drop-shadow-xl">
       <Image
         className="rounded-full drop-shadow-md"
         src={image}
