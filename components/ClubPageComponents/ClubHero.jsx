@@ -63,9 +63,11 @@ const ClubHero = ({slider, data}) => {
             </div>
           ))
           }
+          {slider.length == 0 && 
           <div className={'w-full h-[30vh] md:h-[70vh]'}>
             <Image src={'/assets/images/achievements/1.png'} alt={'Achievement'} layout={'fill'} />
           </div>
+          }
         </Carousel>
       </div>
       <div className=" bg-[#000000c6] h-[30vh] md:h-[70vh] w-full flex flex-col items-center pt-10 absolute top-0">

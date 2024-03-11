@@ -1,21 +1,25 @@
 import { useTranslations } from "next-intl";
-import { useTransition } from "next-intl";
-import AboutClub from "../../components/ClubPageComponents/AboutClub";
 import ClubHero from "../../components/ClubPageComponents/ClubHero";
 import ClubNavbar from "../../components/ClubPageComponents/ClubPageNavbar/ClubNavbar";
-import Gallery from "../../components/ClubPageComponents/Gallery";
 import FooterLinks from "../../components/common/FooterLinks";
-import cellsclubId from "../../config/cell_club_map";
 import QuickLinks from "../../components/common/QuickLinks";
 import ClubPos from "../../components/ClubPageComponents/ClubPos";
-import { getAboutDepartment, getCellsClubs, getSilder } from "../../http";
 import { useEffect, useState } from "react";
+import cellsclubId from "../../config/cell_club_map";
 
 
-const Clubpage = ({slug, setLoader}) => {
+import { getAboutDepartment, getCellsClubs, getSilder } from "../../http";
+import AboutClub from "../../components/ClubPageComponents/AboutClub";
+import Gallery from "../../components/ClubPageComponents/Gallery";
+
+const Cellpage = ({slug, setLoader}) => {
+
   const [sliderImages, setSliderImages] = useState([]);
   const [heroData, setHeroData] = useState();
   const [about, setAbout] = useState();
+  let count = 0;
+
+
 
   useEffect(() => {
     // console.log("slug", slug);
@@ -25,50 +29,64 @@ const Clubpage = ({slug, setLoader}) => {
     getSilder(cellId).then((resp) => {
       // console.log("resp", resp);
       setSliderImages(resp.data['Notice List']);
+      handleCount();
+
     });
 
     getCellsClubs().then((resp) => {
       // console.log("resp", resp.data['List']);
       setHeroData(resp.data['List'].filter((item) => item['url'] == slug[0])[0]);
-    }
-    );
+      handleCount();
+    });
+
 
     getAboutDepartment(cellId).then((resp) => {
       // console.log("resp", resp.data['List'][0]);
       setAbout(resp.data['List'][0]);
-    }); 
-
-    setTimeout(() => {
-      setLoader(false);
-    }, 1000);
+      handleCount();
+    });
+    
   }, [])
+
+
+  const handleCount =()=>{
+    
+   count++;
+   console.log("count", count);
+   if (count == 3){
+     setLoader(false);
+   }
+  }
+
+
+  useEffect(() => {
+    if(count == 3){
+      setLoader(false);
+    }
+  }, [count])
   
   return (
     <div className="bg-[#161b25]">
-      <ClubNavbar name={slug[0].replace("_"," ")} />      
-      <ClubHero slider = {sliderImages} data = {heroData}/>
-      <AboutClub data={about} />
-      <ClubPos />
+      <ClubNavbar name={slug[0]}  menuData={[]}/>
+      <ClubHero slider={sliderImages} data={heroData} />
+      <AboutClub  data={about} />
+      <ClubPos data={[]} />
+
       <div className=" flex-col flex p-10 justify-around md:flex-row w-full h-full bg-[#161b25] gap-y-10">
         <div className={"md:w-1/4"}>
         <QuickLinks heading={"Upcoming Events"} />
         </div>
         
         <div className="md:w-2/3">
-          <Gallery />
+          <Gallery url={slug[0]}/>
         </div>
         
       </div>
-      {/* <div
-        className={
-          "flex space-x-4 pl-20 py-8 bg-notice-bg bg-cover justify-around pr-20"
-        }
-      >
-      </div> */}
       <FooterLinks />
     </div>
   );
 };
+
 
 export const getServerSideProps = async (context) => {
   const slug = context.params.slug;
@@ -81,4 +99,5 @@ export const getServerSideProps = async (context) => {
   }
 }
 
-export default Clubpage;
+export default Cellpage;
+

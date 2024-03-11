@@ -8,7 +8,6 @@ const cellsclubId = {
     "University_Computer_Centre_Digital_Affairs":23,
     "Alumni_Corporate_Affairs":24,
     "Industrial_Relations":25,
-  
  
  }
 
