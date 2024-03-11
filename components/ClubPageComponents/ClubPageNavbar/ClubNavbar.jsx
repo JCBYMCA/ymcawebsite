@@ -10,6 +10,10 @@ const ClubNavbar = ({name, menuData}) => {
     if(!menuData || menuData.length === 0){
         menuData = ClubMenuItems;
     }
+
+    
+
+
     return (
         <>
             <div className={`flex flex-col sticky top-0 bg-[#EBEBEB]  text-black border-1 border-neutral-200`} style={{

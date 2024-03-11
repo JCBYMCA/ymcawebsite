@@ -26,23 +26,27 @@ const description =
 const Caro = ({ title, data, type }) => {
   
   return (
-    <div className="bg-[#F5F7FA] rounded-xl m-20 p-6 flex flex-col space-y-5">
-      <span className="text-4xl font-bold">{title}</span>
-      <Carousel responsive={responsive} keyBoardControl={true}>
-      {data && data.map((item, index) => (
-            <Cards
-            type= {type}
-            key = {index}
-            height={100}
-            width={100}
-            name={item.name}
-            desc={item.Description}
-            image={"http://49.50.77.87:3000/assets/media/"+item.image}
-            url = {item.url}
-          />
-        ))}
-      </Carousel>
-    </div>
+
+    <>
+      <div>
+        <div className="text-3xl font-bold md:mx-20 my-2 mt-10">{title}</div>
+      </div>
+      <div className="bg-[#F5F7FA] rounded-xl mx-3 md:mx-20 p-6 grid  grid-cols-1 sm:grid-cols-2  md:grid-cols-4 ">
+        
+        {data && data.map((item, index) => (
+              <Cards
+              type= {type}
+              key = {index}
+              height={100}
+              width={100}
+              name={item.name}
+              desc={item.Description}
+              image={"http://49.50.77.87:3000/assets/media/"+item.image}
+              url = {item.url}
+            />
+          ))}
+      </div>
+    </>
   );
 };
 

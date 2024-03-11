@@ -7,7 +7,7 @@ import {useRouter} from "next/router";
 import { getDepartmentMenu, getMenu } from "../../../http";
 import { useEffect, useState } from "react";
 
-const DepartmentNavbar = ({id, dept_name}) => {
+const DepartmentNavbar = ({id, dept_name, isDept=false}) => {
     const t = useTranslations("home.navbar");
     return (
         <>
@@ -17,15 +17,28 @@ const DepartmentNavbar = ({id, dept_name}) => {
                 <div className={'flex'}>
                     <Image src='/assets/images/logo.png' alt={'Logo'} width={90} height={90} />
                     <div className={'flex flex-col'}>
-                        <div className={'flex flex-col font-bold text-xl -space-y-1 tracking-wider mt-5'}>
-                            <h1 className={'text-xs md:text-xl'}>{t("JCBoseUst")}</h1>
-                            {/*<h1 className={'text-xs md:text-xl'}>of Science & Technology</h1>*/}
-                            {/*<h1 className={'text-xs md:text-xl'}>YMCA, Faridabad</h1>*/}
-                        </div>
-                        <div className={''}>
-                            <h1 className={`text-xs md:text-xs `}>{t("UST description 1")}</h1>
-                            <h1 className={`text-xs `}>{t("UST description 2")}</h1>
-                        </div>
+
+                        {isDept?(
+                            <div className={"m-auto"}>
+                            <h1 className={'font-semibold text-3xl'}>Department of {dept_name.replace(/_/g, " ")}</h1>
+                            <h1 className={'font-semibold text-md text-secondaryLight'}>J.C. Bose University of Science and
+                                                Technology, YMCA, Faridabad</h1>
+                            </div>
+                        ):
+                        <>
+                            <div className={'flex flex-col font-bold text-xl -space-y-1 tracking-wider mt-5'}>
+                                <h1 className={'text-xs md:text-xl'}>{t("JCBoseUst")}</h1>
+                                
+                            </div>
+                            <div className={''}>
+                                <h1 className={`text-xs md:text-xs `}>{t("UST description 1")}</h1>
+                                <h1 className={`text-xs `}>{t("UST description 2")}</h1>
+                            </div> 
+                        </>
+                        }
+
+                       
+                        
                     </div>
                     <div className={'ml-auto p-1 mr-5'}>
                         <Image src={'/assets/images/jcBosePhoto.png'} width={75} height={75}
@@ -67,6 +80,7 @@ export const DepartmentNavbarMenu = ({id, dept_name}) => {
             let temp = {}
             temp['title'] = item["name"];
             temp['link'] = dept_name+'/'+item['url'];
+            temp['isNewTab'] = item['IsNewTab'];
             temp['submenu'] = [];
             arr.push(temp);
             pi[item.menu_id] = arr.length-1;
@@ -77,6 +91,7 @@ export const DepartmentNavbarMenu = ({id, dept_name}) => {
             let temp = {};
             temp['title'] = item["name"];
             temp['link'] = dept_name+'/'+item['url'];
+            temp['isNewTab'] = item['IsNewTab'];
             temp['submenu'] = [];
             arr[pi[item.p_id]]['submenu'].push(temp);
             si[item.menu_id] = arr[pi[item.p_id]]['submenu'].length-1;
@@ -86,6 +101,7 @@ export const DepartmentNavbarMenu = ({id, dept_name}) => {
             let temp = {};
             temp['title'] = item["name"];
             temp['link'] = dept_name+'/'+item['url'];
+            temp['isNewTab'] = item['IsNewTab'];
             // console.log(item.p_id,item.s_id);
             arr[pi[item.p_id]]['submenu'][si[item.s_id]]['submenu'].push(temp);
         }
