@@ -38,8 +38,10 @@ const Club = ({setLoader}) => {
     <div>
       <ClubNavbar />
       <Clubs />
-      <Caro title={"Technical Clubs"} data={techClubs} type={'clubs'} />
-      <Caro title={"Cultural Clubs"} data={cultClubs}  type={'clubs'} />
+      <div className="mb-5">
+        <Caro title={"Technical Clubs"} data={techClubs} type={'clubs'} />
+        <Caro title={"Cultural Clubs"} data={cultClubs}  type={'clubs'} />
+      </div>
     </div>
   );
 };
