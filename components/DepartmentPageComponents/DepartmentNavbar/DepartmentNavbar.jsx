@@ -67,6 +67,7 @@ export const DepartmentNavbarMenu = ({id, dept_name}) => {
             let temp = {}
             temp['title'] = item["name"];
             temp['link'] = dept_name+'/'+item['url'];
+            temp['isNewTab'] = item['IsNewTab'];
             temp['submenu'] = [];
             arr.push(temp);
             pi[item.menu_id] = arr.length-1;
@@ -77,6 +78,7 @@ export const DepartmentNavbarMenu = ({id, dept_name}) => {
             let temp = {};
             temp['title'] = item["name"];
             temp['link'] = dept_name+'/'+item['url'];
+            temp['isNewTab'] = item['IsNewTab'];
             temp['submenu'] = [];
             arr[pi[item.p_id]]['submenu'].push(temp);
             si[item.menu_id] = arr[pi[item.p_id]]['submenu'].length-1;
@@ -86,6 +88,7 @@ export const DepartmentNavbarMenu = ({id, dept_name}) => {
             let temp = {};
             temp['title'] = item["name"];
             temp['link'] = dept_name+'/'+item['url'];
+            temp['isNewTab'] = item['IsNewTab'];
             // console.log(item.p_id,item.s_id);
             arr[pi[item.p_id]]['submenu'][si[item.s_id]]['submenu'].push(temp);
         }

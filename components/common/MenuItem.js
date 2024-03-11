@@ -65,7 +65,7 @@ const MenuItem = ({ items, depthLevel, translations }) => {
                     />
                 </>
             ) : (
-                <Link className={'cursor-pointer hover:bg-[#455a64] hover:text-white decoration-primary decoration-4 duration-300 underline-offset-4'} href={`${items.link ? (isNotice?"../"+items.link:items.link) : "#"}`}><h1 >{items.title}</h1></Link>
+                <Link target={items.isNewTab? "_blank": "_self"} className={'cursor-pointer hover:bg-[#455a64] hover:text-white decoration-primary decoration-4 duration-300 underline-offset-4'} href={`${items.link ? (isNotice?"../"+items.link:items.link) : "#"}`}><h1 >{items.title}</h1></Link>
             )}
         </li>
     );

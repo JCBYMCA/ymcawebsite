@@ -47,7 +47,7 @@ const NavBar = ({id, menudata}) => {
         //     if (router.query.id === undefined) return; else
         //     user = router.query.id;
         // }
-        //console.log("getting",user,"menu");
+        // console.log(menudata);
         setMenu(createMenuObj(menudata));
 
     } , [])
@@ -61,6 +61,7 @@ const NavBar = ({id, menudata}) => {
             let temp = {}
             temp['title'] = item["name"];
             temp['link'] = item['url'];
+            temp['isNewTab'] = item['IsNewTab'];
             temp['submenu'] = [];
             arr.push(temp);
             pi[item.menu_id] = arr.length-1;
@@ -72,6 +73,7 @@ const NavBar = ({id, menudata}) => {
                 let temp = {};
                 temp['title'] = item["name"];
                 temp['link'] = item['url'];
+                temp['isNewTab'] = item['IsNewTab'];
                 temp['submenu'] = [];
                 arr[pi[item.p_id]]['submenu'].push(temp);
             }
@@ -86,6 +88,7 @@ const NavBar = ({id, menudata}) => {
             let temp = {};
             temp['title'] = item["name"];
             temp['link'] = item['url'];
+            temp['isNewTab'] = item['IsNewTab'];
             // console.log(item.p_id,item.s_id);
             arr[pi[item.p_id]]['submenu'][si[item.s_id]]['submenu'].push(temp);
         }
