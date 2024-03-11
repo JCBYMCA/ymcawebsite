@@ -50,7 +50,7 @@ const DepartmentPage = ({ slug, setLoader }) => {
 
     return slug?.length === 1 ? (
         <div>
-            <DepartmentNavbar id={departmentId[slug[0]]} dept_name={slug[0]} />
+            <DepartmentNavbar id={departmentId[slug[0]]} dept_name={slug[0]} isDept={true} />
             <Landing id={departmentId[slug[0]]} dept_name={slug[0]} sliderImages={sliderImages} />
             <div className={'flex flex-col'}>
                 <div className={'mt-16 mb-12 ml-20 mr-16 md:flex-row space-x-12 flex flex-col justify-center'}>
