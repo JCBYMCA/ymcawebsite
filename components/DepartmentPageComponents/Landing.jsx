@@ -97,7 +97,7 @@ const Landing = ({id, dept_name, sliderImages, isNavbar=true}) => {
                     </div> */}
                     {sliderImages && sliderImages.map((item, i) => (
                         <div key={i} className={'w-full h-[30vh] md:h-[60vh]'}>
-                            <Image src={'http://49.50.77.87:8000/media/'+item.files_url} alt={'Achievement'} layout={'fill'} />
+                            <Image src={'http://49.50.77.87:3000/assets/media/'+item.files_url} alt={'Achievement'} layout={'fill'} />
                         </div>
                     ))} 
                 </Carousel>

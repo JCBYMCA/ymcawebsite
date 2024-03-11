@@ -37,7 +37,7 @@ const CellCards = ({data=[], type}) => {
             width={120}
             name={item.name}
             desc={item.Description}
-            image={"http://49.50.77.87:8000/media/"+item.image}
+            image={"http://49.50.77.87:3000/assets/media/"+item.image}
             url={item.url}
           />
         ))}

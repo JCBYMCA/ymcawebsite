@@ -21,7 +21,7 @@ const GalleryComponent = ({data}) => {
     const makeSrcList = (data) => {
         let srcList = [];
         for (let i = 0; i < data.length; i++) {
-            srcList.push({src: "http://49.50.77.87:8000/media/" + data[i].files_url});
+            srcList.push({src: "http://49.50.77.87:3000/assets/media/" + data[i].files_url});
         }
         // console.log(srcList);
         return srcList;
