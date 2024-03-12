@@ -3,29 +3,80 @@ import FacultyCard from "../../components/FacultyPageComponents/FacultyCard";
 import DepartmentContact from "../../components/FacultyPageComponents/DepartmentContact";
 import Image from "next/image";
 import FacultyNavbar from "../../components/FacultyPageComponents/FacultyNavbar/FacultyNavbar";
+import { useEffect, useState } from "react";
+import { getFaculty, getMenu } from "../../http";
+import departmentId from "../../config/dept_map";
+import { MEDIA_BASE_URL } from "../../config/constants";
+import DepartmentNavbar from "../../components/DepartmentPageComponents/DepartmentNavbar/DepartmentNavbar";
+import NavBar from "../../components/HomePageComponents/NavBar/NavBar";
 
 
-const FacultyPage = ({setLoader}) => {
-    setTimeout(() => {
-       setLoader(false);
-    }, 1000);
+const FacultyPage = ({ slug, setLoader }) => {
+
+    const [data, setData] = useState();
+    const [menu, setMenu] = useState();
+
+
+
+    useEffect(() => {
+
+        getFaculty(departmentId[slug[0]]).then((resp) => {
+            console.log(data);
+            setData(resp.data["Post List"]);
+        });
+
+        getMenu(departmentId[slug[0]]).then((resp) => {
+            setMenu(resp.data);
+        }
+        );
+
+        setTimeout(() => {
+            setLoader(false);
+        }, 1000);
+    }, []);
+
     return (
         <div>
-            <FacultyNavbar/>
+            {slug[0]=="main"? 
+             menu && <NavBar menudata={menu}/>
+            :
+            <DepartmentNavbar id={departmentId[slug[0]]} dept_name={slug[0]} isDept={true} />
+            }
 
-           <div className={'grid md:grid-cols-2 grid-cols-1 md:px-32 mt-16'}>
+            <div className={'grid md:grid-cols-2 grid-cols-1 md:px-32 mt-16'}>
 
-            <FacultyCard
-                image={'/assets/images/faculty/komalbhatia.png'}
-                name={'Komal Kumar Bhatia'}
-                designation={'Dean Computer Department'}
-                mail={'bla@gmail.com'}
-                contact={'91-8851221355'}
-                qualf1={'Vituperatoribus efficiantur tempor'}
-                qualf2={'Vituperatoribus efficiantur tempor'}
-                linkedinlink={''}
-                twitterlink={''}
-            />
+                {data &&
+
+                    data.map((item, i) => {
+                        return (
+                            <FacultyCard
+                                image={item.image_url == "" ? "/assets/images/sampleperson.png" : (MEDIA_BASE_URL + item.image_url)}
+                                name={item.name}
+                                designation={item.desc}
+                                mail={item.email}
+                                contact={item.phone_number}
+                                link={item.irins_url}
+                                qualf1={'Vituperatoribus efficiantur tempor'}
+                                qualf2={'Vituperatoribus efficiantur tempor'}
+                            />
+                        )
+                    })
+
+
+
+                }
+
+                {/* <FacultyCard
+                    image={'/assets/images/faculty/komalbhatia.png'}
+                    name={'Komal Kumar Bhatia'}
+                    designation={'Dean Computer Department'}
+                    mail={'bla@gmail.com'}
+                    contact={'91-8851221355'}
+                    qualf1={'Vituperatoribus efficiantur tempor'}
+                    qualf2={'Vituperatoribus efficiantur tempor'}
+                    linkedinlink={''}
+                    twitterlink={''}
+                />
                 <FacultyCard
                     image={'/assets/images/faculty/atulmishra.png'}
                     name={'Atul Mishra'}
@@ -40,7 +91,7 @@ const FacultyPage = ({setLoader}) => {
                 <FacultyCard
                     image={'/assets/images/faculty/neelamduhan.png'}
                     name={'Neelam Duhan'}
-                    designation={'Assistant Professor'}
+                    designation={'Associate Professor'}
                     mail={'bla@gmail.com'}
                     contact={'91-8851221355'}
                     qualf1={'Vituperatoribus efficiantur tempor'}
@@ -82,22 +133,26 @@ const FacultyPage = ({setLoader}) => {
                     qualf2={'Vituperatoribus efficiantur tempor'}
                     linkedinlink={''}
                     twitterlink={''}
-                />
+                /> */}
 
 
 
-        </div>
+            </div>
         </div>
 
     )
 }
 
-export async function getStaticProps({locale}) {
+export const getServerSideProps = async (context) => {
+    const slug = context.params.slug;
+    console.log("slug", slug);
     return {
         props: {
-            messages: (await import(`../../lang/${locale}.json`)).default,
+            slug: slug,
+            messages: (await import(`../../lang/${context.locale}.json`)).default,
         }
     }
 }
+
 
 export default FacultyPage;

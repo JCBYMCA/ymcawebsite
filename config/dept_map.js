@@ -18,6 +18,7 @@ const departmentId = {
 "Community_College": 17,
 "Research_Development" :26,
 
+
 }
 
 export default departmentId;

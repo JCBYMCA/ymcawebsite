@@ -24,7 +24,7 @@ const FacultyCard = ({image,name,designation,mail,contact,qualf1,qualf2,link,lin
                 duration:0.5,
                 type:'spring',
             }}
-            className={'flex mb-8 ml-4 space-x-8'}>
+            className={'flex drop-shadow-lg  mx-auto mb-8 space-x-8'}>
             <div className={''}>
                 <Image src={image} height={'200'} width={'180'} layout={'fixed'}/>
             </div>
