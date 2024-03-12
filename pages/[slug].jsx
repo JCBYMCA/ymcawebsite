@@ -10,7 +10,7 @@ const TemplatePage = (props) => {
     setTimeout(() => {
         props.setLoader(false);
     }, 1000);
-    const router= useRouter();
+    
     const urlKey= router.query.slug;
     const [data, setData]= useState('');
     const [title, setTitle]= useState('');

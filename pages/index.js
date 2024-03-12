@@ -24,7 +24,7 @@ import Feedback from "../components/HomePageComponents/Feedback";
 import HomeSlider from "../components/HomePageComponents/HomeSlider";
 import Marquee from "../components/common/Marquee";
 import Carousel from "react-multi-carousel";
-import api, { getDepartmentPostsMenu, getSilder } from "../http";
+import api, { getDepartmentPostsMenu, getNotices, getSilder } from "../http";
 import PopupModal from "../components/HomePageComponents/PopupModal";
 
 const Home = ({setLoader}) => {
@@ -47,6 +47,8 @@ const Home = ({setLoader}) => {
     const [sliderImages, setSliderImages] = useState([]);
     const [menu, setMenu]= useState([]);
     const [apiCount, setApiCount]= useState(1);
+    const [noticeData, setNoticeData] = useState({});
+
 
     useEffect(()=> {
         let user= 1;
@@ -59,6 +61,39 @@ const Home = ({setLoader}) => {
         getDepartmentPostsMenu(user).then((resp) => {
             setApiCount(apiCount+1);
             setMenu((resp.data));
+        });
+
+        getNotices(user, 'all').then((resp) => {
+            
+            resp.data["Notice List"].sort((a, b)=> {
+                return moment(b.date) - moment(a.date)
+            })
+            setNoticeData((xyz)=> {return {...xyz, notices: resp.data["Notice List"]}});
+        });
+        getNotices(user, 'result').then((resp) => {
+
+            resp.data["Notice List"].sort((a, b)=> {
+                return moment(b.date) - moment(a.date)
+            })
+        setNoticeData((xyz)=> {return {...xyz, resultNotices: resp.data["Notice List"]}});
+        });
+        getNotices(user, 'datesheet').then((resp) => {
+            resp.data["Notice List"].sort((a, b)=> {
+                return moment(b.date) - moment(a.date)
+            })
+            setNoticeData((xyz)=> {return {...xyz, datesheetNotices: resp.data["Notice List"]}});
+        });
+        getNotices(user, 'tender').then((resp) => {
+            resp.data["Notice List"].sort((a, b)=> {
+                return moment(b.date) - moment(a.date)
+            })
+            setNoticeData((xyz)=> {return {...xyz, tenderNotices: resp.data["Notice List"]}});
+        });
+        getNotices(user, 'student').then((resp) => {
+            resp.data["Notice List"].sort((a, b)=> {
+                return moment(b.date) - moment(a.date)
+            })
+            setNoticeData((xyz)=> {return {...xyz, studentNotices: resp.data["Notice List"]}});
         });
         
         return () => {
@@ -132,7 +167,7 @@ const Home = ({setLoader}) => {
             <div className={'flex flex-col md:flex-row md:h-[36rem] bg-fixed bg!-notice-bg bg-no-repeat bg-center bg-cover'}>
                 <div className={'flex flex-col md:flex-row bg-[#EBEBEB] bg-opacity-5 w-full md:h-[35.8rem] py-10 px-3 md:px-8'}>
                     <div className={'md:w-2/3 w-auto shadow-sm md:mr-4'}>
-                        <Notices className={'bg-[#EBEBEB] border-solid'} />
+                        <Notices data={noticeData} className={'bg-[#EBEBEB] border-solid'} />
                     </div>
                     <div className={'md:w-1/3 w-auto md:ml-4 mt-4 md:mt-0'}>
                         <UpcomingEvents className={'bg-[#EBEBEB] border-solid'}/>

@@ -18,12 +18,14 @@ export const getMarquee = (department = "1") => api.get(`/api/proxy/marqueapi/${
 export const getAboutDepartment  = (department = "1") => api.get(`/api/proxy/aboutdepartmentapi/${department}?format=json`);
 export const getDepartmentMenu  = (department = "1") => api.get(`/api/proxy/parentmenuapi/${department}?format=json`);
 export const getDepartmentPostsMenu  = (department = "1") => api.get(`/api/proxy/parentmenuapi/${department}?format=json`);
+export const getFaculty = (department = "1", type="teaching") => api.get(`/api/proxy/teacherapi/${department}?format=json`);
 export const getPost = (department = "1", url= "LegalCell") => api.get(`api/proxy/postapi/${department}/${url}?format=json`);
 export const getDepartmentPost = (department = "1", url= "LegalCell") => api.get(`/api/proxy/postapi/${department}/${url}?format=json`);
 export const getAchievement = (department = "1") => api.get(`/api/proxy/achievementapi/${department}?format=json`);
 export const getGallery = (department = "1") => api.get(`/api/proxy/galleryapi/${department}?format=json`);
 export const getEventGallery = (galleryId = "1") => api.get(`/api/proxy/galleryimages_api/${galleryId}?format=json`);
 export const getCellsClubs = () => api.get(`/api/proxy/cellsapi?format=json`);
+
 //Post requests
 //export const getNotices = (data,department = "admin") => api.post(`/noticenotice_api/${department}?format=json`, data);
 

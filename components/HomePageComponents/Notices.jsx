@@ -26,58 +26,22 @@ const Notice = (props) => {
 }
 
 
-const Notices = ({isDepartment = false, isHome = true, className, deptID = 1, deptName}) => {
+const Notices = ({isDepartment = false, isHome = true, className, deptID = 1, data={
+        notices: [],
+        resultNotices: [],
+        datesheetNotices: [],
+        tenderNotices: [],
+        studentNotices: []
+    }
+    , deptName}) => {
+
+    const t = useTranslations("home.notices");
     const [value, setValue] = useState('1');
     const router = useRouter();
     const handleChange = (event, newValue) => {
         setValue(newValue);
     };
 
-    const [notices,setNotices] = useState([]);
-    const [resultNotices,setResultNotices] = useState([]);
-    const [datesheetNotices,setDatesheetNotices] = useState([]);
-    const [tenderNotices,setTenderNotices] = useState([]);
-    const [studentNotices,setStudentNotices] = useState([]);
-    useEffect(() => {
-        let user = deptID;
-        console.log("getting",user,"notices");
-        getNotices(user, 'all').then((resp) => {
-           console.log(resp);
-            resp.data["Notice List"].sort((a, b)=> {
-                return moment(b.date) - moment(a.date)
-            })
-            setNotices(resp.data["Notice List"]);
-        });
-        getNotices(user, 'result').then((resp) => {
-            resp.data["Notice List"].sort((a, b)=> {
-                return moment(b.date) - moment(a.date)
-            })
-            setResultNotices(resp.data["Notice List"]);
-        });
-        getNotices(user, 'datesheet').then((resp) => {
-            resp.data["Notice List"].sort((a, b)=> {
-                return moment(b.date) - moment(a.date)
-            })
-            setDatesheetNotices(resp.data["Notice List"]);
-        });
-        getNotices(user, 'tender').then((resp) => {
-            resp.data["Notice List"].sort((a, b)=> {
-                return moment(b.date) - moment(a.date)
-            })
-            setTenderNotices(resp.data["Notice List"]);
-        });
-        getNotices(user, 'student').then((resp) => {
-            resp.data["Notice List"].sort((a, b)=> {
-                return moment(b.date) - moment(a.date)
-            })
-            setStudentNotices(resp.data["Notice List"]);
-        });
-       
-        //const arr= notices.concat(resultNotices).concat(datesheetNotices).concat(tenderNotices).concat(studentNotices);
-        //setNotices(arr.sort((a,b)=> b.e_date - a.e_date))
-
-    } , [value,router])
-    const t = useTranslations("home.notices");
     return(
         <div className={'rounded-md border-gray-800 flex flex-col h-full ' + className}>
             <div className={'rounded-tl-md  rounded-tr-md py-2 text-l md:text-xl text-center bg-secondary text-white font-bold'}>
@@ -85,7 +49,9 @@ const Notices = ({isDepartment = false, isHome = true, className, deptID = 1, de
             </div>
 
              <TabContext value={value} className={"mb-2"}>
-                {isHome && <>
+
+
+            {isHome && <>
                 <TabList onChange={handleChange} aria-label="Notices Tab" className={'md:w-auto w-full'} variant="scrollable" sx={{
                     marginX: 'auto',
                 }}>                    
@@ -95,10 +61,12 @@ const Notices = ({isDepartment = false, isHome = true, className, deptID = 1, de
                         <Tab label="Tender" value="4" className={'font-bold text-xs md:text-sm text-black'}/>
                         <Tab label="Student" value="5" className={'font-bold text-xs md:text-sm text-black'}/>                        
                 </TabList>
-                </>}
+                </>
+            }
+
                 <div className="p-3">
                 <TabPanel value="1" className={"overflow-auto mb-4 overflow-y-scroll"} >
-                    {notices.map((notice,i)=> moment(notice?.e_date).isAfter(moment()) ? (<Notice notice={notice} heading={notice?.title} key={i}/>) : null)}
+                    {data.notices?.map((notice,i)=> moment(notice?.e_date).isAfter(moment()) ? (<Notice notice={notice} heading={notice?.title} key={i}/>) : null)}
                     <button 
                     onClick={() => {
                         // open the notice in a new tab
@@ -108,8 +76,13 @@ const Notices = ({isDepartment = false, isHome = true, className, deptID = 1, de
                         {t('viewAll')}
                     </button>
                 </TabPanel>
+
+
+
+            {isHome &&
+            <>
                 <TabPanel value="2" className={"overflow-auto mb-4 overflow-y-scroll"}>
-                    {resultNotices.map((notice,i)=> moment(notice?.e_date).isAfter(moment()) ? (<Notice notice={notice} heading={notice?.title} key={i}/>) : null)}
+                    {data.resultNotices?.map((notice,i)=> moment(notice?.e_date).isAfter(moment()) ? (<Notice notice={notice} heading={notice?.title} key={i}/>) : null)}
                     <button 
                     onClick={() => {
                         // open the notice in a new tab
@@ -120,7 +93,7 @@ const Notices = ({isDepartment = false, isHome = true, className, deptID = 1, de
                     </button>
                 </TabPanel>
                 <TabPanel value="3" className={"overflow-auto mb-4 overflow-y-scroll"}>
-                    {datesheetNotices.map((notice,i)=> moment(notice?.e_date).isAfter(moment()) ? (<Notice notice={notice} heading={notice?.title} key={i}/>) : null)}
+                    {data.datesheetNotices?.map((notice,i)=> moment(notice?.e_date).isAfter(moment()) ? (<Notice notice={notice} heading={notice?.title} key={i}/>) : null)}
                     <button 
                     onClick={() => {
                         // open the notice in a new tab
@@ -130,11 +103,8 @@ const Notices = ({isDepartment = false, isHome = true, className, deptID = 1, de
                         {t('viewAll')}
                     </button>
                 </TabPanel>
-                {/* <TabPanel value="4" className={"overflow-auto mb-4 scroll-smooth"}>
-                    {tenderNotices.map((notice,i)=> moment(notice?.e_date).isAfter(moment()) ? (<Notice notice={notice} heading={notice?.title} key={i}/>) : null)}
-                </TabPanel> */}
                 <TabPanel value="4" className={"overflow-auto mb-4 overflow-y-scroll"} >
-                    {tenderNotices.map((notice,i)=> moment(notice?.e_date).isAfter(moment()) ? (<Notice notice={notice} heading={notice?.title} key={i}/>) : null)}
+                    {data.tenderNotices?.map((notice,i)=> moment(notice?.e_date).isAfter(moment()) ? (<Notice notice={notice} heading={notice?.title} key={i}/>) : null)}
                     <button 
                     onClick={() => {
                         // open the notice in a new tab
@@ -145,7 +115,7 @@ const Notices = ({isDepartment = false, isHome = true, className, deptID = 1, de
                     </button>
                 </TabPanel>
                 <TabPanel value="5" className={"overflow-auto mb-4 overflow-y-scroll"} >
-                    {studentNotices.map((notice,i)=> moment(notice?.e_date).isAfter(moment()) ? (<Notice notice={notice} heading={notice?.title} key={i}/>) : null)}
+                    {data.studentNotices?.map((notice,i)=> moment(notice?.e_date).isAfter(moment()) ? (<Notice notice={notice} heading={notice?.title} key={i}/>) : null)}
                     <button 
                     onClick={() => {
                         // open the notice in a new tab
@@ -155,6 +125,8 @@ const Notices = ({isDepartment = false, isHome = true, className, deptID = 1, de
                         {t('viewAll')}
                     </button>
                 </TabPanel>
+            </>
+            }
                 </div>
             </TabContext>
         </div>
