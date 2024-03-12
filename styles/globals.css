@@ -125,14 +125,14 @@ header {
 }
 .fbox {
     overflow: hidden;
-    width: calc(100%/7);
+    min-width: calc(100%/7);
     position: relative;
     color: white;
     text-align: center;
 }
 .section-b {
     /* max-width: 200px; */
-    /* min-height: 300px; */
+    min-height: 250px;
     height: 100%;
     position: relative;
 }

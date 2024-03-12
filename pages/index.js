@@ -28,6 +28,22 @@ import api, { getDepartmentPostsMenu, getSilder } from "../http";
 import PopupModal from "../components/HomePageComponents/PopupModal";
 
 const Home = ({setLoader}) => {
+    const responsive = {
+        desktop: {
+            breakpoint: { max: 3000, min: 1024 },
+            items: 5,
+    
+        },
+        tablet: {
+            breakpoint: { max: 1024, min: 464 },
+            items: 2,
+    
+        },
+        mobile: {
+            breakpoint: { max: 464, min: 0 },
+            items: 1,
+        }
+    }
     const [sliderImages, setSliderImages] = useState([]);
     const [menu, setMenu]= useState([]);
     const [apiCount, setApiCount]= useState(1);
@@ -183,6 +199,52 @@ const Home = ({setLoader}) => {
                             duration: 1,
                             type: 'spring',
                         }}
+                        className="h-[400px] w-full hidden md:block">
+                        <Carousel
+                        swipeable={true}
+                        draggable={true}
+                        showDots={false}
+                        responsive={responsive}
+                        ssr={false} // means to render carousel on server-side.
+                        infinite={true}
+                        autoPlay={true}
+                        autoPlaySpeed={3000}
+                        keyBoardControl={true}
+                        transitionDuration={500}
+                        containerClass="carousel-container"
+                        removeArrowOnDeviceType={["tablet", "mobile","desktop"]}
+                        deviceType={"desktop"}
+                        dotListClass="custom-dot-list-style"
+                        itemClass="carousel-item-padding-40-px"
+                        >
+                            <FeatureCard title={"Campus Life"} icon={<LocationCityIcon className={'mx-auto'}/>} description={"Campus Life description"} index={0}/>
+                            <FeatureCard title={"Placements"} icon={<WorkIcon className={'mx-auto'}/>} description={"Placements description"} index={1}/>
+                            <FeatureCard title={"Centres of Excellence"} icon={<SchoolIcon className={'mx-auto'}/>} index={2} description={"Centres of Excellence description"}/>
+                            <FeatureCard title={"Research Facility"} description={"Research Facility description"} index={3} icon={<PrecisionManufacturingIcon className={'mx-auto'}/>}/>
+                            <FeatureCard title={"Central Library"} icon={<LocalLibraryIcon className={'mx-auto'}/>} index={4} description={"Central Library description"} />
+                            <FeatureCard title={"Incubation Centre"} icon={<RocketLaunchIcon className={'mx-auto'}/>} index={5} description={"Incubation Centre description"}/>
+                            <FeatureCard title={"Media Centre"} icon={<MovieIcon className={'mx-auto'}/>} index={6} description={"Media Centre description"}/>
+                            <FeatureCard title={"Media Centre"} icon={<MovieIcon className={'mx-auto'}/>} index={7} description={"Media Centre description"}/>
+                        </Carousel>
+                    </motion.div>
+                    {/* <motion.div
+                        initial={{
+                            opacity:0,
+                            y: 100,
+                        }}
+                        viewport={{
+                            margin:'0px 0px -200px 0px',
+                            once: true
+                        }}
+                        whileInView={{
+                            opacity:1,
+                            y: 0,
+                        }}
+                        transition={{
+                            delay: 0.2,
+                            duration: 1,
+                            type: 'spring',
+                        }}
                         className={'fbox-container hidden md:flex'}>
                         <FeatureCard title={"Campus Life"} icon={<LocationCityIcon className={'mx-auto'}/>} description={"Campus Life description"} index={0}/>
                         <FeatureCard title={"Placements"} icon={<WorkIcon className={'mx-auto'}/>} description={"Placements description"} index={1}/>
@@ -191,7 +253,7 @@ const Home = ({setLoader}) => {
                         <FeatureCard title={"Central Library"} icon={<LocalLibraryIcon className={'mx-auto'}/>} index={4} description={"Central Library description"} />
                         <FeatureCard title={"Incubation Centre"} icon={<RocketLaunchIcon className={'mx-auto'}/>} index={5} description={"Incubation Centre description"}/>
                         <FeatureCard title={"Media Centre"} icon={<MovieIcon className={'mx-auto'}/>} index={6} description={"Media Centre description"}/>
-                    </motion.div>
+                    </motion.div> */}
                 </div>
                 <div className="block md:hidden">
                     <Carousel
