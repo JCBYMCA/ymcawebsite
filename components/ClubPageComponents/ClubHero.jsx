@@ -79,7 +79,7 @@ const ClubHero = ({slider, data}) => {
         <div>
           <h1 className="text-white text-xl text-center font-serif sm:text-2xl">
               {data?.name || 
-              "UNIVERSITY COMPUTER CENTER & DIGITAL AFFAIRS"
+              "Cell Name"
               } 
             </h1>
         </div>

@@ -43,7 +43,7 @@ export const ClubNavbarMenu = ({menuData}) => {
             }}>
                 <HomeIcon className={'ml-auto'}/>
             </div>
-            <NavBarMenu menuItems={menuData} className={' mr-20'} translations={''} />
+            <NavBarMenu menuItems={menuData} className={''} translations={''} />
         </div>
     )
 }

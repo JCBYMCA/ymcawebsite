@@ -41,6 +41,7 @@ const Cell = ({ setLoader }) => {
       {menu.length != 0 && <NavBar menudata={menu} />}
       <CellHero />
       <CellCards data={data} type={'cells'} />
+      <FooterLinks />
     </div>
   );
 };
