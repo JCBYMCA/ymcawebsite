@@ -41,10 +41,18 @@ const Cell = ({ setLoader }) => {
       {menu.length != 0 && <NavBar menudata={menu} />}
       <CellHero />
       <CellCards data={data} type={'cells'} />
+      <FooterLinks />
     </div>
   );
 };
 
+export const getServerSideProps = async (context) => {
+  return {
+      props: {
+          messages: (await import(`../../lang/${context.locale}.json`)).default,
+      }
+  }
+}
 
 
 export default Cell;
