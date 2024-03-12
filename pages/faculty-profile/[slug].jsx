@@ -21,13 +21,13 @@ const FacultyProfile = () => {
         <div className={'w-2/3'}>
             <Head/>
             <Biography/>
-            <EducationQualifications/>
-            <AreaofResearch/>
+            {/* <EducationQualifications/> */}
+            {/* <AreaofResearch/>
             <PatentsGrants/>
             <ProfessionalMembership/>
-            <Awards/>
-            <ResearchPublications/>
-            <button className={'bg-secondaryLight p-2 mt-4 rounded text-white'}>Read More</button>
+            <Awards/> */}
+            {/* <ResearchPublications/> */}
+            {/* <button className={'bg-secondaryLight p-2 mt-4 rounded text-white'}>Read More</button> */}
         </div>
     </div>
         </div>

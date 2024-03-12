@@ -7,9 +7,9 @@ const AboutCell = ({ data }) => {
         <h1 className="text-5xl" >About Us</h1>
       </div>
       <div className="sm:flex sm:space-x-4 mt-6 flex flex-col-reverse sm:flex-row">
-        <div className="sm:mr-4 text-justify">
+        <div className="sm:mr-4 text-justify w-full">
           {data?.about_department ||
-            "UCCE & DA is a part of the University Computer Centre, Panjab University, Chandigarh. It is responsible for the development and maintenance of the University website, the University Management Information System (UMIS), and the University Mobile App. It also provides IT support to various departments and offices of the University"
+            "No Description Available for this cell."
           }
         </div>
         <div className="">
