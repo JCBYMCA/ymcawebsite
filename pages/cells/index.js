@@ -45,6 +45,13 @@ const Cell = ({ setLoader }) => {
   );
 };
 
+export const getServerSideProps = async (context) => {
+  return {
+      props: {
+          messages: (await import(`../../lang/${context.locale}.json`)).default,
+      }
+  }
+}
 
 
 export default Cell;
