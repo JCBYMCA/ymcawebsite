@@ -9,7 +9,7 @@ import { motion } from "framer-motion";
 import DepartmentNavbar from "../../components/DepartmentPageComponents/DepartmentNavbar/DepartmentNavbar";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import { getAboutDepartment, getDepartmentPost, getDepartmentPostsMenu, getSilder } from "../../http";
+import { getAboutDepartment, getDepartmentPost, getDepartmentPostsMenu, getNotices, getSilder } from "../../http";
 import Head from "next/head";
 import NavBar from "../../components/HomePageComponents/NavBar/NavBar";
 import PostTemplate from "../../components/common/PostTemplate";
@@ -25,10 +25,19 @@ const DepartmentPage = ({ slug, setLoader }) => {
     const [title, setTitle] = useState('');
     const [menu, setMenu] = useState([]);
     const [sliderImages, setSliderImages] = useState([]);
+    const [noticeData, setNoticeData] = useState({
+        notices: [],
+        resultNotices: [],
+        datesheetNotices: [],
+        tenderNotices: [],
+        studentNotices: []
+    });
     const page = slug?.[1] ? slug[1] : "";
 
     useEffect(() => {
         if(page!= "")
+
+
         getDepartmentPost(departmentId[slug?.[0]], page).then((resp) => {
             setData(resp.data["Post List"][0].content);
             setTitle(resp.data["Post List"][0].name);
@@ -44,6 +53,16 @@ const DepartmentPage = ({ slug, setLoader }) => {
 
         getDepartmentPostsMenu(departmentId[slug?.[0]]).then((resp) => {
             setMenu((resp.data));
+        });
+
+
+        getNotices(departmentId[slug?.[0]], 'all').then((resp) => {
+            
+            resp.data["Notice List"].sort((a, b)=> {
+                return moment(b.date) - moment(a.date)
+            })
+            // console.log(resp);
+            setNoticeData((xyz)=> {return {...xyz, notices: resp.data["Notice List"]}});
         });
 
     }, [page, slug])
@@ -63,7 +82,7 @@ const DepartmentPage = ({ slug, setLoader }) => {
                 </div>
                 <div className={'flex flex-col md:flex-row bg-notice-bg bg-cover bg-opacity-5 w-full md:h-[35.8rem] py-10 px-3 md:px-8'}>
                     <div className={'md:w-2/3 w-auto shadow-sm md:mr-4'}>
-                        <Notices className={'bg-[#EBEBEB] border-solid'} isDepartment={true}  isHome={false} deptID={departmentId[slug[0]]} deptName={slug[0]} />
+                        <Notices className={'bg-[#EBEBEB] border-solid'} data={noticeData} isDepartment={true}  isHome={false} deptID={departmentId[slug[0]]} deptName={slug[0]} />
                     </div>
                     <div className={'md:w-1/3 w-auto md:ml-4 mt-4 md:mt-0'}>
                         <QuickLinks heading={'Scheme & Syllabus'} className={'bg-[#EBEBEB] border-solid'} deptName={slug[0]} />
