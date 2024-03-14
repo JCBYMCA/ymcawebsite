@@ -21,7 +21,7 @@ const FacultyPage = ({ slug, setLoader }) => {
     useEffect(() => {
 
         getFaculty(departmentId[slug[0]]).then((resp) => {
-            console.log(data);
+            //console.log(data);
             setData(resp.data["Post List"]);
         });
 
@@ -56,8 +56,8 @@ const FacultyPage = ({ slug, setLoader }) => {
                                 mail={item.email}
                                 contact={item.phone_number}
                                 link={item.irins_url}
-                                qualf1={'Vituperatoribus efficiantur tempor'}
-                                qualf2={'Vituperatoribus efficiantur tempor'}
+                                qualf1={item.extra_charge}
+                                qualf2={''}
                             />
                         )
                     })
@@ -145,7 +145,7 @@ const FacultyPage = ({ slug, setLoader }) => {
 
 export const getServerSideProps = async (context) => {
     const slug = context.params.slug;
-    console.log("slug", slug);
+    //console.log("slug", slug);
     return {
         props: {
             slug: slug,

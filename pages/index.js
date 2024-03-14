@@ -70,14 +70,14 @@ const Home = ({setLoader}) => {
             })
             setNoticeData((xyz)=> {return {...xyz, notices: resp.data["Notice List"]}});
         });
-        getNotices(user, 'result').then((resp) => {
+        // getNotices(user, 'result').then((resp) => {
 
-            resp.data["Notice List"].sort((a, b)=> {
-                return moment(b.date) - moment(a.date)
-            })
-        setNoticeData((xyz)=> {return {...xyz, resultNotices: resp.data["Notice List"]}});
-        });
-        getNotices(user, 'datesheet').then((resp) => {
+        //     resp.data["Notice List"].sort((a, b)=> {
+        //         return moment(b.date) - moment(a.date)
+        //     })
+        // setNoticeData((xyz)=> {return {...xyz, resultNotices: resp.data["Notice List"]}});
+        // });
+        getNotices(user, 'examination').then((resp) => {
             resp.data["Notice List"].sort((a, b)=> {
                 return moment(b.date) - moment(a.date)
             })
@@ -89,7 +89,7 @@ const Home = ({setLoader}) => {
             })
             setNoticeData((xyz)=> {return {...xyz, tenderNotices: resp.data["Notice List"]}});
         });
-        getNotices(user, 'student').then((resp) => {
+        getNotices(user, 'recruitment').then((resp) => {
             resp.data["Notice List"].sort((a, b)=> {
                 return moment(b.date) - moment(a.date)
             })

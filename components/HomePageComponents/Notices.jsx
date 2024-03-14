@@ -28,10 +28,13 @@ const Notice = (props) => {
 
 const Notices = ({isDepartment = false, isHome = true, className, deptID = 1, data={
         notices: [],
-        resultNotices: [],
-        datesheetNotices: [],
-        tenderNotices: [],
-        studentNotices: []
+        //resultNotices: [],
+        //datesheetNotices: [],
+        examinationNotices: [],
+        recruitmentNotices: [],
+        tenderNotices: []      
+       
+        //studentNotices: []
     }
     , deptName}) => {
 
@@ -56,10 +59,13 @@ const Notices = ({isDepartment = false, isHome = true, className, deptID = 1, da
                     marginX: 'auto',
                 }}>                    
                         <Tab label="All" value="1" className={'font-bold text-xs md:text-sm text-black'}/>
-                        <Tab label="Result" value="2" className={'font-bold text-xs md:text-sm text-black'}/>
-                        <Tab label="Datesheet" value="3" className={'font-bold text-xs md:text-sm text-black'}/>
+
+                        <Tab label="Examination" value="2" className={'font-bold text-xs md:text-sm text-black'}/>
+                        {/* <Tab label="Result" value="2" className={'font-bold text-xs md:text-sm text-black'}/> */}
+                         <Tab label="Recruitment" value="3" className={'font-bold text-xs md:text-sm text-black'}/>
+                        {/* <Tab label="Datesheet" value="3" className={'font-bold text-xs md:text-sm text-black'}/> */}
                         <Tab label="Tender" value="4" className={'font-bold text-xs md:text-sm text-black'}/>
-                        <Tab label="Student" value="5" className={'font-bold text-xs md:text-sm text-black'}/>                        
+                        {/* <Tab label="Student" value="5" className={'font-bold text-xs md:text-sm text-black'}/>                         */}
                 </TabList>
                 </>
             }
@@ -81,7 +87,18 @@ const Notices = ({isDepartment = false, isHome = true, className, deptID = 1, da
 
             {isHome &&
             <>
-                <TabPanel value="2" className={"overflow-auto mb-4 overflow-y-scroll"}>
+            <TabPanel value="2" className={"overflow-auto mb-4 overflow-y-scroll"}>
+                    {data.examinationNotices?.map((notice,i)=> moment(notice?.e_date).isAfter(moment()) ? (<Notice notice={notice} heading={notice?.title} key={i}/>) : null)}
+                    <button 
+                    onClick={() => {
+                        // open the notice in a new tab
+                        window.open(`/notices/examination`, '_blank');
+                    }}
+                    className={'block mt-auto mx-auto bg-secondary text-white py-2 px-8 hover:scale-105 duration-200 flex-col mb-10'}>
+                        {t('viewAll')}
+                    </button>
+                </TabPanel>
+                {/* <TabPanel value="2" className={"overflow-auto mb-4 overflow-y-scroll"}>
                     {data.resultNotices?.map((notice,i)=> moment(notice?.e_date).isAfter(moment()) ? (<Notice notice={notice} heading={notice?.title} key={i}/>) : null)}
                     <button 
                     onClick={() => {
@@ -91,13 +108,13 @@ const Notices = ({isDepartment = false, isHome = true, className, deptID = 1, da
                     className={'block mt-auto mx-auto bg-secondary text-white py-2 px-8 hover:scale-105 duration-200 flex-col mb-10'}>
                         {t('viewAll')}
                     </button>
-                </TabPanel>
+                </TabPanel> */}
                 <TabPanel value="3" className={"overflow-auto mb-4 overflow-y-scroll"}>
-                    {data.datesheetNotices?.map((notice,i)=> moment(notice?.e_date).isAfter(moment()) ? (<Notice notice={notice} heading={notice?.title} key={i}/>) : null)}
+                    {data.recruitmentNotices?.map((notice,i)=> moment(notice?.e_date).isAfter(moment()) ? (<Notice notice={notice} heading={notice?.title} key={i}/>) : null)}
                     <button 
                     onClick={() => {
                         // open the notice in a new tab
-                        window.open(`/notices/datesheet`, '_blank');
+                        window.open(`/notices/recruitment`, '_blank');
                     }}
                     className={'block mt-auto mx-auto bg-secondary text-white py-2 px-8 hover:scale-105 duration-200 flex-col mb-10'}>
                         {t('viewAll')}
@@ -114,7 +131,7 @@ const Notices = ({isDepartment = false, isHome = true, className, deptID = 1, da
                         {t('viewAll')}
                     </button>
                 </TabPanel>
-                <TabPanel value="5" className={"overflow-auto mb-4 overflow-y-scroll"} >
+                {/* <TabPanel value="5" className={"overflow-auto mb-4 overflow-y-scroll"} >
                     {data.studentNotices?.map((notice,i)=> moment(notice?.e_date).isAfter(moment()) ? (<Notice notice={notice} heading={notice?.title} key={i}/>) : null)}
                     <button 
                     onClick={() => {
@@ -124,7 +141,7 @@ const Notices = ({isDepartment = false, isHome = true, className, deptID = 1, da
                     className={'block mt-auto mx-auto bg-secondary text-white py-2 px-8 hover:scale-105 duration-200 flex-col mb-10'}>
                         {t('viewAll')}
                     </button>
-                </TabPanel>
+                </TabPanel> */}
             </>
             }
                 </div>

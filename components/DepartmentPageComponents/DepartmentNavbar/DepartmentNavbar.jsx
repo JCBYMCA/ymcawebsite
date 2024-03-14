@@ -62,9 +62,9 @@ export const DepartmentNavbarMenu = ({id, dept_name}) => {
         //     if (router.query.id === undefined) return; else
         //     user = router.query.id;
         // }
-        console.log("getting",id,"menu");
+        //console.log("getting",id,"menu");
         getDepartmentMenu(id).then((resp) => {
-            console.log(resp.data);
+            //console.log(resp.data);
             setMenu(createMenuObj(resp.data));
             
         });
@@ -86,7 +86,7 @@ export const DepartmentNavbarMenu = ({id, dept_name}) => {
             pi[item.menu_id] = arr.length-1;
 
         }
-        console.log(arr);
+        //console.log(arr);
         for(let item of data['Submenu Menu List'] ){
             let temp = {};
             temp['title'] = item["name"];
@@ -96,7 +96,7 @@ export const DepartmentNavbarMenu = ({id, dept_name}) => {
             arr[pi[item.p_id]]['submenu'].push(temp);
             si[item.menu_id] = arr[pi[item.p_id]]['submenu'].length-1;
         }
-        console.log(si);
+        //console.log(si);
         for(let item of data['Submenu Level 2 Menu List'] ){
             let temp = {};
             temp['title'] = item["name"];

@@ -18,7 +18,7 @@ export const getMarquee = (department = "1") => api.get(`/api/proxy/marqueapi/${
 export const getAboutDepartment  = (department = "1") => api.get(`/api/proxy/aboutdepartmentapi/${department}?format=json`);
 export const getDepartmentMenu  = (department = "1") => api.get(`/api/proxy/parentmenuapi/${department}?format=json`);
 export const getDepartmentPostsMenu  = (department = "1") => api.get(`/api/proxy/parentmenuapi/${department}?format=json`);
-export const getFaculty = (department = "1", type="teaching") => api.get(`/api/proxy/teacherapi/${department}?format=json`);
+export const getFaculty = (department = "1",type="teaching") => api.get(`/api/proxy/teacherapi/${department}/${type}?format=json`);
 export const getPost = (department = "1", url= "LegalCell") => api.get(`api/proxy/postapi/${department}/${url}?format=json`);
 export const getDepartmentPost = (department = "1", url= "LegalCell") => api.get(`/api/proxy/postapi/${department}/${url}?format=json`);
 export const getAchievement = (department = "1") => api.get(`/api/proxy/achievementapi/${department}?format=json`);
