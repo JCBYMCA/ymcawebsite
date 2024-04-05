@@ -143,12 +143,12 @@ const Home = ({setLoader}) => {
                         image={'/assets/images/governor.png'}
                         url = {'https://haryanarajbhavan.gov.in/whoswho/shri-bandaru-dattatraya/'}
                     />
-                    <ProfileCard
+                    {/* <ProfileCard
                         name={'chief minister name'}
                         designation={'chief minister designation'}
                         image={'/assets/images/cm.png'}
                         url = {'https://haryanacmoffice.gov.in/biography'}
-                    />
+                    /> */}
                     <ProfileCard
                         name={'vice chancellor name'}
                         designation={'vice chancellor designation'}
