@@ -20,8 +20,8 @@ const FacultyPage = ({ slug, setLoader }) => {
 
     useEffect(() => {
 
-        getFaculty(departmentId[slug[0]]).then((resp) => {
-            //console.log(data);
+        getFaculty(departmentId[slug[0]],slug[1]).then((resp) => {
+            console.log(resp);
             setData(resp.data["Post List"]);
         });
 
@@ -55,7 +55,7 @@ const FacultyPage = ({ slug, setLoader }) => {
                                 designation={item.desc}
                                 mail={item.email}
                                 contact={item.phone_number}
-                                link={item.irins_url}
+                                link={"/faculty-profile/"+item.teacher_id}
                                 qualf1={item.extra_charge}
                                 qualf2={''}
                             />

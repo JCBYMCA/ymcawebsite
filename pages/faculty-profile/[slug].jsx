@@ -8,8 +8,22 @@ import ProfessionalMembership from "../../components/FacultyProfilePageComponent
 import Awards from "../../components/FacultyProfilePageComponents/Awards";
 import ResearchPublications from "../../components/FacultyProfilePageComponents/ResearchPublications";
 import FacultyNavbar from "../../components/FacultyPageComponents/FacultyNavbar/FacultyNavbar";
+import { useEffect, useState } from "react";
+import { getFacultyProfile } from "../../http";
 
-const FacultyProfile = () => {
+const FacultyProfile = ({slug, setLoader }) => {
+
+    const [data, setData] = useState();
+
+    useEffect(() => {
+            
+            getFacultyProfile(slug).then((resp) => {
+                console.log(resp);
+                setData(resp.data['Post List']);
+                setLoader(false);
+            });
+        
+    }, []);
 
     return (
         <div>
@@ -20,7 +34,7 @@ const FacultyProfile = () => {
         </div>
         <div className={'w-2/3'}>
             <Head/>
-            <Biography/>
+            <Biography  />
             {/* <EducationQualifications/> */}
             {/* <AreaofResearch/>
             <PatentsGrants/>
@@ -34,14 +48,16 @@ const FacultyProfile = () => {
   );
 }
 
-export async function getServerSideProps({locale}) {
+export const getServerSideProps = async (context) => {
+    const slug = context.params.slug;
+    //console.log("slug", slug);
     return {
         props: {
-            messages: (await import(`../../lang/${locale}.json`)).default,
+            slug: slug,
+            messages: (await import(`../../lang/${context.locale}.json`)).default,
         }
     }
 }
-
 
 export default FacultyProfile;
 
