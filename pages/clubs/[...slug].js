@@ -70,7 +70,7 @@ const Cellpage = ({slug, setLoader}) => {
       <ClubNavbar name={slug[0]}  menuData={[]}/>
       <ClubHero slider={sliderImages} data={heroData} />
       <AboutClub  data={about} />
-      <ClubPos data={[]} />
+      {/* <ClubPos data={[]} /> */}
 
       <div className=" flex-col flex p-10 justify-around md:flex-row w-full h-full bg-[#161b25] gap-y-10">
         <div className={"md:w-1/4"}>

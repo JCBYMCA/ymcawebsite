@@ -46,7 +46,7 @@ const Cellpage = ({slug, setLoader}) => {
     });
     
     getMenu(cellId).then((resp)=>{
-      console.log("resp", resp.data);
+      // console.log("resp", resp.data);
       setMenuData(createMenuObj(resp.data));
     });
 
