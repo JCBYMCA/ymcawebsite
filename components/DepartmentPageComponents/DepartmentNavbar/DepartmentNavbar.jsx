@@ -88,6 +88,15 @@ export const DepartmentNavbarMenu = ({id, dept_name}) => {
 
     } , [id])
 
+    const makeLink = (link) => {
+        if( link.substring(0, 4) === 'http' || 
+            link.substring(0, 4) === 'www.' ||
+            link.substring(0, 5) === 'https'     
+        ) return link;
+
+        return dept_name+'/'+link;
+    }
+
     const createMenuObj= (data)=> {
         let arr = [];
         let pi = {};
@@ -96,7 +105,7 @@ export const DepartmentNavbarMenu = ({id, dept_name}) => {
             // console.log(item);
             let temp = {}
             temp['title'] = item["name"];
-            temp['link'] = dept_name+'/'+item['url'];
+            temp['link'] = makeLink(item['url']);
             temp['isNewTab'] = item['IsNewTab'];
             temp['submenu'] = [];
             arr.push(temp);
@@ -107,7 +116,7 @@ export const DepartmentNavbarMenu = ({id, dept_name}) => {
         for(let item of data['Submenu Menu List'] ){
             let temp = {};
             temp['title'] = item["name"];
-            temp['link'] = dept_name+'/'+item['url'];
+            temp['link'] = makeLink(item['url']);
             temp['isNewTab'] = item['IsNewTab'];
             temp['submenu'] = [];
             arr[pi[item.p_id]]['submenu'].push(temp);
@@ -117,7 +126,7 @@ export const DepartmentNavbarMenu = ({id, dept_name}) => {
         for(let item of data['Submenu Level 2 Menu List'] ){
             let temp = {};
             temp['title'] = item["name"];
-            temp['link'] = dept_name+'/'+item['url'];
+            temp['link'] = makeLink(item['url']);
             temp['isNewTab'] = item['IsNewTab'];
             // console.log(item.p_id,item.s_id);
             arr[pi[item.p_id]]['submenu'][si[item.s_id]]['submenu'].push(temp);

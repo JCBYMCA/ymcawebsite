@@ -42,11 +42,6 @@ const NavBar = ({id, menudata}) => {
 
     useEffect(() => {
         let user = id;
-        // if(isDepartment){
-        //     console.log("getting dept menu");
-        //     if (router.query.id === undefined) return; else
-        //     user = router.query.id;
-        // }
         // console.log(menudata);
         setMenu(createMenuObj(menudata));
 
