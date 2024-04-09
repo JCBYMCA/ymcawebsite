@@ -46,7 +46,7 @@ const FacultyCard = ({image,name,designation,mail,contact,qualf1,qualf2,link,lin
 
                 <h1 className={'text-sm md:text-base'}> {qualf1}</h1>
                 <h1 className={'text-sm md:text-base'}> {qualf2}</h1>
-                <a href={link}><button className={'mt-1 border-2 py-1 px-5 bg-primaryLight hover:bg-primary duration-200 hover:scale-105 text-white rounded-lg'}>Read More</button></a>
+                <a target="_blank" href={link}><button className={'mt-1 border-2 py-1 px-5 bg-primaryLight hover:bg-primary duration-200 hover:scale-105 text-white rounded-lg'}>Read More</button></a>
             </div>
 
         </motion.div>

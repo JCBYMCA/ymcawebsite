@@ -57,8 +57,8 @@ const ClubHero = ({slider, data}) => {
         >
           {slider?.map((item, index) => (
             <div key={index} className={'w-full h-[30vh] md:h-[70vh]'}>
-              <Image src={item.img
-                ? MEDIA_BASE_URL+item.img
+              <Image src={item.files_url
+                ? MEDIA_BASE_URL+item.files_url
                 : '/assets/images/achievements/1.png'} alt={'Achievement'} layout={'fill'} />
             </div>
           ))

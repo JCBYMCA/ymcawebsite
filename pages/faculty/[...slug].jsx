@@ -40,7 +40,7 @@ const FacultyPage = ({ slug, setLoader }) => {
             {slug[0]=="main"? 
              menu && <NavBar menudata={menu}/>
             :
-            <DepartmentNavbar id={departmentId[slug[0]]} dept_name={slug[0]} isDept={true} />
+            <FacultyNavbar id={departmentId[slug[0]]} dept_name={slug[0]} isDept={true} />
             }
 
             <div className={'grid md:grid-cols-2 grid-cols-1 md:px-32 mt-16'}>
