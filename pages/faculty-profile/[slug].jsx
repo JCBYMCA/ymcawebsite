@@ -1,6 +1,5 @@
 import ProfileCard from "../../components/FacultyProfilePageComponents/ProfileCard";
 import Head from "../../components/FacultyProfilePageComponents/Head";
-import Biography from "../../components/FacultyProfilePageComponents/Biography";
 import EducationQualifications from "../../components/FacultyProfilePageComponents/EducationQualifications";
 import AreaofResearch from "../../components/FacultyProfilePageComponents/AreaofResearch";
 import PatentsGrants from "../../components/FacultyProfilePageComponents/Patentsgrants";
@@ -10,6 +9,7 @@ import ResearchPublications from "../../components/FacultyProfilePageComponents/
 import FacultyNavbar from "../../components/FacultyPageComponents/FacultyNavbar/FacultyNavbar";
 import { useEffect, useState } from "react";
 import { getFacultyProfile } from "../../http";
+import ProfileSection from "../../components/FacultyProfilePageComponents/Section";
 
 const FacultyProfile = ({slug, setLoader }) => {
 
@@ -34,7 +34,7 @@ const FacultyProfile = ({slug, setLoader }) => {
         </div>
         <div className={'w-2/3'}>
             <Head/>
-            <Biography  />
+            <ProfileSection  />
             {/* <EducationQualifications/> */}
             {/* <AreaofResearch/>
             <PatentsGrants/>
