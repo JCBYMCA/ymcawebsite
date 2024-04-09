@@ -6,9 +6,24 @@ import HomeIcon from "@mui/icons-material/Home";
 import {useRouter} from "next/router";
 import { getDepartmentMenu, getMenu } from "../../../http";
 import { useEffect, useState } from "react";
+import { getDepartmentlist } from "../../../http";
 
 const DepartmentNavbar = ({id, dept_name, isDept=false}) => {
     const t = useTranslations("home.navbar");
+    const [deptdata, setdeptData] = useState();
+    
+    useEffect(() => {
+        getDepartmentlist(id).then((resp) => {           
+            setdeptData(resp.data["List"][0]["short_name"]);
+           // console.log(resp.data["List"][0]["short_name"]);
+            //console.log(resp.data);
+           
+        });
+
+        // setTimeout(() => {
+        //     setLoader(false);
+        // }, 1000);
+    }, []);
     return (
         <>
             <div className={`flex flex-col sticky top-0 bg-[#EBEBEB]  text-black border-1 border-neutral-200`} style={{
@@ -20,7 +35,9 @@ const DepartmentNavbar = ({id, dept_name, isDept=false}) => {
 
                         {isDept?(
                             <div className={"m-auto"}>
-                            <h1 className={'font-semibold text-3xl'}>Department of {dept_name.replace(/_/g, " ")}</h1>
+                            {/* <h1 className={'font-semibold text-3xl'}>Department of {dept_name.replace(/_/g, " ")}</h1> */}
+                      <h1 className={'font-semibold text-3xl'}>{deptdata}</h1> 
+                           
                             <h1 className={'font-semibold text-md text-secondaryLight'}>J.C. Bose University of Science and
                                                 Technology, YMCA, Faridabad</h1>
                             </div>

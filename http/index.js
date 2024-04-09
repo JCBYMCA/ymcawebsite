@@ -26,6 +26,8 @@ export const getGallery = (department = "1") => api.get(`/api/proxy/galleryapi/$
 export const getEventGallery = (galleryId = "1") => api.get(`/api/proxy/galleryimages_api/${galleryId}?format=json`);
 export const getCellsClubs = () => api.get(`/api/proxy/cellsapi?format=json`);
 export const getFacultyProfile = (teacherId = "8") => api.get(`/api/proxy/teacherdataapi/${teacherId}?format=json`);
+export const getDepartmentlist = (department="1") =>api.get(`/api/proxy/departmentapi/${department}?format=json`);
+
 //Post requests
 //export const getNotices = (data,department = "admin") => api.post(`/noticenotice_api/${department}?format=json`, data);
 
