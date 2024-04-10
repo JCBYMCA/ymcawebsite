@@ -8,12 +8,12 @@ const ProfileCard = () => {
     return (
         <div className={'flex flex-col'}>
             <div className={'drop-shadow-2xl '}>
-                <Image src={'/assets/images/faculty/neelamduhan.png'} width={250} height={300} className={'rounded-xl border-2 border-black '}/>
+                <Image src={"/assets/images/sampleperson.png"} width={250} height={300} className={'rounded-xl border-2 border-black '}/>
             </div>
             <div className={'flex flex-col space-y-6 mt-10'}>
                 <div className={'flex'}>
                     <EmailIcon className={'text-gray-700 mr-1'}/>
-                    <h1>neelamduhan@jcboseust.ac.in</h1>
+                    <h1>someEmail@jcboseust.ac.in</h1>
                 </div>
                 <div className={'flex'}>
                     <PhoneIcon className={'text-gray-700'}/>

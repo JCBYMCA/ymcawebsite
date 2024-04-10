@@ -8,16 +8,20 @@ import TabPanel from '@mui/lab/TabPanel';
 import LibNotices from "../../components/LibraryPageComponents/LibNotices";
 import LibStats from "../../components/LibraryPageComponents/LibStats";
 import NewTitles from "../../components/LibraryPageComponents/NewTitles";
+import DepartmentNavbar from "../../components/DepartmentPageComponents/DepartmentNavbar/DepartmentNavbar";
 
-const LibraryPage= ()=> {
+const LibraryPage= ({setLoader})=> {
     const [value, setValue] = useState('1');
     const handleChange = (event, newValue) => {
         setValue(newValue);
     };
 
+    setLoader(false);
+
     return (
         <div>
-            <LibNavbar />
+            {/* <LibNavbar /> */}
+            <DepartmentNavbar id={"1"} dept_name={"Pt. Deen Dayal Upadhyay Central library"} isDept={false} />
             <div className={'bg-library-bg bg-no-repeat bg-cover'}>
                 <div className={'backdrop-brightness-50 flex flex-col'}>
                     <div className={'mt-20 font-semibold'}>
