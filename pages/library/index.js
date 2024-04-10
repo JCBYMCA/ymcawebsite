@@ -11,6 +11,7 @@ import NewTitles from "../../components/LibraryPageComponents/NewTitles";
 import DepartmentNavbar from "../../components/DepartmentPageComponents/DepartmentNavbar/DepartmentNavbar";
 
 const LibraryPage= ({setLoader})=> {
+    
     const [value, setValue] = useState('1');
     const handleChange = (event, newValue) => {
         setValue(newValue);
@@ -21,7 +22,7 @@ const LibraryPage= ({setLoader})=> {
     return (
         <div>
             {/* <LibNavbar /> */}
-            <DepartmentNavbar id={"1"} dept_name={"Library"} isDept={false} />
+            <DepartmentNavbar id={"27"} dept_name={"Library"} isDept={false} />
             <div className={'bg-library-bg bg-no-repeat bg-cover'}>
                 <div className={'backdrop-brightness-50 flex flex-col'}>
                     <div className={'mt-20 font-semibold'}>
@@ -164,5 +165,15 @@ const LibraryPage= ({setLoader})=> {
         </div>
     )
 }
+
+export async function getServerSideProps({locale}) {
+    return {
+        props: {
+            messages: (await import(`../../lang/${locale}.json`)).default,
+        }
+    }
+}
+
+
 
 export default LibraryPage;
