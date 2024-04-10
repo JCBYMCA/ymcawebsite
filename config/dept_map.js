@@ -17,6 +17,7 @@ const departmentId = {
 "Literature_Languages": 16,
 "Community_College": 17,
 "Research_Development" :26,
+"Library": 27
 
 
 }

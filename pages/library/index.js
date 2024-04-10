@@ -21,7 +21,7 @@ const LibraryPage= ({setLoader})=> {
     return (
         <div>
             {/* <LibNavbar /> */}
-            <DepartmentNavbar id={"1"} dept_name={"Pt. Deen Dayal Upadhyay Central library"} isDept={false} />
+            <DepartmentNavbar id={"1"} dept_name={"Library"} isDept={false} />
             <div className={'bg-library-bg bg-no-repeat bg-cover'}>
                 <div className={'backdrop-brightness-50 flex flex-col'}>
                     <div className={'mt-20 font-semibold'}>
