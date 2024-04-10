@@ -26,8 +26,13 @@ const FacultyProfile = ({slug, setLoader }) => {
             getFacultyProfile(slug).then((resp) => {
                 console.log(resp);
                 setData(resp.data['Post List']);
-                setLoader(false);
+                console.log("data",slug);
             });
+
+            if (
+                slug == "rajat" 
+                // && resp.data['Post List'].length !=0
+                 ) setLoader(false);
         
     }, []);
 

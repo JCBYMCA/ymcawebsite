@@ -87,7 +87,7 @@ export const FacultyNavbarMenu = ({id,facultyPage = false, dept_name}) => {
             link.substring(0, 5) === 'https'     
         ) return link;
         if (facultyPage) return '../'+link; 
-        return '../'+ dept_name+'/'+link;
+        return '../department/'+ dept_name+'/'+link;
     }
 
     const createMenuObj= (data)=> {
