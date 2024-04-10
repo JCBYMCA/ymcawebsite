@@ -182,7 +182,7 @@ const LibraryPage= ({setLoader})=> {
             </div>
             <div className={'mt-16 bg-white flex flex-row justify-around mb-8'}>
                 {/* <LibNotices/> */}
-                <Notices className={'w-[52rem] bg-slate-300 bg-opacity-60'} data={notices} deptName={"Library"} deptID={"27"} isDepartment={true}/>
+                <Notices className={'w-[75%] bg-slate-300 bg-opacity-60'} data={notices} deptName={"Library"} deptID={"27"} isHome={false} isDepartment={true}/>
                 {/* <LibStats/> */}
             </div>
             {/* <NewTitles categories={['Engineering', 'Finance', 'Business', 'Physics', 'Management']} /> */}
