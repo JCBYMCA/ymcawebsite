@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import LibNavbar from '../../components/LibraryPageComponents/LibNavbar/LibNavbar';
 import {motion} from "framer-motion";
 import Tab from '@mui/material/Tab';
@@ -9,15 +9,38 @@ import LibNotices from "../../components/LibraryPageComponents/LibNotices";
 import LibStats from "../../components/LibraryPageComponents/LibStats";
 import NewTitles from "../../components/LibraryPageComponents/NewTitles";
 import DepartmentNavbar from "../../components/DepartmentPageComponents/DepartmentNavbar/DepartmentNavbar";
+import Notices from "../../components/HomePageComponents/Notices";
+import { getNotices } from "../../http";
+import departmentId from "../../config/dept_map";
+import FooterLinks from "../../components/common/FooterLinks";
 
 const LibraryPage= ({setLoader})=> {
-    
+
     const [value, setValue] = useState('1');
     const handleChange = (event, newValue) => {
         setValue(newValue);
     };
+    const [noticeData, setNoticeData] = useState({
+        notices: [],
+        resultNotices: [],
+        datesheetNotices: [],
+        tenderNotices: [],
+        studentNotices: []
+    });
+    const [notices, setNotices] = useState([]);
 
     setLoader(false);
+
+    useEffect(() => {
+        getNotices("27", 'all').then((resp) => {
+            
+            resp.data["Notice List"].sort((a, b)=> {
+                return moment(b.date) - moment(a.date)
+            })
+            // console.log(resp);
+            setNotices((xyz)=> {return {...xyz, notices: resp.data["Notice List"]}});
+        });
+    },[]);
 
     return (
         <div>
@@ -25,7 +48,7 @@ const LibraryPage= ({setLoader})=> {
             <DepartmentNavbar id={"27"} dept_name={"Library"} isDept={false} />
             <div className={'bg-library-bg bg-no-repeat bg-cover'}>
                 <div className={'backdrop-brightness-50 flex flex-col'}>
-                    <div className={'mt-20 font-semibold'}>
+                    <div className={'mt-20 mb-20 font-semibold'}>
                         <motion.h1
                             initial={{
                                 opacity:0,
@@ -61,7 +84,7 @@ const LibraryPage= ({setLoader})=> {
                             duration: 0.3,
                         }} className={'text-white text-2xl text-center md:text-5xl'}>{"CENTRAL LIBRARY"}</motion.h1>
                     </div>
-                    <motion.div
+                    {/* <motion.div
                         initial={{
                             opacity:0,
                             y: 100,
@@ -110,7 +133,7 @@ const LibraryPage= ({setLoader})=> {
                                     <div className={'flex flex-col px-6 py-3'}>
                                     </div>
                             </div>
-                    </motion.div>
+                    </motion.div> */}
                     <div>
                     <motion.h1
                             initial={{
@@ -158,10 +181,12 @@ const LibraryPage= ({setLoader})=> {
                 </div>
             </div>
             <div className={'mt-16 bg-white flex flex-row justify-around mb-8'}>
-                <LibNotices/>
-                <LibStats/>
+                {/* <LibNotices/> */}
+                <Notices className={'w-[52rem] bg-slate-300 bg-opacity-60'} data={notices} deptName={"Library"} deptID={"27"} isDepartment={true}/>
+                {/* <LibStats/> */}
             </div>
-            <NewTitles categories={['Engineering', 'Finance', 'Business', 'Physics', 'Management']} />
+            {/* <NewTitles categories={['Engineering', 'Finance', 'Business', 'Physics', 'Management']} /> */}
+            <FooterLinks />
         </div>
     )
 }
