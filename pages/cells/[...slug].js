@@ -21,6 +21,7 @@ const Cellpage = ({slug, setLoader}) => {
   const [about, setAbout] = useState();
   const [menuData, setMenuData] = useState();
   const [noticeData, setNoticeData] = useState();
+  const [Cellname, setCellName] = useState([]);
 
 
 
@@ -37,6 +38,9 @@ const Cellpage = ({slug, setLoader}) => {
     getCellsClubs().then((resp) => {
       // console.log("resp", resp.data['List']);
       setHeroData(resp.data['List'].filter((item) => item['url'] == slug[0])[0]);
+      setCellName(resp.data['List'].filter((item) => item['url'] == slug[0])[0].name);
+       //console.log(heroData.name);
+      // console.log(Cellname);
     }
     );
 
@@ -107,7 +111,8 @@ const Cellpage = ({slug, setLoader}) => {
   
   return (
     <div>
-      <ClubNavbar name={slug[0].replace("_"," ")} menuData={menuData} />      
+      {/* <ClubNavbar name={slug[0].replace("_"," ")} menuData={menuData} />       */}
+      <ClubNavbar name={Cellname} menuData={menuData} />      
       <ClubHero slider = {sliderImages} data = {heroData}/>
       <AboutCell data = {about}/>
       {noticeData &&

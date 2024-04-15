@@ -13,12 +13,12 @@ const AboutCell = ({ data }) => {
           }
         </div>
         <div className="">
-          <div className="hidden sm:block border border-t-6 border-white border-solid my-4">
-          </div>
+          {/* <div className="hidden sm:block border border-t-6 border-white border-solid my-4">
+          </div> */}
           <div className="sm:flex px-10 sm:px-0">
-            <div className="hidden sm:block border border-l-6 border-white border-solid mr-6"></div>
+            {/* <div className="hidden sm:block border border-l-6 border-white border-solid mr-6"></div> */}
             <div className="mt-8 mb-8 sm:mb-0 sm:mt-0  text-center">
-              <Image className={"w-[30vw] "} src={ data?.head_img ? MEDIA_BASE_URL+data?.head_img : '/assets/images/sampleperson.png'} alt="Pic" width={650} height={650} />
+              <Image className={"w-[13vw] "} src={ data?.head_img ? MEDIA_BASE_URL+data?.head_img : '/assets/images/sampleperson.png'} alt="Pic" width={350} height={350} />
               <div className="w-full md:text-xl font-bold text-xl">{
                 data?.head_name ? data?.head_name : "Mr./Ms. Chairperson"
               }</div>
