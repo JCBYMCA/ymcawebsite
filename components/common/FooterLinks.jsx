@@ -124,7 +124,7 @@ const FooterLinks = () => {
                         }
                         if(item.type=='Explore') {
                             counter++;
-                            return <li key={counter} className={'mb-1 cursor-pointer hover:text-white duration-200'}>{item.name}</li>
+                            return <li key={counter} className={'mb-1 cursor-pointer hover:text-white duration-200'}><Link href={item.url ? item.url : "#"}>{item.name}</Link></li>
                         }
                     })}
                     {/* <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('Officer\'s Contacts')}</li>
@@ -150,7 +150,7 @@ const FooterLinks = () => {
                         }
                         if(item.type=='Explore1') {
                             counter++;
-                            return <li key={counter} className={'mb-1 cursor-pointer hover:text-white duration-200'}>{item.name}</li>
+                            return <li key={counter} className={'mb-1 cursor-pointer hover:text-white duration-200'}><Link href={item.url ? item.url : "#"}>{item.name}</Link></li>
                         }
                     })}
                     {/* <li className={'mb-1 cursor-pointer hover:text-white duration-200'}>{t('360 Degree Feedback')}</li>
