@@ -29,7 +29,9 @@ const FacultyNavbar = ({id, facultyPage = false, dept_name, isDept=false}) => {
                 zIndex:80
             }}>
                 <div className={'flex'}>
-                    <Image src='/assets/images/logo.png' alt={'Logo'} width={90} height={90} />
+                <a href={'/'} className={'ml-5'}>
+                        <Image src='/assets/images/logo.png' alt={'Logo'} width={90} height={90} />
+                    </a>
                     <div className={'flex flex-col'}>
 
                         {isDept?(

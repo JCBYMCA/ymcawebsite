@@ -47,7 +47,7 @@ const Cellpage = ({slug, setLoader}) => {
     getCellsClubs().then((resp) => {
       // console.log("resp", resp.data['List']);
       setHeroData(resp.data['List'].filter((item) => item['url'] == slug[0])[0]);
-      setCellName(resp.data['List'].filter((item) => item['url'] == slug[0])[0].name);
+      setCellName(resp.data['List'].filter((item) => item['url'] == slug[0])[0]?.name);
        //console.log(heroData.name);
       // console.log(Cellname);
     }

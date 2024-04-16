@@ -10,7 +10,6 @@ const ClubNavbar = ({name, menuData}) => {
     if(!menuData || menuData.length === 0){
         menuData = ClubMenuItems;
     }
-
     
 
 
@@ -20,26 +19,32 @@ const ClubNavbar = ({name, menuData}) => {
                 zIndex:8000
             }}>
                 <div className={'flex'}>
-                    <Image src='/assets/images/logo.png' alt={'Logo'} width={90} height={90} />
+                    <a href={'/'} className={'ml-5'}>
+                        <Image src='/assets/images/logo.png' alt={'Logo'} width={90} height={90} />
+                    </a>
                     <div className={'flex flex-col'}>
                         <div className={'flex flex-col font-bold -space-y-1 tracking-wider mt-5'}>
                             <h1 className={'text-xs md:text-3xl mb-1'}>{name ? name : `Clubs & Societies`}</h1>
+                            <h1 className={'font-semibold text-md text-secondaryLight'}>J.C. Bose University of Science and
+                                                Technology, YMCA, Faridabad</h1>
                             {/*<h1 className={'text-xs md:text-xl'}>of Science & Technology</h1>*/}
                             {/*<h1 className={'text-xs md:text-xl'}>YMCA, Faridabad</h1>*/}
                         </div>
                     </div>
                 </div>
-                <ClubNavbarMenu menuData={menuData} />
+                <ClubNavbarMenu menuData={menuData}/>
             </div>
         </>
     )
 }
 export const ClubNavbarMenu = ({menuData}) => {
     const router = useRouter();
+    const type = router.route.split('/').filter((item) => item !== '')[0];
+    const cell = router.query.slug?.[0];
     return (
         <div className={'flex'}>
             <div className={'ml-auto w-10 hover:bg-primary text-center hover:text-white duration-200'} onClick={() => {
-                router.push('/')
+                router.push('/'+type+'/'+cell)
             }}>
                 <HomeIcon className={'ml-auto'}/>
             </div>

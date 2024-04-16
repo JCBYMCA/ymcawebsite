@@ -30,7 +30,9 @@ const DepartmentNavbar = ({id, dept_name, isDept=false}) => {
                 zIndex:80
             }}>
                 <div className={'flex'}>
-                    <Image src='/assets/images/logo.png' alt={'Logo'} width={90} height={90} />
+                <a href={'/'} className={'ml-5'}>
+                        <Image src='/assets/images/logo.png' alt={'Logo'} width={90} height={90} />
+                    </a>
                     <div className={'flex flex-col'}>
 
                         {isDept?(
@@ -138,7 +140,7 @@ export const DepartmentNavbarMenu = ({id, dept_name}) => {
     return (
         <div className={'flex'}>
             <div className={'ml-auto w-10 hover:bg-primary text-center hover:text-white duration-200'} onClick={() => {
-                router.push('/')
+                router.push('/department/'+dept_name)
             }}>
                 <HomeIcon className={'ml-auto'}/>
             </div>

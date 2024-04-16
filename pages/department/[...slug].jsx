@@ -98,7 +98,8 @@ const DepartmentPage = ({ slug, setLoader }) => {
             </Head>
             <div>
                 <div className={"backdrop-brightness-50 shadow-lg"}>
-                    <DepartmentNavbar id={departmentId[slug[0]]} dept_name={slug[0]} />
+    
+                <DepartmentNavbar id={departmentId[slug[0]]} dept_name={slug[0]} isDept={true} />
                     {/* <NavBar id={departmentId[slug[0]]} menudata={menu} /> */}
                 </div>
                 <PostTemplate content={data} title={title}></PostTemplate>

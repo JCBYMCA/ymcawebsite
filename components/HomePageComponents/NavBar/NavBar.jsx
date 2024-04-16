@@ -137,7 +137,11 @@ const NavBar = ({id, menudata}) => {
             zIndex:80
         }}>
             <div className={'flex '}>
-                <div><Image src='/assets/images/logo.png' className={"h-min"} alt={'Logo'} width={90} height={100} /></div>
+                {/* <div> */}
+                <a href={'/'} className={'ml-5'}>
+                        <Image src='/assets/images/logo.png' alt={'Logo'} width={90} height={90} />
+                    </a>
+                {/* </div> */}
 
                 <>
                     <div className={'flex flex-col'}>
