@@ -14,7 +14,7 @@ const PostTemplate = ({ content, title }) => {
                 <div className={" px-6 w-full py-8 bg-white/90 "}>
                     <div className={'mr-4 w-full'}>
                         <h1 className={'font-bold text-2xl mb-4 text-center'}>{title}</h1>
-                        <div id={'content-box'} className={' h-fit p-3 rounded-sm content-center'}>
+                        <div id={'content-box'} className={'m-auto  h-fit p-3 rounded-sm content-center'}>
                             {appendHTML}                           
                         </div>
                     </div>

@@ -10,9 +10,11 @@ import { useEffect, useState } from "react";
 import cellsclubId from "../../config/cell_club_map";
 import Landing from "../../components/DepartmentPageComponents/Landing";
 import Carousel from "react-multi-carousel";
+import Head from "next/head";
 import Image from "next/image";
 import "react-multi-carousel/lib/styles.css";
-import { getAboutDepartment, getCellsClubs, getMenu, getNotices, getSilder } from "../../http";
+import { getAboutDepartment, getCellsClubs, getDepartmentPost, getMenu, getNotices, getSilder } from "../../http";
+import PostTemplate from "../../components/common/PostTemplate";
 
 const Cellpage = ({slug, setLoader}) => {
 
@@ -22,13 +24,20 @@ const Cellpage = ({slug, setLoader}) => {
   const [menuData, setMenuData] = useState();
   const [noticeData, setNoticeData] = useState();
   const [Cellname, setCellName] = useState([]);
+  const [data, setData] = useState([]);
+  const [title, setTitle] = useState([]);
 
-
+  const page = slug?.[1] ? slug[1] : "";
 
   useEffect(() => {
     // console.log("slug", slug);
     const cellId = cellsclubId[slug[0]];
     // console.log("cellId", cellId);
+
+    getDepartmentPost(cellId, page).then((resp) => {
+      setData(resp.data["Post List"][0].content);
+      setTitle(resp.data["Post List"][0].name);
+  });
 
     getSilder(cellId).then((resp) => {
       // console.log("resp", resp);
@@ -65,6 +74,14 @@ const Cellpage = ({slug, setLoader}) => {
       }
       
   });
+  const makeLink = (link) => {
+    if( link.substring(0, 4) === 'http' || 
+        link.substring(0, 4) === 'www.' ||
+        link.substring(0, 5) === 'https'     
+    ) return link;
+
+    return slug?.[0]+'/'+link;
+}
    
     const createMenuObj= (data)=> {
       let arr = [];
@@ -74,7 +91,7 @@ const Cellpage = ({slug, setLoader}) => {
           // console.log(item);
           let temp = {}
           temp['title'] = item["name"];
-          temp['link'] = item['url'];
+          temp['link'] = makeLink(item['url']);
           temp['isNewTab'] = item['IsNewTab'];
           temp['submenu'] = [];
           arr.push(temp);
@@ -85,7 +102,7 @@ const Cellpage = ({slug, setLoader}) => {
       for(let item of data['Submenu Menu List'] ){
           let temp = {};
           temp['title'] = item["name"];
-          temp['link'] = item['url'];
+          temp['link'] = makeLink(item['url']);
           temp['isNewTab'] = item['IsNewTab'];
           temp['submenu'] = [];
           arr[pi[item.p_id]]['submenu'].push(temp);
@@ -95,7 +112,7 @@ const Cellpage = ({slug, setLoader}) => {
       for(let item of data['Submenu Level 2 Menu List'] ){
           let temp = {};
           temp['title'] = item["name"];
-          temp['link'] = item['url'];
+          temp['link'] = makeLink(item['url']);
           temp['isNewTab'] = item['IsNewTab'];
           // console.log(item.p_id,item.s_id);
           arr[pi[item.p_id]]['submenu'][si[item.s_id]]['submenu'].push(temp);
@@ -104,32 +121,48 @@ const Cellpage = ({slug, setLoader}) => {
       return arr;
   }
 
+
+
     setTimeout(() => {
       setLoader(false);
     }, 1000);
-  }, [])
+  }, [page, slug])
   
-  return (
-    <div>
-      {/* <ClubNavbar name={slug[0].replace("_"," ")} menuData={menuData} />       */}
-      <ClubNavbar name={Cellname} menuData={menuData} />      
-      <ClubHero slider = {sliderImages} data = {heroData}/>
-      <AboutCell data = {about}/>
-      {noticeData &&
-        <div className={'sm:flex sm:flex-row sm:items-center space-x-4 px-5 sm:pl-20 py-8 bg-notice-bg bg-cover justify-center sm:justify-around sm:pr-20'}>
-            <div className={'flex flex-col md:flex-row bg-[#EBEBEB] bg-opacity-5 w-full md:h-[35.8rem] py-10 px-3 md:px-8'}>
-                      <div className={'md:w-2/3 w-auto shadow-sm md:mr-4'}>
-                        <Notices  data={noticeData} className={'bg-[#EBEBEB] border-solid'} deptID={cellsclubId[slug[0]]} isDepartment={true} isHome={false} /> 
-                      </div>
-                      <div className={'md:w-1/3 w-auto md:ml-4 mt-4 md:mt-0'}>
-                          <QuickLinks className={'bg-[#EBEBEB] border-solid'} heading={"Upcoming Events"}/>
-                      </div>
-                  </div>
+  return slug?.length === 1 ? (
+      <div>
+        {/* <ClubNavbar name={slug[0].replace("_"," ")} menuData={menuData} />       */}
+        <ClubNavbar name={Cellname} menuData={menuData} />      
+        <ClubHero slider = {sliderImages} data = {heroData}/>
+        <AboutCell data = {about}/>
+        {noticeData &&
+          <div className={'sm:flex sm:flex-row sm:items-center space-x-4 px-5 sm:pl-20 py-8 bg-notice-bg bg-cover justify-center sm:justify-around sm:pr-20'}>
+              <div className={'flex flex-col md:flex-row bg-[#EBEBEB] bg-opacity-5 w-full md:h-[35.8rem] py-10 px-3 md:px-8'}>
+                        <div className={'md:w-2/3 w-auto shadow-sm md:mr-4'}>
+                          <Notices  data={noticeData} className={'bg-[#EBEBEB] border-solid'} deptID={cellsclubId[slug[0]]} isDepartment={true} isHome={false} /> 
+                        </div>
+                        <div className={'md:w-1/3 w-auto md:ml-4 mt-4 md:mt-0'}>
+                            <QuickLinks className={'bg-[#EBEBEB] border-solid'} heading={"Upcoming Events"}/>
+                        </div>
+                    </div>
+          </div>
+        }
+        <FooterLinks />
+      </div>
+) : (
+    <>
+        <Head>
+            <title> {Cellname} - JC Bose University of Science and Technology, YMCA</title>
+        </Head>
+        <div>
+            <div className={"backdrop-brightness-50 shadow-lg"}>
+              <ClubNavbar name={Cellname} menuData={menuData} />  
+            </div>
+            <PostTemplate content={data} title={title}></PostTemplate>
         </div>
-      }
-      <FooterLinks />
-    </div>
-  );
+        <FooterLinks />
+    </>
+)
+ 
 };
 
 
