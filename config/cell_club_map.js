@@ -9,7 +9,10 @@ const cellsclubId = {
     "Alumni_Corporate_Affairs":24,
     "Industrial_Relations":25,
     "Internal_Quality_Assurance":28,
- 
+    "Legal":29,
+    "NAD-DigiLocker":30,
+    "Equal_Opportunity":31,
+    "Vigilance":32,
  }
 
 export default cellsclubId;
