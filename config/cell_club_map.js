@@ -13,6 +13,9 @@ const cellsclubId = {
     "NAD-DigiLocker":30,
     "Equal_Opportunity":31,
     "Vigilance":32,
+    "Women_Welfare":33,
+    "Public_Information_RTI":34,
+    "SC_ST_Welfare":35,
  }
 
 export default cellsclubId;
